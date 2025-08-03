@@ -45,11 +45,11 @@ const MultipleChoiceExercise = ({
       const participle = correctParts.slice(1).join(' ');
 
       // Afficher la phrase avec l'auxiliaire et le participe passé tous les deux en gras et vert
-      const styledAnswer = `<span style="color: #72ba69; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
+      const styledAnswer = `<span style="color: #72ba69;">${auxiliary} ${participle}</span>`;
       return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), styledAnswer);
     } else if (userAnswer) {
       // Afficher la réponse déposée avec style d'étiquette
-      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="color: #72ba69; font-weight: bold; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`);
+      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="color: #72ba69; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`);
     } else {
       // Afficher une zone de dépôt stylée
       return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`);
