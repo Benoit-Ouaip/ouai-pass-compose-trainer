@@ -99,11 +99,11 @@ const MultipleChoiceExercise = ({
   return (
     <div className="text-center space-y-4">
       <div className="p-4 bg-muted/20 rounded-lg">
-        <p className="text-sm font-medium text-ouaip-dark-blue mb-3">
+        <p className="text-base font-medium text-ouaip-dark-blue mb-3">
           Phrase au présent :
         </p>
         <p 
-          className="text-lg text-foreground leading-relaxed"
+          className="text-xl text-foreground leading-relaxed"
           dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
         />
       </div>
@@ -113,22 +113,22 @@ const MultipleChoiceExercise = ({
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >
-        <p className="text-xl font-semibold text-ouaip-dark-blue mb-4">
+        <p className="text-base font-semibold text-ouaip-dark-blue mb-4">
           Phrase au passé composé :
         </p>
         <p 
-          className="text-2xl text-foreground mb-6 leading-relaxed font-medium"
+          className="text-xl text-foreground mb-6 leading-relaxed font-medium"
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         
         {isAnswered && isCorrect && (
-          <p className="text-lg font-medium text-green-600 mb-3">
+          <p className="text-base font-medium text-green-600 mb-3">
             Bravo ! Voici la phrase complète.
           </p>
         )}
         
         {userAnswer && !isAnswered && (
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
+          <p className="text-base font-medium text-ouaip-dark-blue mb-3">
             Tu as déposé une étiquette ! Clique sur Vérifier.
           </p>
         )}
