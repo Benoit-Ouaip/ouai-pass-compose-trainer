@@ -292,35 +292,40 @@ export const scenarios: Scenario[] = [
         presentSentence: "Elle se spécialise dans les desserts.",
         verbToConjugate: "se spécialise",
         correctAnswer: "s'est spécialisée",
-        explanation: "Se spécialiser : elle s'est spécialisée."
+        explanation: "Se spécialiser : elle s'est spécialisée.",
+        choices: ["s'est spécialisée", "a spécialisé", "est spécialisée"]
       },
       {
         id: 36,
         presentSentence: "Nous nous amusons à créer de nouveaux plats.",
         verbToConjugate: "nous amusons",
-        correctAnswer: "nous sommes amusés",
-        explanation: "S'amuser : nous nous sommes amusés."
+        correctAnswer: "nous nous sommes amusés",
+        explanation: "S'amuser : nous nous sommes amusés.",
+        choices: ["nous nous sommes amusés", "nous avons amusé", "nous étions amusés"]
       },
       {
         id: 37,
         presentSentence: "Vous vous organisez bien en cuisine.",
         verbToConjugate: "vous organisez",
-        correctAnswer: "vous êtes organisés",
-        explanation: "S'organiser : vous vous êtes organisés."
+        correctAnswer: "vous vous êtes organisés",
+        explanation: "S'organiser : vous vous êtes organisés.",
+        choices: ["vous vous êtes organisés", "vous avez organisé", "vous étiez organisés"]
       },
       {
         id: 38,
         presentSentence: "Ils se disputent pour la meilleure recette.",
         verbToConjugate: "se disputent",
         correctAnswer: "se sont disputés",
-        explanation: "Se disputer : ils se sont disputés."
+        explanation: "Se disputer : ils se sont disputés.",
+        choices: ["se sont disputés", "ont disputé", "sont disputés"]
       },
       {
         id: 39,
         presentSentence: "Il se trompe dans les proportions.",
         verbToConjugate: "se trompe",
         correctAnswer: "s'est trompé",
-        explanation: "Se tromper : il s'est trompé."
+        explanation: "Se tromper : il s'est trompé.",
+        choices: ["s'est trompé", "a trompé", "est trompé"]
       },
       {
         id: 40,
