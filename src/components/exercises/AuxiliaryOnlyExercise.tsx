@@ -102,26 +102,14 @@ const AuxiliaryOnlyExercise = ({
         const dashes = '_'.repeat(parts[0].length);
         replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
       } else if (parts.length >= 3) {
-        // Cas pronominal: 
+        // Cas pronominal: toujours afficher les pronoms
         // - "se sont perfectionnés" -> "se _____ perfectionnés"
-        // - "nous nous sommes aidés" -> "nous _____ aidés" (pas "nous nous _____ aidés")
+        // - "nous nous sommes aidés" -> "nous nous _____ aidés"
         const beforeAux = parts.slice(0, -2).join(' '); // "se" ou "nous nous"
         const auxiliary = parts[parts.length - 2]; // "sont" ou "sommes"
         const participle = parts[parts.length - 1]; // "perfectionnés" ou "aidés"
         const dashes = '_'.repeat(auxiliary.length);
-        
-        // Pour éviter la duplication, vérifier si les pronoms sont déjà dans la phrase originale
-        const originalWords = exercise.presentSentence.toLowerCase().split(' ');
-        const pronounWords = beforeAux.toLowerCase().split(' ');
-        const hasAllPronouns = pronounWords.every(pronoun => originalWords.includes(pronoun));
-        
-        if (hasAllPronouns) {
-          // Les pronoms sont déjà dans la phrase originale, ne pas les ajouter
-          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else {
-          // Les pronoms ne sont pas dans la phrase originale, les inclure
-          replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        }
+        replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
       } else {
         // Cas fallback
         const dashes = '_'.repeat(parts[0].length);
