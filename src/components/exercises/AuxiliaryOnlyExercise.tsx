@@ -42,10 +42,15 @@ const AuxiliaryOnlyExercise = ({
   // Créer la phrase avec l'auxiliaire à compléter ou avec la réponse si correcte
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
-      // Afficher la phrase avec la réponse correcte en vert
+      // Afficher la phrase avec la réponse correcte en vert et en gras
+      const correctParts = exercise.correctAnswer.split(' ');
+      const auxiliary = correctParts[0];
+      const participle = correctParts.slice(1).join(' ');
+      const styledAnswer = `<span style="color: #22c55e; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
+      
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
+        styledAnswer
       );
     } else {
       // Afficher avec des tirets pour l'auxiliaire et le participe passé en bleu gras
