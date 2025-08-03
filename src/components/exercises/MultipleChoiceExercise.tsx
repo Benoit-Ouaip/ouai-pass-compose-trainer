@@ -85,8 +85,8 @@ const MultipleChoiceExercise = ({
       }} />
       </div>
       
-      <div className="p-8 border-3 border-primary/40 bg-primary/10 rounded-xl relative shadow-lg" onDragOver={handleDragOver} onDrop={handleDrop}>
-        <p className="text-base font-semibold text-ouaip-dark-blue mb-4 text-[#59c2e0]">
+      <div onDragOver={handleDragOver} onDrop={handleDrop} className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#e2de55]">
+        <p className="text-base font-semibold text-ouaip-dark-blue mb-4 text-white">
           Phrase au passé composé :
         </p>
         <p className="text-xl text-foreground mb-6 leading-relaxed font-medium" dangerouslySetInnerHTML={{
