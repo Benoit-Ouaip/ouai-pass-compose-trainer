@@ -379,11 +379,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 44,
-        presentSentence: "Vous vous régalez avec ce dessert.",
-        verbToConjugate: "vous régalez",
-        correctAnswer: "vous vous êtes régalés",
-        explanation: "Se régaler : vous vous êtes régalés.",
-        choices: ["vous vous êtes régalés", "vous avez régalé", "vous étiez régalés"]
+        presentSentence: "Elles se régalent avec ce dessert.",
+        verbToConjugate: "se régalent",
+        correctAnswer: "se sont régalées",
+        explanation: "Se régaler : elles se sont régalées.",
+        choices: ["se sont régalées", "ont régalé", "sont régalées"]
       },
       {
         id: 45,
