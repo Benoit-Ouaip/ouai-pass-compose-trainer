@@ -129,7 +129,7 @@ const AuxiliaryOnlyExercise = ({
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-40 mx-auto"
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-40 mx-auto"
             placeholder="avoir ou être ?"
             disabled={isAnswered}
             onKeyPress={onKeyPress}
