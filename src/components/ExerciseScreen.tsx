@@ -144,12 +144,12 @@ const ExerciseScreen = ({
     // Jouer le son
     playSound(isCorrect);
     
-    // Si correct, passer à l'exercice suivant automatiquement après 2 secondes
+    // Si correct, passer à l'exercice suivant automatiquement après 1.2 secondes
     if (isCorrect) {
       setTimeout(() => {
         setShowFeedbackModal(false);
         handleNext();
-      }, 2000);
+      }, 1200);
     }
   };
 
