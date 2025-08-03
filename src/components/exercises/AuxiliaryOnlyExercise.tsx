@@ -102,14 +102,30 @@ const AuxiliaryOnlyExercise = ({
         const dashes = '_'.repeat(parts[0].length);
         replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
       } else if (parts.length >= 3) {
-        // Cas pronominal: toujours afficher les pronoms
-        // - "se sont perfectionnés" -> "se _____ perfectionnés"
-        // - "nous nous sommes aidés" -> "nous nous _____ aidés"
-        const beforeAux = parts.slice(0, -2).join(' '); // "se" ou "nous nous"
-        const auxiliary = parts[parts.length - 2]; // "sont" ou "sommes"
-        const participle = parts[parts.length - 1]; // "perfectionnés" ou "aidés"
+        // Cas pronominal: analyser ce qui est déjà dans la phrase
+        const beforeAux = parts.slice(0, -2).join(' '); // "nous nous"
+        const auxiliary = parts[parts.length - 2]; // "sommes"
+        const participle = parts[parts.length - 1]; // "aidés"
         const dashes = '_'.repeat(auxiliary.length);
-        replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        
+        // Extraire les mots avant le verbe dans la phrase originale
+        const sentenceWords = exercise.presentSentence.split(' ');
+        const verbIndex = sentenceWords.findIndex(word => 
+          exercise.verbToConjugate.toLowerCase().includes(word.toLowerCase())
+        );
+        const wordsBeforeVerb = sentenceWords.slice(0, verbIndex).join(' ').toLowerCase();
+        
+        // Si les pronoms sont déjà dans la phrase originale, ne pas les répéter
+        const pronouns = beforeAux.split(' ');
+        const missingPronouns = pronouns.filter(pronoun => 
+          !wordsBeforeVerb.includes(pronoun.toLowerCase())
+        );
+        
+        if (missingPronouns.length > 0) {
+          replacement = `${missingPronouns.join(' ')} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        } else {
+          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        }
       } else {
         // Cas fallback
         const dashes = '_'.repeat(parts[0].length);
