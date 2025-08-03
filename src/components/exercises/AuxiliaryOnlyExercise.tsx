@@ -48,10 +48,12 @@ const AuxiliaryOnlyExercise = ({
         `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
       );
     } else {
-      // Afficher avec l'auxiliaire à compléter et le participe passé en bleu gras
+      // Afficher avec des tirets pour l'auxiliaire et le participe passé en bleu gras
+      const auxiliaryLength = exercise.correctAnswer.split(' ')[0].length;
+      const dashes = '_'.repeat(auxiliaryLength);
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `____ <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`
+        `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`
       );
     }
   };
