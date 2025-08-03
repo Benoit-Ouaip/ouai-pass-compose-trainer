@@ -33,7 +33,13 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
       <div className="ouaip-card p-8 mb-6">
         {/* Badge */}
         <div className="mb-6">
-          <div className="text-6xl mb-4">{badge.emoji}</div>
+          <div className="mb-4 flex justify-center">
+            <img 
+              src="/lovable-uploads/7506fbef-dc4c-410c-b53f-bbcdbff9cb3e.png" 
+              alt="Logo Ouaip" 
+              className="w-20 h-20 object-contain"
+            />
+          </div>
           <h2 className="text-3xl font-bold text-ouaip-dark-blue mb-2">
             {badge.title}
           </h2>
