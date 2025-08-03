@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface Exercise {
   id: number;
@@ -24,8 +25,11 @@ const MultipleChoiceExercise = ({
   isAnswered,
   isCorrect
 }: MultipleChoiceExerciseProps) => {
+  const [draggedItem, setDraggedItem] = useState<string | null>(null);
+  
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
+
   // Mettre le verbe en gras et rouge dans la phrase au présent
   const highlightedPresentSentence = exercise.presentSentence.replace(
     new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
@@ -53,13 +57,43 @@ const MultipleChoiceExercise = ({
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
         styledAnswer
       );
-    } else {
-      // Afficher les tirets complets pour ne pas donner d'indice
+    } else if (userAnswer) {
+      // Afficher la réponse déposée avec style d'étiquette
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        generateDashes(exercise.correctAnswer)
+        `<span style="color: #3b82f6; font-weight: bold; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #3b82f6; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);">${userAnswer}</span>`
+      );
+    } else {
+      // Afficher une zone de dépôt stylée
+      return exercise.presentSentence.replace(
+        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+        `<span style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 8px 16px; border: 2px dashed #94a3b8; border-radius: 8px; min-width: 120px; display: inline-block; color: #64748b; font-style: italic;">Dépose ici</span>`
       );
     }
+  };
+
+  const handleDragStart = (e: React.DragEvent, choice: string) => {
+    setDraggedItem(choice);
+    e.dataTransfer.setData('text/plain', choice);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    const choice = e.dataTransfer.getData('text/plain');
+    if (choice && !isAnswered) {
+      setUserAnswer(choice);
+    }
+    setDraggedItem(null);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedItem(null);
   };
 
   return (
@@ -74,33 +108,56 @@ const MultipleChoiceExercise = ({
         />
       </div>
       
-      <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
+      <div 
+        className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl relative"
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+      >
         <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
-          {isAnswered && isCorrect ? "Bravo ! Voici la phrase au passé composé :" : "Choisis le verbe au passé composé :"}
+          {isAnswered && isCorrect ? "Bravo ! Voici la phrase au passé composé :" : 
+           userAnswer ? "Tu as déposé une étiquette ! Clique sur Vérifier :" :
+           "Glisse une étiquette dans la zone de dépôt :"}
         </p>
         <p 
           className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         
-        {!isAnswered && (
-          <div className="flex justify-center gap-4 flex-wrap">
+        {!isAnswered && !userAnswer && (
+          <div className="flex justify-center gap-4 flex-wrap mt-6">
             {shuffledChoices.map((choice, index) => (
-              <Button
+              <div
                 key={index}
-                onClick={() => setUserAnswer(choice)}
-                disabled={isAnswered}
-                variant={userAnswer === choice ? "default" : "outline"}
-                className={`px-6 py-3 text-lg font-medium transition-all ${
-                  userAnswer === choice 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'border-primary/50 hover:border-primary'
+                draggable
+                onDragStart={(e) => handleDragStart(e, choice)}
+                onDragEnd={handleDragEnd}
+                className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-move hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${
+                  draggedItem === choice ? 'opacity-50 scale-95' : ''
                 }`}
+                style={{ touchAction: 'none' }}
               >
-                {choice}
-              </Button>
+                📋 {choice}
+              </div>
             ))}
           </div>
+        )}
+
+        {userAnswer && !isAnswered && (
+          <div className="mt-4 flex justify-center gap-2">
+            <Button
+              onClick={() => setUserAnswer("")}
+              variant="outline"
+              className="px-4 py-2"
+            >
+              🔄 Changer
+            </Button>
+          </div>
+        )}
+        
+        {!userAnswer && !isAnswered && (
+          <p className="text-sm text-muted-foreground mt-4 italic">
+            💡 Conseil : Clique et fais glisser une étiquette vers la zone "Dépose ici"
+          </p>
         )}
       </div>
     </div>
