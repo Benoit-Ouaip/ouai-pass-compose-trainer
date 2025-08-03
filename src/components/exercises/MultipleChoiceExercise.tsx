@@ -51,7 +51,7 @@ const MultipleChoiceExercise = ({
       const participle = correctParts.slice(1).join(' ');
       
       // Afficher la phrase avec l'auxiliaire et le participe passé tous les deux en gras et vert
-      const styledAnswer = `<span style="color: #22c55e; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
+      const styledAnswer = `<span style="color: #72ba69; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
       
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),

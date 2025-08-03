@@ -45,7 +45,7 @@ const FullConjugationExercise = ({
       // Afficher la phrase avec la réponse correcte en vert
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
+        `<span style="font-weight: bold; color: #72ba69;">${exercise.correctAnswer}</span>`
       );
     } else {
       // Afficher les tirets pour l'auxiliaire + participe passé en gras

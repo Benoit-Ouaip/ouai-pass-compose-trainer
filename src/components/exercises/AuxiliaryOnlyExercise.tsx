@@ -46,7 +46,7 @@ const AuxiliaryOnlyExercise = ({
       const correctParts = exercise.correctAnswer.split(' ');
       const auxiliary = correctParts[0];
       const participle = correctParts.slice(1).join(' ');
-      const styledAnswer = `<span style="color: #22c55e; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
+      const styledAnswer = `<span style="color: #72ba69; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
       
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
