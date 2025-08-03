@@ -259,9 +259,9 @@ export const scenarios: Scenario[] = [
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
         verbToConjugate: "nous lavons",
-        correctAnswer: "nous sommes lavé",
+        correctAnswer: "nous nous sommes lavé",
         explanation: "Se laver est pronominal : nous nous sommes lavé les mains.",
-        choices: ["nous sommes lavé", "nous avons lavé", "nous étions lavé"]
+        choices: ["nous nous sommes lavé", "nous avons lavé", "nous étions lavé"]
       },
       {
         id: 32,
