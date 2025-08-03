@@ -305,7 +305,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 37,
-        presentSentence: "Vous vous organisez bien en cuisine.",
+        presentSentence: "Vous vous organisez en cuisine.",
         verbToConjugate: "vous organisez",
         correctAnswer: "vous vous êtes organisés",
         explanation: "S'organiser : vous vous êtes organisés.",
