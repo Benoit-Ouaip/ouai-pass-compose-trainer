@@ -119,9 +119,10 @@ const MultipleChoiceExercise = ({
         __html: createDisplaySentence()
       }} />
         
-        {isAnswered && isCorrect && <p className="text-base font-medium text-green-600 mb-3">
-            Bravo ! Voici la phrase complète.
-          </p>}
+        {isAnswered && isCorrect && <div className="text-base font-medium text-green-600 mb-3 flex items-center justify-center gap-2">
+            <img src="/lovable-uploads/67fac243-a62f-4f09-baef-5e4ec5394cdf.png" alt="Bravo" className="w-8 h-8" />
+            <span>Bravo ! Voici la phrase complète.</span>
+          </div>}
         
         {userAnswer && !isAnswered && <p className="text-base font-medium text-ouaip-dark-blue mb-3">
             Tu as déposé une étiquette ! Clique sur Vérifier.
