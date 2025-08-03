@@ -67,7 +67,7 @@ const MultipleChoiceExercise = ({
       // Afficher une zone de dépôt stylée
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `<span style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 8px 16px; border: 2px dashed #94a3b8; border-radius: 8px; min-width: 120px; display: inline-block; color: #64748b; font-style: italic;">Dépose ici</span>`
+        `<span style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 6px 12px; border: 2px dashed #94a3b8; border-radius: 8px; min-width: 120px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.875rem;">Dépose ici</span>`
       );
     }
   };
