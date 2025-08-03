@@ -102,12 +102,6 @@ const ExerciseScreen = ({
       const parts = exercise.correctAnswer.split(' ');
       let correctAuxiliary;
       
-      console.log('DEBUG niveau 2:', {
-        correctAnswer: exercise.correctAnswer,
-        parts: parts,
-        userAnswer: userAnswer.trim()
-      });
-      
       if (parts.length === 2 && parts[0].match(/[''`]/)) {
         // Cas avec contraction: "t'es rappelé(e)" -> auxiliaire = "es"
         const contractedPart = parts[0];
@@ -126,9 +120,7 @@ const ExerciseScreen = ({
         correctAuxiliary = parts[0];
       }
       
-      console.log('DEBUG auxiliaire attendu:', correctAuxiliary);
       isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
-      console.log('DEBUG résultat:', isCorrect);
     } else {
       // Niveau 3: réponse complète
       isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();

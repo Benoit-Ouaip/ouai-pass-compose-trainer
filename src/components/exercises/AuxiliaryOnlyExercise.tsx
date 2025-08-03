@@ -104,12 +104,20 @@ const AuxiliaryOnlyExercise = ({
       } else if (parts.length >= 3) {
         // Cas pronominal: 
         // - "se sont perfectionnés" -> "se _____ perfectionnés"
-        // - "vous vous êtes régalés" -> "vous vous _____ régalés"
-        const beforeAux = parts.slice(0, -2).join(' '); // "se" ou "vous vous"
-        const auxiliary = parts[parts.length - 2]; // "sont" ou "êtes"
-        const participle = parts[parts.length - 1]; // "perfectionnés" ou "régalés"
+        // - "nous nous sommes aidés" -> "nous _____ aidés" (pas "nous nous _____ aidés")
+        const beforeAux = parts.slice(0, -2).join(' '); // "se" ou "nous nous"
+        const auxiliary = parts[parts.length - 2]; // "sont" ou "sommes"
+        const participle = parts[parts.length - 1]; // "perfectionnés" ou "aidés"
         const dashes = '_'.repeat(auxiliary.length);
-        replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        
+        // Pour éviter la duplication, vérifier si le pronom est déjà dans verbToConjugate
+        if (exercise.verbToConjugate.includes(beforeAux)) {
+          // Le pronom est déjà dans verbToConjugate, remplacer seulement par auxiliaire + participe
+          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        } else {
+          // Le pronom n'est pas dans verbToConjugate, l'inclure
+          replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        }
       } else {
         // Cas fallback
         const dashes = '_'.repeat(parts[0].length);
