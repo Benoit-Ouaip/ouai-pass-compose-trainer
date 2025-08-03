@@ -73,10 +73,16 @@ const ExerciseScreen = ({
       `<span style="font-weight: bold; color: #e55555;">$&</span>`
     );
 
+    // Créer les tirets correspondant au nombre de lettres de la réponse
+    const generateDashes = (answer: string) => {
+      const parts = answer.split(' ');
+      return parts.map(part => '_'.repeat(part.length)).join(' ');
+    };
+
     // Créer la phrase avec tirets pour la saisie
     const sentenceWithBlanks = exercise.presentSentence.replace(
       new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-      "______"
+      generateDashes(exercise.correctAnswer)
     );
 
     return (
@@ -95,7 +101,7 @@ const ExerciseScreen = ({
           <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
             Réécris cette phrase au passé composé :
           </p>
-          <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+          <p className="text-xl text-muted-foreground mb-6 leading-relaxed font-mono">
             {sentenceWithBlanks}
           </p>
           <Input
