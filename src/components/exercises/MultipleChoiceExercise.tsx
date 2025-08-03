@@ -22,6 +22,8 @@ const MultipleChoiceExercise = ({
   setUserAnswer,
   isAnswered
 }: MultipleChoiceExerciseProps) => {
+  // Mélanger les choix de manière aléatoire
+  const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
   // Mettre le verbe en gras et rouge dans la phrase au présent
   const highlightedPresentSentence = exercise.presentSentence.replace(
     new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
@@ -61,7 +63,7 @@ const MultipleChoiceExercise = ({
         </p>
         
         <div className="flex justify-center gap-4 flex-wrap">
-          {exercise.choices?.map((choice, index) => (
+          {shuffledChoices.map((choice, index) => (
             <Button
               key={index}
               onClick={() => setUserAnswer(choice)}
