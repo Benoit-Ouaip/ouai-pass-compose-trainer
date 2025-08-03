@@ -125,126 +125,144 @@ export const scenarios: Scenario[] = [
         presentSentence: "Les participants terminent le parcours.",
         verbToConjugate: "terminent",
         correctAnswer: "ont terminé",
-        explanation: "Le verbe 'terminer' avec ils : ils ont terminé."
+        explanation: "Le verbe 'terminer' avec ils : ils ont terminé.",
+        choices: ["ont terminé", "sont terminés", "se sont terminés"]
       },
       {
         id: 14,
         presentSentence: "Sarah photographie ses amis.",
         verbToConjugate: "photographie",
         correctAnswer: "a photographié",
-        explanation: "Le verbe 'photographier' avec elle : elle a photographié."
+        explanation: "Le verbe 'photographier' avec elle : elle a photographié.",
+        choices: ["a photographié", "est photographiée", "s'est photographiée"]
       },
       {
         id: 15,
         presentSentence: "Nous marchons sur les ponts de singe.",
         verbToConjugate: "marchons",
         correctAnswer: "avons marché",
-        explanation: "Le verbe 'marcher' avec nous : nous avons marché."
+        explanation: "Le verbe 'marcher' avec nous : nous avons marché.",
+        choices: ["avons marché", "sommes marchés", "nous sommes marchés"]
       },
       {
         id: 16,
         presentSentence: "Tu écoutes les conseils du guide.",
         verbToConjugate: "écoutes",
         correctAnswer: "as écouté",
-        explanation: "Le verbe 'écouter' avec tu : tu as écouté."
+        explanation: "Le verbe 'écouter' avec tu : tu as écouté.",
+        choices: ["as écouté", "es écouté", "t'es écouté"]
       },
       {
         id: 17,
         presentSentence: "Il balance sur la tyrolienne géante.",
         verbToConjugate: "balance",
         correctAnswer: "a balancé",
-        explanation: "Le verbe 'balancer' avec il : il a balancé."
+        explanation: "Le verbe 'balancer' avec il : il a balancé.",
+        choices: ["a balancé", "est balancé", "s'est balancé"]
       },
       {
         id: 18,
         presentSentence: "Elles jouent dans les filets d'escalade.",
         verbToConjugate: "jouent",
         correctAnswer: "ont joué",
-        explanation: "Le verbe 'jouer' avec elles : elles ont joué."
+        explanation: "Le verbe 'jouer' avec elles : elles ont joué.",
+        choices: ["ont joué", "sont jouées", "se sont jouées"]
       },
       {
         id: 19,
         presentSentence: "Elle dépasse ses limites aujourd'hui.",
         verbToConjugate: "dépasse",
         correctAnswer: "a dépassé",
-        explanation: "Le verbe 'dépasser' avec elle : elle a dépassé."
+        explanation: "Le verbe 'dépasser' avec elle : elle a dépassé.",
+        choices: ["a dépassé", "est dépassée", "s'est dépassée"]
       },
       {
         id: 20,
         presentSentence: "Les enfants rigolent dans les arbres.",
         verbToConjugate: "rigolent",
         correctAnswer: "ont rigolé",
-        explanation: "Le verbe 'rigoler' avec ils : ils ont rigolé."
+        explanation: "Le verbe 'rigoler' avec ils : ils ont rigolé.",
+        choices: ["ont rigolé", "sont rigolés", "se sont rigolés"]
       },
       {
         id: 21,
         presentSentence: "Tu progresses rapidement sur le parcours.",
         verbToConjugate: "progresses",
         correctAnswer: "as progressé",
-        explanation: "Le verbe 'progresser' avec tu : tu as progressé."
+        explanation: "Le verbe 'progresser' avec tu : tu as progressé.",
+        choices: ["as progressé", "es progressé", "t'es progressé"]
       },
       {
         id: 22,
         presentSentence: "Elle monte courageusement vers les hauteurs.",
         verbToConjugate: "monte",
         correctAnswer: "a monté",
-        explanation: "Le verbe 'monter' avec elle : elle a monté."
+        explanation: "Le verbe 'monter' avec elle : elle a monté.",
+        choices: ["a monté", "est montée", "s'est montée"]
       },
       {
         id: 23,
         presentSentence: "Nous choisissons le parcours difficile.",
         verbToConjugate: "choisissons",
         correctAnswer: "avons choisi",
-        explanation: "Le verbe 'choisir' avec nous : nous avons choisi."
+        explanation: "Le verbe 'choisir' avec nous : nous avons choisi.",
+        choices: ["avons choisi", "sommes choisis", "nous sommes choisis"]
       },
       {
         id: 24,
         presentSentence: "Vous respectez les consignes de sécurité.",
         verbToConjugate: "respectez",
         correctAnswer: "avez respecté",
-        explanation: "Le verbe 'respecter' avec vous : vous avez respecté."
+        explanation: "Le verbe 'respecter' avec vous : vous avez respecté.",
+        choices: ["avez respecté", "êtes respectés", "vous êtes respectés"]
       },
       {
         id: 25,
         presentSentence: "Ils glissent ensemble sur la grande tyrolienne.",
         verbToConjugate: "glissent",
         correctAnswer: "ont glissé",
-        explanation: "Le verbe 'glisser' avec ils : ils ont glissé."
+        explanation: "Le verbe 'glisser' avec ils : ils ont glissé.",
+        choices: ["ont glissé", "sont glissés", "se sont glissés"]
       },
       {
         id: 26,
         presentSentence: "Elle s'amuse beaucoup dans les arbres.",
         verbToConjugate: "s'amuse",
         correctAnswer: "s'est amusée",
-        explanation: "Le verbe pronominal 's'amuser' avec elle : elle s'est amusée."
+        explanation: "Le verbe pronominal 's'amuser' avec elle : elle s'est amusée.",
+        choices: ["s'est amusée", "a amusé", "est amusée"]
       },
       {
         id: 27,
         presentSentence: "Le groupe découvre de nouveaux défis.",
         verbToConjugate: "découvre",
         correctAnswer: "a découvert",
-        explanation: "Le verbe 'découvrir' avec il : il a découvert."
+        explanation: "Le verbe 'découvrir' avec il : il a découvert.",
+        choices: ["a découvert", "est découvert", "s'est découvert"]
       },
       {
         id: 28,
         presentSentence: "Tu franchis tous les obstacles.",
         verbToConjugate: "franchis",
         correctAnswer: "as franchi",
-        explanation: "Le verbe 'franchir' avec tu : tu as franchi."
+        explanation: "Le verbe 'franchir' avec tu : tu as franchi.",
+        choices: ["as franchi", "es franchi", "t'es franchi"]
       },
       {
         id: 29,
         presentSentence: "Elle réussit parfaitement son parcours.",
         verbToConjugate: "réussit",
         correctAnswer: "a réussi",
-        explanation: "Le verbe 'réussir' avec elle : elle a réussi."
+        explanation: "Le verbe 'réussir' avec elle : elle a réussi.",
+        choices: ["a réussi", "est réussie", "s'est réussie"]
       },
       {
         id: 30,
         presentSentence: "Nous applaudissons les autres participants.",
         verbToConjugate: "applaudissons",
         correctAnswer: "avons applaudi",
-        explanation: "Le verbe 'applaudir' avec nous : nous avons applaudi."
+        explanation: "Le verbe 'applaudir' avec nous : nous avons applaudi.",
+        choices: ["avons applaudi", "sommes applaudis", "nous sommes applaudis"]
       }
     ]
   },
@@ -332,147 +350,168 @@ export const scenarios: Scenario[] = [
         presentSentence: "Le cuisinier se repose après le service.",
         verbToConjugate: "se repose",
         correctAnswer: "s'est reposé",
-        explanation: "Se reposer : il s'est reposé."
+        explanation: "Se reposer : il s'est reposé.",
+        choices: ["s'est reposé", "a reposé", "est reposé"]
       },
       {
         id: 41,
         presentSentence: "Tu te rappelles la recette de grand-mère.",
         verbToConjugate: "te rappelles",
         correctAnswer: "t'es rappelé(e)",
-        explanation: "Se rappeler : tu t'es rappelé(e)."
+        explanation: "Se rappeler : tu t'es rappelé(e).",
+        choices: ["t'es rappelé(e)", "as rappelé", "es rappelé"]
       },
       {
         id: 42,
         presentSentence: "Elle se brûle en touchant la poêle.",
         verbToConjugate: "se brûle",
         correctAnswer: "s'est brûlée",
-        explanation: "Se brûler : elle s'est brûlée."
+        explanation: "Se brûler : elle s'est brûlée.",
+        choices: ["s'est brûlée", "a brûlé", "est brûlée"]
       },
       {
         id: 43,
         presentSentence: "Nous nous aidons mutuellement.",
         verbToConjugate: "nous aidons",
-        correctAnswer: "nous sommes aidés",
-        explanation: "S'aider : nous nous sommes aidés."
+        correctAnswer: "nous nous sommes aidés",
+        explanation: "S'aider : nous nous sommes aidés.",
+        choices: ["nous nous sommes aidés", "nous avons aidé", "nous étions aidés"]
       },
       {
         id: 44,
         presentSentence: "Vous vous régalez avec ce dessert.",
         verbToConjugate: "vous régalez",
-        correctAnswer: "vous êtes régalés",
-        explanation: "Se régaler : vous vous êtes régalés."
+        correctAnswer: "vous vous êtes régalés",
+        explanation: "Se régaler : vous vous êtes régalés.",
+        choices: ["vous vous êtes régalés", "vous avez régalé", "vous étiez régalés"]
       },
       {
         id: 45,
         presentSentence: "Ils se perfectionnent dans l'art culinaire.",
         verbToConjugate: "se perfectionnent",
         correctAnswer: "se sont perfectionnés",
-        explanation: "Se perfectionner : ils se sont perfectionnés."
+        explanation: "Se perfectionner : ils se sont perfectionnés.",
+        choices: ["se sont perfectionnés", "ont perfectionné", "sont perfectionnés"]
       },
       {
         id: 46,
         presentSentence: "Il se salit les mains avec la farine.",
         verbToConjugate: "se salit",
         correctAnswer: "s'est sali",
-        explanation: "Se salir : il s'est sali."
+        explanation: "Se salir : il s'est sali.",
+        choices: ["s'est sali", "a sali", "est sali"]
       },
       {
         id: 47,
         presentSentence: "Tu te débrouilles bien avec les épices.",
         verbToConjugate: "te débrouilles",
         correctAnswer: "t'es débrouillé(e)",
-        explanation: "Se débrouiller : tu t'es débrouillé(e)."
+        explanation: "Se débrouiller : tu t'es débrouillé(e).",
+        choices: ["t'es débrouillé(e)", "as débrouillé", "es débrouillé"]
       },
       {
         id: 48,
         presentSentence: "Elle s'inquiète pour la cuisson du gâteau.",
         verbToConjugate: "s'inquiète",
         correctAnswer: "s'est inquiétée",
-        explanation: "S'inquiéter : elle s'est inquiétée."
+        explanation: "S'inquiéter : elle s'est inquiétée.",
+        choices: ["s'est inquiétée", "a inquiété", "est inquiétée"]
       },
       {
         id: 49,
         presentSentence: "Nous nous retrouvons en cuisine chaque matin.",
         verbToConjugate: "nous retrouvons",
-        correctAnswer: "nous sommes retrouvés",
-        explanation: "Se retrouver : nous nous sommes retrouvés."
+        correctAnswer: "nous nous sommes retrouvés",
+        explanation: "Se retrouver : nous nous sommes retrouvés.",
+        choices: ["nous nous sommes retrouvés", "nous avons retrouvé", "nous étions retrouvés"]
       },
       {
         id: 50,
         presentSentence: "Vous vous plaignez de la chaleur des fourneaux.",
         verbToConjugate: "vous plaignez",
-        correctAnswer: "vous êtes plaints",
-        explanation: "Se plaindre : vous vous êtes plaints."
+        correctAnswer: "vous vous êtes plaints",
+        explanation: "Se plaindre : vous vous êtes plaints.",
+        choices: ["vous vous êtes plaints", "vous avez plaint", "vous étiez plaints"]
       },
       {
         id: 51,
         presentSentence: "Ils se moquent de mes maladresses.",
         verbToConjugate: "se moquent",
         correctAnswer: "se sont moqués",
-        explanation: "Se moquer : ils se sont moqués."
+        explanation: "Se moquer : ils se sont moqués.",
+        choices: ["se sont moqués", "ont moqué", "sont moqués"]
       },
       {
         id: 52,
         presentSentence: "Elle se décide enfin pour le menu.",
         verbToConjugate: "se décide",
         correctAnswer: "s'est décidée",
-        explanation: "Se décider : elle s'est décidée."
+        explanation: "Se décider : elle s'est décidée.",
+        choices: ["s'est décidée", "a décidé", "est décidée"]
       },
       {
         id: 53,
         presentSentence: "Tu te demandes comment faire cette sauce.",
         verbToConjugate: "te demandes",
         correctAnswer: "t'es demandé(e)",
-        explanation: "Se demander : tu t'es demandé(e)."
+        explanation: "Se demander : tu t'es demandé(e).",
+        choices: ["t'es demandé(e)", "as demandé", "es demandé"]
       },
       {
         id: 54,
         presentSentence: "Elle se souvient de sa première leçon de cuisine.",
         verbToConjugate: "se souvient",
         correctAnswer: "s'est souvenue",
-        explanation: "Se souvenir : elle s'est souvenue."
+        explanation: "Se souvenir : elle s'est souvenue.",
+        choices: ["s'est souvenue", "a souvenu", "est souvenue"]
       },
       {
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
         verbToConjugate: "nous excusons",
-        correctAnswer: "nous sommes excusés",
-        explanation: "S'excuser : nous nous sommes excusés."
+        correctAnswer: "nous nous sommes excusés",
+        explanation: "S'excuser : nous nous sommes excusés.",
+        choices: ["nous nous sommes excusés", "nous avons excusé", "nous étions excusés"]
       },
       {
         id: 56,
         presentSentence: "Vous vous habituez aux nouveaux ustensiles.",
         verbToConjugate: "vous habituez",
-        correctAnswer: "vous êtes habitués",
-        explanation: "S'habituer : vous vous êtes habitués."
+        correctAnswer: "vous vous êtes habitués",
+        explanation: "S'habituer : vous vous êtes habitués.",
+        choices: ["vous vous êtes habitués", "vous avez habitué", "vous étiez habitués"]
       },
       {
         id: 57,
         presentSentence: "Ils se félicitent pour ce succès culinaire.",
         verbToConjugate: "se félicitent",
         correctAnswer: "se sont félicités",
-        explanation: "Se féliciter : ils se sont félicités."
+        explanation: "Se féliciter : ils se sont félicités.",
+        choices: ["se sont félicités", "ont félicité", "sont félicités"]
       },
       {
         id: 58,
         presentSentence: "Il se dirige vers le frigo pour les ingrédients.",
         verbToConjugate: "se dirige",
         correctAnswer: "s'est dirigé",
-        explanation: "Se diriger : il s'est dirigé."
+        explanation: "Se diriger : il s'est dirigé.",
+        choices: ["s'est dirigé", "a dirigé", "est dirigé"]
       },
       {
         id: 59,
         presentSentence: "Tu te lèves tôt pour préparer le petit-déjeuner.",
         verbToConjugate: "te lèves",
         correctAnswer: "t'es levé(e)",
-        explanation: "Se lever : tu t'es levé(e)."
+        explanation: "Se lever : tu t'es levé(e).",
+        choices: ["t'es levé(e)", "as levé", "es levé"]
       },
       {
         id: 60,
         presentSentence: "Elle se présente comme la nouvelle apprentie.",
         verbToConjugate: "se présente",
         correctAnswer: "s'est présentée",
-        explanation: "Se présenter : elle s'est présentée."
+        explanation: "Se présenter : elle s'est présentée.",
+        choices: ["s'est présentée", "a présenté", "est présentée"]
       }
     ]
   },
@@ -488,7 +527,8 @@ export const scenarios: Scenario[] = [
         presentSentence: "Sofia arrive tard à Bruxelles.",
         verbToConjugate: "arrive",
         correctAnswer: "est arrivée",
-        explanation: "Arriver + être + accord féminin : elle est arrivée."
+        explanation: "Arriver + être + accord féminin : elle est arrivée.",
+        choices: ["est arrivée", "a arrivé", "s'est arrivée"]
       },
       {
         id: 62,
