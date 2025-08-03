@@ -154,6 +154,14 @@ const ExerciseScreen = ({
     }
   }, [userAnswer, isAnswered]);
 
+  const handleTryAgain = () => {
+    setUserAnswer("");
+    setFeedback({type: null, message: ""});
+    setIsAnswered(false);
+    setIsCorrect(false);
+    setShowFeedbackModal(false);
+  };
+
   const handleNext = () => {
     if (currentExercise < exercises.length - 1) {
       setCurrentExercise(prev => prev + 1);
@@ -256,13 +264,34 @@ const ExerciseScreen = ({
               {feedback.message}
             </DialogTitle>
           </DialogHeader>
-          <div className="text-center mt-4">
-            <Button 
-              onClick={() => setShowFeedbackModal(false)}
-              className="ouaip-button-primary"
-            >
-              Continuer
-            </Button>
+          <div className="text-center mt-4 space-x-3">
+            {isCorrect ? (
+              <Button 
+                onClick={() => setShowFeedbackModal(false)}
+                className="ouaip-button-primary"
+              >
+                Continuer
+              </Button>
+            ) : (
+              <>
+                <Button 
+                  onClick={handleTryAgain}
+                  className="ouaip-button-primary"
+                >
+                  Réessayer
+                </Button>
+                <Button 
+                  onClick={() => {
+                    setShowFeedbackModal(false);
+                    // Optionnel : passer à l'exercice suivant même en cas d'erreur
+                  }}
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary/10"
+                >
+                  Passer
+                </Button>
+              </>
+            )}
           </div>
         </DialogContent>
       </Dialog>
