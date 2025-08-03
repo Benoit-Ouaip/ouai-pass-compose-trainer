@@ -89,19 +89,21 @@ const ExerciseScreen = ({
     }
   };
 
-  const handleVerify = (answer: string) => {
+  const handleVerify = () => {
+    if (!userAnswer.trim()) return;
     let isCorrect = false;
+    
     
     if (difficulty === 1) {
       // Niveau 1: choix multiple - comparaison exacte
-      isCorrect = answer.trim() === exercise.correctAnswer;
+      isCorrect = userAnswer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
       // Niveau 2: seulement l'auxiliaire
       const correctAuxiliary = exercise.correctAnswer.split(' ')[0];
-      isCorrect = answer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
+      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
     } else {
       // Niveau 3: réponse complète
-      isCorrect = answer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
+      isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
     }
 
     // Messages de félicitations variés
@@ -143,16 +145,6 @@ const ExerciseScreen = ({
     playSound(isCorrect);
   };
 
-  // Auto-vérification quand une réponse est donnée
-  useEffect(() => {
-    if (userAnswer && !isAnswered) {
-      const timer = setTimeout(() => {
-        handleVerify(userAnswer);
-      }, 500); // Petite pause pour laisser l'utilisateur voir sa réponse
-      
-      return () => clearTimeout(timer);
-    }
-  }, [userAnswer, isAnswered]);
 
   const handleTryAgain = () => {
     setUserAnswer("");
@@ -183,8 +175,9 @@ const ExerciseScreen = ({
       isAnswered,
       isCorrect,
       onKeyPress: (e: React.KeyboardEvent) => {
-        // Plus besoin de handleVerify sur Enter car c'est automatique
-        if (e.key === 'Enter' && isAnswered) {
+        if (e.key === 'Enter' && !isAnswered && userAnswer.trim()) {
+          handleVerify();
+        } else if (e.key === 'Enter' && isAnswered) {
           handleNext();
         }
       }
@@ -242,17 +235,25 @@ const ExerciseScreen = ({
         {renderExercise()}
       </div>
 
-      {/* Actions - Plus besoin du bouton Vérifier */}
-      {isAnswered && (
-        <div className="text-center">
+      {/* Actions */}
+      <div className="text-center">
+        {!isAnswered ? (
+          <Button 
+            onClick={handleVerify}
+            className="ouaip-button-primary px-8 py-3"
+            disabled={!userAnswer.trim()}
+          >
+            Vérifier
+          </Button>
+        ) : (
           <Button 
             onClick={handleNext}
             className="ouaip-button-success px-8 py-3"
           >
             {currentExercise < exercises.length - 1 ? 'Suivant' : 'Terminer'}
           </Button>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Modal de feedback */}
       <Dialog open={showFeedbackModal} onOpenChange={setShowFeedbackModal}>
