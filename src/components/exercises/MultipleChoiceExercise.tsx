@@ -136,7 +136,7 @@ const MultipleChoiceExercise = ({
                 }`}
                 style={{ touchAction: 'none' }}
               >
-                📋 {choice}
+                {choice}
               </div>
             ))}
           </div>
