@@ -267,11 +267,20 @@ const ExerciseScreen = ({
       <Dialog open={showFeedbackModal} onOpenChange={setShowFeedbackModal}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className={`text-center text-xl ${
-              isCorrect ? 'text-green-600' : 'text-red-600'
-            }`}>
-              {feedback.message}
-            </DialogTitle>
+            <div className="flex flex-col items-center">
+              {isCorrect && (
+                <img 
+                  src="/lovable-uploads/1ddd325c-cd8d-49cd-9320-443c846a5870.png" 
+                  alt="Succès" 
+                  className="w-16 h-16 mb-3" 
+                />
+              )}
+              <DialogTitle className={`text-center text-xl ${
+                isCorrect ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {feedback.message}
+              </DialogTitle>
+            </div>
           </DialogHeader>
           <div className="text-center mt-4 space-x-3">
             {isCorrect ? (
