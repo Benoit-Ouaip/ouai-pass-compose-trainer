@@ -45,13 +45,13 @@ const MultipleChoiceExercise = ({
   // Créer la phrase avec tirets ou avec la réponse si correcte
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
-      // Séparer l'auxiliaire du participe passé pour le mettre en gras
+      // Séparer l'auxiliaire du participe passé pour les mettre tous les deux en gras
       const correctParts = exercise.correctAnswer.split(' ');
       const auxiliary = correctParts[0];
       const participle = correctParts.slice(1).join(' ');
       
-      // Afficher la phrase avec l'auxiliaire normal et le participe passé en gras
-      const styledAnswer = `<span style="color: #22c55e;">${auxiliary} <strong>${participle}</strong></span>`;
+      // Afficher la phrase avec l'auxiliaire et le participe passé tous les deux en gras et vert
+      const styledAnswer = `<span style="color: #22c55e; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
       
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
