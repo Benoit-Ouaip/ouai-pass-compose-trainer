@@ -83,11 +83,13 @@ const AuxiliaryOnlyExercise = ({
         
         // Séparer le pronom contracté de l'auxiliaire
         if (contractedPart.includes("'es") || contractedPart.includes("'es")) {
-          const pronoun = contractedPart.replace(/[''`]es/, "'"); // "t'" 
+          // Pour "t'es" -> pronom = "t'", auxiliaire = "es"
+          const pronoun = contractedPart.substring(0, contractedPart.length - 2); // "t'"
           const dashes = '_'.repeat(2); // "es" = 2 lettres
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         } else if (contractedPart.includes("'est") || contractedPart.includes("'est")) {
-          const pronoun = contractedPart.replace(/[''`]est/, "'"); // "s'"
+          // Pour "s'est" -> pronom = "s'", auxiliaire = "est"
+          const pronoun = contractedPart.substring(0, contractedPart.length - 3); // "s'"
           const dashes = '_'.repeat(3); // "est" = 3 lettres
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         } else {
