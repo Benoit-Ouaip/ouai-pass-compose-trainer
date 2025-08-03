@@ -57,10 +57,31 @@ const ExerciseScreen = ({
       // Niveau 3: réponse complète
       isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
     }
+
+    // Messages de félicitations variés
+    const successMessages = [
+      "Excellent ! 🎉",
+      "Bravo ! 👏",
+      "Parfait ! ⭐",
+      "Super ! 🌟",
+      "Magnifique ! 🎯",
+      "Fantastique ! 🚀",
+      "Génial ! 💫",
+      "Formidable ! ✨",
+      "C'est ça ! 🎊",
+      "Bien joué ! 🏆",
+      "Tu as réussi ! 🎈",
+      "Chapeau ! 🎩",
+      "Exactement ! 💯",
+      "Tu es fort(e) ! 💪",
+      "Continue comme ça ! 🔥"
+    ];
+    
+    const randomSuccessMessage = successMessages[Math.floor(Math.random() * successMessages.length)];
     
     setFeedback({
       type: isCorrect ? 'success' : 'error',
-      message: isCorrect ? "Excellent !" : exercise.explanation
+      message: isCorrect ? randomSuccessMessage : exercise.explanation
     });
     
     setScore(prev => ({
