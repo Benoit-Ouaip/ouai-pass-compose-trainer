@@ -35,7 +35,7 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
         <div className="mb-6">
           <div className="mb-4 flex justify-center">
             <img 
-              src="/lovable-uploads/7506fbef-dc4c-410c-b53f-bbcdbff9cb3e.png" 
+              src="/lovable-uploads/ouaip-logo-transparent.png" 
               alt="Logo Ouaip" 
               className="w-60 h-60 object-contain"
             />
