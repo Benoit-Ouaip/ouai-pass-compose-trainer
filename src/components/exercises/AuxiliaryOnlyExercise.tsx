@@ -110,12 +110,16 @@ const AuxiliaryOnlyExercise = ({
         const participle = parts[parts.length - 1]; // "perfectionnés" ou "aidés"
         const dashes = '_'.repeat(auxiliary.length);
         
-        // Pour éviter la duplication, vérifier si le pronom est déjà dans verbToConjugate
-        if (exercise.verbToConjugate.includes(beforeAux)) {
-          // Le pronom est déjà dans verbToConjugate, remplacer seulement par auxiliaire + participe
+        // Pour éviter la duplication, vérifier si les pronoms sont déjà dans la phrase originale
+        const originalWords = exercise.presentSentence.toLowerCase().split(' ');
+        const pronounWords = beforeAux.toLowerCase().split(' ');
+        const hasAllPronouns = pronounWords.every(pronoun => originalWords.includes(pronoun));
+        
+        if (hasAllPronouns) {
+          // Les pronoms sont déjà dans la phrase originale, ne pas les ajouter
           replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         } else {
-          // Le pronom n'est pas dans verbToConjugate, l'inclure
+          // Les pronoms ne sont pas dans la phrase originale, les inclure
           replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         }
       } else {
