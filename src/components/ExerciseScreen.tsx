@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import HelpPanel from "./HelpPanel";
 import MultipleChoiceExercise from "./exercises/MultipleChoiceExercise";
 import AuxiliaryOnlyExercise from "./exercises/AuxiliaryOnlyExercise";
@@ -37,25 +38,70 @@ const ExerciseScreen = ({
   const [showHelp, setShowHelp] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   const exercise = exercises[currentExercise];
   const progress = ((currentExercise + 1) / exercises.length) * 100;
 
-  const handleVerify = () => {
-    if (!userAnswer.trim()) return;
+  // Fonction pour jouer un son
+  const playSound = (isSuccess: boolean) => {
+    // Créer un contexte audio et jouer une mélodie simple
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    
+    if (isSuccess) {
+      // Son de succès : mélodie ascendante
+      const frequencies = [523.25, 659.25, 783.99]; // Do, Mi, Sol
+      frequencies.forEach((freq, index) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + index * 0.15);
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime + index * 0.15);
+        gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + index * 0.15 + 0.05);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + index * 0.15 + 0.3);
+        
+        oscillator.start(audioContext.currentTime + index * 0.15);
+        oscillator.stop(audioContext.currentTime + index * 0.15 + 0.3);
+      });
+    } else {
+      // Son d'erreur : note descendante
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+      oscillator.frequency.linearRampToValueAtTime(200, audioContext.currentTime + 0.5);
+      oscillator.type = 'sawtooth';
+      
+      gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.1);
+      gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.5);
+    }
+  };
 
+  const handleVerify = (answer: string) => {
     let isCorrect = false;
     
     if (difficulty === 1) {
       // Niveau 1: choix multiple - comparaison exacte
-      isCorrect = userAnswer.trim() === exercise.correctAnswer;
+      isCorrect = answer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
       // Niveau 2: seulement l'auxiliaire
       const correctAuxiliary = exercise.correctAnswer.split(' ')[0];
-      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
+      isCorrect = answer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
     } else {
       // Niveau 3: réponse complète
-      isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
+      isCorrect = answer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
     }
 
     // Messages de félicitations variés
@@ -91,7 +137,22 @@ const ExerciseScreen = ({
     
     setIsCorrect(isCorrect);
     setIsAnswered(true);
+    setShowFeedbackModal(true);
+    
+    // Jouer le son
+    playSound(isCorrect);
   };
+
+  // Auto-vérification quand une réponse est donnée
+  useEffect(() => {
+    if (userAnswer && !isAnswered) {
+      const timer = setTimeout(() => {
+        handleVerify(userAnswer);
+      }, 500); // Petite pause pour laisser l'utilisateur voir sa réponse
+      
+      return () => clearTimeout(timer);
+    }
+  }, [userAnswer, isAnswered]);
 
   const handleNext = () => {
     if (currentExercise < exercises.length - 1) {
@@ -100,6 +161,7 @@ const ExerciseScreen = ({
       setFeedback({type: null, message: ""});
       setIsAnswered(false);
       setIsCorrect(false);
+      setShowFeedbackModal(false);
     } else {
       onComplete(Math.round((score.correct / score.total) * 100));
     }
@@ -112,7 +174,12 @@ const ExerciseScreen = ({
       setUserAnswer,
       isAnswered,
       isCorrect,
-      onKeyPress: (e: React.KeyboardEvent) => e.key === 'Enter' && !isAnswered && handleVerify()
+      onKeyPress: (e: React.KeyboardEvent) => {
+        // Plus besoin de handleVerify sur Enter car c'est automatique
+        if (e.key === 'Enter' && isAnswered) {
+          handleNext();
+        }
+      }
     };
 
     switch (difficulty) {
@@ -167,40 +234,38 @@ const ExerciseScreen = ({
         {renderExercise()}
       </div>
 
-      {/* Feedback */}
-      {feedback.type && (
-        <div className={`ouaip-card p-3 mb-4 border-2 fade-in ${
-          feedback.type === 'success' 
-            ? 'border-success bg-success/10' 
-            : 'border-error bg-error/10'
-        }`}>
-          <p className={`text-center font-medium ${
-            feedback.type === 'success' ? 'text-success' : 'text-error'
-          }`}>
-            {feedback.message}
-          </p>
-        </div>
-      )}
-
-      {/* Actions */}
-      <div className="text-center">
-        {!isAnswered ? (
-          <Button 
-            onClick={handleVerify}
-            className="ouaip-button-primary px-8 py-3"
-            disabled={!userAnswer.trim()}
-          >
-            Vérifier
-          </Button>
-        ) : (
+      {/* Actions - Plus besoin du bouton Vérifier */}
+      {isAnswered && (
+        <div className="text-center">
           <Button 
             onClick={handleNext}
             className="ouaip-button-success px-8 py-3"
           >
             {currentExercise < exercises.length - 1 ? 'Suivant' : 'Terminer'}
           </Button>
-        )}
-      </div>
+        </div>
+      )}
+
+      {/* Modal de feedback */}
+      <Dialog open={showFeedbackModal} onOpenChange={setShowFeedbackModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className={`text-center text-xl ${
+              isCorrect ? 'text-green-600' : 'text-red-600'
+            }`}>
+              {feedback.message}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center mt-4">
+            <Button 
+              onClick={() => setShowFeedbackModal(false)}
+              className="ouaip-button-primary"
+            >
+              Continuer
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Help Panel */}
       <HelpPanel 
