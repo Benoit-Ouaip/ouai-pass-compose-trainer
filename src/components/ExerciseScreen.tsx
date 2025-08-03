@@ -60,21 +60,21 @@ const ExerciseScreen = ({
 
     // Messages de félicitations variés
     const successMessages = [
-      "Excellent ! 🎉",
-      "Bravo ! 👏",
-      "Parfait ! ⭐",
-      "Super ! 🌟",
-      "Magnifique ! 🎯",
-      "Fantastique ! 🚀",
-      "Génial ! 💫",
-      "Formidable ! ✨",
-      "C'est ça ! 🎊",
-      "Bien joué ! 🏆",
-      "Tu as réussi ! 🎈",
-      "Chapeau ! 🎩",
-      "Exactement ! 💯",
-      "Tu es fort(e) ! 💪",
-      "Continue comme ça ! 🔥"
+      "Excellent !",
+      "Bravo !",
+      "Parfait !",
+      "Super !",
+      "Magnifique !",
+      "Fantastique !",
+      "Génial !",
+      "Formidable !",
+      "C'est ça !",
+      "Bien joué !",
+      "Tu as réussi !",
+      "Chapeau !",
+      "Exactement !",
+      "Tu es fort(e) !",
+      "Continue comme ça !"
     ];
     
     const randomSuccessMessage = successMessages[Math.floor(Math.random() * successMessages.length)];
