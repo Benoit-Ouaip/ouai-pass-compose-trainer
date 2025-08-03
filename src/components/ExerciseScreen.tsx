@@ -36,6 +36,7 @@ const ExerciseScreen = ({
   const [score, setScore] = useState({correct: 0, total: 0});
   const [showHelp, setShowHelp] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const exercise = exercises[currentExercise];
   const progress = ((currentExercise + 1) / exercises.length) * 100;
@@ -67,6 +68,7 @@ const ExerciseScreen = ({
       total: prev.total + 1
     }));
     
+    setIsCorrect(isCorrect);
     setIsAnswered(true);
   };
 
@@ -76,6 +78,7 @@ const ExerciseScreen = ({
       setUserAnswer("");
       setFeedback({type: null, message: ""});
       setIsAnswered(false);
+      setIsCorrect(false);
     } else {
       onComplete(Math.round((score.correct / score.total) * 100));
     }
@@ -87,6 +90,7 @@ const ExerciseScreen = ({
       userAnswer,
       setUserAnswer,
       isAnswered,
+      isCorrect,
       onKeyPress: (e: React.KeyboardEvent) => e.key === 'Enter' && !isAnswered && handleVerify()
     };
 

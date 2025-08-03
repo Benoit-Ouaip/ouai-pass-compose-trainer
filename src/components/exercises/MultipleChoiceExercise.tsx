@@ -14,13 +14,15 @@ interface MultipleChoiceExerciseProps {
   userAnswer: string;
   setUserAnswer: (answer: string) => void;
   isAnswered: boolean;
+  isCorrect: boolean;
 }
 
 const MultipleChoiceExercise = ({
   exercise,
   userAnswer,
   setUserAnswer,
-  isAnswered
+  isAnswered,
+  isCorrect
 }: MultipleChoiceExerciseProps) => {
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
@@ -36,11 +38,22 @@ const MultipleChoiceExercise = ({
     return parts.map(part => '_'.repeat(part.length)).join(' ');
   };
 
-  // Créer la phrase avec tirets pour la visualisation
-  const sentenceWithBlanks = exercise.presentSentence.replace(
-    new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-    generateDashes(exercise.correctAnswer)
-  );
+  // Créer la phrase avec tirets ou avec la réponse si correcte
+  const createDisplaySentence = () => {
+    if (isAnswered && isCorrect) {
+      // Afficher la phrase avec la réponse correcte en vert
+      return exercise.presentSentence.replace(
+        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+        `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
+      );
+    } else {
+      // Afficher les tirets
+      return exercise.presentSentence.replace(
+        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+        generateDashes(exercise.correctAnswer)
+      );
+    }
+  };
 
   return (
     <div className="text-center space-y-4">
@@ -56,29 +69,32 @@ const MultipleChoiceExercise = ({
       
       <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
         <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
-          Choisis le verbe au passé composé :
+          {isAnswered && isCorrect ? "Bravo ! Voici la phrase au passé composé :" : "Choisis le verbe au passé composé :"}
         </p>
-        <p className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono">
-          {sentenceWithBlanks}
-        </p>
+        <p 
+          className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
+          dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
+        />
         
-        <div className="flex justify-center gap-4 flex-wrap">
-          {shuffledChoices.map((choice, index) => (
-            <Button
-              key={index}
-              onClick={() => setUserAnswer(choice)}
-              disabled={isAnswered}
-              variant={userAnswer === choice ? "default" : "outline"}
-              className={`px-6 py-3 text-lg font-medium transition-all ${
-                userAnswer === choice 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'border-primary/50 hover:border-primary'
-              }`}
-            >
-              {choice}
-            </Button>
-          ))}
-        </div>
+        {!isAnswered && (
+          <div className="flex justify-center gap-4 flex-wrap">
+            {shuffledChoices.map((choice, index) => (
+              <Button
+                key={index}
+                onClick={() => setUserAnswer(choice)}
+                disabled={isAnswered}
+                variant={userAnswer === choice ? "default" : "outline"}
+                className={`px-6 py-3 text-lg font-medium transition-all ${
+                  userAnswer === choice 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'border-primary/50 hover:border-primary'
+                }`}
+              >
+                {choice}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ interface FullConjugationExerciseProps {
   userAnswer: string;
   setUserAnswer: (answer: string) => void;
   isAnswered: boolean;
+  isCorrect: boolean;
   onKeyPress: (e: React.KeyboardEvent) => void;
 }
 
@@ -21,6 +22,7 @@ const FullConjugationExercise = ({
   userAnswer,
   setUserAnswer,
   isAnswered,
+  isCorrect,
   onKeyPress
 }: FullConjugationExerciseProps) => {
   // Mettre le verbe en gras et rouge dans la phrase au présent
@@ -35,11 +37,22 @@ const FullConjugationExercise = ({
     return parts.map(part => '_'.repeat(part.length)).join(' ');
   };
 
-  // Créer la phrase avec tirets pour la saisie
-  const sentenceWithBlanks = exercise.presentSentence.replace(
-    new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-    generateDashes(exercise.correctAnswer)
-  );
+  // Créer la phrase avec tirets ou avec la réponse si correcte
+  const createDisplaySentence = () => {
+    if (isAnswered && isCorrect) {
+      // Afficher la phrase avec la réponse correcte en vert
+      return exercise.presentSentence.replace(
+        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+        `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
+      );
+    } else {
+      // Afficher les tirets
+      return exercise.presentSentence.replace(
+        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+        generateDashes(exercise.correctAnswer)
+      );
+    }
+  };
 
   return (
     <div className="text-center space-y-4">
@@ -55,19 +68,22 @@ const FullConjugationExercise = ({
       
       <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
         <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
-          Complète avec le verbe au passé composé :
+          {isAnswered && isCorrect ? "Excellent ! Voici la phrase au passé composé :" : "Complète avec le verbe au passé composé :"}
         </p>
-        <p className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono">
-          {sentenceWithBlanks}
-        </p>
-        <Input
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
-          placeholder="Tape ta réponse ici..."
-          disabled={isAnswered}
-          onKeyPress={onKeyPress}
+        <p 
+          className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
+          dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
+        {!isAnswered && (
+          <Input
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
+            placeholder="Tape ta réponse ici..."
+            disabled={isAnswered}
+            onKeyPress={onKeyPress}
+          />
+        )}
       </div>
     </div>
   );
