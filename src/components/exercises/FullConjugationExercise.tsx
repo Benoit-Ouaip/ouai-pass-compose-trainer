@@ -36,7 +36,7 @@ const FullConjugationExercise = ({
     const parts = answer.split(' ');
     const auxiliary = parts[0];
     const participle = parts.slice(1).join(' ');
-    return `${'_'.repeat(auxiliary.length)} <strong>${participle}</strong>`;
+    return `${'_'.repeat(auxiliary.length)} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
   };
 
   // Créer la phrase avec tirets ou avec la réponse si correcte

@@ -48,10 +48,10 @@ const AuxiliaryOnlyExercise = ({
         `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
       );
     } else {
-      // Afficher avec l'auxiliaire à compléter
+      // Afficher avec l'auxiliaire à compléter et le participe passé en bleu gras
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `____ ${participle}`
+        `____ <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`
       );
     }
   };
