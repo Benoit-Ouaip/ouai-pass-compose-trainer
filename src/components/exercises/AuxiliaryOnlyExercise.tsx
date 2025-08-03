@@ -88,7 +88,7 @@ const AuxiliaryOnlyExercise = ({
       
       <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
         <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
-          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire :"}
+          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire et son pronom :"}
         </p>
         <p 
           className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
