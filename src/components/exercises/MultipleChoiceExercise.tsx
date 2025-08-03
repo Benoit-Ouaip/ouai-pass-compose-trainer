@@ -128,12 +128,17 @@ const MultipleChoiceExercise = ({
             Tu as déposé une étiquette ! Clique sur Vérifier.
           </p>}
         
-        {!isAnswered && !userAnswer && <div className="flex justify-center gap-4 flex-wrap mt-6">
+        {!isAnswered && !userAnswer && shuffledChoices.length > 0 && <div className="flex justify-center gap-4 flex-wrap mt-6">
             {shuffledChoices.map((choice, index) => <div key={index} draggable onDragStart={e => handleDragStart(e, choice)} onDragEnd={handleDragEnd} className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-move hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`} style={{
           touchAction: 'none'
         }}>
                 {choice}
               </div>)}
+          </div>}
+
+        {!isAnswered && !userAnswer && shuffledChoices.length === 0 && <div className="mt-4 text-center">
+            <p className="text-red-500 font-medium">⚠️ Aucun choix disponible pour cet exercice</p>
+            <p className="text-sm text-muted-foreground">Cet exercice n'a pas de choix multiples définis.</p>
           </div>}
 
         {userAnswer && !isAnswered && <div className="mt-4 flex justify-center gap-2">
