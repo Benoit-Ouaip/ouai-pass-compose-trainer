@@ -61,7 +61,7 @@ const MultipleChoiceExercise = ({
       // Afficher la réponse déposée avec style d'étiquette
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `<span style="color: #3b82f6; font-weight: bold; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #3b82f6; box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);">${userAnswer}</span>`
+        `<span style="color: #72ba69; font-weight: bold; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`
       );
     } else {
       // Afficher une zone de dépôt stylée
