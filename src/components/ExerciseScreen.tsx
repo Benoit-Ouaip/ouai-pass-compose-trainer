@@ -86,7 +86,7 @@ const ExerciseScreen = ({
     );
 
     return (
-      <div className="text-center space-y-8">
+      <div className="text-center space-y-4">
         <div className="p-6 bg-muted/30 rounded-lg">
           <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
             Phrase au présent :
@@ -97,18 +97,18 @@ const ExerciseScreen = ({
           />
         </div>
         
-        <div className="p-8 border-3 border-primary/30 bg-primary/5 rounded-xl">
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
-            Réécris cette phrase au passé composé :
+        <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
+          <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
+            Complète avec le verbe au passé composé :
           </p>
-          <p className="text-xl text-muted-foreground mb-6 leading-relaxed font-mono">
+          <p className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono">
             {sentenceWithBlanks}
           </p>
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
-            placeholder="Écris seulement le verbe au passé composé..."
+            placeholder="Tape ta réponse ici..."
             disabled={isAnswered}
             onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
           />
