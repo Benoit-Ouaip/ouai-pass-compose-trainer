@@ -57,12 +57,18 @@ const AuxiliaryOnlyExercise = ({
       const auxiliaryLength = exercise.correctAnswer.split(' ')[0].length;
       const dashes = '_'.repeat(auxiliaryLength);
       
-      // S'assurer que le remplacement fonctionne même avec les accents
-      let modifiedSentence = exercise.presentSentence;
+      // Créer le remplacement avec le participe passé en bleu gras
+      const replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
       
-      // Essayer le remplacement direct
-      const regex = new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi');
-      modifiedSentence = modifiedSentence.replace(regex, `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`);
+      // Essayer le remplacement avec une regex plus robuste
+      const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+      let modifiedSentence = exercise.presentSentence.replace(regex, replacement);
+      
+      // Si le remplacement n'a pas fonctionné, essayer sans les limites de mots
+      if (modifiedSentence === exercise.presentSentence) {
+        const simpleRegex = new RegExp(exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+        modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
+      }
       
       return modifiedSentence;
     }
