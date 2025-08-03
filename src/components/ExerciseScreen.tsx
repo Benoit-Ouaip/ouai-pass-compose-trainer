@@ -101,7 +101,18 @@ const ExerciseScreen = ({
       // Niveau 2: seulement l'auxiliaire
       const parts = exercise.correctAnswer.split(' ');
       let correctAuxiliary;
-      if (parts.length === 2) {
+      
+      if (parts.length === 2 && (parts[0].includes("'") || parts[0].includes("'"))) {
+        // Cas avec contraction: "t'es rappelé(e)" -> auxiliaire = "es"
+        const contractedPart = parts[0];
+        if (contractedPart.includes("'es")) {
+          correctAuxiliary = "es";
+        } else if (contractedPart.includes("'est")) {
+          correctAuxiliary = "est";
+        } else {
+          correctAuxiliary = parts[0]; // fallback
+        }
+      } else if (parts.length === 2) {
         correctAuxiliary = parts[0]; // cas simple: "a mangé"
       } else if (parts.length > 2) {
         correctAuxiliary = parts[parts.length - 2]; // cas pronominal: "vous vous êtes régalés" -> "êtes"
