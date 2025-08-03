@@ -82,12 +82,12 @@ const AuxiliaryOnlyExercise = ({
         const participle = parts[1]; // "rappelé(e)"
         
         // Séparer le pronom contracté de l'auxiliaire
-        if (contractedPart.includes("'es")) {
-          const pronoun = contractedPart.replace("es", ""); // "t'"
+        if (contractedPart.includes("'es") || contractedPart.includes("'es")) {
+          const pronoun = contractedPart.replace(/[''`]es/, "'"); // "t'" 
           const dashes = '_'.repeat(2); // "es" = 2 lettres
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else if (contractedPart.includes("'est")) {
-          const pronoun = contractedPart.replace("est", ""); // "s'"
+        } else if (contractedPart.includes("'est") || contractedPart.includes("'est")) {
+          const pronoun = contractedPart.replace(/[''`]est/, "'"); // "s'"
           const dashes = '_'.repeat(3); // "est" = 3 lettres
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         } else {

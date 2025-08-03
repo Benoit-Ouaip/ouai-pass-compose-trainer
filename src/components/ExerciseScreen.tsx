@@ -105,9 +105,9 @@ const ExerciseScreen = ({
       if (parts.length === 2 && (parts[0].includes("'") || parts[0].includes("'"))) {
         // Cas avec contraction: "t'es rappelé(e)" -> auxiliaire = "es"
         const contractedPart = parts[0];
-        if (contractedPart.includes("'es")) {
+        if (contractedPart.includes("'es") || contractedPart.includes("'es")) {
           correctAuxiliary = "es";
-        } else if (contractedPart.includes("'est")) {
+        } else if (contractedPart.includes("'est") || contractedPart.includes("'est")) {
           correctAuxiliary = "est";
         } else {
           correctAuxiliary = parts[0]; // fallback
