@@ -41,10 +41,17 @@ const MultipleChoiceExercise = ({
   // Créer la phrase avec tirets ou avec la réponse si correcte
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
-      // Afficher la phrase avec la réponse correcte en vert
+      // Séparer l'auxiliaire du participe passé pour le mettre en gras
+      const correctParts = exercise.correctAnswer.split(' ');
+      const auxiliary = correctParts[0];
+      const participle = correctParts.slice(1).join(' ');
+      
+      // Afficher la phrase avec l'auxiliaire normal et le participe passé en gras
+      const styledAnswer = `<span style="color: #22c55e;">${auxiliary} <strong>${participle}</strong></span>`;
+      
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `<span style="font-weight: bold; color: #22c55e;">${exercise.correctAnswer}</span>`
+        styledAnswer
       );
     } else {
       // Afficher les tirets
