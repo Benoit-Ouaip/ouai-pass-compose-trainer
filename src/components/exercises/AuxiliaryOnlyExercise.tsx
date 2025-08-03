@@ -76,24 +76,24 @@ const AuxiliaryOnlyExercise = ({
       const parts = exercise.correctAnswer.split(' ');
       let replacement;
       
-      if (parts.length === 2 && (parts[0].includes("'") || parts[0].includes("'"))) {
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
         // Cas avec contraction: "t'es rappelé(e)" -> "t' _____ rappelé(e)"
-        const contractedPart = parts[0]; // "t'es"
-        const participle = parts[1]; // "rappelé(e)"
+        const contractedPart = parts[0]; // "t'es" ou "s'est"
+        const participle = parts[1]; // "rappelé(e)" ou "brûlée"
         
-        // Séparer le pronom contracté de l'auxiliaire
-        if (contractedPart.includes("'es") || contractedPart.includes("'es")) {
-          // Pour "t'es" -> pronom = "t'", auxiliaire = "es"
-          const pronoun = contractedPart.substring(0, contractedPart.length - 2); // "t'"
-          const dashes = '_'.repeat(2); // "es" = 2 lettres
+        // Détecter le type de contraction
+        if (contractedPart.endsWith('es')) {
+          // "t'es" -> "t'" + "___"
+          const pronoun = contractedPart.slice(0, -2); // "t'"
+          const dashes = '___'; // 3 tirets pour "es"
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else if (contractedPart.includes("'est") || contractedPart.includes("'est")) {
-          // Pour "s'est" -> pronom = "s'", auxiliaire = "est"
-          const pronoun = contractedPart.substring(0, contractedPart.length - 3); // "s'"
-          const dashes = '_'.repeat(3); // "est" = 3 lettres
+        } else if (contractedPart.endsWith('est')) {
+          // "s'est" -> "s'" + "____"
+          const pronoun = contractedPart.slice(0, -3); // "s'"
+          const dashes = '____'; // 4 tirets pour "est"
           replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         } else {
-          // Cas fallback pour d'autres contractions
+          // Cas fallback
           const dashes = '_'.repeat(contractedPart.length);
           replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
         }
