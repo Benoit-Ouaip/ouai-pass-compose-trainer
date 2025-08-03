@@ -37,25 +37,29 @@ const AuxiliaryOnlyExercise = ({
     return parts.length > 1 ? parts.slice(1).join(' ') : '';
   };
 
-  const participle = getParticipleFromAnswer(exercise.correctAnswer);
+  // Extraire le pronom et l'auxiliaire (tout sauf le participe passé)
+  const getPronounAndAuxiliary = (answer: string) => {
+    const parts = answer.split(' ');
+    return parts.length > 1 ? parts.slice(0, -1).join(' ') : parts[0];
+  };
 
-  // Créer la phrase avec l'auxiliaire à compléter ou avec la réponse si correcte
+  const participle = getParticipleFromAnswer(exercise.correctAnswer);
+  const pronounAndAuxiliary = getPronounAndAuxiliary(exercise.correctAnswer);
+
+  // Créer la phrase avec le pronom et l'auxiliaire à compléter ou avec la réponse si correcte
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
-      // Afficher la phrase avec la réponse correcte en vert et en gras
-      const correctParts = exercise.correctAnswer.split(' ');
-      const auxiliary = correctParts[0];
-      const participle = correctParts.slice(1).join(' ');
-      const styledAnswer = `<span style="color: #72ba69; font-weight: bold;"><strong>${auxiliary}</strong> <strong>${participle}</strong></span>`;
+      // Afficher la phrase avec la réponse correcte en vert
+      const styledAnswer = `<span style="color: #72ba69;">${exercise.correctAnswer}</span>`;
       
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
         styledAnswer
       );
     } else {
-      // Afficher avec des tirets pour l'auxiliaire et le participe passé en bleu gras
-      const auxiliaryLength = exercise.correctAnswer.split(' ')[0].length;
-      const dashes = '_'.repeat(auxiliaryLength);
+      // Afficher avec des tirets pour le pronom + auxiliaire et le participe passé en bleu gras
+      const pronounAuxLength = pronounAndAuxiliary.length;
+      const dashes = '_'.repeat(pronounAuxLength);
       
       // Créer le remplacement avec le participe passé en bleu gras
       const replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;

@@ -98,9 +98,10 @@ const ExerciseScreen = ({
       // Niveau 1: choix multiple - comparaison exacte
       isCorrect = userAnswer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
-      // Niveau 2: seulement l'auxiliaire
-      const correctAuxiliary = exercise.correctAnswer.split(' ')[0];
-      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
+      // Niveau 2: pronom + auxiliaire (tout sauf le participe passé)
+      const parts = exercise.correctAnswer.split(' ');
+      const correctPronounAndAuxiliary = parts.length > 1 ? parts.slice(0, -1).join(' ') : parts[0];
+      isCorrect = userAnswer.trim().toLowerCase() === correctPronounAndAuxiliary.toLowerCase();
     } else {
       // Niveau 3: réponse complète
       isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
