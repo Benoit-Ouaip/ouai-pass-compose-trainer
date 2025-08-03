@@ -427,11 +427,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 50,
-        presentSentence: "Vous vous plaignez de la chaleur des fourneaux.",
-        verbToConjugate: "vous plaignez",
-        correctAnswer: "vous vous êtes plaints",
-        explanation: "Se plaindre : vous vous êtes plaints.",
-        choices: ["vous vous êtes plaints", "vous avez plaint", "vous étiez plaints"]
+        presentSentence: "Elle se plaint de la chaleur des fourneaux.",
+        verbToConjugate: "se plaint",
+        correctAnswer: "s'est plainte",
+        explanation: "Se plaindre : elle s'est plainte.",
+        choices: ["s'est plainte", "a plaint", "est plainte"]
       },
       {
         id: 51,
