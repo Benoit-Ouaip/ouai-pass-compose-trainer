@@ -55,6 +55,36 @@ const MultipleChoiceExercise = ({
       return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`);
     }
   };
+  
+  // Générer un conseil contextuel basé sur le type de verbe
+  const getContextualHint = () => {
+    const verb = exercise.verbToConjugate.toLowerCase();
+    const sentence = exercise.presentSentence.toLowerCase();
+    const correctAnswer = exercise.correctAnswer.toLowerCase();
+    
+    // Verbes pronominaux
+    if (verb.includes('se ') || verb.includes('s\'') || verb.includes('te ') || verb.includes('t\'') || 
+        verb.includes('nous ') || verb.includes('vous ') || verb.includes('me ') || verb.includes('m\'')) {
+      return "Attention, c'est un verbe pronominal ! Pense à l'auxiliaire 'être'.";
+    }
+    
+    // Verbes de mouvement avec être
+    if (correctAnswer.includes('est ') || correctAnswer.includes('sont ') || 
+        correctAnswer.includes('sommes ') || correctAnswer.includes('êtes ') ||
+        (correctAnswer.includes('suis ') && !correctAnswer.includes('me suis'))) {
+      return "Ce verbe se conjugue avec l'auxiliaire 'être' - pense à l'accord !";
+    }
+    
+    // Verbes avec avoir
+    if (correctAnswer.includes('ai ') || correctAnswer.includes('as ') || 
+        correctAnswer.includes('a ') || correctAnswer.includes('avons ') || 
+        correctAnswer.includes('avez ') || correctAnswer.includes('ont ')) {
+      return "Ce verbe se conjugue avec l'auxiliaire 'avoir'.";
+    }
+    
+    // Conseil par défaut
+    return "Clique et fais glisser une étiquette vers la zone avec les trois points.";
+  };
   const handleDragStart = (e: React.DragEvent, choice: string) => {
     setDraggedItem(choice);
     e.dataTransfer.setData('text/plain', choice);
@@ -112,7 +142,7 @@ const MultipleChoiceExercise = ({
           </div>}
         
         {!userAnswer && !isAnswered && <p className="text-sm text-muted-foreground mt-4 italic">
-            💡 Conseil : Clique et fais glisser une étiquette vers la zone "Dépose ici"
+            💡 Conseil : {getContextualHint()}
           </p>}
       </div>
     </div>;
