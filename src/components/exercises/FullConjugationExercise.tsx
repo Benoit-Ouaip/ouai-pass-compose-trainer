@@ -58,29 +58,27 @@ const FullConjugationExercise = ({
 
   return (
     <div className="text-center space-y-4">
-      <div className="p-6 bg-muted/30 rounded-lg">
-        <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
-          Phrase au présent :
-        </p>
+      <div className="p-4 bg-muted/20 rounded-lg">
+        <p className="text-base font-medium text-ouaip-dark-blue mb-3 text-[#9f9f9f]">Phrase au présent :</p>
         <p 
-          className="text-2xl text-foreground leading-relaxed"
+          className="text-xl text-foreground leading-relaxed"
           dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
         />
       </div>
       
-      <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
-        <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
+      <div className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
+        <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">
           {isAnswered && isCorrect ? "Excellent ! Voici la phrase au passé composé :" : "Complète avec le verbe au passé composé :"}
         </p>
         <p 
-          className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
+          className="text-xl text-foreground mb-6 leading-relaxed font-medium"
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         {!isAnswered && (
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 mx-auto"
             placeholder="Tape ta réponse ici..."
             disabled={isAnswered}
             onKeyPress={onKeyPress}
