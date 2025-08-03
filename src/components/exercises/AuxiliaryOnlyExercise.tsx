@@ -56,10 +56,15 @@ const AuxiliaryOnlyExercise = ({
       // Afficher avec des tirets pour l'auxiliaire et le participe passé en bleu gras
       const auxiliaryLength = exercise.correctAnswer.split(' ')[0].length;
       const dashes = '_'.repeat(auxiliaryLength);
-      return exercise.presentSentence.replace(
-        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`
-      );
+      
+      // S'assurer que le remplacement fonctionne même avec les accents
+      let modifiedSentence = exercise.presentSentence;
+      
+      // Essayer le remplacement direct
+      const regex = new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi');
+      modifiedSentence = modifiedSentence.replace(regex, `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`);
+      
+      return modifiedSentence;
     }
   };
 
