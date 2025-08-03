@@ -118,9 +118,9 @@ const ExerciseScreen = ({
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-4">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4">
         <Button 
           variant="outline" 
           onClick={onBack}
@@ -128,7 +128,7 @@ const ExerciseScreen = ({
         >
           ← Retour
         </Button>
-        <h2 className="text-2xl font-bold text-ouaip-dark-blue">
+        <h2 className="text-xl font-bold text-ouaip-dark-blue">
           {scenarioTitle}
         </h2>
         <Button 
@@ -141,7 +141,7 @@ const ExerciseScreen = ({
       </div>
 
       {/* Progress */}
-      <div className="mb-8">
+      <div className="mb-4">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm text-muted-foreground">
             Question {currentExercise + 1} sur {exercises.length}
@@ -154,13 +154,13 @@ const ExerciseScreen = ({
       </div>
 
       {/* Exercise */}
-      <div className="ouaip-card p-8 mb-6">
+      <div className="ouaip-card p-6 mb-4">
         {renderExercise()}
       </div>
 
       {/* Feedback */}
       {feedback.type && (
-        <div className={`ouaip-card p-4 mb-6 border-2 fade-in ${
+        <div className={`ouaip-card p-3 mb-4 border-2 fade-in ${
           feedback.type === 'success' 
             ? 'border-success bg-success/10' 
             : 'border-error bg-error/10'
@@ -174,7 +174,7 @@ const ExerciseScreen = ({
       )}
 
       {/* Actions */}
-      <div className="text-center space-x-4">
+      <div className="text-center">
         {!isAnswered ? (
           <Button 
             onClick={handleVerify}
