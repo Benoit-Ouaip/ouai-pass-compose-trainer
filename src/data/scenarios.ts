@@ -151,10 +151,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 19,
-        presentSentence: "Je dépasse mes limites aujourd'hui.",
+        presentSentence: "Elle dépasse ses limites aujourd'hui.",
         verbToConjugate: "dépasse",
-        correctAnswer: "ai dépassé",
-        explanation: "Le verbe 'dépasser' avec je : j'ai dépassé."
+        correctAnswer: "a dépassé",
+        explanation: "Le verbe 'dépasser' avec elle : elle a dépassé."
       },
       {
         id: 20,
@@ -200,10 +200,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 26,
-        presentSentence: "Je m'amuse beaucoup dans les arbres.",
-        verbToConjugate: "m'amuse",
-        correctAnswer: "me suis amusé(e)",
-        explanation: "Le verbe pronominal 's'amuser' avec je : je me suis amusé(e)."
+        presentSentence: "Elle s'amuse beaucoup dans les arbres.",
+        verbToConjugate: "s'amuse",
+        correctAnswer: "s'est amusée",
+        explanation: "Le verbe pronominal 's'amuser' avec elle : elle s'est amusée."
       },
       {
         id: 27,
@@ -258,10 +258,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 33,
-        presentSentence: "Je me concentre sur ma recette.",
-        verbToConjugate: "me concentre",
-        correctAnswer: "me suis concentré(e)",
-        explanation: "Se concentrer : je me suis concentré(e)."
+        presentSentence: "Elle se concentre sur sa recette.",
+        verbToConjugate: "se concentre",
+        correctAnswer: "s'est concentrée",
+        explanation: "Se concentrer : elle s'est concentrée."
       },
       {
         id: 34,
@@ -300,10 +300,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 39,
-        presentSentence: "Je me trompe dans les proportions.",
-        verbToConjugate: "me trompe",
-        correctAnswer: "me suis trompé(e)",
-        explanation: "Se tromper : je me suis trompé(e)."
+        presentSentence: "Il se trompe dans les proportions.",
+        verbToConjugate: "se trompe",
+        correctAnswer: "s'est trompé",
+        explanation: "Se tromper : il s'est trompé."
       },
       {
         id: 40,
@@ -349,10 +349,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 46,
-        presentSentence: "Je me salisse les mains avec la farine.",
-        verbToConjugate: "me salisse",
-        correctAnswer: "me suis sali(e)",
-        explanation: "Se salir : je me suis sali(e)."
+        presentSentence: "Il se salit les mains avec la farine.",
+        verbToConjugate: "se salit",
+        correctAnswer: "s'est sali",
+        explanation: "Se salir : il s'est sali."
       },
       {
         id: 47,
@@ -391,10 +391,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 52,
-        presentSentence: "Je me décide enfin pour le menu.",
-        verbToConjugate: "me décide",
-        correctAnswer: "me suis décidé(e)",
-        explanation: "Se décider : je me suis décidé(e)."
+        presentSentence: "Elle se décide enfin pour le menu.",
+        verbToConjugate: "se décide",
+        correctAnswer: "s'est décidée",
+        explanation: "Se décider : elle s'est décidée."
       },
       {
         id: 53,
@@ -433,10 +433,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 58,
-        presentSentence: "Je me dirige vers le frigo pour les ingrédients.",
-        verbToConjugate: "me dirige",
-        correctAnswer: "me suis dirigé(e)",
-        explanation: "Se diriger : je me suis dirigé(e)."
+        presentSentence: "Il se dirige vers le frigo pour les ingrédients.",
+        verbToConjugate: "se dirige",
+        correctAnswer: "s'est dirigé",
+        explanation: "Se diriger : il s'est dirigé."
       },
       {
         id: 59,
@@ -477,10 +477,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 63,
-        presentSentence: "Je pars en voyage demain matin.",
-        verbToConjugate: "pars",
-        correctAnswer: "suis parti(e)",
-        explanation: "Partir + être : je suis parti(e)."
+        presentSentence: "Nous partons en voyage demain matin.",
+        verbToConjugate: "partons",
+        correctAnswer: "sommes partis",
+        explanation: "Partir + être : nous sommes partis."
       },
       {
         id: 64,
@@ -519,10 +519,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 69,
-        presentSentence: "Je descends du train à la gare centrale.",
-        verbToConjugate: "descends",
-        correctAnswer: "suis descendu(e)",
-        explanation: "Descendre + être : je suis descendu(e)."
+        presentSentence: "Il descend du train à la gare centrale.",
+        verbToConjugate: "descend",
+        correctAnswer: "est descendu",
+        explanation: "Descendre + être : il est descendu."
       },
       {
         id: 70,
@@ -568,10 +568,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 76,
-        presentSentence: "Je retombe sous le charme de cette région.",
+        presentSentence: "Elle retombe sous le charme de cette région.",
         verbToConjugate: "retombe",
-        correctAnswer: "suis retombé(e)",
-        explanation: "Retomber + être : je suis retombé(e)."
+        correctAnswer: "est retombée",
+        explanation: "Retomber + être : elle est retombée."
       },
       {
         id: 77,
@@ -610,10 +610,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 82,
-        presentSentence: "Je surviens au bon moment.",
-        verbToConjugate: "surviens",
-        correctAnswer: "suis survenu(e)",
-        explanation: "Survenir + être : je suis survenu(e)."
+        presentSentence: "Il survient au bon moment.",
+        verbToConjugate: "survient",
+        correctAnswer: "est survenu",
+        explanation: "Survenir + être : il est survenu."
       },
       {
         id: 83,
@@ -703,10 +703,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 94,
-        presentSentence: "Je ne comprends pas encore les règles.",
-        verbToConjugate: "comprends",
-        correctAnswer: "n'ai pas encore compris",
-        explanation: "Négation 'ne...pas encore' : n'ai pas encore compris."
+        presentSentence: "Il ne comprend pas encore les règles.",
+        verbToConjugate: "comprend",
+        correctAnswer: "n'a pas encore compris",
+        explanation: "Négation 'ne...pas encore' : n'a pas encore compris."
       },
       {
         id: 95,
