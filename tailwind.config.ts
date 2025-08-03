@@ -18,7 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
+				// Ouaip.be brand colors
+				'ouaip-blue': 'hsl(var(--ouaip-blue))',
+				'ouaip-green': 'hsl(var(--ouaip-green))',
+				'ouaip-red': 'hsl(var(--ouaip-red))',
+				'ouaip-dark-blue': 'hsl(var(--ouaip-dark-blue))',
+				'ouaip-yellow': 'hsl(var(--ouaip-yellow))',
+				'ouaip-gray': 'hsl(var(--ouaip-gray))',
+				
+				// Design system colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -31,6 +43,18 @@ export default {
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				error: {
+					DEFAULT: 'hsl(var(--error))',
+					foreground: 'hsl(var(--error-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
