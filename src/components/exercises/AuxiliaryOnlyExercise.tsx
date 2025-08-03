@@ -72,19 +72,28 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Afficher avec des tirets seulement pour l'auxiliaire
-      const auxiliaryLength = auxiliaryOnly.length;
-      const dashes = '_'.repeat(auxiliaryLength);
-      
-      // Créer le remplacement: pronom + tirets + participe passé
+      // Créer la forme avec l'auxiliaire masqué
+      const parts = exercise.correctAnswer.split(' ');
       let replacement;
-      if (pronounOnly) {
-        replacement = `${pronounOnly} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+      
+      if (parts.length === 2) {
+        // Cas simple: "a mangé" -> "_____ mangé"
+        const dashes = '_'.repeat(parts[0].length);
+        replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
+      } else if (parts.length >= 3) {
+        // Cas pronominal: "vous vous êtes régalés" -> "vous vous _____ régalés"
+        const pronoun = parts.slice(0, -2).join(' '); // "vous vous"
+        const auxiliary = parts[parts.length - 2]; // "êtes"
+        const participle = parts[parts.length - 1]; // "régalés"
+        const dashes = '_'.repeat(auxiliary.length);
+        replacement = `${pronoun} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
       } else {
-        replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        // Cas fallback
+        const dashes = '_'.repeat(parts[0].length);
+        replacement = `${dashes}`;
       }
       
-      // Essayer le remplacement avec une regex plus robuste
+      // Remplacer le verbe à conjuguer par la nouvelle forme
       const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
       let modifiedSentence = exercise.presentSentence.replace(regex, replacement);
       
@@ -110,7 +119,7 @@ const AuxiliaryOnlyExercise = ({
       
       <div className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">
-          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire et son pronom :"}
+          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire :"}
         </p>
         <p 
           className="text-xl text-foreground mb-6 leading-relaxed font-medium"
