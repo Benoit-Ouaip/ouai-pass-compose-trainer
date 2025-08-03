@@ -143,6 +143,14 @@ const ExerciseScreen = ({
     
     // Jouer le son
     playSound(isCorrect);
+    
+    // Si correct, passer à l'exercice suivant automatiquement après 2 secondes
+    if (isCorrect) {
+      setTimeout(() => {
+        setShowFeedbackModal(false);
+        handleNext();
+      }, 2000);
+    }
   };
 
 
@@ -267,12 +275,12 @@ const ExerciseScreen = ({
           </DialogHeader>
           <div className="text-center mt-4 space-x-3">
             {isCorrect ? (
-              <Button 
-                onClick={() => setShowFeedbackModal(false)}
-                className="ouaip-button-primary"
-              >
-                Continuer
-              </Button>
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  Passage à l'exercice suivant...
+                </p>
+                <div className="w-8 h-8 mx-auto border-2 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+              </div>
             ) : (
               <>
                 <Button 
@@ -284,7 +292,7 @@ const ExerciseScreen = ({
                 <Button 
                   onClick={() => {
                     setShowFeedbackModal(false);
-                    // Optionnel : passer à l'exercice suivant même en cas d'erreur
+                    handleNext();
                   }}
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10"
