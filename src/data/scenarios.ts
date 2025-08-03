@@ -371,11 +371,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 43,
-        presentSentence: "Nous nous aidons mutuellement.",
-        verbToConjugate: "nous aidons",
-        correctAnswer: "nous nous sommes aidés",
-        explanation: "S'aider : nous nous sommes aidés.",
-        choices: ["nous nous sommes aidés", "nous avons aidé", "nous étions aidés"]
+        presentSentence: "Ils s'aident mutuellement en cuisine.",
+        verbToConjugate: "s'aident",
+        correctAnswer: "se sont aidés",
+        explanation: "S'aider : ils se sont aidés.",
+        choices: ["se sont aidés", "ont aidé", "sont aidés"]
       },
       {
         id: 44,
