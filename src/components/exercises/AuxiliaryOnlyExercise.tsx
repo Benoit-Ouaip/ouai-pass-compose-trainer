@@ -76,22 +76,20 @@ const AuxiliaryOnlyExercise = ({
 
   return (
     <div className="text-center space-y-4">
-      <div className="p-6 bg-muted/30 rounded-lg">
-        <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
-          Phrase au présent :
-        </p>
+      <div className="p-4 bg-muted/20 rounded-lg">
+        <p className="text-base font-medium text-ouaip-dark-blue mb-3 text-[#9f9f9f]">La phrase au présent :</p>
         <p 
-          className="text-2xl text-foreground leading-relaxed"
+          className="text-xl text-foreground leading-relaxed"
           dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
         />
       </div>
       
-      <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
-        <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
+      <div className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
+        <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">
           {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire et son pronom :"}
         </p>
         <p 
-          className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono"
+          className="text-xl text-foreground mb-6 leading-relaxed font-medium"
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         {!isAnswered && (
