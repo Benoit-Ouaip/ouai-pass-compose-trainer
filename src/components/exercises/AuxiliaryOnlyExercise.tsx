@@ -81,12 +81,14 @@ const AuxiliaryOnlyExercise = ({
         const dashes = '_'.repeat(parts[0].length);
         replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
       } else if (parts.length >= 3) {
-        // Cas pronominal: "vous vous êtes régalés" -> "vous vous _____ régalés"
-        const pronoun = parts.slice(0, -2).join(' '); // "vous vous"
-        const auxiliary = parts[parts.length - 2]; // "êtes"
-        const participle = parts[parts.length - 1]; // "régalés"
+        // Cas pronominal: 
+        // - "se sont perfectionnés" -> "se _____ perfectionnés"
+        // - "vous vous êtes régalés" -> "vous vous _____ régalés"
+        const beforeAux = parts.slice(0, -2).join(' '); // "se" ou "vous vous"
+        const auxiliary = parts[parts.length - 2]; // "sont" ou "êtes"
+        const participle = parts[parts.length - 1]; // "perfectionnés" ou "régalés"
         const dashes = '_'.repeat(auxiliary.length);
-        replacement = `${pronoun} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        replacement = `${beforeAux} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
       } else {
         // Cas fallback
         const dashes = '_'.repeat(parts[0].length);
