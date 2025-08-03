@@ -98,10 +98,17 @@ const ExerciseScreen = ({
       // Niveau 1: choix multiple - comparaison exacte
       isCorrect = userAnswer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
-      // Niveau 2: pronom + auxiliaire (tout sauf le participe passé)
+      // Niveau 2: seulement l'auxiliaire
       const parts = exercise.correctAnswer.split(' ');
-      const correctPronounAndAuxiliary = parts.length > 1 ? parts.slice(0, -1).join(' ') : parts[0];
-      isCorrect = userAnswer.trim().toLowerCase() === correctPronounAndAuxiliary.toLowerCase();
+      let correctAuxiliary;
+      if (parts.length === 2) {
+        correctAuxiliary = parts[0]; // cas simple: "a mangé"
+      } else if (parts.length > 2) {
+        correctAuxiliary = parts[parts.length - 2]; // cas pronominal: "vous vous êtes régalés" -> "êtes"
+      } else {
+        correctAuxiliary = parts[0];
+      }
+      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
     } else {
       // Niveau 3: réponse complète
       isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();

@@ -37,16 +37,31 @@ const AuxiliaryOnlyExercise = ({
     return parts.length > 1 ? parts.slice(1).join(' ') : '';
   };
 
-  // Extraire le pronom et l'auxiliaire (tout sauf le participe passé)
-  const getPronounAndAuxiliary = (answer: string) => {
+  // Extraire seulement l'auxiliaire (le dernier mot avant le participe passé)
+  const getAuxiliaryOnly = (answer: string) => {
     const parts = answer.split(' ');
-    return parts.length > 1 ? parts.slice(0, -1).join(' ') : parts[0];
+    if (parts.length === 2) {
+      return parts[0]; // cas simple: "a mangé"
+    } else if (parts.length > 2) {
+      return parts[parts.length - 2]; // cas pronominal: "vous vous êtes régalés" -> "êtes"
+    }
+    return parts[0];
+  };
+
+  // Extraire le pronom (tout sauf l'auxiliaire et le participe passé)
+  const getPronounOnly = (answer: string, verbToConjugate: string) => {
+    const parts = answer.split(' ');
+    if (parts.length > 2) {
+      return parts.slice(0, -2).join(' '); // "vous vous êtes régalés" -> "vous vous"
+    }
+    return ''; // pas de pronom pour les verbes non pronominaux
   };
 
   const participle = getParticipleFromAnswer(exercise.correctAnswer);
-  const pronounAndAuxiliary = getPronounAndAuxiliary(exercise.correctAnswer);
+  const auxiliaryOnly = getAuxiliaryOnly(exercise.correctAnswer);
+  const pronounOnly = getPronounOnly(exercise.correctAnswer, exercise.verbToConjugate);
 
-  // Créer la phrase avec le pronom et l'auxiliaire à compléter ou avec la réponse si correcte
+  // Créer la phrase avec seulement l'auxiliaire à compléter
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
       // Afficher la phrase avec la réponse correcte en vert
@@ -57,12 +72,17 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Afficher avec des tirets pour le pronom + auxiliaire et le participe passé en bleu gras
-      const pronounAuxLength = pronounAndAuxiliary.length;
-      const dashes = '_'.repeat(pronounAuxLength);
+      // Afficher avec des tirets seulement pour l'auxiliaire
+      const auxiliaryLength = auxiliaryOnly.length;
+      const dashes = '_'.repeat(auxiliaryLength);
       
-      // Créer le remplacement avec le participe passé en bleu gras
-      const replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+      // Créer le remplacement: pronom + tirets + participe passé
+      let replacement;
+      if (pronounOnly) {
+        replacement = `${pronounOnly} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+      } else {
+        replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+      }
       
       // Essayer le remplacement avec une regex plus robuste
       const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
