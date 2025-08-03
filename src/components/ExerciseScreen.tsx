@@ -101,8 +101,8 @@ const ExerciseScreen = ({
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg"
-            placeholder="Écris la phrase complète au passé composé..."
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
+            placeholder="Écris seulement le verbe au passé composé..."
             disabled={isAnswered}
             onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
           />
