@@ -419,11 +419,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 49,
-        presentSentence: "Nous nous retrouvons en cuisine chaque matin.",
-        verbToConjugate: "nous retrouvons",
-        correctAnswer: "nous nous sommes retrouvés",
-        explanation: "Se retrouver : nous nous sommes retrouvés.",
-        choices: ["nous nous sommes retrouvés", "nous avons retrouvé", "nous étions retrouvés"]
+        presentSentence: "Je me retrouve en cuisine chaque matin.",
+        verbToConjugate: "me retrouve",
+        correctAnswer: "me suis retrouvé(e)",
+        explanation: "Se retrouver : je me suis retrouvé(e).",
+        choices: ["me suis retrouvé(e)", "ai retrouvé", "suis retrouvé"]
       },
       {
         id: 50,
