@@ -52,7 +52,7 @@ const MultipleChoiceExercise = ({
       return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="color: #72ba69; font-weight: bold; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`);
     } else {
       // Afficher une zone de dépôt stylée
-      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 6px 12px; border: 2px dashed #94a3b8; border-radius: 8px; min-width: 120px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.875rem;">Dépose ici</span>`);
+      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="background: white; padding: 8px 16px; border: 2px solid #94a3b8; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">Dépose ici</span>`);
     }
   };
   const handleDragStart = (e: React.DragEvent, choice: string) => {
