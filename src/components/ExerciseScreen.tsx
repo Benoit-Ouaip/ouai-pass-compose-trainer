@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import HelpPanel from "./HelpPanel";
+import MultipleChoiceExercise from "./exercises/MultipleChoiceExercise";
+import AuxiliaryOnlyExercise from "./exercises/AuxiliaryOnlyExercise";
+import FullConjugationExercise from "./exercises/FullConjugationExercise";
 
 interface Exercise {
   id: number;
@@ -10,6 +12,7 @@ interface Exercise {
   verbToConjugate: string;
   correctAnswer: string;
   explanation: string;
+  choices?: string[];
 }
 
 interface ExerciseScreenProps {
@@ -40,7 +43,19 @@ const ExerciseScreen = ({
   const handleVerify = () => {
     if (!userAnswer.trim()) return;
 
-    const isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
+    let isCorrect = false;
+    
+    if (difficulty === 1) {
+      // Niveau 1: choix multiple - comparaison exacte
+      isCorrect = userAnswer.trim() === exercise.correctAnswer;
+    } else if (difficulty === 2) {
+      // Niveau 2: seulement l'auxiliaire
+      const correctAuxiliary = exercise.correctAnswer.split(' ')[0];
+      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
+    } else {
+      // Niveau 3: réponse complète
+      isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
+    }
     
     setFeedback({
       type: isCorrect ? 'success' : 'error',
@@ -67,54 +82,23 @@ const ExerciseScreen = ({
   };
 
   const renderExercise = () => {
-    // Mettre le verbe en gras et rouge dans la phrase au présent
-    const highlightedPresentSentence = exercise.presentSentence.replace(
-      new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-      `<span style="font-weight: bold; color: #e55555;">$&</span>`
-    );
-
-    // Créer les tirets correspondant au nombre de lettres de la réponse
-    const generateDashes = (answer: string) => {
-      const parts = answer.split(' ');
-      return parts.map(part => '_'.repeat(part.length)).join(' ');
+    const commonProps = {
+      exercise,
+      userAnswer,
+      setUserAnswer,
+      isAnswered,
+      onKeyPress: (e: React.KeyboardEvent) => e.key === 'Enter' && !isAnswered && handleVerify()
     };
 
-    // Créer la phrase avec tirets pour la saisie
-    const sentenceWithBlanks = exercise.presentSentence.replace(
-      new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-      generateDashes(exercise.correctAnswer)
-    );
-
-    return (
-      <div className="text-center space-y-4">
-        <div className="p-6 bg-muted/30 rounded-lg">
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
-            Phrase au présent :
-          </p>
-          <p 
-            className="text-2xl text-foreground leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
-          />
-        </div>
-        
-        <div className="p-6 border-3 border-primary/30 bg-primary/5 rounded-xl">
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-3">
-            Complète avec le verbe au passé composé :
-          </p>
-          <p className="text-xl text-muted-foreground mb-4 leading-relaxed font-mono">
-            {sentenceWithBlanks}
-          </p>
-          <Input
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg w-80 mx-auto"
-            placeholder="Tape ta réponse ici..."
-            disabled={isAnswered}
-            onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
-          />
-        </div>
-      </div>
-    );
+    switch (difficulty) {
+      case 1:
+        return <MultipleChoiceExercise {...commonProps} />;
+      case 2:
+        return <AuxiliaryOnlyExercise {...commonProps} />;
+      case 3:
+      default:
+        return <FullConjugationExercise {...commonProps} />;
+    }
   };
 
   return (

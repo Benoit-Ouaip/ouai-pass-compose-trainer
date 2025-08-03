@@ -18,19 +18,19 @@ const DifficultySelector = ({
       level: 1,
       stars: "★",
       title: "Facile",
-      description: "Verbe surligné, choix entre 2 auxiliaires pré-proposés"
+      description: "Choisis parmi 3 réponses proposées"
     },
     {
       level: 2,
       stars: "★★",
       title: "Moyen",
-      description: "Verbe donné à l'infinitif, auxiliaire masqué"
+      description: "Écris seulement l'auxiliaire (avoir/être)"
     },
     {
       level: 3,
       stars: "★★★",
       title: "Difficile",
-      description: "Verbe à deviner (contexte) + ponctuation/négation à gérer"
+      description: "Écris l'auxiliaire et le participe passé"
     }
   ];
 

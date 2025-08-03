@@ -4,6 +4,7 @@ export interface Exercise {
   verbToConjugate: string;
   correctAnswer: string;
   explanation: string;
+  choices?: string[]; // Pour le niveau 1 (choix multiple)
 }
 
 export interface Scenario {
@@ -28,70 +29,80 @@ export const scenarios: Scenario[] = [
         presentSentence: "Tom glisse sur la tyrolienne.",
         verbToConjugate: "glisse",
         correctAnswer: "a glissé",
-        explanation: "Le verbe 'glisser' se conjugue avec l'auxiliaire 'avoir' : il a glissé."
+        explanation: "Le verbe 'glisser' se conjugue avec l'auxiliaire 'avoir' : il a glissé.",
+        choices: ["a glissé", "est glissé", "s'est glissé"]
       },
       {
         id: 2,
         presentSentence: "Les enfants escaladent tous les filets.",
         verbToConjugate: "escaladent",
         correctAnswer: "ont escaladé",
-        explanation: "Le verbe 'escalader' avec 'ils' : ils ont escaladé."
+        explanation: "Le verbe 'escalader' avec 'ils' : ils ont escaladé.",
+        choices: ["ont escaladé", "sont escaladés", "se sont escaladés"]
       },
       {
         id: 3,
         presentSentence: "Marie traverse le pont suspendu.",
         verbToConjugate: "traverse",
         correctAnswer: "a traversé",
-        explanation: "Le verbe 'traverser' avec 'elle' : elle a traversé."
+        explanation: "Le verbe 'traverser' avec 'elle' : elle a traversé.",
+        choices: ["a traversé", "est traversée", "s'est traversée"]
       },
       {
         id: 4,
         presentSentence: "Paul saute de branche en branche.",
         verbToConjugate: "saute",
         correctAnswer: "a sauté",
-        explanation: "Le verbe 'sauter' se conjugue avec avoir : il a sauté."
+        explanation: "Le verbe 'sauter' se conjugue avec avoir : il a sauté.",
+        choices: ["a sauté", "est sauté", "s'est sauté"]
       },
       {
         id: 5,
         presentSentence: "Les guides expliquent les règles.",
         verbToConjugate: "expliquent",
         correctAnswer: "ont expliqué",
-        explanation: "Le verbe 'expliquer' avec ils : ils ont expliqué."
+        explanation: "Le verbe 'expliquer' avec ils : ils ont expliqué.",
+        choices: ["ont expliqué", "sont expliqués", "se sont expliqués"]
       },
       {
         id: 6,
         presentSentence: "Nous attachons notre harnais.",
         verbToConjugate: "attachons",
         correctAnswer: "avons attaché",
-        explanation: "Le verbe 'attacher' avec nous : nous avons attaché."
+        explanation: "Le verbe 'attacher' avec nous : nous avons attaché.",
+        choices: ["avons attaché", "sommes attachés", "nous sommes attachés"]
       },
       {
         id: 7,
         presentSentence: "Tu observes les autres grimpeurs.",
         verbToConjugate: "observes",
         correctAnswer: "as observé",
-        explanation: "Le verbe 'observer' avec tu : tu as observé."
+        explanation: "Le verbe 'observer' avec tu : tu as observé.",
+        choices: ["as observé", "es observé", "t'es observé"]
       },
       {
         id: 8,
         presentSentence: "Elle encourage son équipe.",
         verbToConjugate: "encourage",
         correctAnswer: "a encouragé",
-        explanation: "Le verbe 'encourager' avec elle : elle a encouragé."
+        explanation: "Le verbe 'encourager' avec elle : elle a encouragé.",
+        choices: ["a encouragé", "est encouragée", "s'est encouragée"]
       },
       {
         id: 9,
         presentSentence: "Ils grimpent jusqu'au sommet.",
         verbToConjugate: "grimpent",
         correctAnswer: "ont grimpé",
-        explanation: "Le verbe 'grimper' avec ils : ils ont grimpé."
+        explanation: "Le verbe 'grimper' avec ils : ils ont grimpé.",
+        choices: ["ont grimpé", "sont grimpés", "se sont grimpés"]
       },
       {
         id: 10,
         presentSentence: "Je teste ma force sur la corde.",
         verbToConjugate: "teste",
         correctAnswer: "ai testé",
-        explanation: "Le verbe 'tester' avec je : j'ai testé."
+        explanation: "Le verbe 'tester' avec je : j'ai testé.",
+        choices: ["ai testé", "suis testé", "me suis testé"]
       },
       {
         id: 11,
