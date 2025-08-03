@@ -32,10 +32,12 @@ const MultipleChoiceExercise = ({
     `<span style="font-weight: bold; color: #e55555;">$&</span>`
   );
 
-  // Créer les tirets correspondant au nombre de lettres de la réponse
-  const generateDashes = (answer: string) => {
+  // Créer les tirets correspondant au nombre de lettres de l'auxiliaire seulement
+  const generateDashesForAuxiliary = (answer: string) => {
     const parts = answer.split(' ');
-    return parts.map(part => '_'.repeat(part.length)).join(' ');
+    const auxiliary = parts[0];
+    const participle = parts.slice(1).join(' ');
+    return `${'_'.repeat(auxiliary.length)} <strong>${participle}</strong>`;
   };
 
   // Créer la phrase avec tirets ou avec la réponse si correcte
@@ -54,10 +56,10 @@ const MultipleChoiceExercise = ({
         styledAnswer
       );
     } else {
-      // Afficher les tirets
+      // Afficher les tirets pour l'auxiliaire + participe passé en gras
       return exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        generateDashes(exercise.correctAnswer)
+        generateDashesForAuxiliary(exercise.correctAnswer)
       );
     }
   };
