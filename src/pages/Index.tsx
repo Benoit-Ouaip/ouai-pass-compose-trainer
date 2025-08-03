@@ -50,13 +50,9 @@ const Index = () => {
   const getExercises = () => {
     if (!currentScenario) return [];
     
-    const difficultyMap = {
-      1: currentScenario.exercises.easy,
-      2: currentScenario.exercises.medium,
-      3: currentScenario.exercises.hard
-    };
-    
-    return difficultyMap[selectedDifficulty as keyof typeof difficultyMap] || [];
+    const startIndex = (selectedDifficulty - 1) * 10;
+    const endIndex = startIndex + 10;
+    return currentScenario.exercises.slice(startIndex, endIndex);
   };
 
   return (

@@ -6,12 +6,10 @@ import HelpPanel from "./HelpPanel";
 
 interface Exercise {
   id: number;
-  context: string;
-  sentence: string;
+  presentSentence: string;
+  verbToConjugate: string;
   correctAnswer: string;
   explanation: string;
-  verb: string;
-  infinitive: string;
 }
 
 interface ExerciseScreenProps {
@@ -68,20 +66,34 @@ const ExerciseScreen = ({
     }
   };
 
-  const renderSentence = () => {
-    const parts = exercise.sentence.split('_____');
+  const renderExercise = () => {
     return (
-      <div className="text-xl text-center">
-        {parts[0]}
-        <Input
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          className="ouaip-input inline-block mx-2 w-40 text-center"
-          placeholder="..."
-          disabled={isAnswered}
-          onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
-        />
-        {parts[1]}
+      <div className="text-center space-y-6">
+        <div className="p-4 bg-muted/50 rounded-lg">
+          <p className="text-lg font-medium text-ouaip-dark-blue mb-2">
+            Phrase au présent :
+          </p>
+          <p className="text-xl text-muted-foreground">
+            {exercise.presentSentence}
+          </p>
+        </div>
+        
+        <div className="p-4 border-2 border-dashed border-muted rounded-lg">
+          <p className="text-lg font-medium text-ouaip-dark-blue mb-2">
+            Réécris cette phrase au passé composé :
+          </p>
+          <p className="text-sm text-muted-foreground mb-3">
+            Verbe à conjuguer : <span className="font-semibold text-primary">{exercise.verbToConjugate}</span>
+          </p>
+          <Input
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            className="ouaip-input text-center text-lg"
+            placeholder="Écris ta réponse ici..."
+            disabled={isAnswered}
+            onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
+          />
+        </div>
       </div>
     );
   };
@@ -124,19 +136,7 @@ const ExerciseScreen = ({
 
       {/* Exercise */}
       <div className="ouaip-card p-8 mb-6">
-        <div className="text-center space-y-6">
-          <p className="text-lg text-muted-foreground italic">
-            {exercise.context}
-          </p>
-          
-          {renderSentence()}
-          
-          {difficulty === 1 && (
-            <p className="text-sm text-muted-foreground">
-              Infinitif: {exercise.infinitive}
-            </p>
-          )}
-        </div>
+        {renderExercise()}
       </div>
 
       {/* Feedback */}
