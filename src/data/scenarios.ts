@@ -109,14 +109,16 @@ export const scenarios: Scenario[] = [
         presentSentence: "Le moniteur aide les débutants.",
         verbToConjugate: "aide",
         correctAnswer: "a aidé",
-        explanation: "Le verbe 'aider' avec il : il a aidé."
+        explanation: "Le verbe 'aider' avec il : il a aidé.",
+        choices: ["a aidé", "est aidé", "s'est aidé"]
       },
       {
         id: 12,
         presentSentence: "Vous admirez le paysage d'en haut.",
         verbToConjugate: "admirez",
         correctAnswer: "avez admiré",
-        explanation: "Le verbe 'admirer' avec vous : vous avez admiré."
+        explanation: "Le verbe 'admirer' avec vous : vous avez admiré.",
+        choices: ["avez admiré", "êtes admirés", "vous êtes admirés"]
       },
       {
         id: 13,
@@ -258,28 +260,32 @@ export const scenarios: Scenario[] = [
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
         verbToConjugate: "nous lavons",
         correctAnswer: "nous sommes lavé",
-        explanation: "Se laver est pronominal : nous nous sommes lavé les mains."
+        explanation: "Se laver est pronominal : nous nous sommes lavé les mains.",
+        choices: ["nous sommes lavé", "nous avons lavé", "nous étions lavé"]
       },
       {
         id: 32,
         presentSentence: "Le chef se prépare pour le service.",
         verbToConjugate: "se prépare",
         correctAnswer: "s'est préparé",
-        explanation: "Se préparer : il s'est préparé."
+        explanation: "Se préparer : il s'est préparé.",
+        choices: ["s'est préparé", "a préparé", "est préparé"]
       },
       {
         id: 33,
         presentSentence: "Elle se concentre sur sa recette.",
         verbToConjugate: "se concentre",
         correctAnswer: "s'est concentrée",
-        explanation: "Se concentrer : elle s'est concentrée."
+        explanation: "Se concentrer : elle s'est concentrée.",
+        choices: ["s'est concentrée", "a concentré", "est concentrée"]
       },
       {
         id: 34,
         presentSentence: "Tu te dépêches de finir ton plat.",
         verbToConjugate: "te dépêches",
         correctAnswer: "t'es dépêché(e)",
-        explanation: "Se dépêcher : tu t'es dépêché(e)."
+        explanation: "Se dépêcher : tu t'es dépêché(e).",
+        choices: ["t'es dépêché(e)", "as dépêché", "es dépêché"]
       },
       {
         id: 35,
