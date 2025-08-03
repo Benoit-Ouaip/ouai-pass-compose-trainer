@@ -76,7 +76,26 @@ const AuxiliaryOnlyExercise = ({
       const parts = exercise.correctAnswer.split(' ');
       let replacement;
       
-      if (parts.length === 2) {
+      if (parts.length === 2 && (parts[0].includes("'") || parts[0].includes("'"))) {
+        // Cas avec contraction: "t'es rappelé(e)" -> "t' _____ rappelé(e)"
+        const contractedPart = parts[0]; // "t'es"
+        const participle = parts[1]; // "rappelé(e)"
+        
+        // Séparer le pronom contracté de l'auxiliaire
+        if (contractedPart.includes("'es")) {
+          const pronoun = contractedPart.replace("es", ""); // "t'"
+          const dashes = '_'.repeat(2); // "es" = 2 lettres
+          replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        } else if (contractedPart.includes("'est")) {
+          const pronoun = contractedPart.replace("est", ""); // "s'"
+          const dashes = '_'.repeat(3); // "est" = 3 lettres
+          replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        } else {
+          // Cas fallback pour d'autres contractions
+          const dashes = '_'.repeat(contractedPart.length);
+          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
+        }
+      } else if (parts.length === 2) {
         // Cas simple: "a mangé" -> "_____ mangé"
         const dashes = '_'.repeat(parts[0].length);
         replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
