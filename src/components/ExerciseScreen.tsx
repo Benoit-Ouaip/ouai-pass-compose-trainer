@@ -67,29 +67,42 @@ const ExerciseScreen = ({
   };
 
   const renderExercise = () => {
+    // Mettre le verbe en gras et rouge dans la phrase au présent
+    const highlightedPresentSentence = exercise.presentSentence.replace(
+      new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+      `<span style="font-weight: bold; color: #e55555;">$&</span>`
+    );
+
+    // Créer la phrase avec tirets pour la saisie
+    const sentenceWithBlanks = exercise.presentSentence.replace(
+      new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+      "______"
+    );
+
     return (
-      <div className="text-center space-y-6">
-        <div className="p-4 bg-muted/50 rounded-lg">
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-2">
+      <div className="text-center space-y-8">
+        <div className="p-6 bg-muted/30 rounded-lg">
+          <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
             Phrase au présent :
           </p>
-          <p className="text-xl text-muted-foreground">
-            {exercise.presentSentence}
-          </p>
+          <p 
+            className="text-2xl text-foreground leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
+          />
         </div>
         
-        <div className="p-4 border-2 border-dashed border-muted rounded-lg">
-          <p className="text-lg font-medium text-ouaip-dark-blue mb-2">
+        <div className="p-8 border-3 border-primary/30 bg-primary/5 rounded-xl">
+          <p className="text-lg font-medium text-ouaip-dark-blue mb-4">
             Réécris cette phrase au passé composé :
           </p>
-          <p className="text-sm text-muted-foreground mb-3">
-            Verbe à conjuguer : <span className="font-semibold text-primary">{exercise.verbToConjugate}</span>
+          <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+            {sentenceWithBlanks}
           </p>
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-lg"
-            placeholder="Écris ta réponse ici..."
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary text-lg font-medium bg-white shadow-lg"
+            placeholder="Écris la phrase complète au passé composé..."
             disabled={isAnswered}
             onKeyPress={(e) => e.key === 'Enter' && !isAnswered && handleVerify()}
           />
