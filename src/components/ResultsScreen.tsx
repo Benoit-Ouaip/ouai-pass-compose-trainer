@@ -37,7 +37,7 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
             <img 
               src="/lovable-uploads/7506fbef-dc4c-410c-b53f-bbcdbff9cb3e.png" 
               alt="Logo Ouaip" 
-              className="w-20 h-20 object-contain"
+              className="w-60 h-60 object-contain"
             />
           </div>
           <h2 className="text-3xl font-bold text-ouaip-dark-blue mb-2">
