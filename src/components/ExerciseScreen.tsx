@@ -102,7 +102,19 @@ const ExerciseScreen = ({
       const parts = exercise.correctAnswer.split(' ');
       let correctAnswer;
       
-      if (parts.length === 2) {
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
+        // Cas avec contraction: "s'est décidée" -> réponse attendue: "est décidée"
+        const contractedPart = parts[0]; // "s'est" ou "t'es"
+        const participle = parts[1]; // "décidée"
+        
+        if (contractedPart.endsWith('est')) {
+          correctAnswer = `est ${participle}`; // "est décidée"
+        } else if (contractedPart.endsWith('es')) {
+          correctAnswer = `es ${participle}`; // "es rappelé"
+        } else {
+          correctAnswer = exercise.correctAnswer; // fallback
+        }
+      } else if (parts.length === 2) {
         correctAnswer = exercise.correctAnswer; // cas simple: "a mangé"
       } else if (parts.length > 2) {
         // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
@@ -117,7 +129,19 @@ const ExerciseScreen = ({
       const parts = exercise.correctAnswer.split(' ');
       let correctAnswer;
       
-      if (parts.length === 2) {
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
+        // Cas avec contraction: "s'est décidée" -> réponse attendue: "est décidée"
+        const contractedPart = parts[0]; // "s'est" ou "t'es"
+        const participle = parts[1]; // "décidée"
+        
+        if (contractedPart.endsWith('est')) {
+          correctAnswer = `est ${participle}`; // "est décidée"
+        } else if (contractedPart.endsWith('es')) {
+          correctAnswer = `es ${participle}`; // "es rappelé"
+        } else {
+          correctAnswer = exercise.correctAnswer; // fallback
+        }
+      } else if (parts.length === 2) {
         correctAnswer = exercise.correctAnswer; // cas simple: "a mangé"
       } else if (parts.length > 2) {
         // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
