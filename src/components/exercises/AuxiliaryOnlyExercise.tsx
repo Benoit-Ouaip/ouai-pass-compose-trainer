@@ -143,10 +143,17 @@ const AuxiliaryOnlyExercise = ({
       // Afficher la phrase avec la réponse correcte en vert
       const styledAnswer = `<span style="color: #72ba69;">${exercise.correctAnswer}</span>`;
       
-      return exercise.presentSentence.replace(
+      let finalSentence = exercise.presentSentence.replace(
         new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
         styledAnswer
       );
+      
+      // Cas spécial : remplacer "Je " par "J'" quand l'auxiliaire commence par une voyelle
+      if (finalSentence.startsWith("Je ") && exercise.correctAnswer.match(/^[aeiou]/i)) {
+        finalSentence = finalSentence.replace(/^Je /, "J'");
+      }
+      
+      return finalSentence;
     } else {
       // Gérer les contractions spécialement
       const parts = exercise.correctAnswer.split(' ');
