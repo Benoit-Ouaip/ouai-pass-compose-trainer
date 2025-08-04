@@ -1171,10 +1171,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 141,
-        presentSentence: "Je peins un symbole sur le mur.",
-        verbToConjugate: "peins",
-        correctAnswer: "ai peint",
-        explanation: "Peindre se conjugue avec avoir : j'ai peint.",
+        presentSentence: "Maria peint un symbole sur le mur.",
+        verbToConjugate: "peint",
+        correctAnswer: "a peint",
+        explanation: "Peindre se conjugue avec avoir : elle a peint.",
         choices: ["ai peint", "suis peint", "me suis peint"]
       },
       {
