@@ -87,8 +87,14 @@ const FullConjugationExercise = ({
       // Cas avec contraction: "s'est décidée"
       participle = parts[1];
       if (parts[0].startsWith('s\'')) {
-        subject = 'Elle';
-        explanation = `Le sujet "${subject}" est féminin singulier, donc le participe passé s'accorde.`;
+        // Analyser la phrase pour déterminer le sujet réel
+        if (exercise.presentSentence.toLowerCase().includes('il ')) {
+          explanation = `Le sujet "il" est masculin singulier, donc le participe passé s'accorde.`;
+        } else if (exercise.presentSentence.toLowerCase().includes('elle ')) {
+          explanation = `Le sujet "elle" est féminin singulier, donc le participe passé s'accorde.`;
+        } else {
+          explanation = `Regarde bien le sujet pour déterminer l'accord du participe passé.`;
+        }
       } else if (parts[0].startsWith('t\'')) {
         subject = 'Tu';
         explanation = `Regarde bien le contexte pour déterminer si "tu" est masculin ou féminin, le participe s'accorde.`;
