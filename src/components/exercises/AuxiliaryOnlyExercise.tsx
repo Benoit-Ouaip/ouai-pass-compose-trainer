@@ -70,18 +70,48 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Créer des tirets seulement pour l'auxiliaire et le participe passé (sans pronoms)
-      const words = auxiliaryAndParticiple.split(' ');
-      const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+      // Gérer les contractions spécialement
+      const parts = exercise.correctAnswer.split(' ');
+      let replacement;
+      
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
+        // Cas avec contraction: "s'est décidée" ou "t'es rappelé(e)"
+        const contractedPart = parts[0]; // "s'est" ou "t'es"
+        const participle = parts[1]; // "décidée" ou "rappelé(e)"
+        
+        if (contractedPart.endsWith('est')) {
+          // "s'est" -> "s'" + "___"
+          const pronoun = contractedPart.slice(0, -3); // "s'"
+          const dashesAux = '___'; // 3 tirets pour "est"
+          const dashesParticiple = '_'.repeat(participle.length);
+          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+        } else if (contractedPart.endsWith('es')) {
+          // "t'es" -> "t'" + "__"
+          const pronoun = contractedPart.slice(0, -2); // "t'"
+          const dashesAux = '__'; // 2 tirets pour "es"
+          const dashesParticiple = '_'.repeat(participle.length);
+          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+        } else {
+          // Cas fallback
+          const words = auxiliaryAndParticiple.split(' ');
+          const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+          replacement = dashesForWords;
+        }
+      } else {
+        // Cas normal (sans contraction) - créer des tirets seulement pour l'auxiliaire et le participe passé (sans pronoms)
+        const words = auxiliaryAndParticiple.split(' ');
+        const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+        replacement = dashesForWords;
+      }
       
       // Remplacer le verbe à conjuguer par les tirets
       const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-      let modifiedSentence = exercise.presentSentence.replace(regex, dashesForWords);
+      let modifiedSentence = exercise.presentSentence.replace(regex, replacement);
       
       // Si le remplacement n'a pas fonctionné, essayer sans les limites de mots
       if (modifiedSentence === exercise.presentSentence) {
         const simpleRegex = new RegExp(exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-        modifiedSentence = exercise.presentSentence.replace(simpleRegex, dashesForWords);
+        modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
       }
       
       return modifiedSentence;
