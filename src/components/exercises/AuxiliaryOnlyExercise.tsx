@@ -200,8 +200,10 @@ const AuxiliaryOnlyExercise = ({
       }
       
       // Cas spécial : remplacer "Je " par "J'" quand l'auxiliaire commence par une voyelle
+      console.log("Debug:", { modifiedSentence, auxiliaryAndParticiple, startsWithJe: modifiedSentence.startsWith("Je "), vowelMatch: auxiliaryAndParticiple.match(/^[aeiou]/i) });
       if (modifiedSentence.startsWith("Je ") && auxiliaryAndParticiple.match(/^[aeiou]/i)) {
         modifiedSentence = modifiedSentence.replace(/^Je /, "J'");
+        console.log("Modified to:", modifiedSentence);
       }
       
       return modifiedSentence;
