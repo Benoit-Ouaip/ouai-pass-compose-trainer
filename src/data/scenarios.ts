@@ -739,10 +739,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 89,
-        presentSentence: "Tu émerges de ta sieste dans le train.",
-        verbToConjugate: "émerges",
-        correctAnswer: "as émergé",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        presentSentence: "Tu rentres chez toi après le voyage.",
+        verbToConjugate: "rentres",
+        correctAnswer: "es rentré",
+        explanation: "Rentrer + être : tu es rentré."
       },
       {
         id: 90,
