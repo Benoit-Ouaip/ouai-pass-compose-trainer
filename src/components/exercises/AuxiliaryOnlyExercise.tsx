@@ -83,7 +83,9 @@ const AuxiliaryOnlyExercise = ({
       participle = parts[1];
       if (parts[0].startsWith('s\'')) {
         // Analyser la phrase pour déterminer le sujet réel
-        if (exercise.presentSentence.toLowerCase().includes('il ')) {
+        if (exercise.presentSentence.toLowerCase().includes('il ') && exercise.presentSentence.toLowerCase().includes('se dirige')) {
+          explanation = `Le verbe "se diriger" n'a pas de complément direct, donc le participe passé reste au masculin singulier : dirigé (pas de "e" ni de "s").`;
+        } else if (exercise.presentSentence.toLowerCase().includes('il ')) {
           explanation = `Le sujet "il" est masculin singulier, donc le participe passé s'accorde.`;
         } else if (exercise.presentSentence.toLowerCase().includes('elle ')) {
           explanation = `Le sujet "elle" est féminin singulier, donc le participe passé s'accorde.`;
