@@ -1,4 +1,7 @@
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { HelpCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 interface Exercise {
@@ -58,6 +61,49 @@ const AuxiliaryOnlyExercise = ({
   };
 
   const auxiliaryAndParticiple = getAuxiliaryAndParticiple(exercise.correctAnswer);
+
+  // Fonction pour extraire le participe passé avec l'explication de l'accord
+  const getParticipleHelp = () => {
+    const parts = exercise.correctAnswer.split(' ');
+    let participle = '';
+    let explanation = '';
+    
+    if (parts.length === 2 && parts[0].match(/[''`]/)) {
+      // Cas avec contraction: "s'est décidée"
+      participle = parts[1];
+      if (parts[0].startsWith('s\'')) {
+        explanation = `Le sujet "elle" est féminin singulier, donc le participe passé s'accorde : ${participle}`;
+      } else if (parts[0].startsWith('t\'')) {
+        explanation = `Regarde bien le contexte pour déterminer si "tu" est masculin ou féminin, le participe s'accorde : ${participle}`;
+      }
+    } else if (parts.length > 2) {
+      // Cas pronominal
+      participle = parts[parts.length - 1];
+      const subjectPronouns = parts.slice(0, -2).join(' ');
+      if (subjectPronouns.includes('vous')) {
+        explanation = `Avec "vous", le participe passé s'accorde selon le genre et nombre : ${participle}`;
+      } else if (subjectPronouns.includes('nous')) {
+        explanation = `Avec "nous", le participe passé s'accorde selon le genre et nombre : ${participle}`;
+      } else {
+        explanation = `Le participe passé s'accorde avec le sujet : ${participle}`;
+      }
+    } else {
+      // Cas simple
+      participle = parts[1];
+      // Analyser la phrase pour déterminer le sujet
+      if (exercise.presentSentence.toLowerCase().includes('elle')) {
+        explanation = `Le sujet "elle" est féminin singulier, donc : ${participle}`;
+      } else if (exercise.presentSentence.toLowerCase().includes('elles')) {
+        explanation = `Le sujet "elles" est féminin pluriel, donc : ${participle}`;
+      } else if (exercise.presentSentence.toLowerCase().includes('ils')) {
+        explanation = `Le sujet "ils" est masculin pluriel, donc : ${participle}`;
+      } else {
+        explanation = `Regarde le sujet pour accorder le participe passé : ${participle}`;
+      }
+    }
+    
+    return { participle, explanation };
+  };
 
   // Créer la phrase avec seulement l'auxiliaire à compléter
   const createDisplaySentence = () => {
@@ -137,15 +183,44 @@ const AuxiliaryOnlyExercise = ({
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         {!isAnswered && (
-          <Input
-            ref={inputRef}
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-40 mx-auto"
-            placeholder="avoir ou être ?"
-            disabled={isAnswered}
-            onKeyPress={onKeyPress}
-          />
+          <div className="flex items-center justify-center gap-4">
+            <Input
+              ref={inputRef}
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
+              placeholder="Ex: est décidée, sont allés..."
+              disabled={isAnswered}
+              onKeyPress={onKeyPress}
+            />
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="h-12 w-12 rounded-full border-2 border-blue-300 hover:border-blue-400 hover:bg-blue-50"
+                >
+                  <HelpCircle className="h-5 w-5 text-blue-500" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-80 p-4 bg-white border-2 border-blue-200 shadow-lg" side="top">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-blue-700 text-sm">💡 Indice pour l'accord</h4>
+                  <div className="text-center">
+                    <span className="text-lg font-bold text-green-600">{getParticipleHelp().participle}</span>
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {getParticipleHelp().explanation}
+                  </p>
+                  <div className="pt-2 border-t border-blue-100">
+                    <p className="text-xs text-blue-600 font-medium">
+                      💡 Astuce: Avec ÊTRE, le participe passé s'accorde toujours avec le sujet !
+                    </p>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
         )}
       </div>
     </div>
