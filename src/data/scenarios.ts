@@ -725,9 +725,9 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 87,
-        presentSentence: "Ils échappent de justesse au contrôle.",
-        verbToConjugate: "échappent",
-        correctAnswer: "ont échappé",
+        presentSentence: "Ils visitent le musée en groupe.",
+        verbToConjugate: "visitent",
+        correctAnswer: "ont visité",
         explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
