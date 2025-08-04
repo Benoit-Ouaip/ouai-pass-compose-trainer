@@ -120,7 +120,7 @@ const MultipleChoiceExercise = ({
       }} />
         
         {isAnswered && isCorrect && <div className="text-base font-medium text-green-600 mb-3 flex items-center justify-center gap-2">
-            <img src="/lovable-uploads/67fac243-a62f-4f09-baef-5e4ec5394cdf.png" alt="Bravo" className="w-8 h-8" />
+            <img src="/lovable-uploads/67fac243-a62f-4f09-baef-5e4ec5394cdf.png" alt="Bravo" className="w-8 h-8 object-contain" />
             <span>Bravo ! Voici la phrase complète.</span>
           </div>}
         
