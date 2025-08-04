@@ -1011,10 +1011,10 @@ export const scenarios: Scenario[] = [
     exercises: [
       {
         id: 121,
-        presentSentence: "Jules écrit le code secret sur le mur.",
+        presentSentence: "Maria écrit le code secret sur le mur.",
         verbToConjugate: "écrit",
         correctAnswer: "a écrit",
-        explanation: "Écrire se conjugue avec avoir : il a écrit.",
+        explanation: "Écrire se conjugue avec avoir : elle a écrit.",
         choices: ["a écrit", "est écrit", "s'est écrit"]
       },
       {
