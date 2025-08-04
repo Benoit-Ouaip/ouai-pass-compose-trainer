@@ -277,241 +277,241 @@ export const scenarios: Scenario[] = [
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
         verbToConjugate: "nous lavons",
-        correctAnswer: "nous nous sommes lavé",
-        explanation: "Se laver est pronominal : nous nous sommes lavé les mains.",
-        choices: ["nous nous sommes lavé", "nous avons lavé", "nous étions lavé"]
+        correctAnswer: "nous sommes",
+        explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes.",
+        choices: ["nous sommes", "nous avons", "nous étions"]
       },
       {
         id: 32,
         presentSentence: "Le chef se prépare pour le service.",
         verbToConjugate: "se prépare",
-        correctAnswer: "s'est préparé",
-        explanation: "Se préparer : il s'est préparé.",
-        choices: ["s'est préparé", "a préparé", "est préparé"]
+        correctAnswer: "s'est",
+        explanation: "Se préparer est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 33,
         presentSentence: "Elle se concentre sur sa recette.",
         verbToConjugate: "se concentre",
-        correctAnswer: "s'est concentrée",
-        explanation: "Se concentrer : elle s'est concentrée.",
-        choices: ["s'est concentrée", "a concentré", "est concentrée"]
+        correctAnswer: "s'est",
+        explanation: "Se concentrer est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 34,
         presentSentence: "Les apprentis se dépêchent de finir leur plat.",
         verbToConjugate: "se dépêchent",
-        correctAnswer: "se sont dépêchés",
-        explanation: "Se dépêcher : ils se sont dépêchés.",
-        choices: ["se sont dépêchés", "ont dépêché", "sont dépêchés"]
+        correctAnswer: "se sont",
+        explanation: "Se dépêcher est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 35,
         presentSentence: "Elle se spécialise dans les desserts.",
         verbToConjugate: "se spécialise",
-        correctAnswer: "s'est spécialisée",
-        explanation: "Se spécialiser : elle s'est spécialisée.",
-        choices: ["s'est spécialisée", "a spécialisé", "est spécialisée"]
+        correctAnswer: "s'est",
+        explanation: "Se spécialiser est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 36,
         presentSentence: "Nous nous amusons à créer de nouveaux plats.",
         verbToConjugate: "nous amusons",
-        correctAnswer: "nous nous sommes amusés",
-        explanation: "S'amuser : nous nous sommes amusés.",
-        choices: ["nous nous sommes amusés", "nous avons amusé", "nous étions amusés"]
+        correctAnswer: "nous sommes",
+        explanation: "S'amuser est pronominal : nous nous sommes.",
+        choices: ["nous sommes", "nous avons", "nous étions"]
       },
       {
         id: 37,
         presentSentence: "Vous vous organisez en cuisine.",
         verbToConjugate: "vous organisez",
-        correctAnswer: "vous êtes organisés",
-        explanation: "S'organiser : vous vous êtes organisés (le premier 'vous' est déjà dans la phrase).",
-        choices: ["vous êtes organisés", "avez organisé", "étiez organisés"]
+        correctAnswer: "vous êtes",
+        explanation: "S'organiser est pronominal : vous vous êtes (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes", "avez", "étiez"]
       },
       {
         id: 38,
         presentSentence: "Ils se disputent pour la meilleure recette.",
         verbToConjugate: "se disputent",
-        correctAnswer: "se sont disputés",
-        explanation: "Se disputer : ils se sont disputés.",
-        choices: ["se sont disputés", "ont disputé", "sont disputés"]
+        correctAnswer: "se sont",
+        explanation: "Se disputer est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 39,
         presentSentence: "Il se trompe dans les proportions.",
         verbToConjugate: "se trompe",
-        correctAnswer: "s'est trompé",
-        explanation: "Se tromper : il s'est trompé.",
-        choices: ["s'est trompé", "a trompé", "est trompé"]
+        correctAnswer: "s'est",
+        explanation: "Se tromper est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 40,
         presentSentence: "Le cuisinier se repose après le service.",
         verbToConjugate: "se repose",
-        correctAnswer: "s'est reposé",
-        explanation: "Se reposer : il s'est reposé.",
-        choices: ["s'est reposé", "a reposé", "est reposé"]
+        correctAnswer: "s'est",
+        explanation: "Se reposer est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 41,
         presentSentence: "Les chefs se rappellent la recette de grand-mère.",
         verbToConjugate: "se rappellent",
-        correctAnswer: "se sont rappelé",
-        explanation: "Se rappeler : ils se sont rappelé la recette.",
-        choices: ["se sont rappelé", "ont rappelé", "sont rappelés"]
+        correctAnswer: "se sont",
+        explanation: "Se rappeler est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 42,
         presentSentence: "Elle se brûle en touchant la poêle.",
         verbToConjugate: "se brûle",
-        correctAnswer: "s'est brûlée",
-        explanation: "Se brûler : elle s'est brûlée.",
-        choices: ["s'est brûlée", "a brûlé", "est brûlée"]
+        correctAnswer: "s'est",
+        explanation: "Se brûler est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 43,
         presentSentence: "Ils s'aident en cuisine.",
         verbToConjugate: "s'aident",
-        correctAnswer: "se sont aidés",
-        explanation: "S'aider : ils se sont aidés.",
-        choices: ["se sont aidés", "ont aidé", "sont aidés"]
+        correctAnswer: "se sont",
+        explanation: "S'aider est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 44,
         presentSentence: "Elles se régalent avec ce dessert.",
         verbToConjugate: "se régalent",
-        correctAnswer: "se sont régalées",
-        explanation: "Se régaler : elles se sont régalées.",
-        choices: ["se sont régalées", "ont régalé", "sont régalées"]
+        correctAnswer: "se sont",
+        explanation: "Se régaler est pronominal : elles se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 45,
         presentSentence: "Ils se perfectionnent dans l'art culinaire.",
         verbToConjugate: "se perfectionnent",
-        correctAnswer: "se sont perfectionnés",
-        explanation: "Se perfectionner : ils se sont perfectionnés.",
-        choices: ["se sont perfectionnés", "ont perfectionné", "sont perfectionnés"]
+        correctAnswer: "se sont",
+        explanation: "Se perfectionner est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 46,
         presentSentence: "Il se salit les mains avec la farine.",
         verbToConjugate: "se salit",
-        correctAnswer: "s'est sali",
-        explanation: "Se salir : il s'est sali.",
-        choices: ["s'est sali", "a sali", "est sali"]
+        correctAnswer: "s'est",
+        explanation: "Se salir est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 47,
         presentSentence: "Les apprentis se débrouillent avec les épices.",
         verbToConjugate: "se débrouillent",
-        correctAnswer: "se sont débrouillés",
-        explanation: "Se débrouiller : ils se sont débrouillés.",
-        choices: ["se sont débrouillés", "ont débrouillé", "sont débrouillés"]
+        correctAnswer: "se sont",
+        explanation: "Se débrouiller est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 48,
         presentSentence: "Elle s'inquiète pour la cuisson du gâteau.",
         verbToConjugate: "s'inquiète",
-        correctAnswer: "s'est inquiétée",
-        explanation: "S'inquiéter : elle s'est inquiétée.",
-        choices: ["s'est inquiétée", "a inquiété", "est inquiétée"]
+        correctAnswer: "s'est",
+        explanation: "S'inquiéter est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 49,
         presentSentence: "Paul se retrouve en cuisine chaque matin.",
         verbToConjugate: "se retrouve",
-        correctAnswer: "s'est retrouvé",
-        explanation: "Se retrouver : il s'est retrouvé.",
-        choices: ["s'est retrouvé", "a retrouvé", "est retrouvé"]
+        correctAnswer: "s'est",
+        explanation: "Se retrouver est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 50,
         presentSentence: "Elle se plaint de la chaleur des fourneaux.",
         verbToConjugate: "se plaint",
-        correctAnswer: "s'est plainte",
-        explanation: "Se plaindre : elle s'est plainte.",
-        choices: ["s'est plainte", "a plaint", "est plainte"]
+        correctAnswer: "s'est",
+        explanation: "Se plaindre est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 51,
         presentSentence: "Ils se moquent de mes maladresses.",
         verbToConjugate: "se moquent",
-        correctAnswer: "se sont moqués",
-        explanation: "Se moquer : ils se sont moqués.",
-        choices: ["se sont moqués", "ont moqué", "sont moqués"]
+        correctAnswer: "se sont",
+        explanation: "Se moquer est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 52,
         presentSentence: "Elle se décide pour le menu.",
         verbToConjugate: "se décide",
-        correctAnswer: "s'est décidée",
-        explanation: "Se décider : elle s'est décidée.",
-        choices: ["s'est décidée", "a décidé", "est décidée"]
+        correctAnswer: "s'est",
+        explanation: "Se décider est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 53,
         presentSentence: "Les cuisiniers se demandent comment faire cette sauce.",
         verbToConjugate: "se demandent",
-        correctAnswer: "se sont demandé",
-        explanation: "Se demander : ils se sont demandé comment faire.",
-        choices: ["se sont demandé", "ont demandé", "sont demandés"]
+        correctAnswer: "se sont",
+        explanation: "Se demander est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 54,
         presentSentence: "Elle se souvient de sa première leçon de cuisine.",
         verbToConjugate: "se souvient",
-        correctAnswer: "s'est souvenue",
-        explanation: "Se souvenir : elle s'est souvenue.",
-        choices: ["s'est souvenue", "a souvenu", "est souvenue"]
+        correctAnswer: "s'est",
+        explanation: "Se souvenir est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
         verbToConjugate: "nous excusons",
-        correctAnswer: "nous sommes excusés",
-        explanation: "S'excuser : nous nous sommes excusés (le premier 'nous' est déjà dans la phrase).",
-        choices: ["nous sommes excusés", "avons excusé", "étions excusés"]
+        correctAnswer: "nous sommes",
+        explanation: "S'excuser est pronominal : nous nous sommes (le premier 'nous' est déjà dans la phrase).",
+        choices: ["nous sommes", "avons", "étions"]
       },
       {
         id: 56,
         presentSentence: "Vous vous habituez aux nouveaux ustensiles.",
         verbToConjugate: "vous habituez",
-        correctAnswer: "vous êtes habitués",
-        explanation: "S'habituer : vous vous êtes habitués (le premier 'vous' est déjà dans la phrase).",
-        choices: ["vous êtes habitués", "avez habitué", "étiez habitués"]
+        correctAnswer: "vous êtes",
+        explanation: "S'habituer est pronominal : vous vous êtes (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes", "avez", "étiez"]
       },
       {
         id: 57,
         presentSentence: "Ils se félicitent pour ce succès culinaire.",
         verbToConjugate: "se félicitent",
-        correctAnswer: "se sont félicités",
-        explanation: "Se féliciter : ils se sont félicités.",
-        choices: ["se sont félicités", "ont félicité", "sont félicités"]
+        correctAnswer: "se sont",
+        explanation: "Se féliciter est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 58,
         presentSentence: "Il se dirige vers le frigo pour les ingrédients.",
         verbToConjugate: "se dirige",
-        correctAnswer: "s'est dirigé",
-        explanation: "Se diriger : il s'est dirigé.",
-        choices: ["s'est dirigé", "a dirigé", "est dirigé"]
+        correctAnswer: "s'est",
+        explanation: "Se diriger est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 59,
         presentSentence: "Elle se lève tôt pour préparer le petit-déjeuner.",
         verbToConjugate: "se lève",
-        correctAnswer: "s'est levée",
-        explanation: "Se lever : elle s'est levée.",
-        choices: ["s'est levée", "a levé", "est levée"]
+        correctAnswer: "s'est",
+        explanation: "Se lever est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 60,
         presentSentence: "Elle se présente comme la nouvelle apprentie.",
         verbToConjugate: "se présente",
-        correctAnswer: "s'est présentée",
-        explanation: "Se présenter : elle s'est présentée.",
-        choices: ["s'est présentée", "a présenté", "est présentée"]
+        correctAnswer: "s'est",
+        explanation: "Se présenter est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       }
     ]
   },
@@ -526,230 +526,230 @@ export const scenarios: Scenario[] = [
         id: 61,
         presentSentence: "Sofia arrive tard à Bruxelles.",
         verbToConjugate: "arrive",
-        correctAnswer: "est arrivée",
-        explanation: "Arriver + être + accord féminin : elle est arrivée.",
-        choices: ["est arrivée", "a arrivé", "s'est arrivée"]
+        correctAnswer: "est",
+        explanation: "Arriver se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 62,
         presentSentence: "Les touristes sortent de l'hôtel ce matin.",
         verbToConjugate: "sortent",
-        correctAnswer: "sont sortis",
-        explanation: "Sortir + être + accord masculin pluriel : ils sont sortis.",
-        choices: ["sont sortis", "ont sorti", "se sont sortis"]
+        correctAnswer: "sont",
+        explanation: "Sortir se conjugue avec être : ils sont.",
+        choices: ["sont", "ont", "se sont"]
       },
       {
         id: 63,
         presentSentence: "Nous, Lucas et moi, nous partons en voyage demain matin.",
         verbToConjugate: "partons",
-        correctAnswer: "sommes partis",
-        explanation: "Partir + être : nous sommes partis.",
-        choices: ["sommes partis", "avons parti", "nous sommes parti"]
+        correctAnswer: "sommes",
+        explanation: "Partir se conjugue avec être : nous sommes.",
+        choices: ["sommes", "avons", "nous sommes"]
       },
       {
         id: 64,
         presentSentence: "Toi Alice, tu viens avec nous en excursion.",
         verbToConjugate: "viens",
-        correctAnswer: "es venue",
-        explanation: "Venir + être + accord féminin : tu es venue.",
-        choices: ["es venue", "as venu", "t'es venue"]
+        correctAnswer: "es",
+        explanation: "Venir se conjugue avec être : tu es.",
+        choices: ["es", "as", "t'es"]
       },
       {
         id: 65,
         presentSentence: "Marie tombe amoureuse de cette ville.",
         verbToConjugate: "tombe",
-        correctAnswer: "est tombée",
-        explanation: "Tomber + être + accord féminin : elle est tombée.",
-        choices: ["est tombée", "a tombé", "s'est tombée"]
+        correctAnswer: "est",
+        explanation: "Tomber se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 66,
         presentSentence: "Nous, Emma et moi, nous entrons dans le musée.",
         verbToConjugate: "entrons",
-        correctAnswer: "sommes entrés",
-        explanation: "Entrer + être : nous sommes entrés.",
-        choices: ["sommes entrés", "avons entré", "nous sommes entré"]
+        correctAnswer: "sommes",
+        explanation: "Entrer se conjugue avec être : nous sommes.",
+        choices: ["sommes", "avons", "nous sommes"]
       },
       {
         id: 67,
         presentSentence: "Vous, Marc et Pierre, vous retournez à l'hôtel avant la nuit.",
         verbToConjugate: "retournez",
-        correctAnswer: "êtes retournés",
-        explanation: "Retourner + être : vous êtes retournés.",
-        choices: ["êtes retournés", "avez retourné", "vous êtes retourné"]
+        correctAnswer: "êtes",
+        explanation: "Retourner se conjugue avec être : vous êtes.",
+        choices: ["êtes", "avez", "vous êtes"]
       },
       {
         id: 68,
         presentSentence: "Ils montent au sommet de la tour.",
         verbToConjugate: "montent",
-        correctAnswer: "sont montés",
-        explanation: "Monter + être : ils sont montés.",
-        choices: ["sont montés", "ont monté", "se sont montés"]
+        correctAnswer: "sont",
+        explanation: "Monter se conjugue avec être : ils sont.",
+        choices: ["sont", "ont", "se sont"]
       },
       {
         id: 69,
         presentSentence: "Il descend du train à la gare centrale.",
         verbToConjugate: "descend",
-        correctAnswer: "est descendu",
-        explanation: "Descendre + être : il est descendu.",
-        choices: ["est descendu", "a descendu", "s'est descendu"]
+        correctAnswer: "est",
+        explanation: "Descendre se conjugue avec être : il est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 70,
         presentSentence: "La voyageuse reste trois jours à Paris.",
         verbToConjugate: "reste",
-        correctAnswer: "est restée",
-        explanation: "Rester + être + accord féminin : elle est restée.",
-        choices: ["est restée", "a resté", "s'est restée"]
+        correctAnswer: "est",
+        explanation: "Rester se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 71,
         presentSentence: "Marc revient de son voyage en Italie.",
         verbToConjugate: "revient",
-        correctAnswer: "est revenu",
-        explanation: "Revenir + être : il est revenu.",
-        choices: ["est revenu", "a revenu", "s'est revenu"]
+        correctAnswer: "est",
+        explanation: "Revenir se conjugue avec être : il est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 72,
         presentSentence: "Elle passe par Londres avant Paris.",
         verbToConjugate: "passe",
-        correctAnswer: "est passée",
-        explanation: "Passer + être : elle est passée.",
-        choices: ["est passée", "a passé", "s'est passée"]
+        correctAnswer: "est",
+        explanation: "Passer se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 73,
         presentSentence: "Nous naissons avec l'envie de voyager.",
         verbToConjugate: "naissons",
-        correctAnswer: "sommes nés",
-        explanation: "Naitre + être : nous sommes nés.",
-        choices: ["sommes nés", "avons naissé", "nous sommes naissé"]
+        correctAnswer: "sommes",
+        explanation: "Naître se conjugue avec être : nous sommes.",
+        choices: ["sommes", "avons", "nous sommes"]
       },
       {
         id: 74,
         presentSentence: "Vous devenez de vrais globe-trotteurs.",
         verbToConjugate: "devenez",
-        correctAnswer: "êtes devenus",
-        explanation: "Devenir + être : vous êtes devenus.",
-        choices: ["êtes devenus", "avez devenu", "vous êtes devenu"]
+        correctAnswer: "êtes",
+        explanation: "Devenir se conjugue avec être : vous êtes.",
+        choices: ["êtes", "avez", "vous êtes"]
       },
       {
         id: 75,
         presentSentence: "Ils repartent vers une nouvelle destination.",
         verbToConjugate: "repartent",
-        correctAnswer: "sont repartis",
-        explanation: "Repartir + être : ils sont repartis.",
-        choices: ["sont repartis", "ont reparti", "se sont repartis"]
+        correctAnswer: "sont",
+        explanation: "Repartir se conjugue avec être : ils sont.",
+        choices: ["sont", "ont", "se sont"]
       },
       {
         id: 76,
         presentSentence: "Elle retombe sous le charme de cette région.",
         verbToConjugate: "retombe",
-        correctAnswer: "est retombée",
-        explanation: "Retomber + être : elle est retombée.",
-        choices: ["est retombée", "a retombé", "s'est retombée"]
+        correctAnswer: "est",
+        explanation: "Retomber se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 77,
         presentSentence: "Marie intervient pour aider les autres voyageurs.",
         verbToConjugate: "intervient",
-        correctAnswer: "est intervenue",
-        explanation: "Intervenir + être : elle est intervenue.",
-        choices: ["est intervenue", "a intervenu", "s'est intervenue"]
+        correctAnswer: "est",
+        explanation: "Intervenir se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 78,
         presentSentence: "Elle va directement à son hôtel.",
         verbToConjugate: "va",
-        correctAnswer: "est allée",
-        explanation: "Aller + être + accord féminin : elle est allée.",
-        choices: ["est allée", "a allé", "s'est allée"]
+        correctAnswer: "est",
+        explanation: "Aller se conjugue avec être : elle est.",
+        choices: ["est", "a", "s'est"]
       },
       {
         id: 79,
         presentSentence: "Nous sortons vers la sortie d'urgence.",
         verbToConjugate: "sortons",
-        correctAnswer: "sommes sortis",
-        explanation: "Sortir + être : nous sommes sortis."
+        correctAnswer: "sommes",
+        explanation: "Sortir se conjugue avec être : nous sommes."
       },
       {
         id: 80,
         presentSentence: "Vous mourez d'envie de visiter ce château.",
         verbToConjugate: "mourez",
-        correctAnswer: "êtes morts",
-        explanation: "Mourir + être : vous êtes morts."
+        correctAnswer: "êtes",
+        explanation: "Mourir se conjugue avec être : vous êtes."
       },
       {
         id: 81,
         presentSentence: "Ils mangent dans ce petit restaurant.",
         verbToConjugate: "mangent",
-        correctAnswer: "ont mangé",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet.",
-        choices: ["ont mangé", "sont mangés", "se sont mangés"]
+        correctAnswer: "ont",
+        explanation: "Manger se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 82,
         presentSentence: "Il arrive au bon moment.",
         verbToConjugate: "arrive",
-        correctAnswer: "est arrivé",
-        explanation: "Arriver + être : il est arrivé."
+        correctAnswer: "est",
+        explanation: "Arriver se conjugue avec être : il est."
       },
       {
         id: 83,
         presentSentence: "Toi Alice, tu parviens à destination.",
         verbToConjugate: "parviens",
-        correctAnswer: "es parvenue",
-        explanation: "Parvenir + être + accord féminin : tu es parvenue."
+        correctAnswer: "es",
+        explanation: "Parvenir se conjugue avec être : tu es."
       },
       {
         id: 84,
         presentSentence: "Elle disparait dans la foule du marché.",
         verbToConjugate: "disparait",
-        correctAnswer: "a disparu",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        correctAnswer: "a",
+        explanation: "Disparaître se conjugue avec avoir : elle a."
       },
       {
         id: 85,
         presentSentence: "Nous prévoyons un moment pour jouer ensemble.",
         verbToConjugate: "prévoyons",
-        correctAnswer: "avons prévu",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        correctAnswer: "avons",
+        explanation: "Prévoir se conjugue avec avoir : nous avons."
       },
       {
         id: 86,
         presentSentence: "Vous photographiez le monument.",
         verbToConjugate: "photographiez",
-        correctAnswer: "avez photographié",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        correctAnswer: "avez",
+        explanation: "Photographier se conjugue avec avoir : vous avez."
       },
       {
         id: 87,
         presentSentence: "Ils visitent le musée en groupe.",
         verbToConjugate: "visitent",
-        correctAnswer: "ont visité",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        correctAnswer: "ont",
+        explanation: "Visiter se conjugue avec avoir : ils ont."
       },
       {
         id: 88,
         presentSentence: "Moi, Mathias, je vais à la gare centrale.",
         verbToConjugate: "vais",
-        correctAnswer: "suis allé",
-        explanation: "Aller + être : je suis allé."
+        correctAnswer: "suis",
+        explanation: "Aller se conjugue avec être : je suis."
       },
       {
         id: 89,
         presentSentence: "Toi, Isabelle, tu rentres chez toi après le voyage.",
         verbToConjugate: "rentres",
-        correctAnswer: "es rentrée",
-        explanation: "Rentrer + être + accord féminin : tu es rentrée."
+        correctAnswer: "es",
+        explanation: "Rentrer se conjugue avec être : tu es."
       },
       {
         id: 90,
         presentSentence: "Elle ressort son appareil photo.",
         verbToConjugate: "ressort",
-        correctAnswer: "a ressorti",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        correctAnswer: "a",
+        explanation: "Ressortir se conjugue avec avoir : elle a."
       }
     ]
   },
@@ -764,241 +764,241 @@ export const scenarios: Scenario[] = [
         id: 91,
         presentSentence: "Les joueurs marquent un but magnifique.",
         verbToConjugate: "marquent",
-        correctAnswer: "ont marqué",
-        explanation: "Avec l'auxiliaire avoir : ils ont marqué.",
-        choices: ["ont marqué", "sont marqués", "se sont marqués"]
+        correctAnswer: "ont",
+        explanation: "Marquer se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 92,
         presentSentence: "L'entraineur prépare son équipe.",
         verbToConjugate: "prépare",
-        correctAnswer: "a préparé",
-        explanation: "Avec l'auxiliaire avoir : il a préparé.",
-        choices: ["a préparé", "est préparé", "s'est préparé"]
+        correctAnswer: "a",
+        explanation: "Préparer se conjugue avec avoir : il a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 93,
         presentSentence: "Les supporters voient un match exceptionnel.",
         verbToConjugate: "voient",
-        correctAnswer: "ont vu",
-        explanation: "Verbe voir irrégulier avec avoir : ils ont vu.",
-        choices: ["ont vu", "sont vus", "ont vus"]
+        correctAnswer: "ont",
+        explanation: "Voir se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "ont"]
       },
       {
         id: 94,
         presentSentence: "Il comprend les règles.",
         verbToConjugate: "comprend",
-        correctAnswer: "a compris",
-        explanation: "Verbe comprendre irrégulier : il a compris.",
-        choices: ["a compris", "est compris", "a comprit"]
+        correctAnswer: "a",
+        explanation: "Comprendre se conjugue avec avoir : il a.",
+        choices: ["a", "est", "a"]
       },
       {
         id: 95,
         presentSentence: "Samedi, tu joues au foot avec ton équipe.",
         verbToConjugate: "joues",
-        correctAnswer: "as joué",
-        explanation: "Avec l'auxiliaire avoir : tu as joué.",
-        choices: ["as joué", "es joué", "as jouée"]
+        correctAnswer: "as",
+        explanation: "Jouer se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "as"]
       },
       {
         id: 96,
         presentSentence: "Elle rate ses penalties.",
         verbToConjugate: "rate",
-        correctAnswer: "a raté",
-        explanation: "Verbe du 1er groupe avec avoir : elle a raté.",
-        choices: ["a raté", "est ratée", "s'est ratée"]
+        correctAnswer: "a",
+        explanation: "Rater se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 97,
         presentSentence: "Nous courons sur le terrain.",
         verbToConjugate: "courons",
-        correctAnswer: "avons couru",
-        explanation: "Verbe courir irrégulier : nous avons couru.",
-        choices: ["avons couru", "sommes courus", "avons couru"]
+        correctAnswer: "avons",
+        explanation: "Courir se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "avons"]
       },
       {
         id: 98,
         presentSentence: "Vous perdez contre cette équipe redoutable.",
         verbToConjugate: "perdez",
-        correctAnswer: "avez perdu",
-        explanation: "Verbe perdre irrégulier : vous avez perdu.",
-        choices: ["avez perdu", "êtes perdus", "vous êtes perdus"]
+        correctAnswer: "avez",
+        explanation: "Perdre se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 99,
         presentSentence: "Ils finissent l'entraînement avec énergie.",
         verbToConjugate: "finissent",
-        correctAnswer: "ont fini",
-        explanation: "Verbe du 2e groupe avec avoir : ils ont fini.",
-        choices: ["ont fini", "sont finis", "se sont finis"]
+        correctAnswer: "ont",
+        explanation: "Finir se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 100,
         presentSentence: "Le gardien arrête tous les tirs.",
         verbToConjugate: "arrête",
-        correctAnswer: "a arrêté",
-        explanation: "Avec l'auxiliaire avoir : il a arrêté.",
-        choices: ["a arrêté", "est arrêté", "s'est arrêté"]
+        correctAnswer: "a",
+        explanation: "Arrêter se conjugue avec avoir : il a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 101,
         presentSentence: "Tu gagnes contre moi.",
         verbToConjugate: "gagnes",
-        correctAnswer: "as gagné",
-        explanation: "Verbe du 1er groupe avec avoir : tu as gagné.",
-        choices: ["as gagné", "es gagné", "t'es gagné"]
+        correctAnswer: "as",
+        explanation: "Gagner se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 102,
         presentSentence: "Elle dribble comme une professionnelle.",
         verbToConjugate: "dribble",
-        correctAnswer: "a dribblé",
-        explanation: "Verbe du 1er groupe avec avoir : elle a dribblé.",
-        choices: ["a dribblé", "est dribblée", "s'est dribblée"]
+        correctAnswer: "a",
+        explanation: "Dribbler se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 103,
         presentSentence: "Nous vendons nos billets.",
         verbToConjugate: "vendons",
-        correctAnswer: "avons vendu",
-        explanation: "Verbe vendre irrégulier : nous avons vendu.",
-        choices: ["avons vendu", "sommes vendus", "nous sommes vendus"]
+        correctAnswer: "avons",
+        explanation: "Vendre se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 104,
         presentSentence: "Vous tirez dans les angles.",
         verbToConjugate: "tirez",
-        correctAnswer: "avez tiré",
-        explanation: "Verbe du 1er groupe avec avoir : vous avez tiré.",
-        choices: ["avez tiré", "êtes tirés", "vous êtes tirés"]
+        correctAnswer: "avez",
+        explanation: "Tirer se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 105,
         presentSentence: "Ils battent l'équipe adverse.",
         verbToConjugate: "battent",
-        correctAnswer: "ont battu",
-        explanation: "Verbe battre irrégulier : ils ont battu.",
-        choices: ["ont battu", "sont battus", "se sont battus"]
+        correctAnswer: "ont",
+        explanation: "Battre se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 106,
         presentSentence: "J'enfile mes crampons neufs.",
         verbToConjugate: "enfile",
-        correctAnswer: "ai enfilé",
-        explanation: "Verbe enfiler du 1er groupe : j'ai enfilé.",
-        choices: ["ai enfilé", "suis enfilé", "me suis enfilé"]
+        correctAnswer: "ai",
+        explanation: "Enfiler se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 107,
         presentSentence: "Tu défends ton but.",
         verbToConjugate: "défends",
-        correctAnswer: "as défendu",
-        explanation: "Verbe défendre irrégulier : tu as défendu.",
-        choices: ["as défendu", "es défendu", "t'es défendu"]
+        correctAnswer: "as",
+        explanation: "Défendre se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 108,
         presentSentence: "Elle fait des passes précises.",
         verbToConjugate: "fait",
-        correctAnswer: "a fait",
-        explanation: "Verbe faire irrégulier : elle a fait.",
-        choices: ["a fait", "est faite", "s'est faite"]
+        correctAnswer: "a",
+        explanation: "Faire se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 109,
         presentSentence: "Nous sautons par-dessus les obstacles.",
         verbToConjugate: "sautons",
-        correctAnswer: "avons sauté",
-        explanation: "Verbe du 1er groupe avec avoir : nous avons sauté.",
-        choices: ["avons sauté", "sommes sautés", "nous sommes sautés"]
+        correctAnswer: "avons",
+        explanation: "Sauter se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 110,
         presentSentence: "Vous prenez des risques calculés.",
         verbToConjugate: "prenez",
-        correctAnswer: "avez pris",
-        explanation: "Verbe prendre irrégulier : vous avez pris.",
-        choices: ["avez pris", "êtes pris", "vous êtes pris"]
+        correctAnswer: "avez",
+        explanation: "Prendre se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 111,
         presentSentence: "Ils tombent lors des tacles.",
         verbToConjugate: "tombent",
-        correctAnswer: "sont tombés",
-        explanation: "Verbe tomber avec être : ils sont tombés.",
-        choices: ["sont tombés", "ont tombé", "se sont tombés"]
+        correctAnswer: "sont",
+        explanation: "Tomber se conjugue avec être : ils sont.",
+        choices: ["sont", "ont", "se sont"]
       },
       {
         id: 112,
         presentSentence: "Je réussis mes premiers matchs.",
         verbToConjugate: "réussis",
-        correctAnswer: "ai réussi",
-        explanation: "Verbe du 2e groupe avec avoir : j'ai réussi.",
-        choices: ["ai réussi", "suis réussi", "me suis réussi"]
+        correctAnswer: "ai",
+        explanation: "Réussir se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 113,
         presentSentence: "Tu vois la différence.",
         verbToConjugate: "vois",
-        correctAnswer: "as vu",
-        explanation: "Verbe voir irrégulier : tu as vu.",
-        choices: ["as vu", "es vu", "t'es vu"]
+        correctAnswer: "as",
+        explanation: "Voir se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 114,
         presentSentence: "Elle applaudit les belles actions.",
         verbToConjugate: "applaudit",
-        correctAnswer: "a applaudi",
-        explanation: "Verbe du 2e groupe avec avoir : elle a applaudi.",
-        choices: ["a applaudi", "est applaudie", "s'est applaudie"]
+        correctAnswer: "a",
+        explanation: "Applaudir se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 115,
         presentSentence: "Nous sortons du terrain victorieux.",
         verbToConjugate: "sortons",
-        correctAnswer: "sommes sortis",
-        explanation: "Verbe sortir avec être : nous sommes sortis.",
-        choices: ["sommes sortis", "avons sorti", "nous sommes sorti"]
+        correctAnswer: "sommes",
+        explanation: "Sortir se conjugue avec être : nous sommes.",
+        choices: ["sommes", "avons", "nous sommes"]
       },
       {
         id: 116,
         presentSentence: "Vous lisez les mouvements adverses.",
         verbToConjugate: "lisez",
-        correctAnswer: "avez lu",
-        explanation: "Verbe lire irrégulier : vous avez lu.",
-        choices: ["avez lu", "êtes lus", "vous êtes lus"]
+        correctAnswer: "avez",
+        explanation: "Lire se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 117,
         presentSentence: "Ils suivent les conseils.",
         verbToConjugate: "suivent",
-        correctAnswer: "ont suivi",
-        explanation: "Verbe suivre irrégulier : ils ont suivi.",
-        choices: ["ont suivi", "sont suivis", "se sont suivis"]
+        correctAnswer: "ont",
+        explanation: "Suivre se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 118,
         presentSentence: "Je choisis mes passes.",
         verbToConjugate: "choisis",
-        correctAnswer: "ai choisi",
-        explanation: "Verbe choisir du 2e groupe : j'ai choisi.",
-        choices: ["ai choisi", "suis choisi", "me suis choisi"]
+        correctAnswer: "ai",
+        explanation: "Choisir se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 119,
         presentSentence: "Tu reviens de tes blessures.",
         verbToConjugate: "reviens",
-        correctAnswer: "es revenu(e)",
-        explanation: "Verbe revenir avec être + accord : tu es revenu(e).",
-        choices: ["es revenu(e)", "as revenu", "t'es revenu"]
+        correctAnswer: "es",
+        explanation: "Revenir se conjugue avec être : tu es.",
+        choices: ["es", "as", "t'es"]
       },
       {
         id: 120,
         presentSentence: "Elle réfléchit comme une stratège.",
         verbToConjugate: "réfléchit",
-        correctAnswer: "a réfléchi",
-        explanation: "Verbe réfléchir du 2e groupe : elle a réfléchi.",
-        choices: ["a réfléchi", "est réfléchie", "s'est réfléchie"]
+        correctAnswer: "a",
+        explanation: "Réfléchir se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       }
     ]
   },
@@ -1013,241 +1013,241 @@ export const scenarios: Scenario[] = [
         id: 121,
         presentSentence: "Jules écrit le code secret sur le mur.",
         verbToConjugate: "écrit",
-        correctAnswer: "a écrit",
-        explanation: "Écrire est irrégulier : il a écrit (et non 'a écrivé').",
-        choices: ["a écrit", "est écrit", "s'est écrit"]
+        correctAnswer: "a",
+        explanation: "Écrire se conjugue avec avoir : il a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 122,
         presentSentence: "Les joueurs prennent des indices.",
         verbToConjugate: "prennent",
-        correctAnswer: "ont pris",
-        explanation: "Prendre est irrégulier : ils ont pris (et non 'ont prendé').",
-        choices: ["ont pris", "sont pris", "se sont pris"]
+        correctAnswer: "ont",
+        explanation: "Prendre se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 123,
         presentSentence: "Je vois une clé cachée sous le tapis.",
         verbToConjugate: "vois",
-        correctAnswer: "ai vu",
-        explanation: "Voir est irrégulier : j'ai vu.",
-        choices: ["ai vu", "suis vu", "me suis vu"]
+        correctAnswer: "ai",
+        explanation: "Voir se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 124,
         presentSentence: "Tu fais une découverte importante.",
         verbToConjugate: "fais",
-        correctAnswer: "as fait",
-        explanation: "Faire est irrégulier : tu as fait.",
-        choices: ["as fait", "es fait", "t'es fait"]
+        correctAnswer: "as",
+        explanation: "Faire se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 125,
         presentSentence: "Elle dit la solution à haute voix.",
         verbToConjugate: "dit",
-        correctAnswer: "a dit",
-        explanation: "Dire est irrégulier : elle a dit.",
-        choices: ["a dit", "est dite", "s'est dite"]
+        correctAnswer: "a",
+        explanation: "Dire se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 126,
         presentSentence: "Nous lisons les instructions attentivement.",
         verbToConjugate: "lisons",
-        correctAnswer: "avons lu",
-        explanation: "Lire est irrégulier : nous avons lu.",
-        choices: ["avons lu", "sommes lus", "nous sommes lus"]
+        correctAnswer: "avons",
+        explanation: "Lire se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 127,
         presentSentence: "Vous mettez la clé dans la serrure.",
         verbToConjugate: "mettez",
-        correctAnswer: "avez mis",
-        explanation: "Mettre est irrégulier : vous avez mis.",
-        choices: ["avez mis", "êtes mis", "vous êtes mis"]
+        correctAnswer: "avez",
+        explanation: "Mettre se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 128,
         presentSentence: "Ils ouvrent la porte mystérieuse.",
         verbToConjugate: "ouvrent",
-        correctAnswer: "ont ouvert",
-        explanation: "Ouvrir est irrégulier : ils ont ouvert.",
-        choices: ["ont ouvert", "sont ouverts", "se sont ouverts"]
+        correctAnswer: "ont",
+        explanation: "Ouvrir se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 129,
         presentSentence: "Je comprends l'énigme.",
         verbToConjugate: "comprends",
-        correctAnswer: "ai compris",
-        explanation: "Comprendre est irrégulier : j'ai compris.",
-        choices: ["ai compris", "suis compris", "me suis compris"]
+        correctAnswer: "ai",
+        explanation: "Comprendre se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 130,
         presentSentence: "Tu apprends les règles du jeu.",
         verbToConjugate: "apprends",
-        correctAnswer: "as appris",
-        explanation: "Apprendre est irrégulier : tu as appris.",
-        choices: ["as appris", "es appris", "t'es appris"]
+        correctAnswer: "as",
+        explanation: "Apprendre se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 131,
         presentSentence: "Elle boit une potion magique.",
         verbToConjugate: "boit",
-        correctAnswer: "a bu",
-        explanation: "Boire est irrégulier : elle a bu.",
-        choices: ["a bu", "est bue", "s'est bue"]
+        correctAnswer: "a",
+        explanation: "Boire se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 132,
         presentSentence: "Nous courons vers la sortie.",
         verbToConjugate: "courons",
-        correctAnswer: "avons couru",
-        explanation: "Courir est irrégulier : nous avons couru.",
-        choices: ["avons couru", "sommes courus", "nous sommes courus"]
+        correctAnswer: "avons",
+        explanation: "Courir se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 133,
         presentSentence: "Vous offrez votre aide aux autres.",
         verbToConjugate: "offrez",
-        correctAnswer: "avez offert",
-        explanation: "Offrir est irrégulier : vous avez offert.",
-        choices: ["avez offert", "êtes offerts", "vous êtes offerts"]
+        correctAnswer: "avez",
+        explanation: "Offrir se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 134,
         presentSentence: "Ils reçoivent un message crypté.",
         verbToConjugate: "reçoivent",
-        correctAnswer: "ont reçu",
-        explanation: "Recevoir est irrégulier : ils ont reçu.",
-        choices: ["ont reçu", "sont reçus", "se sont reçus"]
+        correctAnswer: "ont",
+        explanation: "Recevoir se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 135,
         presentSentence: "Je conduis l'équipe vers la victoire.",
         verbToConjugate: "conduis",
-        correctAnswer: "ai conduit",
-        explanation: "Conduire est irrégulier : j'ai conduit.",
-        choices: ["ai conduit", "suis conduit", "me suis conduit"]
+        correctAnswer: "ai",
+        explanation: "Conduire se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 136,
         presentSentence: "Tu construis un plan d'évasion.",
         verbToConjugate: "construis",
-        correctAnswer: "as construit",
-        explanation: "Construire est irrégulier : tu as construit.",
-        choices: ["as construit", "es construit", "t'es construit"]
+        correctAnswer: "as",
+        explanation: "Construire se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 137,
         presentSentence: "Elle craint les pièges du labyrinthe.",
         verbToConjugate: "craint",
-        correctAnswer: "a craint",
-        explanation: "Craindre est irrégulier : elle a craint.",
-        choices: ["a craint", "est crainte", "s'est crainte"]
+        correctAnswer: "a",
+        explanation: "Craindre se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 138,
         presentSentence: "Nous résolvons toutes les énigmes.",
         verbToConjugate: "résolvons",
-        correctAnswer: "avons résolu",
-        explanation: "Résoudre est irrégulier : nous avons résolu.",
-        choices: ["avons résolu", "sommes résolus", "nous sommes résolus"]
+        correctAnswer: "avons",
+        explanation: "Résoudre se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 139,
         presentSentence: "Vous connaissez ce type de jeu.",
         verbToConjugate: "connaissez",
-        correctAnswer: "avez connu",
-        explanation: "Connaître est irrégulier : vous avez connu.",
-        choices: ["avez connu", "êtes connus", "vous êtes connus"]
+        correctAnswer: "avez",
+        explanation: "Connaître se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 140,
         presentSentence: "Ils vivent une aventure extraordinaire.",
         verbToConjugate: "vivent",
-        correctAnswer: "ont vécu",
-        explanation: "Vivre est irrégulier : ils ont vécu.",
-        choices: ["ont vécu", "sont vécus", "se sont vécus"]
+        correctAnswer: "ont",
+        explanation: "Vivre se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 141,
         presentSentence: "Je peins un symbole sur le mur.",
         verbToConjugate: "peins",
-        correctAnswer: "ai peint",
-        explanation: "Peindre est irrégulier : j'ai peint.",
-        choices: ["ai peint", "suis peint", "me suis peint"]
+        correctAnswer: "ai",
+        explanation: "Peindre se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 142,
         presentSentence: "Tu joins les deux parties du puzzle.",
         verbToConjugate: "joins",
-        correctAnswer: "as joint",
-        explanation: "Joindre est irrégulier : tu as joint.",
-        choices: ["as joint", "es joint", "t'es joint"]
+        correctAnswer: "as",
+        explanation: "Joindre se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 143,
         presentSentence: "Elle rompt le code de la porte.",
         verbToConjugate: "rompt",
-        correctAnswer: "a rompu",
-        explanation: "Rompre est irrégulier : elle a rompu.",
-        choices: ["a rompu", "est rompue", "s'est rompue"]
+        correctAnswer: "a",
+        explanation: "Rompre se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 144,
         presentSentence: "Nous suivons les indices un par un.",
         verbToConjugate: "suivons",
-        correctAnswer: "avons suivi",
-        explanation: "Suivre est irrégulier : nous avons suivi.",
-        choices: ["avons suivi", "sommes suivis", "nous sommes suivis"]
+        correctAnswer: "avons",
+        explanation: "Suivre se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       },
       {
         id: 145,
         presentSentence: "Vous battez le record de temps.",
         verbToConjugate: "battez",
-        correctAnswer: "avez battu",
-        explanation: "Battre est irrégulier : vous avez battu.",
-        choices: ["avez battu", "êtes battus", "vous êtes battus"]
+        correctAnswer: "avez",
+        explanation: "Battre se conjugue avec avoir : vous avez.",
+        choices: ["avez", "êtes", "vous êtes"]
       },
       {
         id: 146,
         presentSentence: "Ils perdent leur chemin dans le labyrinthe.",
         verbToConjugate: "perdent",
-        correctAnswer: "ont perdu",
-        explanation: "Perdre est irrégulier : ils ont perdu.",
-        choices: ["ont perdu", "sont perdus", "se sont perdus"]
+        correctAnswer: "ont",
+        explanation: "Perdre se conjugue avec avoir : ils ont.",
+        choices: ["ont", "sont", "se sont"]
       },
       {
         id: 147,
         presentSentence: "Je tiens fermement la clé magique.",
         verbToConjugate: "tiens",
-        correctAnswer: "ai tenu",
-        explanation: "Tenir est irrégulier : j'ai tenu.",
-        choices: ["ai tenu", "suis tenu", "me suis tenu"]
+        correctAnswer: "ai",
+        explanation: "Tenir se conjugue avec avoir : j'ai.",
+        choices: ["ai", "suis", "me suis"]
       },
       {
         id: 148,
         presentSentence: "Tu obtiens la réponse.",
         verbToConjugate: "obtiens",
-        correctAnswer: "as obtenu",
-        explanation: "Obtenir est irrégulier : tu as obtenu.",
-        choices: ["as obtenu", "es obtenu", "t'es obtenu"]
+        correctAnswer: "as",
+        explanation: "Obtenir se conjugue avec avoir : tu as.",
+        choices: ["as", "es", "t'es"]
       },
       {
         id: 149,
         presentSentence: "Elle pousse la porte secrète.",
         verbToConjugate: "pousse",
-        correctAnswer: "a poussé",
-        explanation: "Pousser (verbe régulier) : elle a poussé.",
-        choices: ["a poussé", "est poussée", "s'est poussée"]
+        correctAnswer: "a",
+        explanation: "Pousser se conjugue avec avoir : elle a.",
+        choices: ["a", "est", "s'est"]
       },
       {
         id: 150,
         presentSentence: "Nous découvrons le trésor caché.",
         verbToConjugate: "découvrons",
-        correctAnswer: "avons découvert",
-        explanation: "Découvrir est irrégulier : nous avons découvert.",
-        choices: ["avons découvert", "sommes découverts", "nous sommes découverts"]
+        correctAnswer: "avons",
+        explanation: "Découvrir se conjugue avec avoir : nous avons.",
+        choices: ["avons", "sommes", "nous sommes"]
       }
     ]
   }
