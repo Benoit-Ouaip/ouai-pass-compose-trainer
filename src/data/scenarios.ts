@@ -682,10 +682,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 81,
-        presentSentence: "Ils habitent dans ce petit village.",
-        verbToConjugate: "habitent",
-        correctAnswer: "ont habité",
-        explanation: "Habiter + avoir : ils ont habité."
+        presentSentence: "Ils mangent dans ce petit restaurant.",
+        verbToConjugate: "mangent",
+        correctAnswer: "ont mangé",
+        explanation: "Manger + avoir : ils ont mangé."
       },
       {
         id: 82,
