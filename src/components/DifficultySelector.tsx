@@ -24,7 +24,7 @@ const DifficultySelector = ({
       level: 2,
       stars: "★★",
       title: "Moyen",
-      description: "Écris seulement l'auxiliaire (avoir/être)"
+      description: "Écris l'auxiliaire et le participe passé"
     },
     {
       level: 3,
