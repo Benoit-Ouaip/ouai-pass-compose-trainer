@@ -276,242 +276,242 @@ export const scenarios: Scenario[] = [
       {
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
-        verbToConjugate: "lavons",
-        correctAnswer: "sommes",
-        explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes lavés.",
-        choices: ["sommes", "avons", "étions"]
+        verbToConjugate: "nous lavons",
+        correctAnswer: "nous sommes",
+        explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes.",
+        choices: ["nous sommes", "nous avons", "nous étions"]
       },
       {
         id: 32,
         presentSentence: "Le chef se prépare pour le service.",
-        verbToConjugate: "prépare",
-        correctAnswer: "est",
-        explanation: "Se préparer est pronominal : il s'est préparé.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se prépare",
+        correctAnswer: "s'est",
+        explanation: "Se préparer est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 33,
         presentSentence: "Elle se concentre sur sa recette.",
-        verbToConjugate: "concentre",
-        correctAnswer: "est",
-        explanation: "Se concentrer est pronominal : elle s'est concentrée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se concentre",
+        correctAnswer: "s'est",
+        explanation: "Se concentrer est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 34,
         presentSentence: "Les apprentis se dépêchent de finir leur plat.",
-        verbToConjugate: "dépêchent",
-        correctAnswer: "sont",
-        explanation: "Se dépêcher est pronominal : ils se sont dépêchés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se dépêchent",
+        correctAnswer: "se sont",
+        explanation: "Se dépêcher est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 35,
         presentSentence: "Elle se spécialise dans les desserts.",
-        verbToConjugate: "spécialise",
-        correctAnswer: "est",
-        explanation: "Se spécialiser est pronominal : elle s'est spécialisée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se spécialise",
+        correctAnswer: "s'est",
+        explanation: "Se spécialiser est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 36,
         presentSentence: "Nous nous amusons à créer de nouveaux plats.",
-        verbToConjugate: "amusons",
-        correctAnswer: "sommes",
-        explanation: "S'amuser est pronominal : nous nous sommes amusés.",
-        choices: ["sommes", "avons", "étions"]
+        verbToConjugate: "nous amusons",
+        correctAnswer: "nous sommes",
+        explanation: "S'amuser est pronominal : nous nous sommes.",
+        choices: ["nous sommes", "nous avons", "nous étions"]
       },
       {
         id: 37,
         presentSentence: "Vous vous organisez en cuisine.",
-        verbToConjugate: "organisez",
-        correctAnswer: "êtes",
-        explanation: "S'organiser est pronominal : vous vous êtes organisés.",
-        choices: ["êtes", "avez", "étiez"]
+        verbToConjugate: "vous organisez",
+        correctAnswer: "vous êtes",
+        explanation: "S'organiser est pronominal : vous vous êtes (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes", "avez", "étiez"]
       },
       {
         id: 38,
         presentSentence: "Ils se disputent pour la meilleure recette.",
-        verbToConjugate: "disputent",
-        correctAnswer: "sont",
-        explanation: "Se disputer est pronominal : ils se sont disputés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se disputent",
+        correctAnswer: "se sont",
+        explanation: "Se disputer est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 39,
         presentSentence: "Il se trompe dans les proportions.",
-        verbToConjugate: "trompe",
-        correctAnswer: "est",
-        explanation: "Se tromper est pronominal : il s'est trompé.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se trompe",
+        correctAnswer: "s'est",
+        explanation: "Se tromper est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 40,
         presentSentence: "Le cuisinier se repose après le service.",
-        verbToConjugate: "repose",
-        correctAnswer: "est",
-        explanation: "Se reposer est pronominal : il s'est reposé.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se repose",
+        correctAnswer: "s'est",
+        explanation: "Se reposer est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 41,
         presentSentence: "Les chefs se rappellent la recette de grand-mère.",
-        verbToConjugate: "rappellent",
-        correctAnswer: "sont",
-        explanation: "Se rappeler est pronominal : ils se sont rappelés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se rappellent",
+        correctAnswer: "se sont",
+        explanation: "Se rappeler est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 42,
         presentSentence: "Elle se brûle en touchant la poêle.",
-        verbToConjugate: "brûle",
-        correctAnswer: "est",
-        explanation: "Se brûler est pronominal : elle s'est brûlée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se brûle",
+        correctAnswer: "s'est",
+        explanation: "Se brûler est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 43,
         presentSentence: "Ils s'aident en cuisine.",
-        verbToConjugate: "aident",
-        correctAnswer: "sont",
-        explanation: "S'aider est pronominal : ils se sont aidés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "s'aident",
+        correctAnswer: "se sont",
+        explanation: "S'aider est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 44,
         presentSentence: "Elles se régalent avec ce dessert.",
-        verbToConjugate: "régalent",
-        correctAnswer: "sont",
-        explanation: "Se régaler est pronominal : elles se sont régalées.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se régalent",
+        correctAnswer: "se sont",
+        explanation: "Se régaler est pronominal : elles se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 45,
         presentSentence: "Ils se perfectionnent dans l'art culinaire.",
-        verbToConjugate: "perfectionnent",
-        correctAnswer: "sont",
-        explanation: "Se perfectionner est pronominal : ils se sont perfectionnés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se perfectionnent",
+        correctAnswer: "se sont",
+        explanation: "Se perfectionner est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 46,
         presentSentence: "Il se salit les mains avec la farine.",
-        verbToConjugate: "salit",
-        correctAnswer: "est",
-        explanation: "Se salir est pronominal : il s'est sali.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se salit",
+        correctAnswer: "s'est",
+        explanation: "Se salir est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 47,
         presentSentence: "Les apprentis se débrouillent avec les épices.",
-        verbToConjugate: "débrouillent",
-        correctAnswer: "sont",
-        explanation: "Se débrouiller est pronominal : ils se sont débrouillés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se débrouillent",
+        correctAnswer: "se sont",
+        explanation: "Se débrouiller est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 48,
         presentSentence: "Elle s'inquiète pour la cuisson du gâteau.",
-        verbToConjugate: "inquiète",
-        correctAnswer: "est",
-        explanation: "S'inquiéter est pronominal : elle s'est inquiétée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "s'inquiète",
+        correctAnswer: "s'est",
+        explanation: "S'inquiéter est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 49,
         presentSentence: "Paul se retrouve en cuisine chaque matin.",
-        verbToConjugate: "retrouve",
-        correctAnswer: "est",
-        explanation: "Se retrouver est pronominal : il s'est retrouvé.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se retrouve",
+        correctAnswer: "s'est",
+        explanation: "Se retrouver est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 50,
         presentSentence: "Elle se plaint de la chaleur des fourneaux.",
-        verbToConjugate: "plaint",
-        correctAnswer: "est",
-        explanation: "Se plaindre est pronominal : elle s'est plainte.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se plaint",
+        correctAnswer: "s'est",
+        explanation: "Se plaindre est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 51,
         presentSentence: "Ils se moquent de mes maladresses.",
-        verbToConjugate: "moquent",
-        correctAnswer: "sont",
-        explanation: "Se moquer est pronominal : ils se sont moqués.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se moquent",
+        correctAnswer: "se sont",
+        explanation: "Se moquer est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 52,
         presentSentence: "Elle se décide pour le menu.",
-        verbToConjugate: "décide",
-        correctAnswer: "est",
-        explanation: "Se décider est pronominal : elle s'est décidée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se décide",
+        correctAnswer: "s'est",
+        explanation: "Se décider est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 53,
         presentSentence: "Les cuisiniers se demandent comment faire cette sauce.",
-        verbToConjugate: "demandent",
-        correctAnswer: "sont",
-        explanation: "Se demander est pronominal : ils se sont demandés.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se demandent",
+        correctAnswer: "se sont",
+        explanation: "Se demander est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 54,
         presentSentence: "Elle se souvient de sa première leçon de cuisine.",
-        verbToConjugate: "souvient",
-        correctAnswer: "est",
-        explanation: "Se souvenir est pronominal : elle s'est souvenue.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se souvient",
+        correctAnswer: "s'est",
+        explanation: "Se souvenir est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
-        verbToConjugate: "excusons",
-        correctAnswer: "sommes",
-        explanation: "S'excuser est pronominal : nous nous sommes excusés.",
-        choices: ["sommes", "avons", "étions"]
+        verbToConjugate: "nous excusons",
+        correctAnswer: "nous sommes",
+        explanation: "S'excuser est pronominal : nous nous sommes (le premier 'nous' est déjà dans la phrase).",
+        choices: ["nous sommes", "avons", "étions"]
       },
       {
         id: 56,
         presentSentence: "Vous vous habituez aux nouveaux ustensiles.",
-        verbToConjugate: "habituez",
-        correctAnswer: "êtes",
-        explanation: "S'habituer est pronominal : vous vous êtes habitués.",
-        choices: ["êtes", "avez", "étiez"]
+        verbToConjugate: "vous habituez",
+        correctAnswer: "vous êtes",
+        explanation: "S'habituer est pronominal : vous vous êtes (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes", "avez", "étiez"]
       },
       {
         id: 57,
         presentSentence: "Ils se félicitent pour ce succès culinaire.",
-        verbToConjugate: "félicitent",
-        correctAnswer: "sont",
-        explanation: "Se féliciter est pronominal : ils se sont félicités.",
-        choices: ["sont", "ont", "étaient"]
+        verbToConjugate: "se félicitent",
+        correctAnswer: "se sont",
+        explanation: "Se féliciter est pronominal : ils se sont.",
+        choices: ["se sont", "ont", "sont"]
       },
       {
         id: 58,
         presentSentence: "Il se dirige vers le frigo pour les ingrédients.",
-        verbToConjugate: "dirige",
-        correctAnswer: "est",
-        explanation: "Se diriger est pronominal : il s'est dirigé.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se dirige",
+        correctAnswer: "s'est",
+        explanation: "Se diriger est pronominal : il s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 59,
         presentSentence: "Elle se lève tôt pour préparer le petit-déjeuner.",
-        verbToConjugate: "lève",
-        correctAnswer: "est",
-        explanation: "Se lever est pronominal : elle s'est levée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se lève",
+        correctAnswer: "s'est",
+        explanation: "Se lever est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       },
       {
         id: 60,
         presentSentence: "Elle se présente comme la nouvelle apprentie.",
-        verbToConjugate: "présente",
-        correctAnswer: "est",
-        explanation: "Se présenter est pronominal : elle s'est présentée.",
-        choices: ["est", "a", "était"]
+        verbToConjugate: "se présente",
+        correctAnswer: "s'est",
+        explanation: "Se présenter est pronominal : elle s'est.",
+        choices: ["s'est", "a", "est"]
       }
     ]
   },

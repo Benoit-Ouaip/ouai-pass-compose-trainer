@@ -148,9 +148,39 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Pour le niveau moyen, on ne montre que des tirets pour l'auxiliaire
-      const auxiliary = exercise.correctAnswer; // "ont", "s'est", etc.
-      const replacement = '_'.repeat(auxiliary.length);
+      // Gérer les contractions spécialement
+      const parts = exercise.correctAnswer.split(' ');
+      let replacement;
+      
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
+        // Cas avec contraction: "s'est décidée" ou "t'es rappelé(e)"
+        const contractedPart = parts[0]; // "s'est" ou "t'es"
+        const participle = parts[1]; // "décidée" ou "rappelé(e)"
+        
+        if (contractedPart.endsWith('est')) {
+          // "s'est" -> "s'" + "___"
+          const pronoun = contractedPart.slice(0, -3); // "s'"
+          const dashesAux = '___'; // 3 tirets pour "est"
+          const dashesParticiple = '_'.repeat(participle.length);
+          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+        } else if (contractedPart.endsWith('es')) {
+          // "t'es" -> "t'" + "__"
+          const pronoun = contractedPart.slice(0, -2); // "t'"
+          const dashesAux = '__'; // 2 tirets pour "es"
+          const dashesParticiple = '_'.repeat(participle.length);
+          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+        } else {
+          // Cas fallback
+          const words = auxiliaryAndParticiple.split(' ');
+          const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+          replacement = dashesForWords;
+        }
+      } else {
+        // Cas normal (sans contraction) - créer des tirets seulement pour l'auxiliaire et le participe passé (sans pronoms)
+        const words = auxiliaryAndParticiple.split(' ');
+        const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+        replacement = dashesForWords;
+      }
       
       // Remplacer le verbe à conjuguer par les tirets
       const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
@@ -178,7 +208,7 @@ const AuxiliaryOnlyExercise = ({
       
       <div className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">
-          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire seulement :"}
+          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire et le participe passé :"}
         </p>
         <p 
           className="text-xl text-foreground mb-6 leading-relaxed font-medium"
@@ -198,7 +228,7 @@ const AuxiliaryOnlyExercise = ({
               autoCapitalize="off"
               spellCheck="false"
               className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
-              placeholder="Ex: ont, s'est, ai..."
+              placeholder="Ex: est décidée, sont allés..."
               disabled={isAnswered}
               onKeyPress={onKeyPress}
             />
