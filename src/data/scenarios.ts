@@ -711,10 +711,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 85,
-        presentSentence: "Nous convenons d'un moment pour jouer ensemble.",
-        verbToConjugate: "convenons",
-        correctAnswer: "sommes convenus",
-        explanation: "Convenir + être : nous sommes convenus."
+        presentSentence: "Nous prévoyons un moment pour jouer ensemble.",
+        verbToConjugate: "prévoyons",
+        correctAnswer: "avons prévu",
+        explanation: "Prévoir + avoir : nous avons prévu."
       },
       {
         id: 86,
