@@ -170,7 +170,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 19,
-        presentSentence: "Elle dépasse ses limites aujourd'hui.",
+        presentSentence: "Elle dépasse ses limites.",
         verbToConjugate: "dépasse",
         correctAnswer: "a dépassé",
         explanation: "Le verbe 'dépasser' avec elle : elle a dépassé.",
@@ -186,7 +186,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 21,
-        presentSentence: "Tu progresses rapidement sur le parcours.",
+        presentSentence: "Tu progresses sur le parcours.",
         verbToConjugate: "progresses",
         correctAnswer: "as progressé",
         explanation: "Le verbe 'progresser' avec tu : tu as progressé.",
@@ -194,7 +194,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 22,
-        presentSentence: "Elle monte courageusement vers les hauteurs.",
+        presentSentence: "Elle monte vers les hauteurs.",
         verbToConjugate: "monte",
         correctAnswer: "a monté",
         explanation: "Le verbe 'monter' avec elle : elle a monté.",
@@ -226,7 +226,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 26,
-        presentSentence: "Elle s'amuse beaucoup dans les arbres.",
+        presentSentence: "Elle s'amuse dans les arbres.",
         verbToConjugate: "s'amuse",
         correctAnswer: "s'est amusée",
         explanation: "Le verbe pronominal 's'amuser' avec elle : elle s'est amusée.",
@@ -250,7 +250,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 29,
-        presentSentence: "Elle réussit parfaitement son parcours.",
+        presentSentence: "Elle réussit son parcours.",
         verbToConjugate: "réussit",
         correctAnswer: "a réussi",
         explanation: "Le verbe 'réussir' avec elle : elle a réussi.",
@@ -371,7 +371,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 43,
-        presentSentence: "Ils s'aident mutuellement en cuisine.",
+        presentSentence: "Ils s'aident en cuisine.",
         verbToConjugate: "s'aident",
         correctAnswer: "se sont aidés",
         explanation: "S'aider : ils se sont aidés.",
@@ -403,7 +403,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 47,
-        presentSentence: "Les apprentis se débrouillent bien avec les épices.",
+        presentSentence: "Les apprentis se débrouillent avec les épices.",
         verbToConjugate: "se débrouillent",
         correctAnswer: "se sont débrouillés",
         explanation: "Se débrouiller : ils se sont débrouillés.",
@@ -443,7 +443,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 52,
-        presentSentence: "Elle se décide enfin pour le menu.",
+        presentSentence: "Elle se décide pour le menu.",
         verbToConjugate: "se décide",
         correctAnswer: "s'est décidée",
         explanation: "Se décider : elle s'est décidée.",
@@ -697,7 +697,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 83,
-        presentSentence: "Toi Alice, tu parviens enfin à destination.",
+        presentSentence: "Toi Alice, tu parviens à destination.",
         verbToConjugate: "parviens",
         correctAnswer: "es parvenue",
         explanation: "Parvenir + être + accord féminin : tu es parvenue."
@@ -756,7 +756,7 @@ export const scenarios: Scenario[] = [
   {
     id: 4,
     title: "Journal du club de foot",
-    description: "Match, entraînement, score. Travaille les négations et les adverbes (bien, déjà, encore).",
+    description: "Match, entraînement, score. Travaille les verbes avec l'auxiliaire avoir ou être.",
     icon: "⚽",
     color: "bg-ouaip-yellow/20 text-ouaip-dark-blue",
     exercises: [
@@ -770,11 +770,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 92,
-        presentSentence: "L'entraineur prépare bien son équipe.",
+        presentSentence: "L'entraineur prépare son équipe.",
         verbToConjugate: "prépare",
-        correctAnswer: "a bien préparé",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien préparé.",
-        choices: ["a bien préparé", "est bien préparé", "a préparé bien"]
+        correctAnswer: "a préparé",
+        explanation: "Avec l'auxiliaire avoir : il a préparé.",
+        choices: ["a préparé", "est préparé", "s'est préparé"]
       },
       {
         id: 93,
@@ -786,7 +786,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 94,
-        presentSentence: "Il comprend maintenant les règles.",
+        presentSentence: "Il comprend les règles.",
         verbToConjugate: "comprend",
         correctAnswer: "a compris",
         explanation: "Verbe comprendre irrégulier : il a compris.",
@@ -802,7 +802,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 96,
-        presentSentence: "Elle rate parfois ses penalties.",
+        presentSentence: "Elle rate ses penalties.",
         verbToConjugate: "rate",
         correctAnswer: "a raté",
         explanation: "Verbe du 1er groupe avec avoir : elle a raté.",
@@ -810,7 +810,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 97,
-        presentSentence: "Nous courons vite sur le terrain.",
+        presentSentence: "Nous courons sur le terrain.",
         verbToConjugate: "courons",
         correctAnswer: "avons couru",
         explanation: "Verbe courir irrégulier : nous avons couru.",
@@ -834,15 +834,15 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 100,
-        presentSentence: "Le gardien arrête bien tous les tirs.",
+        presentSentence: "Le gardien arrête tous les tirs.",
         verbToConjugate: "arrête",
-        correctAnswer: "a bien arrêté",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien arrêté.",
-        choices: ["a bien arrêté", "est bien arrêté", "a arrêté bien"]
+        correctAnswer: "a arrêté",
+        explanation: "Avec l'auxiliaire avoir : il a arrêté.",
+        choices: ["a arrêté", "est arrêté", "s'est arrêté"]
       },
       {
         id: 101,
-        presentSentence: "Tu gagnes souvent contre moi.",
+        presentSentence: "Tu gagnes contre moi.",
         verbToConjugate: "gagnes",
         correctAnswer: "as gagné",
         explanation: "Verbe du 1er groupe avec avoir : tu as gagné.",
@@ -850,15 +850,15 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 102,
-        presentSentence: "Elle dribble déjà comme une professionnelle.",
+        presentSentence: "Elle dribble comme une professionnelle.",
         verbToConjugate: "dribble",
-        correctAnswer: "a déjà dribblé",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : a déjà dribblé.",
-        choices: ["a déjà dribblé", "est déjà dribblée", "a dribblé déjà"]
+        correctAnswer: "a dribblé",
+        explanation: "Verbe du 1er groupe avec avoir : elle a dribblé.",
+        choices: ["a dribblé", "est dribblée", "s'est dribblée"]
       },
       {
         id: 103,
-        presentSentence: "Nous vendons nos billets rapidement.",
+        presentSentence: "Nous vendons nos billets.",
         verbToConjugate: "vendons",
         correctAnswer: "avons vendu",
         explanation: "Verbe vendre irrégulier : nous avons vendu.",
@@ -866,15 +866,15 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 104,
-        presentSentence: "Vous tirez bien dans les angles.",
+        presentSentence: "Vous tirez dans les angles.",
         verbToConjugate: "tirez",
-        correctAnswer: "avez bien tiré",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : avez bien tiré.",
-        choices: ["avez bien tiré", "êtes bien tirés", "avez tiré bien"]
+        correctAnswer: "avez tiré",
+        explanation: "Verbe du 1er groupe avec avoir : vous avez tiré.",
+        choices: ["avez tiré", "êtes tirés", "vous êtes tirés"]
       },
       {
         id: 105,
-        presentSentence: "Ils battent l'équipe adverse facilement.",
+        presentSentence: "Ils battent l'équipe adverse.",
         verbToConjugate: "battent",
         correctAnswer: "ont battu",
         explanation: "Verbe battre irrégulier : ils ont battu.",
@@ -890,11 +890,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 107,
-        presentSentence: "Tu défends déjà très bien ton but.",
+        presentSentence: "Tu défends ton but.",
         verbToConjugate: "défends",
-        correctAnswer: "as déjà défendu",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : as déjà défendu.",
-        choices: ["as déjà défendu", "es déjà défendu", "as défendu déjà"]
+        correctAnswer: "as défendu",
+        explanation: "Verbe défendre irrégulier : tu as défendu.",
+        choices: ["as défendu", "es défendu", "t'es défendu"]
       },
       {
         id: 108,
@@ -906,11 +906,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 109,
-        presentSentence: "Nous sautons bien par-dessus les obstacles.",
+        presentSentence: "Nous sautons par-dessus les obstacles.",
         verbToConjugate: "sautons",
-        correctAnswer: "avons bien sauté",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : avons bien sauté.",
-        choices: ["avons bien sauté", "sommes bien sautés", "avons sauté bien"]
+        correctAnswer: "avons sauté",
+        explanation: "Verbe du 1er groupe avec avoir : nous avons sauté.",
+        choices: ["avons sauté", "sommes sautés", "nous sommes sautés"]
       },
       {
         id: 110,
@@ -930,15 +930,15 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 112,
-        presentSentence: "Je réussis déjà mes premiers matchs.",
+        presentSentence: "Je réussis mes premiers matchs.",
         verbToConjugate: "réussis",
-        correctAnswer: "ai déjà réussi",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : ai déjà réussi.",
-        choices: ["ai déjà réussi", "suis déjà réussi", "ai réussi déjà"]
+        correctAnswer: "ai réussi",
+        explanation: "Verbe du 2e groupe avec avoir : j'ai réussi.",
+        choices: ["ai réussi", "suis réussi", "me suis réussi"]
       },
       {
         id: 113,
-        presentSentence: "Tu vois maintenant la différence.",
+        presentSentence: "Tu vois la différence.",
         verbToConjugate: "vois",
         correctAnswer: "as vu",
         explanation: "Verbe voir irrégulier : tu as vu.",
@@ -946,11 +946,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 114,
-        presentSentence: "Elle applaudit bien les belles actions.",
+        presentSentence: "Elle applaudit les belles actions.",
         verbToConjugate: "applaudit",
-        correctAnswer: "a bien applaudi",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien applaudi.",
-        choices: ["a bien applaudi", "est bien applaudie", "a applaudi bien"]
+        correctAnswer: "a applaudi",
+        explanation: "Verbe du 2e groupe avec avoir : elle a applaudi.",
+        choices: ["a applaudi", "est applaudie", "s'est applaudie"]
       },
       {
         id: 115,
@@ -962,15 +962,15 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 116,
-        presentSentence: "Vous lisez déjà les mouvements adverses.",
+        presentSentence: "Vous lisez les mouvements adverses.",
         verbToConjugate: "lisez",
-        correctAnswer: "avez déjà lu",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : avez déjà lu.",
-        choices: ["avez déjà lu", "êtes déjà lus", "avez lu déjà"]
+        correctAnswer: "avez lu",
+        explanation: "Verbe lire irrégulier : vous avez lu.",
+        choices: ["avez lu", "êtes lus", "vous êtes lus"]
       },
       {
         id: 117,
-        presentSentence: "Ils suivent maintenant les conseils.",
+        presentSentence: "Ils suivent les conseils.",
         verbToConjugate: "suivent",
         correctAnswer: "ont suivi",
         explanation: "Verbe suivre irrégulier : ils ont suivi.",
@@ -978,11 +978,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 118,
-        presentSentence: "Je choisis bien mes passes.",
+        presentSentence: "Je choisis mes passes.",
         verbToConjugate: "choisis",
-        correctAnswer: "ai bien choisi",
-        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : ai bien choisi.",
-        choices: ["ai bien choisi", "suis bien choisi", "ai choisi bien"]
+        correctAnswer: "ai choisi",
+        explanation: "Verbe choisir du 2e groupe : j'ai choisi.",
+        choices: ["ai choisi", "suis choisi", "me suis choisi"]
       },
       {
         id: 119,
@@ -994,11 +994,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 120,
-        presentSentence: "Elle réfléchit déjà comme une stratège.",
+        presentSentence: "Elle réfléchit comme une stratège.",
         verbToConjugate: "réfléchit",
-        correctAnswer: "a déjà réfléchi",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : a déjà réfléchi.",
-        choices: ["a déjà réfléchi", "est déjà réfléchie", "a réfléchi déjà"]
+        correctAnswer: "a réfléchi",
+        explanation: "Verbe réfléchir du 2e groupe : elle a réfléchi.",
+        choices: ["a réfléchi", "est réfléchie", "s'est réfléchie"]
       }
     ]
   },
@@ -1075,7 +1075,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 129,
-        presentSentence: "Je comprends enfin l'énigme.",
+        presentSentence: "Je comprends l'énigme.",
         verbToConjugate: "comprends",
         correctAnswer: "ai compris",
         explanation: "Comprendre est irrégulier : j'ai compris.",
@@ -1155,7 +1155,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 139,
-        presentSentence: "Vous connaissez déjà ce type de jeu.",
+        presentSentence: "Vous connaissez ce type de jeu.",
         verbToConjugate: "connaissez",
         correctAnswer: "avez connu",
         explanation: "Connaître est irrégulier : vous avez connu.",
@@ -1227,7 +1227,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 148,
-        presentSentence: "Tu obtiens finalement la réponse.",
+        presentSentence: "Tu obtiens la réponse.",
         verbToConjugate: "obtiens",
         correctAnswer: "as obtenu",
         explanation: "Obtenir est irrégulier : tu as obtenu.",
