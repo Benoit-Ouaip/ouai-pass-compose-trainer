@@ -39,11 +39,10 @@ const FullConjugationExercise = ({
     `<span style="font-weight: bold; color: #e55555;">$&</span>`
   );
 
-  // Créer les tirets correspondant au nombre de lettres de toute la réponse
+  // Créer les tirets correspondant à chaque mot de la réponse
   const generateDashesForFullAnswer = (answer: string) => {
-    // Compter seulement les lettres, pas les espaces
-    const letterCount = answer.replace(/\s/g, '').length;
-    return '_'.repeat(letterCount);
+    const words = answer.split(' ');
+    return words.map(word => '_'.repeat(word.length)).join(' ');
   };
 
   // Créer la phrase avec tirets ou avec la réponse si correcte
