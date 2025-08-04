@@ -80,74 +80,18 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Créer la forme avec l'auxiliaire masqué
-      const parts = exercise.correctAnswer.split(' ');
-      let replacement;
+      // Créer des tirets correspondant exactement aux mots de la réponse attendue
+      const words = exercise.correctAnswer.split(' ');
+      const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
       
-      if (parts.length === 2 && parts[0].match(/[''`]/)) {
-        // Cas avec contraction: "t'es rappelé(e)" -> "t' _____ rappelé(e)"
-        const contractedPart = parts[0]; // "t'es" ou "s'est"
-        const participle = parts[1]; // "rappelé(e)" ou "brûlée"
-        
-        // Détecter le type de contraction
-        if (contractedPart.endsWith('es')) {
-          // "t'es" -> "t'" + "___"
-          const pronoun = contractedPart.slice(0, -2); // "t'"
-          const dashes = '___'; // 3 tirets pour "es"
-          replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else if (contractedPart.endsWith('est')) {
-          // "s'est" -> "s'" + "____"
-          const pronoun = contractedPart.slice(0, -3); // "s'"
-          const dashes = '____'; // 4 tirets pour "est"
-          replacement = `${pronoun}${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else {
-          // Cas fallback
-          const dashes = '_'.repeat(contractedPart.length);
-          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        }
-      } else if (parts.length === 2) {
-        // Cas simple: "a mangé" -> "_____ mangé"
-        const dashes = '_'.repeat(parts[0].length);
-        replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${parts[1]}</span>`;
-      } else if (parts.length >= 3) {
-        // Cas pronominal: analyser ce qui est déjà dans la phrase
-        const beforeAux = parts.slice(0, -2).join(' '); // "nous nous"
-        const auxiliary = parts[parts.length - 2]; // "sommes"
-        const participle = parts[parts.length - 1]; // "aidés"
-        const dashes = '_'.repeat(auxiliary.length);
-        
-        // Extraire les mots avant le verbe dans la phrase originale
-        const sentenceWords = exercise.presentSentence.split(' ');
-        const verbIndex = sentenceWords.findIndex(word => 
-          exercise.verbToConjugate.toLowerCase().includes(word.toLowerCase())
-        );
-        const wordsBeforeVerb = sentenceWords.slice(0, verbIndex).join(' ').toLowerCase();
-        
-        // Si les pronoms sont déjà dans la phrase originale, ne pas les répéter
-        const pronouns = beforeAux.split(' ');
-        const missingPronouns = pronouns.filter(pronoun => 
-          !wordsBeforeVerb.includes(pronoun.toLowerCase())
-        );
-        
-        if (missingPronouns.length > 0) {
-          replacement = `${missingPronouns.join(' ')} ${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        } else {
-          replacement = `${dashes} <span style="font-weight: bold; color: #3b82f6;">${participle}</span>`;
-        }
-      } else {
-        // Cas fallback
-        const dashes = '_'.repeat(parts[0].length);
-        replacement = `${dashes}`;
-      }
-      
-      // Remplacer le verbe à conjuguer par la nouvelle forme
+      // Remplacer le verbe à conjuguer par les tirets
       const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-      let modifiedSentence = exercise.presentSentence.replace(regex, replacement);
+      let modifiedSentence = exercise.presentSentence.replace(regex, dashesForWords);
       
       // Si le remplacement n'a pas fonctionné, essayer sans les limites de mots
       if (modifiedSentence === exercise.presentSentence) {
         const simpleRegex = new RegExp(exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-        modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
+        modifiedSentence = exercise.presentSentence.replace(simpleRegex, dashesForWords);
       }
       
       return modifiedSentence;
