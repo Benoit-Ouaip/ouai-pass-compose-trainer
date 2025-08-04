@@ -732,10 +732,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 88,
-        presentSentence: "Je surgis de derrière la colonne.",
-        verbToConjugate: "surgis",
-        correctAnswer: "ai surgi",
-        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
+        presentSentence: "Je vais à la gare centrale.",
+        verbToConjugate: "vais",
+        correctAnswer: "suis allé",
+        explanation: "Aller + être : je suis allé."
       },
       {
         id: 89,
