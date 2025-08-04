@@ -192,6 +192,11 @@ const AuxiliaryOnlyExercise = ({
         modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
       }
       
+      // Cas spécial : remplacer "Je " par "J'" quand l'auxiliaire commence par une voyelle
+      if (modifiedSentence.startsWith("Je ") && auxiliaryAndParticiple.match(/^[aeiou]/i)) {
+        modifiedSentence = modifiedSentence.replace(/^Je /, "J'");
+      }
+      
       return modifiedSentence;
     }
   };
