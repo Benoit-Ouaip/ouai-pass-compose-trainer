@@ -74,11 +74,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 7,
-        presentSentence: "Tu observes les autres grimpeurs.",
-        verbToConjugate: "observes",
-        correctAnswer: "as observé",
-        explanation: "Le verbe 'observer' avec tu : tu as observé.",
-        choices: ["as observé", "es observé", "t'es observé"]
+        presentSentence: "Pierre observe les autres grimpeurs.",
+        verbToConjugate: "observe",
+        correctAnswer: "a observé",
+        explanation: "Le verbe 'observer' avec il : il a observé.",
+        choices: ["a observé", "est observé", "s'est observé"]
       },
       {
         id: 8,
