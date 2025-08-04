@@ -762,213 +762,243 @@ export const scenarios: Scenario[] = [
     exercises: [
       {
         id: 91,
-        presentSentence: "Les joueurs ne marquent pas encore de but.",
+        presentSentence: "Les joueurs marquent un but magnifique.",
         verbToConjugate: "marquent",
-        correctAnswer: "n'ont pas encore marqué",
-        explanation: "Négation avec 'encore' : ne ont pas encore marqué → n'ont pas encore marqué."
+        correctAnswer: "ont marqué",
+        explanation: "Avec l'auxiliaire avoir : ils ont marqué.",
+        choices: ["ont marqué", "sont marqués", "se sont marqués"]
       },
       {
         id: 92,
         presentSentence: "L'entraîneur prépare bien son équipe.",
         verbToConjugate: "prépare",
         correctAnswer: "a bien préparé",
-        explanation: "Adverbe 'bien' : a bien préparé."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien préparé.",
+        choices: ["a bien préparé", "est bien préparé", "a préparé bien"]
       },
       {
         id: 93,
-        presentSentence: "Les supporters ne voient jamais un tel match.",
+        presentSentence: "Les supporters voient un match exceptionnel.",
         verbToConjugate: "voient",
-        correctAnswer: "n'ont jamais vu",
-        explanation: "Négation 'ne...jamais' : n'ont jamais vu."
+        correctAnswer: "ont vu",
+        explanation: "Verbe voir irrégulier avec avoir : ils ont vu.",
+        choices: ["ont vu", "sont vus", "ont vus"]
       },
       {
         id: 94,
-        presentSentence: "Il ne comprend pas encore les règles.",
+        presentSentence: "Il comprend maintenant les règles.",
         verbToConjugate: "comprend",
-        correctAnswer: "n'a pas encore compris",
-        explanation: "Négation 'ne...pas encore' : n'a pas encore compris."
+        correctAnswer: "a compris",
+        explanation: "Verbe comprendre irrégulier : il a compris.",
+        choices: ["a compris", "est compris", "a comprit"]
       },
       {
         id: 95,
         presentSentence: "Tu joues déjà très bien au foot.",
         verbToConjugate: "joues",
         correctAnswer: "as déjà joué",
-        explanation: "Adverbe 'déjà' : as déjà joué."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : as déjà joué.",
+        choices: ["as déjà joué", "es déjà joué", "as joué déjà"]
       },
       {
         id: 96,
-        presentSentence: "Elle ne rate jamais ses penalties.",
+        presentSentence: "Elle rate parfois ses penalties.",
         verbToConjugate: "rate",
-        correctAnswer: "n'a jamais raté",
-        explanation: "Négation 'ne...jamais' : n'a jamais raté."
+        correctAnswer: "a raté",
+        explanation: "Verbe du 1er groupe avec avoir : elle a raté.",
+        choices: ["a raté", "est ratée", "s'est ratée"]
       },
       {
         id: 97,
-        presentSentence: "Nous courons déjà assez vite.",
+        presentSentence: "Nous courons vite sur le terrain.",
         verbToConjugate: "courons",
-        correctAnswer: "avons déjà couru",
-        explanation: "Adverbe 'déjà' : avons déjà couru."
+        correctAnswer: "avons couru",
+        explanation: "Verbe courir irrégulier : nous avons couru.",
+        choices: ["avons couru", "sommes courus", "avons couru"]
       },
       {
         id: 98,
-        presentSentence: "Vous ne perdez jamais contre cette équipe.",
+        presentSentence: "Vous perdez contre cette équipe redoutable.",
         verbToConjugate: "perdez",
-        correctAnswer: "n'avez jamais perdu",
-        explanation: "Négation 'ne...jamais' : n'avez jamais perdu."
+        correctAnswer: "avez perdu",
+        explanation: "Verbe perdre irrégulier : vous avez perdu.",
+        choices: ["avez perdu", "êtes perdus", "vous êtes perdus"]
       },
       {
         id: 99,
-        presentSentence: "Ils ne finissent pas encore l'entraînement.",
+        presentSentence: "Ils finissent l'entraînement avec énergie.",
         verbToConjugate: "finissent",
-        correctAnswer: "n'ont pas encore fini",
-        explanation: "Négation 'ne...pas encore' : n'ont pas encore fini."
+        correctAnswer: "ont fini",
+        explanation: "Verbe du 2e groupe avec avoir : ils ont fini.",
+        choices: ["ont fini", "sont finis", "se sont finis"]
       },
       {
         id: 100,
         presentSentence: "Le gardien arrête bien tous les tirs.",
         verbToConjugate: "arrête",
         correctAnswer: "a bien arrêté",
-        explanation: "Adverbe 'bien' : a bien arrêté."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien arrêté.",
+        choices: ["a bien arrêté", "est bien arrêté", "a arrêté bien"]
       },
       {
         id: 101,
-        presentSentence: "Tu ne gagnes jamais contre moi.",
+        presentSentence: "Tu gagnes souvent contre moi.",
         verbToConjugate: "gagnes",
-        correctAnswer: "n'as jamais gagné",
-        explanation: "Négation 'ne...jamais' : n'as jamais gagné."
+        correctAnswer: "as gagné",
+        explanation: "Verbe du 1er groupe avec avoir : tu as gagné.",
+        choices: ["as gagné", "es gagné", "t'es gagné"]
       },
       {
         id: 102,
         presentSentence: "Elle dribble déjà comme une professionnelle.",
         verbToConjugate: "dribble",
         correctAnswer: "a déjà dribblé",
-        explanation: "Adverbe 'déjà' : a déjà dribblé."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : a déjà dribblé.",
+        choices: ["a déjà dribblé", "est déjà dribblée", "a dribblé déjà"]
       },
       {
         id: 103,
-        presentSentence: "Nous ne vendons pas encore nos billets.",
+        presentSentence: "Nous vendons nos billets rapidement.",
         verbToConjugate: "vendons",
-        correctAnswer: "n'avons pas encore vendu",
-        explanation: "Négation 'ne...pas encore' : n'avons pas encore vendu."
+        correctAnswer: "avons vendu",
+        explanation: "Verbe vendre irrégulier : nous avons vendu.",
+        choices: ["avons vendu", "sommes vendus", "nous sommes vendus"]
       },
       {
         id: 104,
         presentSentence: "Vous tirez bien dans les angles.",
         verbToConjugate: "tirez",
         correctAnswer: "avez bien tiré",
-        explanation: "Adverbe 'bien' : avez bien tiré."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : avez bien tiré.",
+        choices: ["avez bien tiré", "êtes bien tirés", "avez tiré bien"]
       },
       {
         id: 105,
-        presentSentence: "Ils ne battent jamais l'équipe adverse.",
+        presentSentence: "Ils battent l'équipe adverse facilement.",
         verbToConjugate: "battent",
-        correctAnswer: "n'ont jamais battu",
-        explanation: "Négation 'ne...jamais' : n'ont jamais battu."
+        correctAnswer: "ont battu",
+        explanation: "Verbe battre irrégulier : ils ont battu.",
+        choices: ["ont battu", "sont battus", "se sont battus"]
       },
       {
         id: 106,
-        presentSentence: "Je ne mets pas encore mes crampons.",
+        presentSentence: "Je mets mes crampons neufs.",
         verbToConjugate: "mets",
-        correctAnswer: "n'ai pas encore mis",
-        explanation: "Négation 'ne...pas encore' : n'ai pas encore mis."
+        correctAnswer: "ai mis",
+        explanation: "Verbe mettre irrégulier : j'ai mis.",
+        choices: ["ai mis", "suis mis", "me suis mis"]
       },
       {
         id: 107,
         presentSentence: "Tu défends déjà très bien ton but.",
         verbToConjugate: "défends",
         correctAnswer: "as déjà défendu",
-        explanation: "Adverbe 'déjà' : as déjà défendu."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : as déjà défendu.",
+        choices: ["as déjà défendu", "es déjà défendu", "as défendu déjà"]
       },
       {
         id: 108,
-        presentSentence: "Elle ne fait jamais de fautes graves.",
+        presentSentence: "Elle fait des passes précises.",
         verbToConjugate: "fait",
-        correctAnswer: "n'a jamais fait",
-        explanation: "Négation 'ne...jamais' : n'a jamais fait."
+        correctAnswer: "a fait",
+        explanation: "Verbe faire irrégulier : elle a fait.",
+        choices: ["a fait", "est faite", "s'est faite"]
       },
       {
         id: 109,
         presentSentence: "Nous sautons bien par-dessus les obstacles.",
         verbToConjugate: "sautons",
         correctAnswer: "avons bien sauté",
-        explanation: "Adverbe 'bien' : avons bien sauté."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : avons bien sauté.",
+        choices: ["avons bien sauté", "sommes bien sautés", "avons sauté bien"]
       },
       {
         id: 110,
-        presentSentence: "Vous ne prenez pas encore de risques.",
+        presentSentence: "Vous prenez des risques calculés.",
         verbToConjugate: "prenez",
-        correctAnswer: "n'avez pas encore pris",
-        explanation: "Négation 'ne...pas encore' : n'avez pas encore pris."
+        correctAnswer: "avez pris",
+        explanation: "Verbe prendre irrégulier : vous avez pris.",
+        choices: ["avez pris", "êtes pris", "vous êtes pris"]
       },
       {
         id: 111,
-        presentSentence: "Ils ne tombent jamais lors des tacles.",
+        presentSentence: "Ils tombent lors des tacles.",
         verbToConjugate: "tombent",
-        correctAnswer: "ne sont jamais tombés",
-        explanation: "Négation 'ne...jamais' avec être : ne sont jamais tombés."
+        correctAnswer: "sont tombés",
+        explanation: "Verbe tomber avec être : ils sont tombés.",
+        choices: ["sont tombés", "ont tombé", "se sont tombés"]
       },
       {
         id: 112,
         presentSentence: "Je réussis déjà mes premiers matchs.",
         verbToConjugate: "réussis",
         correctAnswer: "ai déjà réussi",
-        explanation: "Adverbe 'déjà' : ai déjà réussi."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : ai déjà réussi.",
+        choices: ["ai déjà réussi", "suis déjà réussi", "ai réussi déjà"]
       },
       {
         id: 113,
-        presentSentence: "Tu ne vois pas encore la différence.",
+        presentSentence: "Tu vois maintenant la différence.",
         verbToConjugate: "vois",
-        correctAnswer: "n'as pas encore vu",
-        explanation: "Négation 'ne...pas encore' : n'as pas encore vu."
+        correctAnswer: "as vu",
+        explanation: "Verbe voir irrégulier : tu as vu.",
+        choices: ["as vu", "es vu", "t'es vu"]
       },
       {
         id: 114,
         presentSentence: "Elle applaudit bien les belles actions.",
         verbToConjugate: "applaudit",
         correctAnswer: "a bien applaudi",
-        explanation: "Adverbe 'bien' : a bien applaudi."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien applaudi.",
+        choices: ["a bien applaudi", "est bien applaudie", "a applaudi bien"]
       },
       {
         id: 115,
-        presentSentence: "Nous ne sortons jamais du terrain perdants.",
+        presentSentence: "Nous sortons du terrain victorieux.",
         verbToConjugate: "sortons",
-        correctAnswer: "ne sommes jamais sortis",
-        explanation: "Négation 'ne...jamais' avec être : ne sommes jamais sortis."
+        correctAnswer: "sommes sortis",
+        explanation: "Verbe sortir avec être : nous sommes sortis.",
+        choices: ["sommes sortis", "avons sorti", "nous sommes sorti"]
       },
       {
         id: 116,
         presentSentence: "Vous lisez déjà les mouvements adverses.",
         verbToConjugate: "lisez",
         correctAnswer: "avez déjà lu",
-        explanation: "Adverbe 'déjà' : avez déjà lu."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : avez déjà lu.",
+        choices: ["avez déjà lu", "êtes déjà lus", "avez lu déjà"]
       },
       {
         id: 117,
-        presentSentence: "Ils ne suivent pas encore les conseils.",
+        presentSentence: "Ils suivent maintenant les conseils.",
         verbToConjugate: "suivent",
-        correctAnswer: "n'ont pas encore suivi",
-        explanation: "Négation 'ne...pas encore' : n'ont pas encore suivi."
+        correctAnswer: "ont suivi",
+        explanation: "Verbe suivre irrégulier : ils ont suivi.",
+        choices: ["ont suivi", "sont suivis", "se sont suivis"]
       },
       {
         id: 118,
         presentSentence: "Je choisis bien mes passes.",
         verbToConjugate: "choisis",
         correctAnswer: "ai bien choisi",
-        explanation: "Adverbe 'bien' : ai bien choisi."
+        explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : ai bien choisi.",
+        choices: ["ai bien choisi", "suis bien choisi", "ai choisi bien"]
       },
       {
         id: 119,
-        presentSentence: "Tu ne reviens jamais de tes blessures.",
+        presentSentence: "Tu reviens de tes blessures.",
         verbToConjugate: "reviens",
-        correctAnswer: "n'es jamais revenu(e)",
-        explanation: "Négation 'ne...jamais' avec être : n'es jamais revenu(e)."
+        correctAnswer: "es revenu(e)",
+        explanation: "Verbe revenir avec être + accord : tu es revenu(e).",
+        choices: ["es revenu(e)", "as revenu", "t'es revenu"]
       },
       {
         id: 120,
         presentSentence: "Elle réfléchit déjà comme une stratège.",
         verbToConjugate: "réfléchit",
         correctAnswer: "a déjà réfléchi",
-        explanation: "Adverbe 'déjà' : a déjà réfléchi."
+        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : a déjà réfléchi.",
+        choices: ["a déjà réfléchi", "est déjà réfléchie", "a réfléchi déjà"]
       }
     ]
   },
@@ -984,210 +1014,240 @@ export const scenarios: Scenario[] = [
         presentSentence: "Jules écrit le code secret sur le mur.",
         verbToConjugate: "écrit",
         correctAnswer: "a écrit",
-        explanation: "Écrire est irrégulier : il a écrit (et non 'a écrivé')."
+        explanation: "Écrire est irrégulier : il a écrit (et non 'a écrivé').",
+        choices: ["a écrit", "est écrit", "s'est écrit"]
       },
       {
         id: 122,
         presentSentence: "Les joueurs prennent des indices.",
         verbToConjugate: "prennent",
         correctAnswer: "ont pris",
-        explanation: "Prendre est irrégulier : ils ont pris (et non 'ont prendé')."
+        explanation: "Prendre est irrégulier : ils ont pris (et non 'ont prendé').",
+        choices: ["ont pris", "sont pris", "se sont pris"]
       },
       {
         id: 123,
         presentSentence: "Je vois une clé cachée sous le tapis.",
         verbToConjugate: "vois",
         correctAnswer: "ai vu",
-        explanation: "Voir est irrégulier : j'ai vu."
+        explanation: "Voir est irrégulier : j'ai vu.",
+        choices: ["ai vu", "suis vu", "me suis vu"]
       },
       {
         id: 124,
         presentSentence: "Tu fais une découverte importante.",
         verbToConjugate: "fais",
         correctAnswer: "as fait",
-        explanation: "Faire est irrégulier : tu as fait."
+        explanation: "Faire est irrégulier : tu as fait.",
+        choices: ["as fait", "es fait", "t'es fait"]
       },
       {
         id: 125,
         presentSentence: "Elle dit la solution à haute voix.",
         verbToConjugate: "dit",
         correctAnswer: "a dit",
-        explanation: "Dire est irrégulier : elle a dit."
+        explanation: "Dire est irrégulier : elle a dit.",
+        choices: ["a dit", "est dite", "s'est dite"]
       },
       {
         id: 126,
         presentSentence: "Nous lisons les instructions attentivement.",
         verbToConjugate: "lisons",
         correctAnswer: "avons lu",
-        explanation: "Lire est irrégulier : nous avons lu."
+        explanation: "Lire est irrégulier : nous avons lu.",
+        choices: ["avons lu", "sommes lus", "nous sommes lus"]
       },
       {
         id: 127,
         presentSentence: "Vous mettez la clé dans la serrure.",
         verbToConjugate: "mettez",
         correctAnswer: "avez mis",
-        explanation: "Mettre est irrégulier : vous avez mis."
+        explanation: "Mettre est irrégulier : vous avez mis.",
+        choices: ["avez mis", "êtes mis", "vous êtes mis"]
       },
       {
         id: 128,
         presentSentence: "Ils ouvrent la porte mystérieuse.",
         verbToConjugate: "ouvrent",
         correctAnswer: "ont ouvert",
-        explanation: "Ouvrir est irrégulier : ils ont ouvert."
+        explanation: "Ouvrir est irrégulier : ils ont ouvert.",
+        choices: ["ont ouvert", "sont ouverts", "se sont ouverts"]
       },
       {
         id: 129,
         presentSentence: "Je comprends enfin l'énigme.",
         verbToConjugate: "comprends",
         correctAnswer: "ai compris",
-        explanation: "Comprendre est irrégulier : j'ai compris."
+        explanation: "Comprendre est irrégulier : j'ai compris.",
+        choices: ["ai compris", "suis compris", "me suis compris"]
       },
       {
         id: 130,
         presentSentence: "Tu apprends les règles du jeu.",
         verbToConjugate: "apprends",
         correctAnswer: "as appris",
-        explanation: "Apprendre est irrégulier : tu as appris."
+        explanation: "Apprendre est irrégulier : tu as appris.",
+        choices: ["as appris", "es appris", "t'es appris"]
       },
       {
         id: 131,
         presentSentence: "Elle boit une potion magique.",
         verbToConjugate: "boit",
         correctAnswer: "a bu",
-        explanation: "Boire est irrégulier : elle a bu."
+        explanation: "Boire est irrégulier : elle a bu.",
+        choices: ["a bu", "est bue", "s'est bue"]
       },
       {
         id: 132,
         presentSentence: "Nous courons vers la sortie.",
         verbToConjugate: "courons",
         correctAnswer: "avons couru",
-        explanation: "Courir est irrégulier : nous avons couru."
+        explanation: "Courir est irrégulier : nous avons couru.",
+        choices: ["avons couru", "sommes courus", "nous sommes courus"]
       },
       {
         id: 133,
         presentSentence: "Vous offrez votre aide aux autres.",
         verbToConjugate: "offrez",
         correctAnswer: "avez offert",
-        explanation: "Offrir est irrégulier : vous avez offert."
+        explanation: "Offrir est irrégulier : vous avez offert.",
+        choices: ["avez offert", "êtes offerts", "vous êtes offerts"]
       },
       {
         id: 134,
         presentSentence: "Ils reçoivent un message crypté.",
         verbToConjugate: "reçoivent",
         correctAnswer: "ont reçu",
-        explanation: "Recevoir est irrégulier : ils ont reçu."
+        explanation: "Recevoir est irrégulier : ils ont reçu.",
+        choices: ["ont reçu", "sont reçus", "se sont reçus"]
       },
       {
         id: 135,
         presentSentence: "Je conduis l'équipe vers la victoire.",
         verbToConjugate: "conduis",
         correctAnswer: "ai conduit",
-        explanation: "Conduire est irrégulier : j'ai conduit."
+        explanation: "Conduire est irrégulier : j'ai conduit.",
+        choices: ["ai conduit", "suis conduit", "me suis conduit"]
       },
       {
         id: 136,
         presentSentence: "Tu construis un plan d'évasion.",
         verbToConjugate: "construis",
         correctAnswer: "as construit",
-        explanation: "Construire est irrégulier : tu as construit."
+        explanation: "Construire est irrégulier : tu as construit.",
+        choices: ["as construit", "es construit", "t'es construit"]
       },
       {
         id: 137,
         presentSentence: "Elle craint les pièges du labyrinthe.",
         verbToConjugate: "craint",
         correctAnswer: "a craint",
-        explanation: "Craindre est irrégulier : elle a craint."
+        explanation: "Craindre est irrégulier : elle a craint.",
+        choices: ["a craint", "est crainte", "s'est crainte"]
       },
       {
         id: 138,
         presentSentence: "Nous résolvons toutes les énigmes.",
         verbToConjugate: "résolvons",
         correctAnswer: "avons résolu",
-        explanation: "Résoudre est irrégulier : nous avons résolu."
+        explanation: "Résoudre est irrégulier : nous avons résolu.",
+        choices: ["avons résolu", "sommes résolus", "nous sommes résolus"]
       },
       {
         id: 139,
         presentSentence: "Vous connaissez déjà ce type de jeu.",
         verbToConjugate: "connaissez",
         correctAnswer: "avez connu",
-        explanation: "Connaitre est irrégulier : vous avez connu."
+        explanation: "Connaître est irrégulier : vous avez connu.",
+        choices: ["avez connu", "êtes connus", "vous êtes connus"]
       },
       {
         id: 140,
         presentSentence: "Ils vivent une aventure extraordinaire.",
         verbToConjugate: "vivent",
         correctAnswer: "ont vécu",
-        explanation: "Vivre est irrégulier : ils ont vécu."
+        explanation: "Vivre est irrégulier : ils ont vécu.",
+        choices: ["ont vécu", "sont vécus", "se sont vécus"]
       },
       {
         id: 141,
         presentSentence: "Je peins un symbole sur le mur.",
         verbToConjugate: "peins",
         correctAnswer: "ai peint",
-        explanation: "Peindre est irrégulier : j'ai peint."
+        explanation: "Peindre est irrégulier : j'ai peint.",
+        choices: ["ai peint", "suis peint", "me suis peint"]
       },
       {
         id: 142,
         presentSentence: "Tu joins les deux parties du puzzle.",
         verbToConjugate: "joins",
         correctAnswer: "as joint",
-        explanation: "Joindre est irrégulier : tu as joint."
+        explanation: "Joindre est irrégulier : tu as joint.",
+        choices: ["as joint", "es joint", "t'es joint"]
       },
       {
         id: 143,
         presentSentence: "Elle rompt le code de la porte.",
         verbToConjugate: "rompt",
         correctAnswer: "a rompu",
-        explanation: "Rompre est irrégulier : elle a rompu."
+        explanation: "Rompre est irrégulier : elle a rompu.",
+        choices: ["a rompu", "est rompue", "s'est rompue"]
       },
       {
         id: 144,
         presentSentence: "Nous suivons les indices un par un.",
         verbToConjugate: "suivons",
         correctAnswer: "avons suivi",
-        explanation: "Suivre est irrégulier : nous avons suivi."
+        explanation: "Suivre est irrégulier : nous avons suivi.",
+        choices: ["avons suivi", "sommes suivis", "nous sommes suivis"]
       },
       {
         id: 145,
         presentSentence: "Vous battez le record de temps.",
         verbToConjugate: "battez",
         correctAnswer: "avez battu",
-        explanation: "Battre est irrégulier : vous avez battu."
+        explanation: "Battre est irrégulier : vous avez battu.",
+        choices: ["avez battu", "êtes battus", "vous êtes battus"]
       },
       {
         id: 146,
         presentSentence: "Ils perdent leur chemin dans le labyrinthe.",
         verbToConjugate: "perdent",
         correctAnswer: "ont perdu",
-        explanation: "Perdre est irrégulier : ils ont perdu."
+        explanation: "Perdre est irrégulier : ils ont perdu.",
+        choices: ["ont perdu", "sont perdus", "se sont perdus"]
       },
       {
         id: 147,
         presentSentence: "Je tiens fermement la clé magique.",
         verbToConjugate: "tiens",
         correctAnswer: "ai tenu",
-        explanation: "Tenir est irrégulier : j'ai tenu."
+        explanation: "Tenir est irrégulier : j'ai tenu.",
+        choices: ["ai tenu", "suis tenu", "me suis tenu"]
       },
       {
         id: 148,
         presentSentence: "Tu obtiens finalement la réponse.",
         verbToConjugate: "obtiens",
         correctAnswer: "as obtenu",
-        explanation: "Obtenir est irrégulier : tu as obtenu."
+        explanation: "Obtenir est irrégulier : tu as obtenu.",
+        choices: ["as obtenu", "es obtenu", "t'es obtenu"]
       },
       {
         id: 149,
         presentSentence: "Elle pousse la porte secrète.",
         verbToConjugate: "pousse",
         correctAnswer: "a poussé",
-        explanation: "Pousser (verbe régulier) : elle a poussé."
+        explanation: "Pousser (verbe régulier) : elle a poussé.",
+        choices: ["a poussé", "est poussée", "s'est poussée"]
       },
       {
         id: 150,
         presentSentence: "Nous découvrons le trésor caché.",
         verbToConjugate: "découvrons",
         correctAnswer: "avons découvert",
-        explanation: "Découvrir est irrégulier : nous avons découvert."
+        explanation: "Découvrir est irrégulier : nous avons découvert.",
+        choices: ["avons découvert", "sommes découverts", "nous sommes découverts"]
       }
     ]
   }
