@@ -685,7 +685,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Ils mangent dans ce petit restaurant.",
         verbToConjugate: "mangent",
         correctAnswer: "ont mangé",
-        explanation: "Manger + avoir : ils ont mangé.",
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet.",
         choices: ["ont mangé", "sont mangés", "se sont mangés"]
       },
       {
@@ -707,7 +707,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Elle disparait dans la foule du marché.",
         verbToConjugate: "disparait",
         correctAnswer: "a disparu",
-        explanation: "Disparaitre + avoir : elle a disparu."
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
         id: 85,
@@ -721,28 +721,28 @@ export const scenarios: Scenario[] = [
         presentSentence: "Vous apparaissez soudain devant le monument.",
         verbToConjugate: "apparaissez",
         correctAnswer: "avez apparu",
-        explanation: "Apparaitre + avoir : vous avez apparu."
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
         id: 87,
         presentSentence: "Ils échappent de justesse au contrôle.",
         verbToConjugate: "échappent",
         correctAnswer: "ont échappé",
-        explanation: "Échapper + avoir : ils ont échappé."
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
         id: 88,
         presentSentence: "Je surgis de derrière la colonne.",
         verbToConjugate: "surgis",
         correctAnswer: "ai surgi",
-        explanation: "Surgir + avoir : j'ai surgi."
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
         id: 89,
         presentSentence: "Tu émerges de ta sieste dans le train.",
         verbToConjugate: "émerges",
         correctAnswer: "as émergé",
-        explanation: "Émerger + avoir : tu as émergé."
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       },
       {
         id: 90,
