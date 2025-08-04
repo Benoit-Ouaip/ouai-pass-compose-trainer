@@ -620,7 +620,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 73,
-        presentSentence: "Nous naissons tous avec l'envie de voyager.",
+        presentSentence: "Nous naissons avec l'envie de voyager.",
         verbToConjugate: "naissons",
         correctAnswer: "sommes nés",
         explanation: "Naître + être : nous sommes nés.",
