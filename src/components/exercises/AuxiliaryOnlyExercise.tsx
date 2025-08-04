@@ -68,7 +68,11 @@ const AuxiliaryOnlyExercise = ({
     let participle = '';
     let explanation = '';
     
-    if (parts.length === 2 && parts[0].match(/[''`]/)) {
+    // Cas spécifique pour "se moquer de"
+    if (exercise.presentSentence.toLowerCase().includes('se moquent')) {
+      participle = parts[parts.length - 1];
+      explanation = `Le verbe se moquer de n'a pas de CDV → le participe passé s'accorde avec le sujet : ${participle}`;
+    } else if (parts.length === 2 && parts[0].match(/[''`]/)) {
       // Cas avec contraction: "s'est décidée"
       participle = parts[1];
       if (parts[0].startsWith('s\'')) {
