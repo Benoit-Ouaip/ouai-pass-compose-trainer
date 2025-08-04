@@ -325,9 +325,9 @@ export const scenarios: Scenario[] = [
         id: 37,
         presentSentence: "Vous vous organisez en cuisine.",
         verbToConjugate: "vous organisez",
-        correctAnswer: "vous vous êtes organisés",
-        explanation: "S'organiser : vous vous êtes organisés.",
-        choices: ["vous vous êtes organisés", "vous avez organisé", "vous étiez organisés"]
+        correctAnswer: "vous êtes organisés",
+        explanation: "S'organiser : vous vous êtes organisés (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes organisés", "avez organisé", "étiez organisés"]
       },
       {
         id: 38,
@@ -477,9 +477,9 @@ export const scenarios: Scenario[] = [
         id: 56,
         presentSentence: "Vous vous habituez aux nouveaux ustensiles.",
         verbToConjugate: "vous habituez",
-        correctAnswer: "vous vous êtes habitués",
-        explanation: "S'habituer : vous vous êtes habitués.",
-        choices: ["vous vous êtes habitués", "vous avez habitué", "vous étiez habitués"]
+        correctAnswer: "vous êtes habitués",
+        explanation: "S'habituer : vous vous êtes habitués (le premier 'vous' est déjà dans la phrase).",
+        choices: ["vous êtes habitués", "avez habitué", "étiez habitués"]
       },
       {
         id: 57,
