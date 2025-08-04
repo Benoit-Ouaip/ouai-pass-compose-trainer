@@ -882,11 +882,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 106,
-        presentSentence: "Je mets mes crampons neufs.",
-        verbToConjugate: "mets",
-        correctAnswer: "ai mis",
-        explanation: "Verbe mettre irrégulier : j'ai mis.",
-        choices: ["ai mis", "suis mis", "me suis mis"]
+        presentSentence: "J'enfile mes crampons neufs.",
+        verbToConjugate: "enfile",
+        correctAnswer: "ai enfilé",
+        explanation: "Verbe enfiler du 1er groupe : j'ai enfilé.",
+        choices: ["ai enfilé", "suis enfilé", "me suis enfilé"]
       },
       {
         id: 107,
