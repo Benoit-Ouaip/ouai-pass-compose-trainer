@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import confetti from 'canvas-confetti';
 
 interface ResultsScreenProps {
   score: number;
@@ -23,10 +25,52 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
   };
 
   const getEncouragement = () => {
-    if (score >= 80) return "Tu maîtrises parfaitement le passé composé !";
+    if (score >= 80) return "Tu maîtrises le passé composé !";
     if (score >= 60) return "Tu es sur la bonne voie, continue comme ça !";
     return "Continue à t'entraîner, tu progresses !";
   };
+
+  // Effet de confettis et son au chargement
+  useEffect(() => {
+    // Confettis
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'];
+
+    (function frame() {
+      confetti({
+        particleCount: 3,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      });
+      confetti({
+        particleCount: 3,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+
+    // Son "Hourra !" - utilise l'API Speech Synthesis du navigateur
+    const utterance = new SpeechSynthesisUtterance("Hourra !");
+    utterance.lang = 'fr-FR';
+    utterance.volume = 0.7;
+    utterance.rate = 1.2;
+    utterance.pitch = 1.3;
+    
+    setTimeout(() => {
+      speechSynthesis.speak(utterance);
+    }, 500);
+
+  }, []);
 
   return (
     <div className="max-w-2xl mx-auto p-6 text-center">
