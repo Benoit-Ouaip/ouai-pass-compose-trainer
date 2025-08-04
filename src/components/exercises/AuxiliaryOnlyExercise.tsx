@@ -76,7 +76,7 @@ const AuxiliaryOnlyExercise = ({
     // Cas spécifique pour "se demander"
     else if (exercise.presentSentence.toLowerCase().includes('se demandent')) {
       participle = parts[parts.length - 1];
-      explanation = `Le participe passé s'accorde avec le sujet.`;
+      explanation = `Le participe passé ne s'accorde pas car se est un complément indirect du verbe.`;
     }
     else if (parts.length === 2 && parts[0].match(/[''`]/)) {
       // Cas avec contraction: "s'est décidée"
