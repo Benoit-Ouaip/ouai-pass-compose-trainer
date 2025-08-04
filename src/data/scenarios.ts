@@ -276,18 +276,18 @@ export const scenarios: Scenario[] = [
       {
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
-        verbToConjugate: "nous lavons",
-        correctAnswer: "nous sommes",
-        explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes.",
-        choices: ["nous sommes", "nous avons", "nous étions"]
+        verbToConjugate: "lavons",
+        correctAnswer: "sommes",
+        explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes lavés.",
+        choices: ["sommes", "avons", "étions"]
       },
       {
         id: 32,
         presentSentence: "Le chef se prépare pour le service.",
-        verbToConjugate: "se prépare",
-        correctAnswer: "s'est",
-        explanation: "Se préparer est pronominal : il s'est.",
-        choices: ["s'est", "a", "est"]
+        verbToConjugate: "prépare",
+        correctAnswer: "est",
+        explanation: "Se préparer est pronominal : il s'est préparé.",
+        choices: ["est", "a", "était"]
       },
       {
         id: 33,
