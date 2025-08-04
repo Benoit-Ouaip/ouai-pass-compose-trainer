@@ -682,10 +682,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 81,
-        presentSentence: "Ils demeurent dans ce petit village.",
-        verbToConjugate: "demeurent",
-        correctAnswer: "sont demeurés",
-        explanation: "Demeurer + être : ils sont demeurés."
+        presentSentence: "Ils habitent dans ce petit village.",
+        verbToConjugate: "habitent",
+        correctAnswer: "ont habité",
+        explanation: "Habiter + avoir : ils ont habité."
       },
       {
         id: 82,
