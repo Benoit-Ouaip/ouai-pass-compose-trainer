@@ -76,7 +76,7 @@ const AuxiliaryOnlyExercise = ({
     // Cas spécifique pour "se demander"
     else if (exercise.presentSentence.toLowerCase().includes('se demandent')) {
       participle = parts[parts.length - 1];
-      explanation = `On ne met pas de "s" à la fin. Pourquoi ? Parce que dans se demander, les cuisiniers se posent une question à eux-mêmes.`;
+      explanation = `On ne met pas de "s" à la fin. Pourquoi ? Parce que dans "se demander", les cuisiniers se posent une question à eux-mêmes.`;
     }
     else if (parts.length === 2 && parts[0].match(/[''`]/)) {
       // Cas avec contraction: "s'est décidée"
