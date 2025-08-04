@@ -535,119 +535,136 @@ export const scenarios: Scenario[] = [
         presentSentence: "Les touristes sortent de l'hôtel ce matin.",
         verbToConjugate: "sortent",
         correctAnswer: "sont sortis",
-        explanation: "Sortir + être + accord masculin pluriel : ils sont sortis."
+        explanation: "Sortir + être + accord masculin pluriel : ils sont sortis.",
+        choices: ["sont sortis", "ont sorti", "se sont sortis"]
       },
       {
         id: 63,
         presentSentence: "Nous partons en voyage demain matin.",
         verbToConjugate: "partons",
         correctAnswer: "sommes partis",
-        explanation: "Partir + être : nous sommes partis."
+        explanation: "Partir + être : nous sommes partis.",
+        choices: ["sommes partis", "avons parti", "nous sommes parti"]
       },
       {
         id: 64,
         presentSentence: "Tu viens avec nous en excursion.",
         verbToConjugate: "viens",
         correctAnswer: "es venu(e)",
-        explanation: "Venir + être : tu es venu(e)."
+        explanation: "Venir + être : tu es venu(e).",
+        choices: ["es venu(e)", "as venu", "t'es venu"]
       },
       {
         id: 65,
         presentSentence: "Elle tombe amoureuse de cette ville.",
         verbToConjugate: "tombe",
         correctAnswer: "est tombée",
-        explanation: "Tomber + être + accord féminin : elle est tombée."
+        explanation: "Tomber + être + accord féminin : elle est tombée.",
+        choices: ["est tombée", "a tombé", "s'est tombée"]
       },
       {
         id: 66,
         presentSentence: "Nous entrons dans le musée.",
         verbToConjugate: "entrons",
         correctAnswer: "sommes entrés",
-        explanation: "Entrer + être : nous sommes entrés."
+        explanation: "Entrer + être : nous sommes entrés.",
+        choices: ["sommes entrés", "avons entré", "nous sommes entré"]
       },
       {
         id: 67,
         presentSentence: "Vous retournez à l'hôtel avant la nuit.",
         verbToConjugate: "retournez",
         correctAnswer: "êtes retournés",
-        explanation: "Retourner + être : vous êtes retournés."
+        explanation: "Retourner + être : vous êtes retournés.",
+        choices: ["êtes retournés", "avez retourné", "vous êtes retourné"]
       },
       {
         id: 68,
         presentSentence: "Ils montent au sommet de la tour.",
         verbToConjugate: "montent",
         correctAnswer: "sont montés",
-        explanation: "Monter + être : ils sont montés."
+        explanation: "Monter + être : ils sont montés.",
+        choices: ["sont montés", "ont monté", "se sont montés"]
       },
       {
         id: 69,
         presentSentence: "Il descend du train à la gare centrale.",
         verbToConjugate: "descend",
         correctAnswer: "est descendu",
-        explanation: "Descendre + être : il est descendu."
+        explanation: "Descendre + être : il est descendu.",
+        choices: ["est descendu", "a descendu", "s'est descendu"]
       },
       {
         id: 70,
         presentSentence: "La voyageuse reste trois jours à Paris.",
         verbToConjugate: "reste",
         correctAnswer: "est restée",
-        explanation: "Rester + être + accord féminin : elle est restée."
+        explanation: "Rester + être + accord féminin : elle est restée.",
+        choices: ["est restée", "a resté", "s'est restée"]
       },
       {
         id: 71,
         presentSentence: "Tu reviens de ton voyage en Italie.",
         verbToConjugate: "reviens",
         correctAnswer: "es revenu(e)",
-        explanation: "Revenir + être : tu es revenu(e)."
+        explanation: "Revenir + être : tu es revenu(e).",
+        choices: ["es revenu(e)", "as revenu", "t'es revenu"]
       },
       {
         id: 72,
         presentSentence: "Elle passe par Londres avant Paris.",
         verbToConjugate: "passe",
         correctAnswer: "est passée",
-        explanation: "Passer + être : elle est passée."
+        explanation: "Passer + être : elle est passée.",
+        choices: ["est passée", "a passé", "s'est passée"]
       },
       {
         id: 73,
         presentSentence: "Nous naissons tous avec l'envie de voyager.",
         verbToConjugate: "naissons",
         correctAnswer: "sommes nés",
-        explanation: "Naître + être : nous sommes nés."
+        explanation: "Naître + être : nous sommes nés.",
+        choices: ["sommes nés", "avons naissé", "nous sommes naissé"]
       },
       {
         id: 74,
         presentSentence: "Vous devenez de vrais globe-trotteurs.",
         verbToConjugate: "devenez",
         correctAnswer: "êtes devenus",
-        explanation: "Devenir + être : vous êtes devenus."
+        explanation: "Devenir + être : vous êtes devenus.",
+        choices: ["êtes devenus", "avez devenu", "vous êtes devenu"]
       },
       {
         id: 75,
         presentSentence: "Ils repartent vers une nouvelle destination.",
         verbToConjugate: "repartent",
         correctAnswer: "sont repartis",
-        explanation: "Repartir + être : ils sont repartis."
+        explanation: "Repartir + être : ils sont repartis.",
+        choices: ["sont repartis", "ont reparti", "se sont repartis"]
       },
       {
         id: 76,
         presentSentence: "Elle retombe sous le charme de cette région.",
         verbToConjugate: "retombe",
         correctAnswer: "est retombée",
-        explanation: "Retomber + être : elle est retombée."
+        explanation: "Retomber + être : elle est retombée.",
+        choices: ["est retombée", "a retombé", "s'est retombée"]
       },
       {
         id: 77,
         presentSentence: "Tu interviens pour aider les autres voyageurs.",
         verbToConjugate: "interviens",
         correctAnswer: "es intervenu(e)",
-        explanation: "Intervenir + être : tu es intervenu(e)."
+        explanation: "Intervenir + être : tu es intervenu(e).",
+        choices: ["es intervenu(e)", "as intervenu", "t'es intervenu"]
       },
       {
         id: 78,
         presentSentence: "Elle va directement à son hôtel.",
         verbToConjugate: "va",
         correctAnswer: "est allée",
-        explanation: "Aller + être + accord féminin : elle est allée."
+        explanation: "Aller + être + accord féminin : elle est allée.",
+        choices: ["est allée", "a allé", "s'est allée"]
       },
       {
         id: 79,
