@@ -548,11 +548,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 64,
-        presentSentence: "Tu viens avec nous en excursion.",
+        presentSentence: "Toi Alice, tu viens avec nous en excursion.",
         verbToConjugate: "viens",
-        correctAnswer: "es venu(e)",
-        explanation: "Venir + être : tu es venu(e).",
-        choices: ["es venu(e)", "as venu", "t'es venu"]
+        correctAnswer: "es venue",
+        explanation: "Venir + être + accord féminin : tu es venue.",
+        choices: ["es venue", "as venu", "t'es venue"]
       },
       {
         id: 65,
