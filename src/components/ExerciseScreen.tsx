@@ -98,32 +98,8 @@ const ExerciseScreen = ({
       // Niveau 1: choix multiple - comparaison exacte
       isCorrect = userAnswer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
-      // Niveau 2: auxiliaire et participe passé (sans pronoms)
-      const parts = exercise.correctAnswer.split(' ');
-      let correctAnswer;
-      
-      if (parts.length === 2 && parts[0].match(/[''`]/)) {
-        // Cas avec contraction: "s'est décidée" -> réponse attendue: "est décidée"
-        const contractedPart = parts[0]; // "s'est" ou "t'es"
-        const participle = parts[1]; // "décidée"
-        
-        if (contractedPart.endsWith('est')) {
-          correctAnswer = `est ${participle}`; // "est décidée"
-        } else if (contractedPart.endsWith('es')) {
-          correctAnswer = `es ${participle}`; // "es rappelé"
-        } else {
-          correctAnswer = exercise.correctAnswer; // fallback
-        }
-      } else if (parts.length === 2) {
-        correctAnswer = exercise.correctAnswer; // cas simple: "a mangé"
-      } else if (parts.length > 2) {
-        // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
-        correctAnswer = parts.slice(-2).join(' ');
-      } else {
-        correctAnswer = exercise.correctAnswer;
-      }
-      
-      isCorrect = userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
+      // Niveau 2: seulement l'auxiliaire
+      isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
     } else {
       // Niveau 3: auxiliaire et participe passé (sans pronoms) - même logique que niveau 2
       const parts = exercise.correctAnswer.split(' ');
