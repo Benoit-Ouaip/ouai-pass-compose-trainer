@@ -668,10 +668,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 79,
-        presentSentence: "Nous accourons vers la sortie d'urgence.",
-        verbToConjugate: "accourons",
-        correctAnswer: "sommes accourus",
-        explanation: "Accourir + être : nous sommes accourus."
+        presentSentence: "Nous sortons vers la sortie d'urgence.",
+        verbToConjugate: "sortons",
+        correctAnswer: "sommes sortis",
+        explanation: "Sortir + être : nous sommes sortis."
       },
       {
         id: 80,
