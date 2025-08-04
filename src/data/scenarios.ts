@@ -652,11 +652,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 77,
-        presentSentence: "Tu interviens pour aider les autres voyageurs.",
-        verbToConjugate: "interviens",
-        correctAnswer: "es intervenu(e)",
-        explanation: "Intervenir + être : tu es intervenu(e).",
-        choices: ["es intervenu(e)", "as intervenu", "t'es intervenu"]
+        presentSentence: "Marie intervient pour aider les autres voyageurs.",
+        verbToConjugate: "intervient",
+        correctAnswer: "est intervenue",
+        explanation: "Intervenir + être : elle est intervenue.",
+        choices: ["est intervenue", "a intervenu", "s'est intervenue"]
       },
       {
         id: 78,
