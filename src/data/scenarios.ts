@@ -732,7 +732,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 88,
-        presentSentence: "Je vais à la gare centrale.",
+        presentSentence: "Moi, Mathias, je vais à la gare centrale.",
         verbToConjugate: "vais",
         correctAnswer: "suis allé",
         explanation: "Aller + être : je suis allé."
