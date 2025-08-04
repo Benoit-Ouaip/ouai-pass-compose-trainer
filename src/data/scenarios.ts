@@ -697,10 +697,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 83,
-        presentSentence: "Tu parviens enfin à destination.",
+        presentSentence: "Toi Alice, tu parviens enfin à destination.",
         verbToConjugate: "parviens",
-        correctAnswer: "es parvenu(e)",
-        explanation: "Parvenir + être : tu es parvenu(e)."
+        correctAnswer: "es parvenue",
+        explanation: "Parvenir + être + accord féminin : tu es parvenue."
       },
       {
         id: 84,
