@@ -540,7 +540,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 63,
-        presentSentence: "Nous partons en voyage demain matin.",
+        presentSentence: "Nous, Lucas et moi, nous partons en voyage demain matin.",
         verbToConjugate: "partons",
         correctAnswer: "sommes partis",
         explanation: "Partir + être : nous sommes partis.",
@@ -556,7 +556,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 65,
-        presentSentence: "Elle tombe amoureuse de cette ville.",
+        presentSentence: "Marie tombe amoureuse de cette ville.",
         verbToConjugate: "tombe",
         correctAnswer: "est tombée",
         explanation: "Tomber + être + accord féminin : elle est tombée.",
@@ -564,7 +564,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 66,
-        presentSentence: "Nous entrons dans le musée.",
+        presentSentence: "Nous, Emma et moi, nous entrons dans le musée.",
         verbToConjugate: "entrons",
         correctAnswer: "sommes entrés",
         explanation: "Entrer + être : nous sommes entrés.",
@@ -572,7 +572,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 67,
-        presentSentence: "Vous retournez à l'hôtel avant la nuit.",
+        presentSentence: "Vous, Marc et Pierre, vous retournez à l'hôtel avant la nuit.",
         verbToConjugate: "retournez",
         correctAnswer: "êtes retournés",
         explanation: "Retourner + être : vous êtes retournés.",
@@ -739,10 +739,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 89,
-        presentSentence: "Tu rentres chez toi après le voyage.",
+        presentSentence: "Toi, Isabelle, tu rentres chez toi après le voyage.",
         verbToConjugate: "rentres",
-        correctAnswer: "es rentré",
-        explanation: "Rentrer + être : tu es rentré."
+        correctAnswer: "es rentrée",
+        explanation: "Rentrer + être + accord féminin : tu es rentrée."
       },
       {
         id: 90,
