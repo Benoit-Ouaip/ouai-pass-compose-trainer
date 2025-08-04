@@ -794,11 +794,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 95,
-        presentSentence: "Tu joues déjà très bien au foot.",
+        presentSentence: "Tu joues très bien au foot.",
         verbToConjugate: "joues",
-        correctAnswer: "as déjà joué",
-        explanation: "L'adverbe 'déjà' se place entre l'auxiliaire et le participe : as déjà joué.",
-        choices: ["as déjà joué", "es déjà joué", "as joué déjà"]
+        correctAnswer: "as joué",
+        explanation: "Avec l'auxiliaire avoir : tu as joué.",
+        choices: ["as joué", "es joué", "as jouée"]
       },
       {
         id: 96,
