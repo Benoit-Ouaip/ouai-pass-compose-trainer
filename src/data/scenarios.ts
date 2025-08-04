@@ -770,7 +770,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 92,
-        presentSentence: "L'entraîneur prépare bien son équipe.",
+        presentSentence: "L'entraineur prépare bien son équipe.",
         verbToConjugate: "prépare",
         correctAnswer: "a bien préparé",
         explanation: "L'adverbe 'bien' se place entre l'auxiliaire et le participe : a bien préparé.",
