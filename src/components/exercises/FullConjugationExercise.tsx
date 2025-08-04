@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+import { useEffect, useRef } from "react";
 
 interface Exercise {
   id: number;
@@ -25,6 +26,13 @@ const FullConjugationExercise = ({
   isCorrect,
   onKeyPress
 }: FullConjugationExerciseProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!isAnswered && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isAnswered, exercise.id]);
   // Mettre le verbe en gras et rouge dans la phrase au présent
   const highlightedPresentSentence = exercise.presentSentence.replace(
     new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
@@ -76,6 +84,7 @@ const FullConjugationExercise = ({
         />
         {!isAnswered && (
           <Input
+            ref={inputRef}
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 mx-auto"
