@@ -224,7 +224,7 @@ const FullConjugationExercise = ({
                   </p>
                   <div className="pt-2 border-t border-blue-100">
                     <p className="text-xs text-blue-600 font-medium">
-                      💡 Astuce: Avec ÊTRE, le participe passé s'accorde toujours avec le sujet !
+                      💡 Astuce: Identifie le sujet pour bien accorder le participe passé !
                     </p>
                   </div>
                 </div>
