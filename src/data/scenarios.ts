@@ -794,7 +794,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 95,
-        presentSentence: "Tu joues très bien au foot.",
+        presentSentence: "Samedi, tu joues au foot avec ton équipe.",
         verbToConjugate: "joues",
         correctAnswer: "as joué",
         explanation: "Avec l'auxiliaire avoir : tu as joué.",
