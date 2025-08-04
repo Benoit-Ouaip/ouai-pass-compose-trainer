@@ -714,7 +714,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Nous prévoyons un moment pour jouer ensemble.",
         verbToConjugate: "prévoyons",
         correctAnswer: "avons prévu",
-        explanation: "Prévoir + avoir : le participe passé ne s'accorde pas avec le sujet."
+        explanation: "Regarde le sujet pour accorder le participe passé."
       },
       {
         id: 86,
