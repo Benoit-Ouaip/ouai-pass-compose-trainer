@@ -299,11 +299,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 34,
-        presentSentence: "Tu te dépêches de finir ton plat.",
-        verbToConjugate: "te dépêches",
-        correctAnswer: "t'es dépêché(e)",
-        explanation: "Se dépêcher : tu t'es dépêché(e).",
-        choices: ["t'es dépêché(e)", "as dépêché", "es dépêché"]
+        presentSentence: "Les apprentis se dépêchent de finir leur plat.",
+        verbToConjugate: "se dépêchent",
+        correctAnswer: "se sont dépêchés",
+        explanation: "Se dépêcher : ils se sont dépêchés.",
+        choices: ["se sont dépêchés", "ont dépêché", "sont dépêchés"]
       },
       {
         id: 35,
@@ -355,11 +355,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 41,
-        presentSentence: "Tu te rappelles la recette de grand-mère.",
-        verbToConjugate: "te rappelles",
-        correctAnswer: "t'es rappelé(e)",
-        explanation: "Se rappeler : tu t'es rappelé(e).",
-        choices: ["t'es rappelé(e)", "as rappelé", "es rappelé"]
+        presentSentence: "Les chefs se rappellent la recette de grand-mère.",
+        verbToConjugate: "se rappellent",
+        correctAnswer: "se sont rappelé",
+        explanation: "Se rappeler : ils se sont rappelé la recette.",
+        choices: ["se sont rappelé", "ont rappelé", "sont rappelés"]
       },
       {
         id: 42,
@@ -403,11 +403,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 47,
-        presentSentence: "Tu te débrouilles bien avec les épices.",
-        verbToConjugate: "te débrouilles",
-        correctAnswer: "t'es débrouillé(e)",
-        explanation: "Se débrouiller : tu t'es débrouillé(e).",
-        choices: ["t'es débrouillé(e)", "as débrouillé", "es débrouillé"]
+        presentSentence: "Les apprentis se débrouillent bien avec les épices.",
+        verbToConjugate: "se débrouillent",
+        correctAnswer: "se sont débrouillés",
+        explanation: "Se débrouiller : ils se sont débrouillés.",
+        choices: ["se sont débrouillés", "ont débrouillé", "sont débrouillés"]
       },
       {
         id: 48,
@@ -419,11 +419,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 49,
-        presentSentence: "Je me retrouve en cuisine chaque matin.",
-        verbToConjugate: "me retrouve",
-        correctAnswer: "me suis retrouvé(e)",
-        explanation: "Se retrouver : je me suis retrouvé(e).",
-        choices: ["me suis retrouvé(e)", "ai retrouvé", "suis retrouvé"]
+        presentSentence: "Paul se retrouve en cuisine chaque matin.",
+        verbToConjugate: "se retrouve",
+        correctAnswer: "s'est retrouvé",
+        explanation: "Se retrouver : il s'est retrouvé.",
+        choices: ["s'est retrouvé", "a retrouvé", "est retrouvé"]
       },
       {
         id: 50,
@@ -451,11 +451,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 53,
-        presentSentence: "Tu te demandes comment faire cette sauce.",
-        verbToConjugate: "te demandes",
-        correctAnswer: "t'es demandé(e)",
-        explanation: "Se demander : tu t'es demandé(e).",
-        choices: ["t'es demandé(e)", "as demandé", "es demandé"]
+        presentSentence: "Les cuisiniers se demandent comment faire cette sauce.",
+        verbToConjugate: "se demandent",
+        correctAnswer: "se sont demandé",
+        explanation: "Se demander : ils se sont demandé comment faire.",
+        choices: ["se sont demandé", "ont demandé", "sont demandés"]
       },
       {
         id: 54,
