@@ -718,7 +718,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 86,
-        presentSentence: "Vous apparaissez soudain devant le monument.",
+        presentSentence: "Vous apparaissez devant le monument.",
         verbToConjugate: "apparaissez",
         correctAnswer: "avez apparu",
         explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
