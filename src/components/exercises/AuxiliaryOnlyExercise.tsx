@@ -222,12 +222,7 @@ const AuxiliaryOnlyExercise = ({
                   <p className="text-sm text-gray-700 leading-relaxed">
                     {getParticipleHelp().explanation}
                   </p>
-                   <div className="pt-2 border-t border-blue-100">
-                     <p className="text-xs text-blue-600 font-medium">
-                       💡 Astuce: Identifie le sujet pour bien accorder le participe passé !
-                     </p>
-                   </div>
-                </div>
+                 </div>
               </PopoverContent>
             </Popover>
           </div>
