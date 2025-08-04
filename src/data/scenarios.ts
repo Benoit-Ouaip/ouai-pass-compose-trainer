@@ -469,9 +469,9 @@ export const scenarios: Scenario[] = [
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
         verbToConjugate: "nous excusons",
-        correctAnswer: "nous nous sommes excusés",
-        explanation: "S'excuser : nous nous sommes excusés.",
-        choices: ["nous nous sommes excusés", "nous avons excusé", "nous étions excusés"]
+        correctAnswer: "nous sommes excusés",
+        explanation: "S'excuser : nous nous sommes excusés (le premier 'nous' est déjà dans la phrase).",
+        choices: ["nous sommes excusés", "avons excusé", "étions excusés"]
       },
       {
         id: 56,
