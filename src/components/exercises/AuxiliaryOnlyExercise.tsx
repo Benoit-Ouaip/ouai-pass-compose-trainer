@@ -71,44 +71,44 @@ const AuxiliaryOnlyExercise = ({
     // Cas spécifique pour "se moquer de"
     if (exercise.presentSentence.toLowerCase().includes('se moquent')) {
       participle = parts[parts.length - 1];
-      explanation = `Le verbe se moquer de n'a pas de CDV → le participe passé s'accorde avec le sujet`;
+      explanation = `Le verbe se moquer de n'a pas de CDV → le participe passé s'accorde avec le sujet.`;
     } 
     // Cas spécifique pour "se demander"
     else if (exercise.presentSentence.toLowerCase().includes('se demandent')) {
       participle = parts[parts.length - 1];
-      explanation = `Le participe passé s'accorde avec le sujet`;
+      explanation = `Le participe passé s'accorde avec le sujet.`;
     }
     else if (parts.length === 2 && parts[0].match(/[''`]/)) {
       // Cas avec contraction: "s'est décidée"
       participle = parts[1];
       if (parts[0].startsWith('s\'')) {
-        explanation = `Le sujet "elle" est féminin singulier, donc le participe passé s'accorde : ${participle}`;
+        explanation = `Le sujet "elle" est féminin singulier, donc le participe passé s'accorde.`;
       } else if (parts[0].startsWith('t\'')) {
-        explanation = `Regarde bien le contexte pour déterminer si "tu" est masculin ou féminin, le participe s'accorde : ${participle}`;
+        explanation = `Regarde bien le contexte pour déterminer si "tu" est masculin ou féminin, le participe s'accorde.`;
       }
     } else if (parts.length > 2) {
       // Cas pronominal
       participle = parts[parts.length - 1];
       const subjectPronouns = parts.slice(0, -2).join(' ');
       if (subjectPronouns.includes('vous')) {
-        explanation = `Avec "vous", le participe passé s'accorde selon le genre et nombre : ${participle}`;
+        explanation = `Avec "vous", le participe passé s'accorde selon le genre et nombre.`;
       } else if (subjectPronouns.includes('nous')) {
-        explanation = `Avec "nous", le participe passé s'accorde selon le genre et nombre : ${participle}`;
+        explanation = `Avec "nous", le participe passé s'accorde selon le genre et nombre.`;
       } else {
-        explanation = `Le participe passé s'accorde avec le sujet : ${participle}`;
+        explanation = `Le participe passé s'accorde avec le sujet.`;
       }
     } else {
       // Cas simple
       participle = parts[1];
       // Analyser la phrase pour déterminer le sujet
       if (exercise.presentSentence.toLowerCase().includes('elle')) {
-        explanation = `Le sujet "elle" est féminin singulier, donc : ${participle}`;
+        explanation = `Le sujet "elle" est féminin singulier.`;
       } else if (exercise.presentSentence.toLowerCase().includes('elles')) {
-        explanation = `Le sujet "elles" est féminin pluriel, donc : ${participle}`;
+        explanation = `Le sujet "elles" est féminin pluriel.`;
       } else if (exercise.presentSentence.toLowerCase().includes('ils')) {
-        explanation = `Le sujet "ils" est masculin pluriel, donc : ${participle}`;
+        explanation = `Le sujet "ils" est masculin pluriel.`;
       } else {
-        explanation = `Regarde le sujet pour accorder le participe passé : ${participle}`;
+        explanation = `Regarde le sujet pour accorder le participe passé.`;
       }
     }
     
