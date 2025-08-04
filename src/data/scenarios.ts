@@ -685,7 +685,8 @@ export const scenarios: Scenario[] = [
         presentSentence: "Ils mangent dans ce petit restaurant.",
         verbToConjugate: "mangent",
         correctAnswer: "ont mangé",
-        explanation: "Manger + avoir : ils ont mangé."
+        explanation: "Manger + avoir : ils ont mangé.",
+        choices: ["ont mangé", "sont mangés", "se sont mangés"]
       },
       {
         id: 82,
