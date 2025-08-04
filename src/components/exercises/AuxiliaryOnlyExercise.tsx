@@ -109,15 +109,28 @@ const AuxiliaryOnlyExercise = ({
     } else {
       // Cas simple
       participle = parts[1];
-      // Analyser la phrase pour déterminer le sujet
-      if (exercise.presentSentence.toLowerCase().includes('elle')) {
-        explanation = `Le sujet "elle" est féminin singulier.`;
-      } else if (exercise.presentSentence.toLowerCase().includes('elles')) {
-        explanation = `Le sujet "elles" est féminin pluriel.`;
-      } else if (exercise.presentSentence.toLowerCase().includes('ils')) {
-        explanation = `Le sujet "ils" est masculin pluriel.`;
+      
+      // Vérifier si c'est l'auxiliaire "avoir"
+      const isAvoirAuxiliary = exercise.correctAnswer.includes('avons') || 
+                              exercise.correctAnswer.includes('avez') || 
+                              exercise.correctAnswer.includes('ont') || 
+                              exercise.correctAnswer.includes('as') || 
+                              exercise.correctAnswer.includes('a ') ||
+                              exercise.correctAnswer.includes('ai ');
+      
+      if (isAvoirAuxiliary) {
+        explanation = `Avec l'auxiliaire "avoir", on n'accorde pas le participe passé avec le sujet.`;
       } else {
-        explanation = `Regarde le sujet pour accorder le participe passé.`;
+        // Analyser la phrase pour déterminer le sujet
+        if (exercise.presentSentence.toLowerCase().includes('elle')) {
+          explanation = `Le sujet "elle" est féminin singulier.`;
+        } else if (exercise.presentSentence.toLowerCase().includes('elles')) {
+          explanation = `Le sujet "elles" est féminin pluriel.`;
+        } else if (exercise.presentSentence.toLowerCase().includes('ils')) {
+          explanation = `Le sujet "ils" est masculin pluriel.`;
+        } else {
+          explanation = `Regarde le sujet pour accorder le participe passé.`;
+        }
       }
     }
     
