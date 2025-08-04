@@ -623,7 +623,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Nous naissons avec l'envie de voyager.",
         verbToConjugate: "naissons",
         correctAnswer: "sommes nés",
-        explanation: "Naître + être : nous sommes nés.",
+        explanation: "Naitre + être : nous sommes nés.",
         choices: ["sommes nés", "avons naissé", "nous sommes naissé"]
       },
       {
@@ -704,10 +704,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 84,
-        presentSentence: "Elle disparaît dans la foule du marché.",
-        verbToConjugate: "disparaît",
+        presentSentence: "Elle disparait dans la foule du marché.",
+        verbToConjugate: "disparait",
         correctAnswer: "a disparu",
-        explanation: "Disparaître + avoir : elle a disparu."
+        explanation: "Disparaitre + avoir : elle a disparu."
       },
       {
         id: 85,
@@ -721,7 +721,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Vous apparaissez soudain devant le monument.",
         verbToConjugate: "apparaissez",
         correctAnswer: "avez apparu",
-        explanation: "Apparaître + avoir : vous avez apparu."
+        explanation: "Apparaitre + avoir : vous avez apparu."
       },
       {
         id: 87,
@@ -1110,7 +1110,7 @@ export const scenarios: Scenario[] = [
         presentSentence: "Vous connaissez déjà ce type de jeu.",
         verbToConjugate: "connaissez",
         correctAnswer: "avez connu",
-        explanation: "Connaître est irrégulier : vous avez connu."
+        explanation: "Connaitre est irrégulier : vous avez connu."
       },
       {
         id: 140,
