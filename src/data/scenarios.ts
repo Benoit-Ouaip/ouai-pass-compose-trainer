@@ -604,11 +604,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 71,
-        presentSentence: "Tu reviens de ton voyage en Italie.",
-        verbToConjugate: "reviens",
-        correctAnswer: "es revenu(e)",
-        explanation: "Revenir + être : tu es revenu(e).",
-        choices: ["es revenu(e)", "as revenu", "t'es revenu"]
+        presentSentence: "Marc revient de son voyage en Italie.",
+        verbToConjugate: "revient",
+        correctAnswer: "est revenu",
+        explanation: "Revenir + être : il est revenu.",
+        choices: ["est revenu", "a revenu", "s'est revenu"]
       },
       {
         id: 72,
