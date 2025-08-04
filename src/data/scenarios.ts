@@ -690,10 +690,10 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 82,
-        presentSentence: "Il survient au bon moment.",
-        verbToConjugate: "survient",
-        correctAnswer: "est survenu",
-        explanation: "Survenir + être : il est survenu."
+        presentSentence: "Il arrive au bon moment.",
+        verbToConjugate: "arrive",
+        correctAnswer: "est arrivé",
+        explanation: "Arriver + être : il est arrivé."
       },
       {
         id: 83,
