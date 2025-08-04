@@ -98,11 +98,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 10,
-        presentSentence: "Je teste ma force sur la corde.",
-        verbToConjugate: "teste",
-        correctAnswer: "ai testé",
-        explanation: "Le verbe 'tester' avec je : j'ai testé.",
-        choices: ["ai testé", "suis testé", "me suis testé"]
+        presentSentence: "J'évalue ma force sur la corde.",
+        verbToConjugate: "évalue",
+        correctAnswer: "ai évalué",
+        explanation: "Le verbe 'évaluer' avec je : j'ai évalué.",
+        choices: ["ai évalué", "suis évalué", "me suis évalué"]
       },
       {
         id: 11,
