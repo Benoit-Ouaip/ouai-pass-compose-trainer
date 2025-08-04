@@ -1013,241 +1013,241 @@ export const scenarios: Scenario[] = [
         id: 121,
         presentSentence: "Jules écrit le code secret sur le mur.",
         verbToConjugate: "écrit",
-        correctAnswer: "a",
-        explanation: "Écrire se conjugue avec avoir : il a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a écrit",
+        explanation: "Écrire se conjugue avec avoir : il a écrit.",
+        choices: ["a écrit", "est écrit", "s'est écrit"]
       },
       {
         id: 122,
         presentSentence: "Les joueurs prennent des indices.",
         verbToConjugate: "prennent",
-        correctAnswer: "ont",
-        explanation: "Prendre se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont pris",
+        explanation: "Prendre se conjugue avec avoir : ils ont pris.",
+        choices: ["ont pris", "sont pris", "se sont pris"]
       },
       {
         id: 123,
         presentSentence: "Je vois une clé cachée sous le tapis.",
         verbToConjugate: "vois",
-        correctAnswer: "ai",
-        explanation: "Voir se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai vu",
+        explanation: "Voir se conjugue avec avoir : j'ai vu.",
+        choices: ["ai vu", "suis vu", "me suis vu"]
       },
       {
         id: 124,
         presentSentence: "Tu fais une découverte importante.",
         verbToConjugate: "fais",
-        correctAnswer: "as",
-        explanation: "Faire se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as fait",
+        explanation: "Faire se conjugue avec avoir : tu as fait.",
+        choices: ["as fait", "es fait", "t'es fait"]
       },
       {
         id: 125,
         presentSentence: "Elle dit la solution à haute voix.",
         verbToConjugate: "dit",
-        correctAnswer: "a",
-        explanation: "Dire se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a dit",
+        explanation: "Dire se conjugue avec avoir : elle a dit.",
+        choices: ["a dit", "est dite", "s'est dite"]
       },
       {
         id: 126,
         presentSentence: "Nous lisons les instructions attentivement.",
         verbToConjugate: "lisons",
-        correctAnswer: "avons",
-        explanation: "Lire se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons lu",
+        explanation: "Lire se conjugue avec avoir : nous avons lu.",
+        choices: ["avons lu", "sommes lus", "nous sommes lus"]
       },
       {
         id: 127,
         presentSentence: "Vous mettez la clé dans la serrure.",
         verbToConjugate: "mettez",
-        correctAnswer: "avez",
-        explanation: "Mettre se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez mis",
+        explanation: "Mettre se conjugue avec avoir : vous avez mis.",
+        choices: ["avez mis", "êtes mis", "vous êtes mis"]
       },
       {
         id: 128,
         presentSentence: "Ils ouvrent la porte mystérieuse.",
         verbToConjugate: "ouvrent",
-        correctAnswer: "ont",
-        explanation: "Ouvrir se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont ouvert",
+        explanation: "Ouvrir se conjugue avec avoir : ils ont ouvert.",
+        choices: ["ont ouvert", "sont ouverts", "se sont ouverts"]
       },
       {
         id: 129,
         presentSentence: "Je comprends l'énigme.",
         verbToConjugate: "comprends",
-        correctAnswer: "ai",
-        explanation: "Comprendre se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai compris",
+        explanation: "Comprendre se conjugue avec avoir : j'ai compris.",
+        choices: ["ai compris", "suis compris", "me suis compris"]
       },
       {
         id: 130,
         presentSentence: "Tu apprends les règles du jeu.",
         verbToConjugate: "apprends",
-        correctAnswer: "as",
-        explanation: "Apprendre se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as appris",
+        explanation: "Apprendre se conjugue avec avoir : tu as appris.",
+        choices: ["as appris", "es appris", "t'es appris"]
       },
       {
         id: 131,
         presentSentence: "Elle boit une potion magique.",
         verbToConjugate: "boit",
-        correctAnswer: "a",
-        explanation: "Boire se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a bu",
+        explanation: "Boire se conjugue avec avoir : elle a bu.",
+        choices: ["a bu", "est bue", "s'est bue"]
       },
       {
         id: 132,
         presentSentence: "Nous courons vers la sortie.",
         verbToConjugate: "courons",
-        correctAnswer: "avons",
-        explanation: "Courir se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons couru",
+        explanation: "Courir se conjugue avec avoir : nous avons couru.",
+        choices: ["avons couru", "sommes courus", "nous sommes courus"]
       },
       {
         id: 133,
         presentSentence: "Vous offrez votre aide aux autres.",
         verbToConjugate: "offrez",
-        correctAnswer: "avez",
-        explanation: "Offrir se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez offert",
+        explanation: "Offrir se conjugue avec avoir : vous avez offert.",
+        choices: ["avez offert", "êtes offerts", "vous êtes offerts"]
       },
       {
         id: 134,
         presentSentence: "Ils reçoivent un message crypté.",
         verbToConjugate: "reçoivent",
-        correctAnswer: "ont",
-        explanation: "Recevoir se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont reçu",
+        explanation: "Recevoir se conjugue avec avoir : ils ont reçu.",
+        choices: ["ont reçu", "sont reçus", "se sont reçus"]
       },
       {
         id: 135,
         presentSentence: "Je conduis l'équipe vers la victoire.",
         verbToConjugate: "conduis",
-        correctAnswer: "ai",
-        explanation: "Conduire se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai conduit",
+        explanation: "Conduire se conjugue avec avoir : j'ai conduit.",
+        choices: ["ai conduit", "suis conduit", "me suis conduit"]
       },
       {
         id: 136,
         presentSentence: "Tu construis un plan d'évasion.",
         verbToConjugate: "construis",
-        correctAnswer: "as",
-        explanation: "Construire se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as construit",
+        explanation: "Construire se conjugue avec avoir : tu as construit.",
+        choices: ["as construit", "es construit", "t'es construit"]
       },
       {
         id: 137,
         presentSentence: "Elle craint les pièges du labyrinthe.",
         verbToConjugate: "craint",
-        correctAnswer: "a",
-        explanation: "Craindre se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a craint",
+        explanation: "Craindre se conjugue avec avoir : elle a craint.",
+        choices: ["a craint", "est crainte", "s'est crainte"]
       },
       {
         id: 138,
         presentSentence: "Nous résolvons toutes les énigmes.",
         verbToConjugate: "résolvons",
-        correctAnswer: "avons",
-        explanation: "Résoudre se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons résolu",
+        explanation: "Résoudre se conjugue avec avoir : nous avons résolu.",
+        choices: ["avons résolu", "sommes résolus", "nous sommes résolus"]
       },
       {
         id: 139,
         presentSentence: "Vous connaissez ce type de jeu.",
         verbToConjugate: "connaissez",
-        correctAnswer: "avez",
-        explanation: "Connaître se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez connu",
+        explanation: "Connaître se conjugue avec avoir : vous avez connu.",
+        choices: ["avez connu", "êtes connus", "vous êtes connus"]
       },
       {
         id: 140,
         presentSentence: "Ils vivent une aventure extraordinaire.",
         verbToConjugate: "vivent",
-        correctAnswer: "ont",
-        explanation: "Vivre se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont vécu",
+        explanation: "Vivre se conjugue avec avoir : ils ont vécu.",
+        choices: ["ont vécu", "sont vécus", "se sont vécus"]
       },
       {
         id: 141,
         presentSentence: "Je peins un symbole sur le mur.",
         verbToConjugate: "peins",
-        correctAnswer: "ai",
-        explanation: "Peindre se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai peint",
+        explanation: "Peindre se conjugue avec avoir : j'ai peint.",
+        choices: ["ai peint", "suis peint", "me suis peint"]
       },
       {
         id: 142,
         presentSentence: "Tu joins les deux parties du puzzle.",
         verbToConjugate: "joins",
-        correctAnswer: "as",
-        explanation: "Joindre se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as joint",
+        explanation: "Joindre se conjugue avec avoir : tu as joint.",
+        choices: ["as joint", "es joint", "t'es joint"]
       },
       {
         id: 143,
         presentSentence: "Elle rompt le code de la porte.",
         verbToConjugate: "rompt",
-        correctAnswer: "a",
-        explanation: "Rompre se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a rompu",
+        explanation: "Rompre se conjugue avec avoir : elle a rompu.",
+        choices: ["a rompu", "est rompue", "s'est rompue"]
       },
       {
         id: 144,
         presentSentence: "Nous suivons les indices un par un.",
         verbToConjugate: "suivons",
-        correctAnswer: "avons",
-        explanation: "Suivre se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons suivi",
+        explanation: "Suivre se conjugue avec avoir : nous avons suivi.",
+        choices: ["avons suivi", "sommes suivis", "nous sommes suivis"]
       },
       {
         id: 145,
         presentSentence: "Vous battez le record de temps.",
         verbToConjugate: "battez",
-        correctAnswer: "avez",
-        explanation: "Battre se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez battu",
+        explanation: "Battre se conjugue avec avoir : vous avez battu.",
+        choices: ["avez battu", "êtes battus", "vous êtes battus"]
       },
       {
         id: 146,
         presentSentence: "Ils perdent leur chemin dans le labyrinthe.",
         verbToConjugate: "perdent",
-        correctAnswer: "ont",
-        explanation: "Perdre se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont perdu",
+        explanation: "Perdre se conjugue avec avoir : ils ont perdu.",
+        choices: ["ont perdu", "sont perdus", "se sont perdus"]
       },
       {
         id: 147,
         presentSentence: "Je tiens fermement la clé magique.",
         verbToConjugate: "tiens",
-        correctAnswer: "ai",
-        explanation: "Tenir se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai tenu",
+        explanation: "Tenir se conjugue avec avoir : j'ai tenu.",
+        choices: ["ai tenu", "suis tenu", "me suis tenu"]
       },
       {
         id: 148,
         presentSentence: "Tu obtiens la réponse.",
         verbToConjugate: "obtiens",
-        correctAnswer: "as",
-        explanation: "Obtenir se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as obtenu",
+        explanation: "Obtenir se conjugue avec avoir : tu as obtenu.",
+        choices: ["as obtenu", "es obtenu", "t'es obtenu"]
       },
       {
         id: 149,
         presentSentence: "Elle pousse la porte secrète.",
         verbToConjugate: "pousse",
-        correctAnswer: "a",
-        explanation: "Pousser se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a poussé",
+        explanation: "Pousser se conjugue avec avoir : elle a poussé.",
+        choices: ["a poussé", "est poussée", "s'est poussée"]
       },
       {
         id: 150,
         presentSentence: "Nous découvrons le trésor caché.",
         verbToConjugate: "découvrons",
-        correctAnswer: "avons",
-        explanation: "Découvrir se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons découvert",
+        explanation: "Découvrir se conjugue avec avoir : nous avons découvert.",
+        choices: ["avons découvert", "sommes découverts", "nous sommes découverts"]
       }
     ]
   }
