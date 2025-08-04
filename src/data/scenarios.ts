@@ -499,11 +499,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 59,
-        presentSentence: "Tu te lèves tôt pour préparer le petit-déjeuner.",
-        verbToConjugate: "te lèves",
-        correctAnswer: "t'es levé(e)",
-        explanation: "Se lever : tu t'es levé(e).",
-        choices: ["t'es levé(e)", "as levé", "es levé"]
+        presentSentence: "Elle se lève tôt pour préparer le petit-déjeuner.",
+        verbToConjugate: "se lève",
+        correctAnswer: "s'est levée",
+        explanation: "Se lever : elle s'est levée.",
+        choices: ["s'est levée", "a levé", "est levée"]
       },
       {
         id: 60,
