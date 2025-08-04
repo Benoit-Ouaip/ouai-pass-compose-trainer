@@ -748,8 +748,8 @@ export const scenarios: Scenario[] = [
         id: 90,
         presentSentence: "Elle ressort son appareil photo.",
         verbToConjugate: "ressort",
-        correctAnswer: "est ressortie",
-        explanation: "Ressortir + être : elle est ressortie."
+        correctAnswer: "a ressorti",
+        explanation: "Avec l'auxiliaire avoir, pas d'accord du participe passé avec le sujet."
       }
     ]
   },
