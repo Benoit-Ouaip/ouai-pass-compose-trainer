@@ -202,6 +202,7 @@ const ExerciseScreen = ({
 
 
   const handleTryAgain = () => {
+    console.log("handleTryAgain called - resetting state");
     setUserAnswer("");
     setFeedback({type: null, message: ""});
     setIsAnswered(false);
@@ -210,6 +211,7 @@ const ExerciseScreen = ({
   };
 
   const handleNext = () => {
+    console.log("handleNext called - moving to next exercise");
     if (currentExercise < exercises.length - 1) {
       setCurrentExercise(prev => prev + 1);
       setUserAnswer("");
