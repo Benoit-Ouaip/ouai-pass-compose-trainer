@@ -113,8 +113,20 @@ const ExerciseScreen = ({
       
       isCorrect = userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
     } else {
-      // Niveau 3: réponse complète
-      isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();
+      // Niveau 3: auxiliaire et participe passé (sans pronoms) - même logique que niveau 2
+      const parts = exercise.correctAnswer.split(' ');
+      let correctAnswer;
+      
+      if (parts.length === 2) {
+        correctAnswer = exercise.correctAnswer; // cas simple: "a mangé"
+      } else if (parts.length > 2) {
+        // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
+        correctAnswer = parts.slice(-2).join(' ');
+      } else {
+        correctAnswer = exercise.correctAnswer;
+      }
+      
+      isCorrect = userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
     }
 
     // Messages de félicitations variés

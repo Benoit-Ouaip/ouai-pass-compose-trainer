@@ -39,13 +39,31 @@ const FullConjugationExercise = ({
     `<span style="font-weight: bold; color: #e55555;">$&</span>`
   );
 
-  // Créer les tirets correspondant à chaque mot de la réponse
-  const generateDashesForFullAnswer = (answer: string) => {
-    const words = answer.split(' ');
-    return words.map(word => '_'.repeat(word.length)).join(' ');
+  // Extraire l'auxiliaire et le participe passé (sans les pronoms)
+  const getAuxiliaryAndParticiple = (answer: string) => {
+    const parts = answer.split(' ');
+    if (parts.length === 2) {
+      return answer; // cas simple: "a mangé"
+    } else if (parts.length > 2) {
+      // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
+      return parts.slice(-2).join(' ');
+    }
+    return answer;
   };
 
-  // Créer la phrase avec tirets ou avec la réponse si correcte
+  // Extraire les pronoms (tout sauf l'auxiliaire et le participe passé)
+  const getPronouns = (answer: string) => {
+    const parts = answer.split(' ');
+    if (parts.length > 2) {
+      return parts.slice(0, -2).join(' '); // "vous vous êtes régalés" -> "vous vous"
+    }
+    return ''; // pas de pronom pour les verbes non pronominaux
+  };
+
+  const auxiliaryAndParticiple = getAuxiliaryAndParticiple(exercise.correctAnswer);
+  const pronouns = getPronouns(exercise.correctAnswer);
+
+  // Créer la phrase avec pronoms + tirets pour auxiliaire et participe passé
   const createDisplaySentence = () => {
     if (isAnswered && isCorrect) {
       // Afficher la phrase avec la réponse correcte en vert
@@ -54,11 +72,28 @@ const FullConjugationExercise = ({
         `<span style="font-weight: bold; color: #72ba69;">${exercise.correctAnswer}</span>`
       );
     } else {
-      // Afficher des tirets pour toute la réponse (auxiliaire + participe passé)
-      return exercise.presentSentence.replace(
-        new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-        generateDashesForFullAnswer(exercise.correctAnswer)
-      );
+      // Afficher les pronoms + tirets pour l'auxiliaire et le participe passé
+      const words = auxiliaryAndParticiple.split(' ');
+      const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
+      
+      let replacement;
+      if (pronouns) {
+        replacement = `${pronouns} ${dashesForWords}`;
+      } else {
+        replacement = dashesForWords;
+      }
+      
+      // Remplacer le verbe à conjuguer par le nouveau format
+      const regex = new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+      let modifiedSentence = exercise.presentSentence.replace(regex, replacement);
+      
+      // Si le remplacement n'a pas fonctionné, essayer sans les limites de mots
+      if (modifiedSentence === exercise.presentSentence) {
+        const simpleRegex = new RegExp(exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+        modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
+      }
+      
+      return modifiedSentence;
     }
   };
 
