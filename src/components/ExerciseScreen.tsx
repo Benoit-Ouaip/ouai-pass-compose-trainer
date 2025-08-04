@@ -98,29 +98,20 @@ const ExerciseScreen = ({
       // Niveau 1: choix multiple - comparaison exacte
       isCorrect = userAnswer.trim() === exercise.correctAnswer;
     } else if (difficulty === 2) {
-      // Niveau 2: seulement l'auxiliaire
+      // Niveau 2: auxiliaire et participe passé (sans pronoms)
       const parts = exercise.correctAnswer.split(' ');
-      let correctAuxiliary;
+      let correctAnswer;
       
-      if (parts.length === 2 && parts[0].match(/[''`]/)) {
-        // Cas avec contraction: "t'es rappelé(e)" -> auxiliaire = "es"
-        const contractedPart = parts[0];
-        if (contractedPart.endsWith('es')) {
-          correctAuxiliary = "es";
-        } else if (contractedPart.endsWith('est')) {
-          correctAuxiliary = "est";
-        } else {
-          correctAuxiliary = parts[0]; // fallback
-        }
-      } else if (parts.length === 2) {
-        correctAuxiliary = parts[0]; // cas simple: "a mangé"
+      if (parts.length === 2) {
+        correctAnswer = exercise.correctAnswer; // cas simple: "a mangé"
       } else if (parts.length > 2) {
-        correctAuxiliary = parts[parts.length - 2]; // cas pronominal: "vous vous êtes régalés" -> "êtes"
+        // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
+        correctAnswer = parts.slice(-2).join(' ');
       } else {
-        correctAuxiliary = parts[0];
+        correctAnswer = exercise.correctAnswer;
       }
       
-      isCorrect = userAnswer.trim().toLowerCase() === correctAuxiliary.toLowerCase();
+      isCorrect = userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase();
     } else {
       // Niveau 3: réponse complète
       isCorrect = userAnswer.trim().toLowerCase() === exercise.correctAnswer.toLowerCase();

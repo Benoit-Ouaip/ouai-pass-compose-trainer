@@ -45,29 +45,19 @@ const AuxiliaryOnlyExercise = ({
     return parts.length > 1 ? parts.slice(1).join(' ') : '';
   };
 
-  // Extraire seulement l'auxiliaire (le dernier mot avant le participe passé)
-  const getAuxiliaryOnly = (answer: string) => {
+  // Extraire l'auxiliaire et le participe passé (sans les pronoms)
+  const getAuxiliaryAndParticiple = (answer: string) => {
     const parts = answer.split(' ');
     if (parts.length === 2) {
-      return parts[0]; // cas simple: "a mangé"
+      return answer; // cas simple: "a mangé"
     } else if (parts.length > 2) {
-      return parts[parts.length - 2]; // cas pronominal: "vous vous êtes régalés" -> "êtes"
+      // cas pronominal: "vous vous êtes régalés" -> "êtes régalés"
+      return parts.slice(-2).join(' ');
     }
-    return parts[0];
+    return answer;
   };
 
-  // Extraire le pronom (tout sauf l'auxiliaire et le participe passé)
-  const getPronounOnly = (answer: string, verbToConjugate: string) => {
-    const parts = answer.split(' ');
-    if (parts.length > 2) {
-      return parts.slice(0, -2).join(' '); // "vous vous êtes régalés" -> "vous vous"
-    }
-    return ''; // pas de pronom pour les verbes non pronominaux
-  };
-
-  const participle = getParticipleFromAnswer(exercise.correctAnswer);
-  const auxiliaryOnly = getAuxiliaryOnly(exercise.correctAnswer);
-  const pronounOnly = getPronounOnly(exercise.correctAnswer, exercise.verbToConjugate);
+  const auxiliaryAndParticiple = getAuxiliaryAndParticiple(exercise.correctAnswer);
 
   // Créer la phrase avec seulement l'auxiliaire à compléter
   const createDisplaySentence = () => {
@@ -80,8 +70,8 @@ const AuxiliaryOnlyExercise = ({
         styledAnswer
       );
     } else {
-      // Créer des tirets correspondant exactement aux mots de la réponse attendue
-      const words = exercise.correctAnswer.split(' ');
+      // Créer des tirets seulement pour l'auxiliaire et le participe passé (sans pronoms)
+      const words = auxiliaryAndParticiple.split(' ');
       const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
       
       // Remplacer le verbe à conjuguer par les tirets
@@ -110,7 +100,7 @@ const AuxiliaryOnlyExercise = ({
       
       <div className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">
-          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire :"}
+          {isAnswered && isCorrect ? "Parfait ! Voici la phrase complète :" : "Complète avec l'auxiliaire et le participe passé :"}
         </p>
         <p 
           className="text-xl text-foreground mb-6 leading-relaxed font-medium"
