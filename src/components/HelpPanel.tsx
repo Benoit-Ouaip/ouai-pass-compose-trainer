@@ -106,6 +106,35 @@ const HelpPanel = ({ isOpen, onClose, scenarioId }: HelpPanelProps) => {
             </div>
           </div>
 
+          {/* Orthographe des participes passés */}
+          <div>
+            <h3 className="text-lg font-semibold text-ouaip-dark-blue mb-3">
+              ✍️ Orthographe des participes passés
+            </h3>
+            <div className="ouaip-card p-4">
+              <p className="text-sm text-muted-foreground mb-3">
+                Astuce pour bien écrire le participe passé :
+              </p>
+              <div className="bg-info/10 text-info px-4 py-3 rounded mb-3">
+                <p className="font-semibold mb-2">📝 Le participe s'écrit comme on l'entend</p>
+                <p className="text-sm mb-2">
+                  Pour vérifier la dernière lettre, mettez "une chose..." devant
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="bg-primary/10 text-primary px-3 py-2 rounded text-sm">
+                  <strong>Il a fait</strong> → Une chose <strong>faite</strong> → dernière lettre "t"
+                </div>
+                <div className="bg-primary/10 text-primary px-3 py-2 rounded text-sm">
+                  <strong>Elle a pris</strong> → Une chose <strong>prise</strong> → dernière lettre "s"
+                </div>
+                <div className="bg-primary/10 text-primary px-3 py-2 rounded text-sm">
+                  <strong>Nous avons dit</strong> → Une chose <strong>dite</strong> → dernière lettre "t"
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Négation */}
           <div>
             <h3 className="text-lg font-semibold text-ouaip-dark-blue mb-3">
