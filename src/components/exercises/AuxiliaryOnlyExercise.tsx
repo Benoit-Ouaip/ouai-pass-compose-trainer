@@ -232,6 +232,7 @@ const AuxiliaryOnlyExercise = ({
           <div className="flex items-center justify-center gap-4">
             <Input
               ref={inputRef}
+              type="text"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
               onTouchStart={(e) => e.preventDefault()}
@@ -241,6 +242,9 @@ const AuxiliaryOnlyExercise = ({
               autoCorrect="off"
               autoCapitalize="off"
               spellCheck="false"
+              data-lpignore="true"
+              data-form-type="other"
+              inputMode="text"
               className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
               placeholder="Ex: est décidée, sont allés..."
               disabled={isAnswered}
