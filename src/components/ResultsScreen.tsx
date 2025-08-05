@@ -59,15 +59,68 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
       }
     }());
 
-    // Son "Hourra !" - utilise l'API Speech Synthesis du navigateur
-    const utterance = new SpeechSynthesisUtterance("Hourra !");
-    utterance.lang = 'fr-FR';
-    utterance.volume = 0.7;
-    utterance.rate = 1.2;
-    utterance.pitch = 1.3;
+    // Son d'applaudissements joyeux - créé avec Web Audio API
+    const createApplauseSound = () => {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      
+      // Créer plusieurs oscillateurs pour simuler des applaudissements
+      const createClap = (delay: number, frequency: number, volume: number) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        oscillator.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        // Configuration pour un son de claquement
+        oscillator.type = 'sawtooth';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime + delay);
+        
+        // Filtre passe-haut pour donner un son plus claquant
+        filter.type = 'highpass';
+        filter.frequency.setValueAtTime(800, audioContext.currentTime + delay);
+        
+        // Enveloppe rapide pour simuler un claquement
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime + delay);
+        gainNode.gain.linearRampToValueAtTime(volume, audioContext.currentTime + delay + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + delay + 0.1);
+        
+        oscillator.start(audioContext.currentTime + delay);
+        oscillator.stop(audioContext.currentTime + delay + 0.1);
+      };
+      
+      // Créer une série d'applaudissements avec des variations
+      for (let i = 0; i < 15; i++) {
+        const delay = i * 0.08 + Math.random() * 0.04;
+        const frequency = 1000 + Math.random() * 2000;
+        const volume = 0.1 + Math.random() * 0.1;
+        createClap(delay, frequency, volume);
+      }
+      
+      // Ajouter une mélodie joyeuse par-dessus
+      const melodyNotes = [523.25, 659.25, 783.99, 1046.5]; // Do, Mi, Sol, Do octave
+      melodyNotes.forEach((freq, index) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + index * 0.2 + 0.5);
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime + index * 0.2 + 0.5);
+        gainNode.gain.linearRampToValueAtTime(0.15, audioContext.currentTime + index * 0.2 + 0.55);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + index * 0.2 + 0.8);
+        
+        oscillator.start(audioContext.currentTime + index * 0.2 + 0.5);
+        oscillator.stop(audioContext.currentTime + index * 0.2 + 0.8);
+      });
+    };
     
     setTimeout(() => {
-      speechSynthesis.speak(utterance);
+      createApplauseSound();
     }, 500);
 
   }, []);
