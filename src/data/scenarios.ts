@@ -269,7 +269,7 @@ export const scenarios: Scenario[] = [
   {
     id: 2,
     title: "Dans la cuisine du chef Léo",
-    description: "Recettes, gestes précis. Maîtrise les verbes pronominaux au passé composé.",
+    description: "Recettes, gestes précis. Maîtrise les verbes pronominaux et les verbes du 2ème et 3ème groupe au passé composé.",
     icon: "👨‍🍳",
     color: "bg-ouaip-red/20 text-ouaip-red",
     exercises: [
@@ -283,11 +283,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 32,
-        presentSentence: "Le chef se prépare pour le service.",
-        verbToConjugate: "se prépare",
-        correctAnswer: "s'est préparé",
-        explanation: "Se préparer est pronominal : il s'est préparé.",
-        choices: ["s'est préparé", "a préparé", "est préparé"]
+        presentSentence: "Le chef prépare le service du soir.",
+        verbToConjugate: "prépare",
+        correctAnswer: "a préparé",
+        explanation: "Préparer se conjugue avec avoir : il a préparé.",
+        choices: ["a préparé", "s'est préparé", "est préparé"]
       },
       {
         id: 33,
@@ -299,19 +299,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 34,
-        presentSentence: "Les apprentis se dépêchent de finir leur plat.",
-        verbToConjugate: "se dépêchent",
-        correctAnswer: "se sont dépêchés",
-        explanation: "Se dépêcher est pronominal : ils se sont dépêchés.",
-        choices: ["se sont dépêchés", "ont dépêché", "sont dépêchés"]
+        presentSentence: "Les apprentis finissent leur plat à temps.",
+        verbToConjugate: "finissent",
+        correctAnswer: "ont fini",
+        explanation: "Finir se conjugue avec avoir : ils ont fini.",
+        choices: ["ont fini", "se sont finis", "sont finis"]
       },
       {
         id: 35,
-        presentSentence: "Elle se spécialise dans les desserts.",
-        verbToConjugate: "se spécialise",
-        correctAnswer: "s'est spécialisée",
-        explanation: "Se spécialiser est pronominal : elle s'est spécialisée.",
-        choices: ["s'est spécialisée", "a spécialisé", "est spécialisée"]
+        presentSentence: "Elle apprend les techniques de pâtisserie.",
+        verbToConjugate: "apprend",
+        correctAnswer: "a appris",
+        explanation: "Apprendre se conjugue avec avoir : elle a appris.",
+        choices: ["a appris", "s'est apprise", "est apprise"]
       },
       {
         id: 36,
@@ -323,11 +323,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 37,
-        presentSentence: "Vous vous organisez en cuisine.",
-        verbToConjugate: "vous organisez",
-        correctAnswer: "vous êtes organisé(e)s",
-        explanation: "S'organiser est pronominal : vous vous êtes organisé(e)s.",
-        choices: ["vous êtes organisé(e)s", "avez organisé", "étiez organisé(e)s"]
+        presentSentence: "Vous cuisinez un délicieux potage.",
+        verbToConjugate: "cuisinez",
+        correctAnswer: "avez cuisiné",
+        explanation: "Cuisiner se conjugue avec avoir : vous avez cuisiné.",
+        choices: ["avez cuisiné", "vous êtes cuisinés", "étiez cuisinés"]
       },
       {
         id: 38,
@@ -339,11 +339,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 39,
-        presentSentence: "Il se trompe dans les proportions.",
-        verbToConjugate: "se trompe",
-        correctAnswer: "s'est trompé",
-        explanation: "Se tromper est pronominal : il s'est trompé.",
-        choices: ["s'est trompé", "a trompé", "est trompé"]
+        presentSentence: "Il découpe les légumes avec précision.",
+        verbToConjugate: "découpe",
+        correctAnswer: "a découpé",
+        explanation: "Découper se conjugue avec avoir : il a découpé.",
+        choices: ["a découpé", "s'est découpé", "est découpé"]
       },
       {
         id: 40,
@@ -355,19 +355,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 41,
-        presentSentence: "Les chefs se rappellent la recette de grand-mère.",
-        verbToConjugate: "se rappellent",
-        correctAnswer: "se sont rappelé",
-        explanation: "Se rappeler est pronominal : ils se sont rappelé.",
-        choices: ["se sont rappelé", "ont rappelé", "sont rappelés"]
+        presentSentence: "Les chefs goûtent leurs préparations.",
+        verbToConjugate: "goûtent",
+        correctAnswer: "ont goûté",
+        explanation: "Goûter se conjugue avec avoir : ils ont goûté.",
+        choices: ["ont goûté", "se sont goûtés", "sont goûtés"]
       },
       {
         id: 42,
-        presentSentence: "Elle se brûle en touchant la poêle.",
-        verbToConjugate: "se brûle",
-        correctAnswer: "s'est brûlée",
-        explanation: "Se brûler est pronominal : elle s'est brûlée.",
-        choices: ["s'est brûlée", "a brûlé", "est brûlée"]
+        presentSentence: "Elle réussit parfaitement son soufflé.",
+        verbToConjugate: "réussit",
+        correctAnswer: "a réussi",
+        explanation: "Réussir se conjugue avec avoir : elle a réussi.",
+        choices: ["a réussi", "s'est réussie", "est réussie"]
       },
       {
         id: 43,
@@ -379,19 +379,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 44,
-        presentSentence: "Elles se régalent avec ce dessert.",
-        verbToConjugate: "se régalent",
-        correctAnswer: "se sont régalées",
-        explanation: "Se régaler est pronominal : elles se sont régalées.",
-        choices: ["se sont régalées", "ont régalé", "sont régalées"]
+        presentSentence: "Elles choisissent les meilleurs ingrédients.",
+        verbToConjugate: "choisissent",
+        correctAnswer: "ont choisi",
+        explanation: "Choisir se conjugue avec avoir : elles ont choisi.",
+        choices: ["ont choisi", "se sont choisies", "sont choisies"]
       },
       {
         id: 45,
-        presentSentence: "Ils se perfectionnent dans l'art culinaire.",
-        verbToConjugate: "se perfectionnent",
-        correctAnswer: "se sont perfectionnés",
-        explanation: "Se perfectionner est pronominal : ils se sont perfectionnés.",
-        choices: ["se sont perfectionnés", "ont perfectionné", "sont perfectionnés"]
+        presentSentence: "Ils mélangent tous les épices ensemble.",
+        verbToConjugate: "mélangent",
+        correctAnswer: "ont mélangé",
+        explanation: "Mélanger se conjugue avec avoir : ils ont mélangé.",
+        choices: ["ont mélangé", "se sont mélangés", "sont mélangés"]
       },
       {
         id: 46,
@@ -403,19 +403,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 47,
-        presentSentence: "Les apprentis se débrouillent avec les épices.",
-        verbToConjugate: "se débrouillent",
-        correctAnswer: "se sont débrouillés",
-        explanation: "Se débrouiller est pronominal : ils se sont débrouillés.",
-        choices: ["se sont débrouillés", "ont débrouillé", "sont débrouillés"]
+        presentSentence: "Les apprentis comprennent les techniques.",
+        verbToConjugate: "comprennent",
+        correctAnswer: "ont compris",
+        explanation: "Comprendre se conjugue avec avoir : ils ont compris.",
+        choices: ["ont compris", "se sont compris", "sont compris"]
       },
       {
         id: 48,
-        presentSentence: "Elle s'inquiète pour la cuisson du gâteau.",
-        verbToConjugate: "s'inquiète",
-        correctAnswer: "s'est inquiétée",
-        explanation: "S'inquiéter est pronominal : elle s'est inquiétée.",
-        choices: ["s'est inquiétée", "a inquiété", "est inquiétée"]
+        presentSentence: "Elle met le gâteau au four.",
+        verbToConjugate: "met",
+        correctAnswer: "a mis",
+        explanation: "Mettre se conjugue avec avoir : elle a mis.",
+        choices: ["a mis", "s'est mise", "est mise"]
       },
       {
         id: 49,
@@ -427,19 +427,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 50,
-        presentSentence: "Elle se plaint de la chaleur des fourneaux.",
-        verbToConjugate: "se plaint",
-        correctAnswer: "s'est plainte",
-        explanation: "Se plaindre est pronominal : elle s'est plainte.",
-        choices: ["s'est plainte", "a plaint", "est plainte"]
+        presentSentence: "Elle fait une sauce délicieuse.",
+        verbToConjugate: "fait",
+        correctAnswer: "a fait",
+        explanation: "Faire se conjugue avec avoir : elle a fait.",
+        choices: ["a fait", "s'est faite", "est faite"]
       },
       {
         id: 51,
-        presentSentence: "Ils se moquent de mes maladresses.",
-        verbToConjugate: "se moquent",
-        correctAnswer: "se sont moqués",
-        explanation: "Se moquer est pronominal : ils se sont moqués.",
-        choices: ["se sont moqués", "ont moqué", "sont moqués"]
+        presentSentence: "Ils utilisent des ustensiles professionnels.",
+        verbToConjugate: "utilisent",
+        correctAnswer: "ont utilisé",
+        explanation: "Utiliser se conjugue avec avoir : ils ont utilisé.",
+        choices: ["ont utilisé", "se sont utilisés", "sont utilisés"]
       },
       {
         id: 52,
@@ -451,19 +451,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 53,
-        presentSentence: "Les cuisiniers se demandent comment faire cette sauce.",
-        verbToConjugate: "se demandent",
-        correctAnswer: "se sont demandé",
-        explanation: "Se demander est pronominal : ils se sont demandé.",
-        choices: ["se sont demandé", "ont demandé", "sont demandés"]
+        presentSentence: "Les cuisiniers servent les clients rapidement.",
+        verbToConjugate: "servent",
+        correctAnswer: "ont servi",
+        explanation: "Servir se conjugue avec avoir : ils ont servi.",
+        choices: ["ont servi", "se sont servis", "sont servis"]
       },
       {
         id: 54,
-        presentSentence: "Elle se souvient de sa première leçon de cuisine.",
-        verbToConjugate: "se souvient",
-        correctAnswer: "s'est souvenue",
-        explanation: "Se souvenir est pronominal : elle s'est souvenue.",
-        choices: ["s'est souvenue", "a souvenu", "est souvenue"]
+        presentSentence: "Elle écrit la recette dans son carnet.",
+        verbToConjugate: "écrit",
+        correctAnswer: "a écrit",
+        explanation: "Écrire se conjugue avec avoir : elle a écrit.",
+        choices: ["a écrit", "s'est écrite", "est écrite"]
       },
       {
         id: 55,
@@ -475,19 +475,19 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 56,
-        presentSentence: "Vous vous habituez aux nouveaux ustensiles.",
-        verbToConjugate: "vous habituez",
-        correctAnswer: "vous êtes habitué(e)s",
-        explanation: "S'habituer est pronominal : vous vous êtes habitué(e)s.",
-        choices: ["vous êtes habitué(e)s", "avez habitué", "étiez habitué(e)s"]
+        presentSentence: "Vous dressez les assiettes avec art.",
+        verbToConjugate: "dressez",
+        correctAnswer: "avez dressé",
+        explanation: "Dresser se conjugue avec avoir : vous avez dressé.",
+        choices: ["avez dressé", "vous êtes dressés", "étiez dressés"]
       },
       {
         id: 57,
-        presentSentence: "Ils se félicitent pour ce succès culinaire.",
-        verbToConjugate: "se félicitent",
-        correctAnswer: "se sont félicités",
-        explanation: "Se féliciter est pronominal : ils se sont félicités.",
-        choices: ["se sont félicités", "ont félicité", "sont félicités"]
+        presentSentence: "Ils réchauffent le plat principal.",
+        verbToConjugate: "réchauffent",
+        correctAnswer: "ont réchauffé",
+        explanation: "Réchauffer se conjugue avec avoir : ils ont réchauffé.",
+        choices: ["ont réchauffé", "se sont réchauffés", "sont réchauffés"]
       },
       {
         id: 58,
@@ -499,11 +499,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 59,
-        presentSentence: "Elle se lève tôt pour préparer le petit-déjeuner.",
-        verbToConjugate: "se lève",
-        correctAnswer: "s'est levée",
-        explanation: "Se lever est pronominal : elle s'est levée.",
-        choices: ["s'est levée", "a levé", "est levée"]
+        presentSentence: "Elle nettoie la cuisine après service.",
+        verbToConjugate: "nettoie",
+        correctAnswer: "a nettoyé",
+        explanation: "Nettoyer se conjugue avec avoir : elle a nettoyé.",
+        choices: ["a nettoyé", "s'est nettoyée", "est nettoyée"]
       },
       {
         id: 60,
