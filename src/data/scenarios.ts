@@ -285,10 +285,10 @@ export const scenarios: Scenario[] = [
       {
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
-        verbToConjugate: "nous nous lavons",
-        correctAnswer: "sommes lavé(e)s",
+        verbToConjugate: "nous lavons",
+        correctAnswer: "nous sommes lavé(e)s",
         explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes lavé(e)s.",
-        choices: ["sommes lavé(e)s", "avons lavé", "étions lavé(e)s"]
+        choices: ["nous sommes lavé(e)s", "avons lavé", "étions lavé(e)s"]
       },
       {
         id: 32,
@@ -325,10 +325,10 @@ export const scenarios: Scenario[] = [
       {
         id: 36,
         presentSentence: "Nous nous amusons à créer de nouveaux plats.",
-        verbToConjugate: "nous nous amusons",
-        correctAnswer: "sommes amusé(e)s",
+        verbToConjugate: "nous amusons",
+        correctAnswer: "nous sommes amusé(e)s",
         explanation: "S'amuser est pronominal : nous nous sommes amusé(e)s.",
-        choices: ["sommes amusé(e)s", "avons amusé", "étions amusé(e)s"]
+        choices: ["nous sommes amusé(e)s", "avons amusé", "étions amusé(e)s"]
       },
       {
         id: 37,
@@ -477,10 +477,10 @@ export const scenarios: Scenario[] = [
       {
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
-        verbToConjugate: "nous nous excusons",
-        correctAnswer: "sommes excusé(e)s",
+        verbToConjugate: "nous excusons",
+        correctAnswer: "nous sommes excusé(e)s",
         explanation: "S'excuser est pronominal : nous nous sommes excusé(e)s.",
-        choices: ["sommes excusé(e)s", "avons excusé", "étions excusé(e)s"]
+        choices: ["nous sommes excusé(e)s", "avons excusé", "étions excusé(e)s"]
       },
       {
         id: 56,
