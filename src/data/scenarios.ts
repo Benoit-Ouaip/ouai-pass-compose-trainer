@@ -278,7 +278,7 @@ export const scenarios: Scenario[] = [
   {
     id: 2,
     title: "Dans la cuisine du chef Léo",
-    description: "Recettes, gestes précis. Maîtrise les verbes pronominaux et les verbes du 2ème et 3ème groupe au passé composé.",
+    description: "Recettes, gestes précis. Maitrise les verbes pronominaux et les verbes du 2ème et 3ème groupe au passé composé.",
     icon: "👨‍🍳",
     color: "bg-ouaip-red/20 text-ouaip-red",
     exercises: [
