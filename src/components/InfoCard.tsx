@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 interface InfoCardProps {
   title: string;
   message: string;
@@ -16,9 +18,17 @@ const InfoCard = ({ title, message, logo, color }: InfoCardProps) => {
         {title}
       </h3>
       
-      <p className="text-muted-foreground flex-grow text-center">
+      <p className="text-muted-foreground flex-grow text-center mb-6">
         {message}
       </p>
+      
+      <Button 
+        onClick={() => window.open('https://ouaip.be/play', '_blank')}
+        className="w-full text-white hover:opacity-90"
+        style={{ backgroundColor: '#e55555' }}
+      >
+        Visiter ouaip.be
+      </Button>
     </div>
   );
 };
