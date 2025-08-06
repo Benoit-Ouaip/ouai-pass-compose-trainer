@@ -51,8 +51,26 @@ const MultipleChoiceExercise = ({
       // Afficher la réponse déposée avec style d'étiquette
       return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="color: #72ba69; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`);
     } else {
-      // Afficher une zone de dépôt stylée
-      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`);
+      // Créer les tirets en gardant les pronoms réfléchis
+      const parts = exercise.correctAnswer.split(' ');
+      let replacement;
+      
+      if (parts.length === 2 && parts[0].match(/[''`]/)) {
+        // Cas avec contraction: "s'est décidée" ou "t'es rappelé(e)"
+        const contractedPart = parts[0]; // "s'est" ou "t'es"
+        const pronoun = contractedPart.slice(0, contractedPart.length - (contractedPart.endsWith('est') ? 3 : 2));
+        replacement = `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">${pronoun}...</span>`;
+      } else if (parts.length > 2) {
+        // Cas pronominal avec pronoms séparés: "nous nous sommes amusé(e)s" ou "se sont disputés"
+        const pronounParts = parts.slice(0, -2);
+        const pronounsToShow = pronounParts.join(' ');
+        replacement = `${pronounsToShow} <span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`;
+      } else {
+        // Cas normal sans pronoms
+        replacement = `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`;
+      }
+      
+      return exercise.presentSentence.replace(new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'), replacement);
     }
   };
   
