@@ -182,16 +182,21 @@ const FullConjugationExercise = ({
           const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
           replacement = dashesForWords;
         }
+      } else if (parts.length > 2) {
+        // Cas pronominal avec pronoms séparés: "nous nous sommes amusé(e)s"
+        const pronounParts = parts.slice(0, -2); // ["nous", "nous"]
+        const auxAndParticiple = parts.slice(-2); // ["sommes", "amusé(e)s"]
+        
+        // Afficher les pronoms + tirets pour auxiliaire et participe
+        const pronounsToShow = pronounParts.join(' ');
+        const dashesForAux = '_'.repeat(auxAndParticiple[0].length);
+        const dashesForParticiple = '_'.repeat(auxAndParticiple[1].length);
+        replacement = `${pronounsToShow} ${dashesForAux} ${dashesForParticiple}`;
       } else {
-        // Cas normal (sans contraction)
+        // Cas normal (sans contraction et sans pronoms)
         const words = auxiliaryAndParticiple.split(' ');
         const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
-        
-        if (pronouns) {
-          replacement = `${pronouns} ${dashesForWords}`;
-        } else {
-          replacement = dashesForWords;
-        }
+        replacement = dashesForWords;
       }
       
       // Remplacer le verbe à conjuguer par le nouveau format

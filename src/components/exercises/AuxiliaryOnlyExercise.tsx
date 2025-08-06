@@ -182,8 +182,18 @@ const AuxiliaryOnlyExercise = ({
           const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
           replacement = dashesForWords;
         }
+      } else if (parts.length > 2) {
+        // Cas pronominal avec pronoms séparés: "nous nous sommes amusé(e)s" ou "se sont disputés"
+        const pronounParts = parts.slice(0, -2); // ["nous", "nous"] ou ["se"]
+        const auxAndParticiple = parts.slice(-2); // ["sommes", "amusé(e)s"] ou ["sont", "disputés"]
+        
+        // Afficher les pronoms + tirets pour auxiliaire et participe
+        const pronounsToShow = pronounParts.join(' ');
+        const dashesForAux = '_'.repeat(auxAndParticiple[0].length);
+        const dashesForParticiple = '_'.repeat(auxAndParticiple[1].length);
+        replacement = `${pronounsToShow} ${dashesForAux} ${dashesForParticiple}`;
       } else {
-        // Cas normal (sans contraction) - créer des tirets seulement pour l'auxiliaire et le participe passé (sans pronoms)
+        // Cas normal (sans contraction et sans pronoms) - créer des tirets seulement pour l'auxiliaire et le participe passé
         const words = auxiliaryAndParticiple.split(' ');
         const dashesForWords = words.map(word => '_'.repeat(word.length)).join(' ');
         replacement = dashesForWords;
