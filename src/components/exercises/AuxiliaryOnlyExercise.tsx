@@ -241,52 +241,51 @@ const AuxiliaryOnlyExercise = ({
           className="text-xl text-foreground mb-6 leading-relaxed font-medium"
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
-        {!isAnswered && (
-          <div className="flex items-center justify-center gap-4">
-            <input
-              ref={inputRef}
-              type="text"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              autoComplete="one-time-code"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck="false"
-              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
-              placeholder="Ex: est décidée, sont allés..."
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && userAnswer.trim()) {
-                  onKeyPress(e as any);
-                }
-              }}
-              onFocus={(e) => {
-                e.target.setAttribute('autocomplete', 'one-time-code');
-              }}
-            />
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="h-12 w-12 rounded-full border-2 border-blue-300 hover:border-blue-400 hover:bg-blue-50"
-                >
-                  <HelpCircle className="h-5 w-5 text-blue-500" />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-80 p-4 bg-white border-2 border-blue-200 shadow-lg" side="top">
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-blue-700 text-sm">💡 Indice pour l'accord</h4>
-                  <div className="text-center">
-                    <span className="text-lg font-bold text-green-600">{getParticipleHelp().participle}</span>
-                  </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {getParticipleHelp().explanation}
-                  </p>
-                 </div>
-              </PopoverContent>
-            </Popover>
-          </div>
-        )}
+        <div className="flex items-center justify-center gap-4">
+          <input
+            ref={inputRef}
+            type="text"
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            autoComplete="one-time-code"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
+            placeholder="Ex: est décidée, sont allés..."
+            disabled={isAnswered}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && userAnswer.trim()) {
+                onKeyPress(e as any);
+              }
+            }}
+            onFocus={(e) => {
+              e.target.setAttribute('autocomplete', 'one-time-code');
+            }}
+          />
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-12 w-12 rounded-full border-2 border-blue-300 hover:border-blue-400 hover:bg-blue-50"
+              >
+                <HelpCircle className="h-5 w-5 text-blue-500" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80 p-4 bg-white border-2 border-blue-200 shadow-lg" side="top">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-blue-700 text-sm">💡 Indice pour l'accord</h4>
+                <div className="text-center">
+                  <span className="text-lg font-bold text-green-600">{getParticipleHelp().participle}</span>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {getParticipleHelp().explanation}
+                </p>
+               </div>
+            </PopoverContent>
+          </Popover>
+        </div>
         
         {!isAnswered && !userAnswer && (
           <div className="mt-4 text-center">
