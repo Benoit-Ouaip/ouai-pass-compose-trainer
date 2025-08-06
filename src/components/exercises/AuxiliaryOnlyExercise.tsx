@@ -242,13 +242,13 @@ const AuxiliaryOnlyExercise = ({
           <div className="flex items-center justify-center gap-4">
             <Input
               ref={inputRef}
-              type="text"
+              type="search"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
               onTouchStart={(e) => e.preventDefault()}
               onContextMenu={(e) => e.preventDefault()}
               onDoubleClick={(e) => e.preventDefault()}
-              autoComplete="off"
+              autoComplete="new-password"
               autoCorrect="off"
               autoCapitalize="off"
               spellCheck="false"
@@ -257,10 +257,13 @@ const AuxiliaryOnlyExercise = ({
               data-1p-ignore="true"
               data-lastpass-icon-root="true"
               data-webkit-autofill="false"
+              data-ms-autofill="false"
               inputMode="text"
-              name="grammar-exercise"
+              name={`grammar-exercise-${Date.now()}`}
+              id={`input-${Math.random()}`}
               role="textbox"
               aria-label="Réponse de l'exercice"
+              style={{ WebkitAppearance: 'none' }}
               className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
               placeholder="Ex: est décidée, sont allés..."
               disabled={isAnswered}
