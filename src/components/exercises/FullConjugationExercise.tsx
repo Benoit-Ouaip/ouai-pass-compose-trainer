@@ -126,20 +126,39 @@ const FullConjugationExercise = ({
                               exercise.correctAnswer.includes('as') || 
                               exercise.correctAnswer.includes('a ') ||
                               exercise.correctAnswer.includes('ai ');
+
+      // Vérifier si c'est l'auxiliaire "être"
+      const isEtreAuxiliary = exercise.correctAnswer.includes('suis') || 
+                             exercise.correctAnswer.includes('es ') || 
+                             exercise.correctAnswer.includes('est ') ||
+                             exercise.correctAnswer.includes('sommes') || 
+                             exercise.correctAnswer.includes('êtes') || 
+                             exercise.correctAnswer.includes('sont');
       
       if (isAvoirAuxiliary) {
         explanation = `Avec l'auxiliaire "avoir", on n'accorde pas le participe passé avec le sujet.`;
-      } else {
-        // Analyser la phrase pour déterminer le sujet
+      } else if (isEtreAuxiliary) {
+        // Analyser la phrase pour déterminer le sujet pour l'auxiliaire être
         if (exercise.presentSentence.toLowerCase().includes('elle')) {
-          explanation = `Le sujet "elle" est féminin singulier.`;
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "elle" (féminin singulier).`;
         } else if (exercise.presentSentence.toLowerCase().includes('elles')) {
-          explanation = `Le sujet "elles" est féminin pluriel.`;
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "elles" (féminin pluriel).`;
         } else if (exercise.presentSentence.toLowerCase().includes('ils')) {
-          explanation = `Le sujet "ils" est masculin pluriel.`;
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "ils" (masculin pluriel).`;
+        } else if (exercise.presentSentence.toLowerCase().includes('nous')) {
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "nous".`;
+        } else if (exercise.presentSentence.toLowerCase().includes('vous')) {
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "vous".`;
+        } else if (exercise.presentSentence.toLowerCase().includes('tu')) {
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "tu".`;
+        } else if (exercise.presentSentence.toLowerCase().includes('il ')) {
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet "il" (masculin singulier).`;
         } else {
-          explanation = `Regarde le sujet pour accorder le participe passé.`;
+          explanation = `Avec l'auxiliaire "être", le participe passé s'accorde avec le sujet.`;
         }
+      } else {
+        // Cas fallback
+        explanation = `Regarde le sujet pour accorder le participe passé.`;
       }
     }
     
