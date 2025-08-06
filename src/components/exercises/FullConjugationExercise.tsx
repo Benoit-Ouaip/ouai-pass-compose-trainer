@@ -227,6 +227,12 @@ const FullConjugationExercise = ({
         modifiedSentence = exercise.presentSentence.replace(simpleRegex, replacement);
       }
       
+      // Gérer la contraction "Je" -> "J'" quand l'auxiliaire commence par une voyelle
+      const firstWordOfAnswer = parts[0];
+      if (firstWordOfAnswer && ['a', 'ai', 'as', 'avons', 'avez', 'ont', 'est', 'es'].includes(firstWordOfAnswer)) {
+        modifiedSentence = modifiedSentence.replace(/\bJe\b/g, "J'");
+      }
+      
       return modifiedSentence;
     }
   };
