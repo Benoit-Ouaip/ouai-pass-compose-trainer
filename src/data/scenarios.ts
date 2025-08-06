@@ -776,7 +776,7 @@ export const scenarios: Scenario[] = [
   {
     id: 4,
     title: "Journal du club de foot",
-    description: "Match, entraînement, score. Travaille les verbes avec l'auxiliaire avoir ou être.",
+    description: "Match, entrainement, score. Travaille les verbes avec l'auxiliaire avoir ou être.",
     icon: "⚽",
     color: "bg-ouaip-yellow/20 text-ouaip-dark-blue",
     exercises: [
@@ -846,7 +846,7 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 99,
-        presentSentence: "Ils finissent l'entraînement avec énergie.",
+        presentSentence: "Ils finissent l'entrainement avec énergie.",
         verbToConjugate: "finissent",
         correctAnswer: "ont fini",
         explanation: "Finir se conjugue avec avoir : ils ont fini.",
@@ -1276,7 +1276,7 @@ export const scenarios: Scenario[] = [
 export const infoCard: InfoCard = {
   id: "coming-soon",
   title: "Bientôt disponible",
-  message: "D'autres thèmes viendront s'ajouter régulièrement. En attendant, bon entraînement et à très bientôt sur ouaip.be !",
+  message: "D'autres thèmes viendront s'ajouter régulièrement. En attendant, bon entrainement et à très bientôt sur ouaip.be !",
   logo: "/lovable-uploads/240e0093-f976-4edb-bce9-c92bcd1f4c10.png",
   color: "bg-ouaip-blue/20 text-ouaip-blue",
   type: "info"
