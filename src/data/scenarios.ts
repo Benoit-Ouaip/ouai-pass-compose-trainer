@@ -300,11 +300,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 33,
-        presentSentence: "Elle se concentre sur sa recette.",
-        verbToConjugate: "concentre",
-        correctAnswer: "s'est concentrée",
-        explanation: "Se concentrer est pronominal : elle s'est concentrée.",
-        choices: ["s'est concentrée", "a concentré", "est concentrée"]
+        presentSentence: "Elle aime préparer ses recettes.",
+        verbToConjugate: "aime",
+        correctAnswer: "a aimé",
+        explanation: "Aimer se conjugue avec avoir : elle a aimé.",
+        choices: ["a aimé", "s'est aimée", "est aimée"]
       },
       {
         id: 34,
