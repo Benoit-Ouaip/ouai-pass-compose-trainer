@@ -79,7 +79,8 @@ const MultipleChoiceExercise = ({
       } else if (parts.length > 2) {
         // Cas pronominal avec pronoms séparés: "nous nous sommes amusé(e)s" ou "se sont disputés"
         const pronounParts = parts.slice(0, -2);
-        const pronounsToShow = pronounParts.join(' ');
+        // Filtrer pour enlever "se" des pronoms affichés
+        const pronounsToShow = pronounParts.filter(part => part !== 'se').join(' ');
         replacement = `${pronounsToShow} <span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem; margin: 0 8px;">...</span> `;
       } else {
         // Cas normal sans pronoms
