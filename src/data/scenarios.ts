@@ -16,6 +16,15 @@ export interface Scenario {
   exercises: Exercise[];
 }
 
+export interface InfoCard {
+  id: string;
+  title: string;
+  message: string;
+  logo: string;
+  color: string;
+  type: 'info';
+}
+
 export const scenarios: Scenario[] = [
   {
     id: 1,
@@ -1263,3 +1272,12 @@ export const scenarios: Scenario[] = [
     ]
   }
 ];
+
+export const infoCard: InfoCard = {
+  id: "coming-soon",
+  title: "Bientôt disponible",
+  message: "D'autres thèmes viendront s'ajouter régulièrement. Bon entraînement !",
+  logo: "/lovable-uploads/240e0093-f976-4edb-bce9-c92bcd1f4c10.png",
+  color: "bg-ouaip-blue/20 text-ouaip-blue",
+  type: "info"
+};

@@ -4,7 +4,8 @@ import ScenarioCard from "@/components/ScenarioCard";
 import DifficultySelector from "@/components/DifficultySelector";
 import ExerciseScreen from "@/components/ExerciseScreen";
 import ResultsScreen from "@/components/ResultsScreen";
-import { scenarios } from "@/data/scenarios";
+import { scenarios, infoCard } from "@/data/scenarios";
+import InfoCard from "@/components/InfoCard";
 
 type GameState = 'home' | 'difficulty' | 'exercise' | 'results';
 
@@ -87,6 +88,14 @@ const Index = () => {
                   />
                 </div>
               ))}
+              <div className="fade-in">
+                <InfoCard
+                  title={infoCard.title}
+                  message={infoCard.message}
+                  logo={infoCard.logo}
+                  color={infoCard.color}
+                />
+              </div>
             </div>
           </div>
         )}
