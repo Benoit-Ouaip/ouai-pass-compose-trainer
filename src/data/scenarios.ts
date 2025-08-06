@@ -336,7 +336,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "cuisinez",
         correctAnswer: "avez cuisiné",
         explanation: "Cuisiner se conjugue avec avoir : vous avez cuisiné.",
-        choices: ["avez cuisiné", "vous êtes cuisinés", "étiez cuisinés"]
+        choices: ["avez cuisiné", "êtes cuisinés", "vous avez cuisiné"]
       },
       {
         id: 38,
