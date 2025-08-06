@@ -933,11 +933,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 111,
-        presentSentence: "Ils tombent lors des tacles.",
-        verbToConjugate: "tombent",
-        correctAnswer: "sont tombés",
-        explanation: "Tomber se conjugue avec être : ils sont tombés.",
-        choices: ["sont tombés", "ont tombé", "se sont tombés"]
+        presentSentence: "Ils partent vers les vestiaires.",
+        verbToConjugate: "partent",
+        correctAnswer: "sont partis",
+        explanation: "Partir se conjugue avec être : ils sont partis.",
+        choices: ["sont partis", "ont parti", "se sont partis"]
       },
       {
         id: 112,
