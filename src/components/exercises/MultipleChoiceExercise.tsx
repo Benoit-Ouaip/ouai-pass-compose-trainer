@@ -27,10 +27,20 @@ const MultipleChoiceExercise = ({
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
 
-  // Mettre le verbe en gras et rouge dans la phrase au présent
+  // Mettre seulement le verbe en gras et rouge dans la phrase au présent (pas les pronoms)
   const highlightedPresentSentence = exercise.presentSentence.replace(
-    exercise.verbToConjugate,
-    `<span style="font-weight: bold; color: #e55555;">${exercise.verbToConjugate}</span>`
+    new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
+    (match) => {
+      // Pour les verbes pronominaux, ne mettre en rouge que la partie verbale
+      const parts = match.split(' ');
+      if (parts.length > 1) {
+        // Garder les pronoms normaux et mettre seulement le dernier mot (le verbe) en rouge
+        const pronouns = parts.slice(0, -1).join(' ');
+        const verb = parts[parts.length - 1];
+        return `${pronouns} <span style="font-weight: bold; color: #e55555;">${verb}</span>`;
+      }
+      return `<span style="font-weight: bold; color: #e55555;">${match}</span>`;
+    }
   );
 
   // Créer les tirets correspondant au nombre de lettres de la réponse complète

@@ -39,10 +39,20 @@ const FullConjugationExercise = ({
   
   // Debug log pour vérifier le chargement de la correction
   console.log("FullConjugationExercise - isAnswered:", isAnswered, "exercise.id:", exercise.id, "correctAnswer:", exercise.correctAnswer);
-  // Mettre le verbe en gras et rouge dans la phrase au présent
+  // Mettre seulement le verbe en gras et rouge dans la phrase au présent (pas les pronoms)
   const highlightedPresentSentence = exercise.presentSentence.replace(
     new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
-    `<span style="font-weight: bold; color: #e55555;">$&</span>`
+    (match) => {
+      // Pour les verbes pronominaux, ne mettre en rouge que la partie verbale
+      const parts = match.split(' ');
+      if (parts.length > 1) {
+        // Garder les pronoms normaux et mettre seulement le dernier mot (le verbe) en rouge
+        const pronouns = parts.slice(0, -1).join(' ');
+        const verb = parts[parts.length - 1];
+        return `${pronouns} <span style="font-weight: bold; color: #e55555;">${verb}</span>`;
+      }
+      return `<span style="font-weight: bold; color: #e55555;">${match}</span>`;
+    }
   );
 
   // Extraire l'auxiliaire et le participe passé (sans les pronoms)
