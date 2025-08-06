@@ -126,68 +126,54 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
       const end = Date.now() + duration;
 
       (function frame() {
-        // Pluie principale - plus de gouttes pour un effet dense
-        for (let i = 0; i < 8; i++) {
+        // Nuages gris qui passent
+        if (Math.random() < 0.3) {
           confetti({
-            particleCount: 1,
-            angle: 85 + Math.random() * 10, // Angle légèrement variable pour le vent
-            spread: 2,
-            origin: { x: Math.random(), y: -0.1 },
-            colors: ['#3B82F6', '#1E40AF', '#60A5FA', '#93C5FD', '#DBEAFE'],
-            gravity: 1.5 + Math.random() * 1.5, // Vitesse variable
-            scalar: 0.3 + Math.random() * 0.3, // Taille variable
-            drift: (Math.random() - 0.5) * 0.5, // Effet de vent
+            particleCount: 3,
+            angle: 0,
+            spread: 40,
+            origin: { x: -0.1, y: 0.2 + Math.random() * 0.3 },
+            colors: ['#9CA3AF', '#6B7280', '#4B5563', '#374151'],
+            gravity: 0,
+            scalar: 1.2 + Math.random() * 0.8,
+            drift: 0.8 + Math.random() * 0.4,
             shapes: ['circle'],
-            ticks: 200 + Math.random() * 200
+            ticks: 400 + Math.random() * 200
           });
         }
-
-        // Gouttes moyennes pour la texture
-        for (let i = 0; i < 4; i++) {
-          confetti({
-            particleCount: 1,
-            angle: 87 + Math.random() * 6,
-            spread: 1,
-            origin: { x: Math.random(), y: -0.1 },
-            colors: ['#1E40AF', '#1E3A8A', '#3730A3'],
-            gravity: 2 + Math.random() * 1,
-            scalar: 0.5 + Math.random() * 0.4,
-            drift: (Math.random() - 0.5) * 0.4,
-            shapes: ['circle'],
-            ticks: 250 + Math.random() * 150
-          });
-        }
-
-        // Grosses gouttes occasionnelles pour l'impact
-        if (Math.random() < 0.4) {
-          confetti({
-            particleCount: 1,
-            angle: 88 + Math.random() * 4,
-            spread: 1,
-            origin: { x: Math.random(), y: -0.1 },
-            colors: ['#1E40AF', '#1E3A8A'],
-            gravity: 2.5 + Math.random() * 0.5,
-            scalar: 0.8 + Math.random() * 0.4,
-            drift: (Math.random() - 0.5) * 0.3,
-            shapes: ['circle'],
-            ticks: 300 + Math.random() * 200
-          });
-        }
-
-        // Effet de brouillard/embruns très légers
+        
+        // Nuages plus hauts
         if (Math.random() < 0.2) {
           confetti({
             particleCount: 2,
-            angle: 90,
-            spread: 20,
-            origin: { x: Math.random(), y: 0.3 + Math.random() * 0.4 },
-            colors: ['#E0E7FF', '#C7D2FE'],
-            gravity: 0.3,
-            scalar: 0.2,
-            drift: (Math.random() - 0.5) * 0.8,
+            angle: 0,
+            spread: 60,
+            origin: { x: -0.1, y: 0.1 + Math.random() * 0.2 },
+            colors: ['#D1D5DB', '#9CA3AF', '#6B7280'],
+            gravity: 0,
+            scalar: 1.5 + Math.random() * 1,
+            drift: 0.6 + Math.random() * 0.3,
             shapes: ['circle'],
-            ticks: 100
+            ticks: 500 + Math.random() * 300
           });
+        }
+
+        // Quelques gouttes fines occasionnelles
+        if (Math.random() < 0.1) {
+          for (let i = 0; i < 3; i++) {
+            confetti({
+              particleCount: 1,
+              angle: 88 + Math.random() * 4,
+              spread: 1,
+              origin: { x: Math.random(), y: -0.1 },
+              colors: ['#60A5FA', '#93C5FD'],
+              gravity: 3 + Math.random() * 1,
+              scalar: 0.1 + Math.random() * 0.1,
+              drift: (Math.random() - 0.5) * 0.2,
+              shapes: ['line'],
+              ticks: 150 + Math.random() * 100
+            });
+          }
         }
 
         if (Date.now() < end) {
