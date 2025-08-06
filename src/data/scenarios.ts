@@ -528,7 +528,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "arrive",
         correctAnswer: "est arrivée",
         explanation: "Arriver se conjugue avec être : elle est arrivée.",
-        choices: ["est", "arrivée", "a"]
+        choices: ["est arrivée", "a arrivé", "s'est arrivée"]
       },
       {
         id: 62,
@@ -536,7 +536,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "sortent",
         correctAnswer: "sont sortis",
         explanation: "Sortir se conjugue avec être : ils sont sortis.",
-        choices: ["sont", "sortis", "ont"]
+        choices: ["sont sortis", "ont sorti", "se sont sortis"]
       },
       {
         id: 63,
@@ -544,7 +544,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "partons",
         correctAnswer: "sommes partis",
         explanation: "Partir se conjugue avec être : nous sommes partis.",
-        choices: ["sommes", "partis", "avons"]
+        choices: ["sommes partis", "avons parti", "nous sommes partis"]
       },
       {
         id: 64,
@@ -552,7 +552,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "viens",
         correctAnswer: "es venue",
         explanation: "Venir se conjugue avec être : tu es venue.",
-        choices: ["es", "venue", "as"]
+        choices: ["es venue", "as venu", "t'es venue"]
       },
       {
         id: 65,
@@ -560,7 +560,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "tombe",
         correctAnswer: "est tombée",
         explanation: "Tomber se conjugue avec être : elle est tombée.",
-        choices: ["est", "tombée", "a"]
+        choices: ["est tombée", "a tombé", "s'est tombée"]
       },
       {
         id: 66,
@@ -568,7 +568,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "entrons",
         correctAnswer: "sommes entrés",
         explanation: "Entrer se conjugue avec être : nous sommes entrés.",
-        choices: ["sommes", "entrés", "avons"]
+        choices: ["sommes entrés", "avons entré", "nous sommes entrés"]
       },
       {
         id: 67,
@@ -576,7 +576,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "retournez",
         correctAnswer: "êtes retournés",
         explanation: "Retourner se conjugue avec être : vous êtes retournés.",
-        choices: ["êtes", "retournés", "avez"]
+        choices: ["êtes retournés", "avez retourné", "vous êtes retournés"]
       },
       {
         id: 68,
@@ -584,7 +584,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "montent",
         correctAnswer: "sont montés",
         explanation: "Monter se conjugue avec être : ils sont montés.",
-        choices: ["sont", "montés", "ont"]
+        choices: ["sont montés", "ont monté", "se sont montés"]
       },
       {
         id: 69,
@@ -592,7 +592,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "descend",
         correctAnswer: "est descendu",
         explanation: "Descendre se conjugue avec être : il est descendu.",
-        choices: ["est", "descendu", "a"]
+        choices: ["est descendu", "a descendu", "s'est descendu"]
       },
       {
         id: 70,
@@ -600,7 +600,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "reste",
         correctAnswer: "est restée",
         explanation: "Rester se conjugue avec être : elle est restée.",
-        choices: ["est", "restée", "a"]
+        choices: ["est restée", "a resté", "s'est restée"]
       },
       {
         id: 71,
@@ -608,7 +608,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "revient",
         correctAnswer: "est revenu",
         explanation: "Revenir se conjugue avec être : il est revenu.",
-        choices: ["est", "revenu", "a"]
+        choices: ["est revenu", "a revenu", "s'est revenu"]
       },
       {
         id: 72,
@@ -616,7 +616,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "passe",
         correctAnswer: "est passée",
         explanation: "Passer se conjugue avec être : elle est passée.",
-        choices: ["est", "passée", "a"]
+        choices: ["est passée", "a passé", "s'est passée"]
       },
       {
         id: 73,
@@ -624,7 +624,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "naissons",
         correctAnswer: "sommes nés",
         explanation: "Naître se conjugue avec être : nous sommes nés.",
-        choices: ["sommes", "nés", "avons"]
+        choices: ["sommes nés", "avons né", "nous sommes nés"]
       },
       {
         id: 74,
@@ -632,7 +632,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "devenez",
         correctAnswer: "êtes devenus",
         explanation: "Devenir se conjugue avec être : vous êtes devenus.",
-        choices: ["êtes", "devenus", "avez"]
+        choices: ["êtes devenus", "avez devenu", "vous êtes devenus"]
       },
       {
         id: 75,
@@ -640,7 +640,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "repartent",
         correctAnswer: "sont repartis",
         explanation: "Repartir se conjugue avec être : ils sont repartis.",
-        choices: ["sont", "repartis", "ont"]
+        choices: ["sont repartis", "ont reparti", "se sont repartis"]
       },
       {
         id: 76,
@@ -648,7 +648,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "retombe",
         correctAnswer: "est retombée",
         explanation: "Retomber se conjugue avec être : elle est retombée.",
-        choices: ["est", "retombée", "a"]
+        choices: ["est retombée", "a retombé", "s'est retombée"]
       },
       {
         id: 77,
@@ -656,7 +656,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "intervient",
         correctAnswer: "est intervenue",
         explanation: "Intervenir se conjugue avec être : elle est intervenue.",
-        choices: ["est", "intervenue", "a"]
+        choices: ["est intervenue", "a intervenu", "s'est intervenue"]
       },
       {
         id: 78,
@@ -664,7 +664,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "va",
         correctAnswer: "est allée",
         explanation: "Aller se conjugue avec être : elle est allée.",
-        choices: ["est", "allée", "a"]
+        choices: ["est allée", "a allé", "s'est allée"]
       },
       {
         id: 79,
@@ -766,7 +766,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "marquent",
         correctAnswer: "ont marqué",
         explanation: "Marquer se conjugue avec avoir : ils ont marqué.",
-        choices: ["ont", "marqué", "sont"]
+        choices: ["ont marqué", "sont marqués", "se sont marqués"]
       },
       {
         id: 92,
@@ -774,7 +774,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "prépare",
         correctAnswer: "a préparé",
         explanation: "Préparer se conjugue avec avoir : il a préparé.",
-        choices: ["a", "préparé", "est"]
+        choices: ["a préparé", "est préparé", "s'est préparé"]
       },
       {
         id: 93,
@@ -926,7 +926,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "tombent",
         correctAnswer: "sont tombés",
         explanation: "Tomber se conjugue avec être : ils sont tombés.",
-        choices: ["sont", "tombés", "ont"]
+        choices: ["sont tombés", "ont tombé", "se sont tombés"]
       },
       {
         id: 112,
@@ -958,7 +958,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "sortons",
         correctAnswer: "sommes sortis",
         explanation: "Sortir se conjugue avec être : nous sommes sortis.",
-        choices: ["sommes", "sortis", "avons"]
+        choices: ["sommes sortis", "avons sorti", "nous sommes sortis"]
       },
       {
         id: 116,
@@ -990,7 +990,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "reviens",
         correctAnswer: "es revenu",
         explanation: "Revenir se conjugue avec être : tu es revenu.",
-        choices: ["es", "revenu", "as"]
+        choices: ["es revenu", "as revenu", "t'es revenu"]
       },
       {
         id: 120,
