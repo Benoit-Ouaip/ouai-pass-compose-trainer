@@ -1025,7 +1025,7 @@ export const scenarios: Scenario[] = [
   {
     id: 5,
     title: "Escape game virtuel",
-    description: "Énigmes, indices, mystères. Maîtrise les verbes irréguliers fréquents (voir, prendre, écrire...).",
+    description: "Énigmes, indices, mystères. Maitrise les verbes irréguliers fréquents (voir, prendre, écrire...).",
     icon: "🔍",
     color: "bg-ouaip-dark-blue/20 text-ouaip-dark-blue",
     exercises: [
