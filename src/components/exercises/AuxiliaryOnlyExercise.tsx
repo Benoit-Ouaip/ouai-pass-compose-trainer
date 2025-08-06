@@ -240,37 +240,27 @@ const AuxiliaryOnlyExercise = ({
         />
         {!isAnswered && (
           <div className="flex items-center justify-center gap-4">
-            <div
+            <input
               ref={inputRef}
-              contentEditable
-              suppressContentEditableWarning
-              onInput={(e) => {
-                const text = e.currentTarget.textContent || '';
-                setUserAnswer(text);
-              }}
+              type="text"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              autoComplete="one-time-code"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck="false"
+              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
+              placeholder="Ex: est décidée, sont allés..."
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isAnswered && userAnswer.trim()) {
-                  e.preventDefault();
+                if (e.key === 'Enter' && userAnswer.trim()) {
                   onKeyPress(e as any);
                 }
               }}
-              onPaste={(e) => {
-                e.preventDefault();
-                const text = e.clipboardData.getData('text/plain');
-                setUserAnswer(text);
-                e.currentTarget.textContent = text;
+              onFocus={(e) => {
+                // Empêcher l'autocomplétion au focus
+                e.target.setAttribute('autocomplete', 'one-time-code');
               }}
-              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none"
-              style={{ 
-                minHeight: '64px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-              data-placeholder="Ex: est décidée, sont allés..."
-            >
-              {userAnswer}
-            </div>
+            />
             <Popover>
               <PopoverTrigger asChild>
                 <Button
