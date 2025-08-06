@@ -670,8 +670,9 @@ export const scenarios: Scenario[] = [
         id: 79,
         presentSentence: "Nous sortons vers la sortie d'urgence.",
         verbToConjugate: "sortons",
-        correctAnswer: "sommes",
-        explanation: "Sortir se conjugue avec être : nous sommes."
+        correctAnswer: "sommes sortis",
+        explanation: "Sortir se conjugue avec être : nous sommes sortis.",
+        choices: ["sommes sortis", "avons sorti", "nous sommes sortis"]
       },
       {
         id: 80,
