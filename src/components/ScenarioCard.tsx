@@ -12,7 +12,7 @@ interface ScenarioCardProps {
 const ScenarioCard = ({ id, title, description, icon, color, onSelect }: ScenarioCardProps) => {
   return (
     <div className="ouaip-card p-6 h-full flex flex-col">
-      <div className={`w-16 h-16 rounded-lg flex items-center justify-center text-2xl mb-4 ${color}`}>
+      <div className={`w-16 h-16 rounded-lg flex items-center justify-center text-2xl mb-4 mx-auto ${color}`}>
         {icon}
       </div>
       
