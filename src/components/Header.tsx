@@ -17,7 +17,7 @@ const Header = ({
               ← Accueil
             </Button>}
         </div>
-        <h1 className="text-2xl font-bold text-ouaip-dark-blue text-white">Atelier d'entrainement sur le passé composé</h1>
+        <h1 className="text-2xl font-bold text-ouaip-dark-blue text-white">Entrainement sur le passé composé</h1>
       </div>
     </header>;
 };
