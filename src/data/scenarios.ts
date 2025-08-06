@@ -360,7 +360,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se repose",
         correctAnswer: "s'est reposé",
         explanation: "Se reposer est pronominal : il s'est reposé.",
-        choices: ["s'est reposé", "a reposé", "est reposé"]
+        choices: ["est reposé", "a reposé", "s'est reposé"]
       },
       {
         id: 41,
