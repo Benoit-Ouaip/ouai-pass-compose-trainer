@@ -526,145 +526,145 @@ export const scenarios: Scenario[] = [
         id: 61,
         presentSentence: "Sofia arrive tard à Bruxelles.",
         verbToConjugate: "arrive",
-        correctAnswer: "est",
-        explanation: "Arriver se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est arrivée",
+        explanation: "Arriver se conjugue avec être : elle est arrivée.",
+        choices: ["est", "arrivée", "a"]
       },
       {
         id: 62,
         presentSentence: "Les touristes sortent de l'hôtel ce matin.",
         verbToConjugate: "sortent",
-        correctAnswer: "sont",
-        explanation: "Sortir se conjugue avec être : ils sont.",
-        choices: ["sont", "ont", "se sont"]
+        correctAnswer: "sont sortis",
+        explanation: "Sortir se conjugue avec être : ils sont sortis.",
+        choices: ["sont", "sortis", "ont"]
       },
       {
         id: 63,
         presentSentence: "Nous, Lucas et moi, nous partons en voyage demain matin.",
         verbToConjugate: "partons",
-        correctAnswer: "sommes",
-        explanation: "Partir se conjugue avec être : nous sommes.",
-        choices: ["sommes", "avons", "nous sommes"]
+        correctAnswer: "sommes partis",
+        explanation: "Partir se conjugue avec être : nous sommes partis.",
+        choices: ["sommes", "partis", "avons"]
       },
       {
         id: 64,
         presentSentence: "Toi Alice, tu viens avec nous en excursion.",
         verbToConjugate: "viens",
-        correctAnswer: "es",
-        explanation: "Venir se conjugue avec être : tu es.",
-        choices: ["es", "as", "t'es"]
+        correctAnswer: "es venue",
+        explanation: "Venir se conjugue avec être : tu es venue.",
+        choices: ["es", "venue", "as"]
       },
       {
         id: 65,
         presentSentence: "Marie tombe amoureuse de cette ville.",
         verbToConjugate: "tombe",
-        correctAnswer: "est",
-        explanation: "Tomber se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est tombée",
+        explanation: "Tomber se conjugue avec être : elle est tombée.",
+        choices: ["est", "tombée", "a"]
       },
       {
         id: 66,
         presentSentence: "Nous, Emma et moi, nous entrons dans le musée.",
         verbToConjugate: "entrons",
-        correctAnswer: "sommes",
-        explanation: "Entrer se conjugue avec être : nous sommes.",
-        choices: ["sommes", "avons", "nous sommes"]
+        correctAnswer: "sommes entrés",
+        explanation: "Entrer se conjugue avec être : nous sommes entrés.",
+        choices: ["sommes", "entrés", "avons"]
       },
       {
         id: 67,
         presentSentence: "Vous, Marc et Pierre, vous retournez à l'hôtel avant la nuit.",
         verbToConjugate: "retournez",
-        correctAnswer: "êtes",
-        explanation: "Retourner se conjugue avec être : vous êtes.",
-        choices: ["êtes", "avez", "vous êtes"]
+        correctAnswer: "êtes retournés",
+        explanation: "Retourner se conjugue avec être : vous êtes retournés.",
+        choices: ["êtes", "retournés", "avez"]
       },
       {
         id: 68,
         presentSentence: "Ils montent au sommet de la tour.",
         verbToConjugate: "montent",
-        correctAnswer: "sont",
-        explanation: "Monter se conjugue avec être : ils sont.",
-        choices: ["sont", "ont", "se sont"]
+        correctAnswer: "sont montés",
+        explanation: "Monter se conjugue avec être : ils sont montés.",
+        choices: ["sont", "montés", "ont"]
       },
       {
         id: 69,
         presentSentence: "Il descend du train à la gare centrale.",
         verbToConjugate: "descend",
-        correctAnswer: "est",
-        explanation: "Descendre se conjugue avec être : il est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est descendu",
+        explanation: "Descendre se conjugue avec être : il est descendu.",
+        choices: ["est", "descendu", "a"]
       },
       {
         id: 70,
         presentSentence: "La voyageuse reste trois jours à Paris.",
         verbToConjugate: "reste",
-        correctAnswer: "est",
-        explanation: "Rester se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est restée",
+        explanation: "Rester se conjugue avec être : elle est restée.",
+        choices: ["est", "restée", "a"]
       },
       {
         id: 71,
         presentSentence: "Marc revient de son voyage en Italie.",
         verbToConjugate: "revient",
-        correctAnswer: "est",
-        explanation: "Revenir se conjugue avec être : il est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est revenu",
+        explanation: "Revenir se conjugue avec être : il est revenu.",
+        choices: ["est", "revenu", "a"]
       },
       {
         id: 72,
         presentSentence: "Elle passe par Londres avant Paris.",
         verbToConjugate: "passe",
-        correctAnswer: "est",
-        explanation: "Passer se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est passée",
+        explanation: "Passer se conjugue avec être : elle est passée.",
+        choices: ["est", "passée", "a"]
       },
       {
         id: 73,
         presentSentence: "Nous naissons avec l'envie de voyager.",
         verbToConjugate: "naissons",
-        correctAnswer: "sommes",
-        explanation: "Naître se conjugue avec être : nous sommes.",
-        choices: ["sommes", "avons", "nous sommes"]
+        correctAnswer: "sommes nés",
+        explanation: "Naître se conjugue avec être : nous sommes nés.",
+        choices: ["sommes", "nés", "avons"]
       },
       {
         id: 74,
         presentSentence: "Vous devenez de vrais globe-trotteurs.",
         verbToConjugate: "devenez",
-        correctAnswer: "êtes",
-        explanation: "Devenir se conjugue avec être : vous êtes.",
-        choices: ["êtes", "avez", "vous êtes"]
+        correctAnswer: "êtes devenus",
+        explanation: "Devenir se conjugue avec être : vous êtes devenus.",
+        choices: ["êtes", "devenus", "avez"]
       },
       {
         id: 75,
         presentSentence: "Ils repartent vers une nouvelle destination.",
         verbToConjugate: "repartent",
-        correctAnswer: "sont",
-        explanation: "Repartir se conjugue avec être : ils sont.",
-        choices: ["sont", "ont", "se sont"]
+        correctAnswer: "sont repartis",
+        explanation: "Repartir se conjugue avec être : ils sont repartis.",
+        choices: ["sont", "repartis", "ont"]
       },
       {
         id: 76,
         presentSentence: "Elle retombe sous le charme de cette région.",
         verbToConjugate: "retombe",
-        correctAnswer: "est",
-        explanation: "Retomber se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est retombée",
+        explanation: "Retomber se conjugue avec être : elle est retombée.",
+        choices: ["est", "retombée", "a"]
       },
       {
         id: 77,
         presentSentence: "Marie intervient pour aider les autres voyageurs.",
         verbToConjugate: "intervient",
-        correctAnswer: "est",
-        explanation: "Intervenir se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est intervenue",
+        explanation: "Intervenir se conjugue avec être : elle est intervenue.",
+        choices: ["est", "intervenue", "a"]
       },
       {
         id: 78,
         presentSentence: "Elle va directement à son hôtel.",
         verbToConjugate: "va",
-        correctAnswer: "est",
-        explanation: "Aller se conjugue avec être : elle est.",
-        choices: ["est", "a", "s'est"]
+        correctAnswer: "est allée",
+        explanation: "Aller se conjugue avec être : elle est allée.",
+        choices: ["est", "allée", "a"]
       },
       {
         id: 79,
@@ -764,17 +764,17 @@ export const scenarios: Scenario[] = [
         id: 91,
         presentSentence: "Les joueurs marquent un but magnifique.",
         verbToConjugate: "marquent",
-        correctAnswer: "ont",
-        explanation: "Marquer se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont marqué",
+        explanation: "Marquer se conjugue avec avoir : ils ont marqué.",
+        choices: ["ont", "marqué", "sont"]
       },
       {
         id: 92,
         presentSentence: "L'entraineur prépare son équipe.",
         verbToConjugate: "prépare",
-        correctAnswer: "a",
-        explanation: "Préparer se conjugue avec avoir : il a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a préparé",
+        explanation: "Préparer se conjugue avec avoir : il a préparé.",
+        choices: ["a", "préparé", "est"]
       },
       {
         id: 93,
@@ -924,9 +924,9 @@ export const scenarios: Scenario[] = [
         id: 111,
         presentSentence: "Ils tombent lors des tacles.",
         verbToConjugate: "tombent",
-        correctAnswer: "sont",
-        explanation: "Tomber se conjugue avec être : ils sont.",
-        choices: ["sont", "ont", "se sont"]
+        correctAnswer: "sont tombés",
+        explanation: "Tomber se conjugue avec être : ils sont tombés.",
+        choices: ["sont", "tombés", "ont"]
       },
       {
         id: 112,
@@ -956,9 +956,9 @@ export const scenarios: Scenario[] = [
         id: 115,
         presentSentence: "Nous sortons du terrain victorieux.",
         verbToConjugate: "sortons",
-        correctAnswer: "sommes",
-        explanation: "Sortir se conjugue avec être : nous sommes.",
-        choices: ["sommes", "avons", "nous sommes"]
+        correctAnswer: "sommes sortis",
+        explanation: "Sortir se conjugue avec être : nous sommes sortis.",
+        choices: ["sommes", "sortis", "avons"]
       },
       {
         id: 116,
@@ -988,9 +988,9 @@ export const scenarios: Scenario[] = [
         id: 119,
         presentSentence: "Tu reviens de tes blessures.",
         verbToConjugate: "reviens",
-        correctAnswer: "es",
-        explanation: "Revenir se conjugue avec être : tu es.",
-        choices: ["es", "as", "t'es"]
+        correctAnswer: "es revenu",
+        explanation: "Revenir se conjugue avec être : tu es revenu.",
+        choices: ["es", "revenu", "as"]
       },
       {
         id: 120,
