@@ -16,11 +16,11 @@ const ScenarioCard = ({ id, title, description, icon, color, onSelect }: Scenari
         {icon}
       </div>
       
-      <h3 className="text-xl font-semibold text-ouaip-dark-blue mb-3">
+      <h3 className="text-xl font-semibold text-ouaip-dark-blue mb-3 text-center">
         {title}
       </h3>
       
-      <p className="text-muted-foreground flex-grow mb-6">
+      <p className="text-muted-foreground flex-grow mb-6 text-center">
         {description}
       </p>
       
