@@ -1026,7 +1026,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "écrit",
         correctAnswer: "a écrit",
         explanation: "Écrire se conjugue avec avoir : elle a écrit.",
-        choices: ["a écrit", "est écrit", "s'est écrit"]
+        choices: ["a écrit", "s'est écrit", "est écrit"]
       },
       {
         id: 122,
