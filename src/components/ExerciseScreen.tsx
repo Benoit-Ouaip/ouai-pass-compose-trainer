@@ -278,7 +278,7 @@ const ExerciseScreen = ({
       <div className="mb-4">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm text-muted-foreground">
-            Question {currentExercise + 1} sur {exercises.length}
+            Phrase {currentExercise + 1} sur {exercises.length}
           </span>
           <span className="text-sm text-muted-foreground">
             Score: {score.correct}/{score.total}
