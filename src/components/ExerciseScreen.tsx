@@ -339,7 +339,7 @@ const ExerciseScreen = ({
             {isCorrect ? (
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-2">
-                  Passage à l'exercice suivant...
+                  {currentExercise < exercises.length - 1 ? 'Passage à l\'exercice suivant...' : 'Analyse des résultats...'}
                 </p>
                 <div className="w-8 h-8 mx-auto border-2 border-green-600 border-t-transparent rounded-full animate-spin"></div>
               </div>
