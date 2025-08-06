@@ -49,9 +49,7 @@ const Index = () => {
       <main className="container mx-auto py-8">
         {gameState === 'home' && <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">
-                Choisissez votre aventure
-              </h2>
+              <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">Choisis ton aventure !</h2>
               <p className="text-xl text-muted-foreground">Maitrise le passé composé en t'amusant !</p>
             </div>
             
