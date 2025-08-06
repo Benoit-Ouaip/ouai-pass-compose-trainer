@@ -119,6 +119,9 @@ const FullConjugationExercise = ({
       // Cas simple
       participle = parts[1];
       
+      console.log("Debug - exercise.correctAnswer:", exercise.correctAnswer);
+      console.log("Debug - parts:", parts);
+      
       // Vérifier si c'est l'auxiliaire "avoir"
       const isAvoirAuxiliary = exercise.correctAnswer.includes('avons') || 
                               exercise.correctAnswer.includes('avez') || 
@@ -134,6 +137,9 @@ const FullConjugationExercise = ({
                              exercise.correctAnswer.includes('sommes ') || 
                              exercise.correctAnswer.includes('êtes ') || 
                              exercise.correctAnswer.includes('sont ');
+      
+      console.log("Debug - isAvoirAuxiliary:", isAvoirAuxiliary);
+      console.log("Debug - isEtreAuxiliary:", isEtreAuxiliary);
       
       if (isAvoirAuxiliary) {
         explanation = `Avec l'auxiliaire "avoir", on n'accorde pas le participe passé avec le sujet.`;
