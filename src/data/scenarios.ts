@@ -791,145 +791,145 @@ export const scenarios: Scenario[] = [
         id: 93,
         presentSentence: "Les supporters voient un match exceptionnel.",
         verbToConjugate: "voient",
-        correctAnswer: "ont",
-        explanation: "Voir se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "ont"]
+        correctAnswer: "ont vu",
+        explanation: "Voir se conjugue avec avoir : ils ont vu.",
+        choices: ["ont vu", "sont vus", "se sont vus"]
       },
       {
         id: 94,
         presentSentence: "Il comprend les règles.",
         verbToConjugate: "comprend",
-        correctAnswer: "a",
-        explanation: "Comprendre se conjugue avec avoir : il a.",
-        choices: ["a", "est", "a"]
+        correctAnswer: "a compris",
+        explanation: "Comprendre se conjugue avec avoir : il a compris.",
+        choices: ["a compris", "est compris", "s'est compris"]
       },
       {
         id: 95,
         presentSentence: "Samedi, tu joues au foot avec ton équipe.",
         verbToConjugate: "joues",
-        correctAnswer: "as",
-        explanation: "Jouer se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "as"]
+        correctAnswer: "as joué",
+        explanation: "Jouer se conjugue avec avoir : tu as joué.",
+        choices: ["as joué", "es joué", "t'es joué"]
       },
       {
         id: 96,
         presentSentence: "Elle rate ses penalties.",
         verbToConjugate: "rate",
-        correctAnswer: "a",
-        explanation: "Rater se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a raté",
+        explanation: "Rater se conjugue avec avoir : elle a raté.",
+        choices: ["a raté", "est ratée", "s'est ratée"]
       },
       {
         id: 97,
         presentSentence: "Nous courons sur le terrain.",
         verbToConjugate: "courons",
-        correctAnswer: "avons",
-        explanation: "Courir se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "avons"]
+        correctAnswer: "avons couru",
+        explanation: "Courir se conjugue avec avoir : nous avons couru.",
+        choices: ["avons couru", "sommes courus", "nous sommes courus"]
       },
       {
         id: 98,
         presentSentence: "Vous perdez contre cette équipe redoutable.",
         verbToConjugate: "perdez",
-        correctAnswer: "avez",
-        explanation: "Perdre se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez perdu",
+        explanation: "Perdre se conjugue avec avoir : vous avez perdu.",
+        choices: ["avez perdu", "êtes perdus", "vous êtes perdus"]
       },
       {
         id: 99,
         presentSentence: "Ils finissent l'entraînement avec énergie.",
         verbToConjugate: "finissent",
-        correctAnswer: "ont",
-        explanation: "Finir se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont fini",
+        explanation: "Finir se conjugue avec avoir : ils ont fini.",
+        choices: ["ont fini", "sont finis", "se sont finis"]
       },
       {
         id: 100,
         presentSentence: "Le gardien arrête tous les tirs.",
         verbToConjugate: "arrête",
-        correctAnswer: "a",
-        explanation: "Arrêter se conjugue avec avoir : il a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a arrêté",
+        explanation: "Arrêter se conjugue avec avoir : il a arrêté.",
+        choices: ["a arrêté", "est arrêté", "s'est arrêté"]
       },
       {
         id: 101,
         presentSentence: "Tu gagnes contre moi.",
         verbToConjugate: "gagnes",
-        correctAnswer: "as",
-        explanation: "Gagner se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as gagné",
+        explanation: "Gagner se conjugue avec avoir : tu as gagné.",
+        choices: ["as gagné", "es gagné", "t'es gagné"]
       },
       {
         id: 102,
         presentSentence: "Elle dribble comme une professionnelle.",
         verbToConjugate: "dribble",
-        correctAnswer: "a",
-        explanation: "Dribbler se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a dribblé",
+        explanation: "Dribbler se conjugue avec avoir : elle a dribblé.",
+        choices: ["a dribblé", "est dribblée", "s'est dribblée"]
       },
       {
         id: 103,
         presentSentence: "Nous vendons nos billets.",
         verbToConjugate: "vendons",
-        correctAnswer: "avons",
-        explanation: "Vendre se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons vendu",
+        explanation: "Vendre se conjugue avec avoir : nous avons vendu.",
+        choices: ["avons vendu", "sommes vendus", "nous sommes vendus"]
       },
       {
         id: 104,
         presentSentence: "Vous tirez dans les angles.",
         verbToConjugate: "tirez",
-        correctAnswer: "avez",
-        explanation: "Tirer se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez tiré",
+        explanation: "Tirer se conjugue avec avoir : vous avez tiré.",
+        choices: ["avez tiré", "êtes tirés", "vous êtes tirés"]
       },
       {
         id: 105,
         presentSentence: "Ils battent l'équipe adverse.",
         verbToConjugate: "battent",
-        correctAnswer: "ont",
-        explanation: "Battre se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont battu",
+        explanation: "Battre se conjugue avec avoir : ils ont battu.",
+        choices: ["ont battu", "sont battus", "se sont battus"]
       },
       {
         id: 106,
         presentSentence: "J'enfile mes crampons neufs.",
         verbToConjugate: "enfile",
-        correctAnswer: "ai",
-        explanation: "Enfiler se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai enfilé",
+        explanation: "Enfiler se conjugue avec avoir : j'ai enfilé.",
+        choices: ["ai enfilé", "suis enfilé", "me suis enfilé"]
       },
       {
         id: 107,
         presentSentence: "Tu défends ton but.",
         verbToConjugate: "défends",
-        correctAnswer: "as",
-        explanation: "Défendre se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as défendu",
+        explanation: "Défendre se conjugue avec avoir : tu as défendu.",
+        choices: ["as défendu", "es défendu", "t'es défendu"]
       },
       {
         id: 108,
         presentSentence: "Elle fait des passes précises.",
         verbToConjugate: "fait",
-        correctAnswer: "a",
-        explanation: "Faire se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a fait",
+        explanation: "Faire se conjugue avec avoir : elle a fait.",
+        choices: ["a fait", "est faite", "s'est faite"]
       },
       {
         id: 109,
         presentSentence: "Nous sautons par-dessus les obstacles.",
         verbToConjugate: "sautons",
-        correctAnswer: "avons",
-        explanation: "Sauter se conjugue avec avoir : nous avons.",
-        choices: ["avons", "sommes", "nous sommes"]
+        correctAnswer: "avons sauté",
+        explanation: "Sauter se conjugue avec avoir : nous avons sauté.",
+        choices: ["avons sauté", "sommes sautés", "nous sommes sautés"]
       },
       {
         id: 110,
         presentSentence: "Vous prenez des risques calculés.",
         verbToConjugate: "prenez",
-        correctAnswer: "avez",
-        explanation: "Prendre se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez pris",
+        explanation: "Prendre se conjugue avec avoir : vous avez pris.",
+        choices: ["avez pris", "êtes pris", "vous êtes pris"]
       },
       {
         id: 111,
@@ -943,25 +943,25 @@ export const scenarios: Scenario[] = [
         id: 112,
         presentSentence: "Je réussis mes premiers matchs.",
         verbToConjugate: "réussis",
-        correctAnswer: "ai",
-        explanation: "Réussir se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai réussi",
+        explanation: "Réussir se conjugue avec avoir : j'ai réussi.",
+        choices: ["ai réussi", "suis réussi", "me suis réussi"]
       },
       {
         id: 113,
         presentSentence: "Tu vois la différence.",
         verbToConjugate: "vois",
-        correctAnswer: "as",
-        explanation: "Voir se conjugue avec avoir : tu as.",
-        choices: ["as", "es", "t'es"]
+        correctAnswer: "as vu",
+        explanation: "Voir se conjugue avec avoir : tu as vu.",
+        choices: ["as vu", "es vu", "t'es vu"]
       },
       {
         id: 114,
         presentSentence: "Elle applaudit les belles actions.",
         verbToConjugate: "applaudit",
-        correctAnswer: "a",
-        explanation: "Applaudir se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a applaudi",
+        explanation: "Applaudir se conjugue avec avoir : elle a applaudi.",
+        choices: ["a applaudi", "est applaudie", "s'est applaudie"]
       },
       {
         id: 115,
@@ -975,25 +975,25 @@ export const scenarios: Scenario[] = [
         id: 116,
         presentSentence: "Vous lisez les mouvements adverses.",
         verbToConjugate: "lisez",
-        correctAnswer: "avez",
-        explanation: "Lire se conjugue avec avoir : vous avez.",
-        choices: ["avez", "êtes", "vous êtes"]
+        correctAnswer: "avez lu",
+        explanation: "Lire se conjugue avec avoir : vous avez lu.",
+        choices: ["avez lu", "êtes lus", "vous êtes lus"]
       },
       {
         id: 117,
         presentSentence: "Ils suivent les conseils.",
         verbToConjugate: "suivent",
-        correctAnswer: "ont",
-        explanation: "Suivre se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont suivi",
+        explanation: "Suivre se conjugue avec avoir : ils ont suivi.",
+        choices: ["ont suivi", "sont suivis", "se sont suivis"]
       },
       {
         id: 118,
         presentSentence: "Je choisis mes passes.",
         verbToConjugate: "choisis",
-        correctAnswer: "ai",
-        explanation: "Choisir se conjugue avec avoir : j'ai.",
-        choices: ["ai", "suis", "me suis"]
+        correctAnswer: "ai choisi",
+        explanation: "Choisir se conjugue avec avoir : j'ai choisi.",
+        choices: ["ai choisi", "suis choisi", "me suis choisi"]
       },
       {
         id: 119,
@@ -1007,9 +1007,9 @@ export const scenarios: Scenario[] = [
         id: 120,
         presentSentence: "Elle réfléchit comme une stratège.",
         verbToConjugate: "réfléchit",
-        correctAnswer: "a",
-        explanation: "Réfléchir se conjugue avec avoir : elle a.",
-        choices: ["a", "est", "s'est"]
+        correctAnswer: "a réfléchi",
+        explanation: "Réfléchir se conjugue avec avoir : elle a réfléchi.",
+        choices: ["a réfléchi", "est réfléchie", "s'est réfléchie"]
       }
     ]
   },
