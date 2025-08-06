@@ -122,15 +122,15 @@ const FullConjugationExercise = ({
       console.log("Debug - exercise.correctAnswer:", exercise.correctAnswer);
       console.log("Debug - parts:", parts);
       
-      // Vérifier si c'est l'auxiliaire "avoir"
-      const isAvoirAuxiliary = exercise.correctAnswer.includes('avons') || 
-                              exercise.correctAnswer.includes('avez') || 
-                              exercise.correctAnswer.includes('ont') || 
-                              exercise.correctAnswer.includes('as') || 
+      // Vérifier si c'est l'auxiliaire "avoir" (mots complets seulement)
+      const isAvoirAuxiliary = exercise.correctAnswer.includes('avons ') || 
+                              exercise.correctAnswer.includes('avez ') || 
+                              exercise.correctAnswer.includes('ont ') || 
+                              exercise.correctAnswer.includes('as ') || 
                               exercise.correctAnswer.includes('a ') ||
                               exercise.correctAnswer.includes('ai ');
 
-      // Vérifier si c'est l'auxiliaire "être"
+      // Vérifier si c'est l'auxiliaire "être" (mots complets seulement)
       const isEtreAuxiliary = exercise.correctAnswer.includes('suis ') || 
                              exercise.correctAnswer.includes('es ') || 
                              exercise.correctAnswer.includes('est ') ||
