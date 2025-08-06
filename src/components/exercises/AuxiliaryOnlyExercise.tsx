@@ -240,35 +240,37 @@ const AuxiliaryOnlyExercise = ({
         />
         {!isAnswered && (
           <div className="flex items-center justify-center gap-4">
-            <Input
+            <div
               ref={inputRef}
-              type="search"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              onTouchStart={(e) => e.preventDefault()}
-              onContextMenu={(e) => e.preventDefault()}
-              onDoubleClick={(e) => e.preventDefault()}
-              autoComplete="new-password"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck="false"
-              data-lpignore="true"
-              data-form-type="other"
-              data-1p-ignore="true"
-              data-lastpass-icon-root="true"
-              data-webkit-autofill="false"
-              data-ms-autofill="false"
-              inputMode="text"
-              name={`grammar-exercise-${Date.now()}`}
-              id={`input-${Math.random()}`}
-              role="textbox"
-              aria-label="Réponse de l'exercice"
-              style={{ WebkitAppearance: 'none' }}
-              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
-              placeholder="Ex: est décidée, sont allés..."
-              disabled={isAnswered}
-              onKeyPress={onKeyPress}
-            />
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) => {
+                const text = e.currentTarget.textContent || '';
+                setUserAnswer(text);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !isAnswered && userAnswer.trim()) {
+                  e.preventDefault();
+                  onKeyPress(e as any);
+                }
+              }}
+              onPaste={(e) => {
+                e.preventDefault();
+                const text = e.clipboardData.getData('text/plain');
+                setUserAnswer(text);
+                e.currentTarget.textContent = text;
+              }}
+              className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none"
+              style={{ 
+                minHeight: '64px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              data-placeholder="Ex: est décidée, sont allés..."
+            >
+              {userAnswer}
+            </div>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
