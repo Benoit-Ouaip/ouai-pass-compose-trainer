@@ -10,8 +10,8 @@ const Header = ({
   return <header className="w-full border-b-2 border-primary p-4 shadow-sm bg-[#e2de55]">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <a href="https://ouaip.be/" target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-4 py-2 rounded-lg font-bold text-xl hover:bg-primary/90 transition-colors">
-            Ouaip
+          <a href="https://ouaip.be/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <img src="/lovable-uploads/b5e828fb-5d4a-48b1-aa05-4d3a09ec8468.png" alt="OUAIP Logo" className="h-12 w-auto" />
           </a>
           {showBackButton && <Button variant="outline" onClick={onBackToHome} className="border-primary text-primary hover:bg-primary/10">
               ← Accueil
