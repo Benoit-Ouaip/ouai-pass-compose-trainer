@@ -29,8 +29,8 @@ const MultipleChoiceExercise = ({
 
   // Mettre le verbe en gras et rouge dans la phrase au présent
   const highlightedPresentSentence = exercise.presentSentence.replace(
-    new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), 
-    `<span style="font-weight: bold; color: #e55555;">$&</span>`
+    exercise.verbToConjugate,
+    `<span style="font-weight: bold; color: #e55555;">${exercise.verbToConjugate}</span>`
   );
 
   // Créer les tirets correspondant au nombre de lettres de la réponse complète
@@ -49,14 +49,11 @@ const MultipleChoiceExercise = ({
 
       // Afficher la phrase avec l'auxiliaire et le participe passé tous les deux en gras et vert
       const styledAnswer = `<span style="color: #72ba69;">${auxiliary} ${participle}</span>`;
-      return exercise.presentSentence.replace(
-        new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), 
-        styledAnswer
-      );
+      return exercise.presentSentence.replace(exercise.verbToConjugate, styledAnswer);
     } else if (userAnswer) {
       // Afficher la réponse déposée avec style d'étiquette
       return exercise.presentSentence.replace(
-        new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), 
+        exercise.verbToConjugate, 
         `<span style="color: #72ba69; background: #e0f2fe; padding: 4px 12px; border-radius: 8px; border: 2px solid #72ba69; box-shadow: 0 2px 4px rgba(114, 186, 105, 0.2);">${userAnswer}</span>`
       );
     } else {
@@ -79,10 +76,7 @@ const MultipleChoiceExercise = ({
         replacement = `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`;
       }
       
-      return exercise.presentSentence.replace(
-        new RegExp(`\\b${exercise.verbToConjugate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), 
-        replacement
-      );
+      return exercise.presentSentence.replace(exercise.verbToConjugate, replacement);
     }
   };
   
