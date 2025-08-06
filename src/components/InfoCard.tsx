@@ -23,7 +23,7 @@ const InfoCard = ({ title, message, logo, color }: InfoCardProps) => {
       </p>
       
       <Button 
-        onClick={() => window.open('https://ouaip.be/play', '_blank')}
+        onClick={() => window.open('https://ouaip.be/', '_blank')}
         className="w-full text-white hover:opacity-90"
         style={{ backgroundColor: '#e55555' }}
       >
