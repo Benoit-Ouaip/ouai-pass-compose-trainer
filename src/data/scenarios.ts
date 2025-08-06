@@ -304,7 +304,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se concentre",
         correctAnswer: "s'est concentrée",
         explanation: "Se concentrer est pronominal : elle s'est concentrée.",
-        choices: ["s'est concentrée", "a concentré", "est concentrée"]
+        choices: ["a concentré", "est concentrée", "s'est concentrée"]
       },
       {
         id: 34,
@@ -344,7 +344,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se disputent",
         correctAnswer: "se sont disputés",
         explanation: "Se disputer est pronominal : ils se sont disputés.",
-        choices: ["se sont disputés", "ont disputé", "sont disputés"]
+        choices: ["ont disputé", "sont disputés", "se sont disputés"]
       },
       {
         id: 39,
@@ -384,7 +384,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "s'aident",
         correctAnswer: "se sont aidés",
         explanation: "S'aider est pronominal : ils se sont aidés.",
-        choices: ["se sont aidés", "ont aidé", "sont aidés"]
+        choices: ["ont aidé", "sont aidés", "se sont aidés"]
       },
       {
         id: 44,
@@ -408,7 +408,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se salit",
         correctAnswer: "s'est sali",
         explanation: "Se salir est pronominal : il s'est sali.",
-        choices: ["s'est sali", "a sali", "est sali"]
+        choices: ["a sali", "est sali", "s'est sali"]
       },
       {
         id: 47,
@@ -432,7 +432,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se retrouve",
         correctAnswer: "s'est retrouvé",
         explanation: "Se retrouver est pronominal : il s'est retrouvé.",
-        choices: ["s'est retrouvé", "a retrouvé", "est retrouvé"]
+        choices: ["a retrouvé", "est retrouvé", "s'est retrouvé"]
       },
       {
         id: 50,
@@ -456,7 +456,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se décide",
         correctAnswer: "s'est décidée",
         explanation: "Se décider est pronominal : elle s'est décidée.",
-        choices: ["s'est décidée", "a décidé", "est décidée"]
+        choices: ["a décidé", "est décidée", "s'est décidée"]
       },
       {
         id: 53,
@@ -504,7 +504,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se dirige",
         correctAnswer: "s'est dirigé",
         explanation: "Se diriger est pronominal : il s'est dirigé.",
-        choices: ["s'est dirigé", "a dirigé", "est dirigé"]
+        choices: ["a dirigé", "est dirigé", "s'est dirigé"]
       },
       {
         id: 59,
@@ -520,7 +520,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se présente",
         correctAnswer: "s'est présentée",
         explanation: "Se présenter est pronominal : elle s'est présentée.",
-        choices: ["s'est présentée", "a présenté", "est présentée"]
+        choices: ["a présenté", "est présentée", "s'est présentée"]
       }
     ]
   },
