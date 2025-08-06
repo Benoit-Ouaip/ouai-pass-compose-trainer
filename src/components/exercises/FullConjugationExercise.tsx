@@ -128,12 +128,12 @@ const FullConjugationExercise = ({
                               exercise.correctAnswer.includes('ai ');
 
       // Vérifier si c'est l'auxiliaire "être"
-      const isEtreAuxiliary = exercise.correctAnswer.includes('suis') || 
+      const isEtreAuxiliary = exercise.correctAnswer.includes('suis ') || 
                              exercise.correctAnswer.includes('es ') || 
                              exercise.correctAnswer.includes('est ') ||
-                             exercise.correctAnswer.includes('sommes') || 
-                             exercise.correctAnswer.includes('êtes') || 
-                             exercise.correctAnswer.includes('sont');
+                             exercise.correctAnswer.includes('sommes ') || 
+                             exercise.correctAnswer.includes('êtes ') || 
+                             exercise.correctAnswer.includes('sont ');
       
       if (isAvoirAuxiliary) {
         explanation = `Avec l'auxiliaire "avoir", on n'accorde pas le participe passé avec le sujet.`;
