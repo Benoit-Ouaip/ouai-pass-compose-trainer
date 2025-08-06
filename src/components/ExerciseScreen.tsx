@@ -239,6 +239,11 @@ const ExerciseScreen = ({
       }
     };
 
+    // Pour l'escape game virtuel, on force le choix multiple en niveau facile
+    if (scenarioTitle === "Escape game virtuel" && difficulty === 1) {
+      return <MultipleChoiceExercise {...commonProps} />;
+    }
+
     switch (difficulty) {
       case 1:
         return <MultipleChoiceExercise {...commonProps} />;
