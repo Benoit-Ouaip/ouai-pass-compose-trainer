@@ -121,22 +121,42 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
         createApplauseSound();
       }, 500);
     } else {
-      // Animation de pluie pour les scores insuffisants
-      const duration = 4000;
+      // Animation de pluie améliorée pour les scores insuffisants
+      const duration = 5000;
       const end = Date.now() + duration;
 
       (function frame() {
-        // Créer des gouttes de pluie (particules bleues qui tombent)
-        confetti({
-          particleCount: 2,
-          angle: 90,
-          spread: 10,
-          origin: { x: Math.random(), y: 0 },
-          colors: ['#3B82F6', '#1E40AF', '#60A5FA'],
-          gravity: 1.5,
-          scalar: 0.6,
-          drift: 0
-        });
+        // Créer plusieurs types de gouttes pour plus de réalisme
+        for (let i = 0; i < 3; i++) {
+          confetti({
+            particleCount: 1,
+            angle: 90,
+            spread: 5,
+            origin: { x: Math.random(), y: -0.1 },
+            colors: ['#3B82F6', '#1E40AF', '#60A5FA', '#93C5FD'],
+            gravity: 2,
+            scalar: 0.4 + Math.random() * 0.4,
+            drift: (Math.random() - 0.5) * 0.3,
+            shapes: ['circle'],
+            ticks: 300
+          });
+        }
+
+        // Gouttes plus grosses occasionnelles
+        if (Math.random() < 0.3) {
+          confetti({
+            particleCount: 1,
+            angle: 90,
+            spread: 3,
+            origin: { x: Math.random(), y: -0.1 },
+            colors: ['#1E40AF', '#1E3A8A'],
+            gravity: 2.5,
+            scalar: 0.8,
+            drift: (Math.random() - 0.5) * 0.2,
+            shapes: ['circle'],
+            ticks: 400
+          });
+        }
 
         if (Date.now() < end) {
           requestAnimationFrame(frame);
