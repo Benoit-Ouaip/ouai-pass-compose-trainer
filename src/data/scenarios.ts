@@ -1276,7 +1276,7 @@ export const scenarios: Scenario[] = [
 export const infoCard: InfoCard = {
   id: "coming-soon",
   title: "Bientôt disponible",
-  message: "D'autres thèmes viendront s'ajouter régulièrement. En attendant, bon entraînement et à bientôt sur ouaip.be !",
+  message: "D'autres thèmes viendront s'ajouter régulièrement. En attendant, bon entraînement et à très bientôt sur ouaip.be !",
   logo: "/lovable-uploads/240e0093-f976-4edb-bce9-c92bcd1f4c10.png",
   color: "bg-ouaip-blue/20 text-ouaip-blue",
   type: "info"
