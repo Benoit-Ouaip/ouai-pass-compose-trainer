@@ -37,8 +37,8 @@ const FullConjugationExercise = ({
     }
   }, [isAnswered, exercise.id]);
   
-  // Log de débogage
-  console.log("FullConjugationExercise - isAnswered:", isAnswered, "exercise.id:", exercise.id);
+  // Debug log pour vérifier le chargement de la correction
+  console.log("FullConjugationExercise - isAnswered:", isAnswered, "exercise.id:", exercise.id, "correctAnswer:", exercise.correctAnswer);
   // Mettre le verbe en gras et rouge dans la phrase au présent
   const highlightedPresentSentence = exercise.presentSentence.replace(
     new RegExp(`\\b${exercise.verbToConjugate}\\b`, 'gi'),
