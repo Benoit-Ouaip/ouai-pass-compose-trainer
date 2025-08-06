@@ -1086,11 +1086,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 129,
-        presentSentence: "Je comprends l'énigme.",
+        presentSentence: "J'comprends l'énigme.",
         verbToConjugate: "comprends",
-        correctAnswer: "J'ai compris",
-        explanation: "Comprendre se conjugue avec avoir : J'ai compris.",
-        choices: ["J'ai compris", "suis compris", "me suis compris"]
+        correctAnswer: "ai compris",
+        explanation: "Comprendre se conjugue avec avoir : j'ai compris.",
+        choices: ["ai compris", "suis compris", "me suis compris"]
       },
       {
         id: 130,
