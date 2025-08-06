@@ -1038,11 +1038,11 @@ export const scenarios: Scenario[] = [
       },
       {
         id: 123,
-        presentSentence: "J'vois une clé cachée sous le tapis.",
+        presentSentence: "Je vois une clé cachée sous le tapis.",
         verbToConjugate: "vois",
-        correctAnswer: "ai vu",
+        correctAnswer: "j'ai vu",
         explanation: "Voir se conjugue avec avoir : j'ai vu.",
-        choices: ["ai vu", "suis vu", "me suis vu"]
+        choices: ["j'ai vu", "suis vu", "me suis vu"]
       },
       {
         id: 124,
