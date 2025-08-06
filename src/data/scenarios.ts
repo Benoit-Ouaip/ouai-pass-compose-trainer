@@ -678,79 +678,89 @@ export const scenarios: Scenario[] = [
         id: 80,
         presentSentence: "Vous mourez d'envie de visiter ce château.",
         verbToConjugate: "mourez",
-        correctAnswer: "êtes",
-        explanation: "Mourir se conjugue avec être : vous êtes."
+        correctAnswer: "êtes morts",
+        explanation: "Mourir se conjugue avec être : vous êtes morts.",
+        choices: ["êtes morts", "avez mort", "vous êtes morts"]
       },
       {
         id: 81,
         presentSentence: "Ils mangent dans ce petit restaurant.",
         verbToConjugate: "mangent",
-        correctAnswer: "ont",
-        explanation: "Manger se conjugue avec avoir : ils ont.",
-        choices: ["ont", "sont", "se sont"]
+        correctAnswer: "ont mangé",
+        explanation: "Manger se conjugue avec avoir : ils ont mangé.",
+        choices: ["ont mangé", "sont mangés", "se sont mangés"]
       },
       {
         id: 82,
         presentSentence: "Il arrive au bon moment.",
         verbToConjugate: "arrive",
-        correctAnswer: "est",
-        explanation: "Arriver se conjugue avec être : il est."
+        correctAnswer: "est arrivé",
+        explanation: "Arriver se conjugue avec être : il est arrivé.",
+        choices: ["est arrivé", "a arrivé", "s'est arrivé"]
       },
       {
         id: 83,
         presentSentence: "Toi Alice, tu parviens à destination.",
         verbToConjugate: "parviens",
-        correctAnswer: "es",
-        explanation: "Parvenir se conjugue avec être : tu es."
+        correctAnswer: "es parvenue",
+        explanation: "Parvenir se conjugue avec être : tu es parvenue.",
+        choices: ["es parvenue", "as parvenu", "t'es parvenue"]
       },
       {
         id: 84,
         presentSentence: "Elle disparait dans la foule du marché.",
         verbToConjugate: "disparait",
-        correctAnswer: "a",
-        explanation: "Disparaître se conjugue avec avoir : elle a."
+        correctAnswer: "a disparu",
+        explanation: "Disparaître se conjugue avec avoir : elle a disparu.",
+        choices: ["a disparu", "est disparue", "s'est disparue"]
       },
       {
         id: 85,
         presentSentence: "Nous prévoyons un moment pour jouer ensemble.",
         verbToConjugate: "prévoyons",
-        correctAnswer: "avons",
-        explanation: "Prévoir se conjugue avec avoir : nous avons."
+        correctAnswer: "avons prévu",
+        explanation: "Prévoir se conjugue avec avoir : nous avons prévu.",
+        choices: ["avons prévu", "sommes prévus", "nous sommes prévus"]
       },
       {
         id: 86,
         presentSentence: "Vous photographiez le monument.",
         verbToConjugate: "photographiez",
-        correctAnswer: "avez",
-        explanation: "Photographier se conjugue avec avoir : vous avez."
+        correctAnswer: "avez photographié",
+        explanation: "Photographier se conjugue avec avoir : vous avez photographié.",
+        choices: ["avez photographié", "êtes photographiés", "vous êtes photographiés"]
       },
       {
         id: 87,
         presentSentence: "Ils visitent le musée en groupe.",
         verbToConjugate: "visitent",
-        correctAnswer: "ont",
-        explanation: "Visiter se conjugue avec avoir : ils ont."
+        correctAnswer: "ont visité",
+        explanation: "Visiter se conjugue avec avoir : ils ont visité.",
+        choices: ["ont visité", "sont visités", "se sont visités"]
       },
       {
         id: 88,
         presentSentence: "Moi, Mathias, je vais à la gare centrale.",
         verbToConjugate: "vais",
-        correctAnswer: "suis",
-        explanation: "Aller se conjugue avec être : je suis."
+        correctAnswer: "suis allé",
+        explanation: "Aller se conjugue avec être : je suis allé.",
+        choices: ["suis allé", "ai allé", "me suis allé"]
       },
       {
         id: 89,
         presentSentence: "Toi, Isabelle, tu rentres chez toi après le voyage.",
         verbToConjugate: "rentres",
-        correctAnswer: "es",
-        explanation: "Rentrer se conjugue avec être : tu es."
+        correctAnswer: "es rentrée",
+        explanation: "Rentrer se conjugue avec être : tu es rentrée.",
+        choices: ["es rentrée", "as rentré", "t'es rentrée"]
       },
       {
         id: 90,
         presentSentence: "Elle ressort son appareil photo.",
         verbToConjugate: "ressort",
-        correctAnswer: "a",
-        explanation: "Ressortir se conjugue avec avoir : elle a."
+        correctAnswer: "a ressorti",
+        explanation: "Ressortir se conjugue avec avoir : elle a ressorti.",
+        choices: ["a ressorti", "est ressortie", "s'est ressortie"]
       }
     ]
   },
