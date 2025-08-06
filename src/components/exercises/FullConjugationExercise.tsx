@@ -122,21 +122,14 @@ const FullConjugationExercise = ({
       console.log("Debug - exercise.correctAnswer:", exercise.correctAnswer);
       console.log("Debug - parts:", parts);
       
-      // Vérifier si c'est l'auxiliaire "avoir" (mots complets seulement)
-      const isAvoirAuxiliary = exercise.correctAnswer.includes('avons ') || 
-                              exercise.correctAnswer.includes('avez ') || 
-                              exercise.correctAnswer.includes('ont ') || 
-                              exercise.correctAnswer.includes('as ') || 
-                              exercise.correctAnswer.includes('a ') ||
-                              exercise.correctAnswer.includes('ai ');
-
-      // Vérifier si c'est l'auxiliaire "être" (mots complets seulement)
-      const isEtreAuxiliary = exercise.correctAnswer.includes('suis ') || 
-                             exercise.correctAnswer.includes('es ') || 
-                             exercise.correctAnswer.includes('est ') ||
-                             exercise.correctAnswer.includes('sommes ') || 
-                             exercise.correctAnswer.includes('êtes ') || 
-                             exercise.correctAnswer.includes('sont ');
+      // Détecter l'auxiliaire en regardant le premier mot
+      const firstWord = parts[0];
+      const isAvoirAuxiliary = ['avons', 'avez', 'ont', 'as', 'a', 'ai'].includes(firstWord);
+      const isEtreAuxiliary = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont'].includes(firstWord);
+      
+      console.log("Debug - firstWord:", firstWord);
+      console.log("Debug - isAvoirAuxiliary:", isAvoirAuxiliary);
+      console.log("Debug - isEtreAuxiliary:", isEtreAuxiliary);
       
       console.log("Debug - isAvoirAuxiliary:", isAvoirAuxiliary);
       console.log("Debug - isEtreAuxiliary:", isEtreAuxiliary);
