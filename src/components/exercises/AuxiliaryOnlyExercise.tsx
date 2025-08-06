@@ -33,7 +33,10 @@ const AuxiliaryOnlyExercise = ({
 
   useEffect(() => {
     if (!isAnswered && inputRef.current) {
-      inputRef.current.focus();
+      // Petit délai pour s'assurer que le DOM est prêt
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
     }
   }, [isAnswered, exercise.id]);
   // Mettre le verbe en gras et rouge dans la phrase au présent
@@ -257,7 +260,6 @@ const AuxiliaryOnlyExercise = ({
                 }
               }}
               onFocus={(e) => {
-                // Empêcher l'autocomplétion au focus
                 e.target.setAttribute('autocomplete', 'one-time-code');
               }}
             />
@@ -283,6 +285,14 @@ const AuxiliaryOnlyExercise = ({
                  </div>
               </PopoverContent>
             </Popover>
+          </div>
+        )}
+        
+        {!isAnswered && !userAnswer && (
+          <div className="mt-4 text-center">
+            <p className="text-sm text-muted-foreground italic">
+              💡 Tape ta réponse dans le champ ci-dessus
+            </p>
           </div>
         )}
       </div>
