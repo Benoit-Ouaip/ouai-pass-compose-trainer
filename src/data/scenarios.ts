@@ -286,9 +286,9 @@ export const scenarios: Scenario[] = [
         id: 31,
         presentSentence: "Nous nous lavons les mains avant de cuisiner.",
         verbToConjugate: "nous lavons",
-        correctAnswer: "nous sommes lavé(e)s",
+        correctAnswer: "sommes lavé(e)s",
         explanation: "Se laver est pronominal et se conjugue avec être : nous nous sommes lavé(e)s.",
-        choices: ["nous sommes lavé(e)s", "nous avons lavé", "nous étions lavé(e)s"]
+        choices: ["sommes lavé(e)s", "avons lavé", "étions lavé(e)s"]
       },
       {
         id: 32,
@@ -326,9 +326,9 @@ export const scenarios: Scenario[] = [
         id: 36,
         presentSentence: "Nous nous amusons à créer de nouveaux plats.",
         verbToConjugate: "nous amusons",
-        correctAnswer: "nous sommes amusé(e)s",
+        correctAnswer: "sommes amusé(e)s",
         explanation: "S'amuser est pronominal : nous nous sommes amusé(e)s.",
-        choices: ["nous sommes amusé(e)s", "nous avons amusé", "nous étions amusé(e)s"]
+        choices: ["sommes amusé(e)s", "avons amusé", "étions amusé(e)s"]
       },
       {
         id: 37,
@@ -360,7 +360,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "se repose",
         correctAnswer: "s'est reposé",
         explanation: "Se reposer est pronominal : il s'est reposé.",
-        choices: ["est reposé", "a reposé", "s'est reposé"]
+        choices: ["s'est reposé", "a reposé", "est reposé"]
       },
       {
         id: 41,
@@ -478,9 +478,9 @@ export const scenarios: Scenario[] = [
         id: 55,
         presentSentence: "Nous nous excusons pour le retard du plat.",
         verbToConjugate: "nous excusons",
-        correctAnswer: "nous sommes excusé(e)s",
+        correctAnswer: "sommes excusé(e)s",
         explanation: "S'excuser est pronominal : nous nous sommes excusé(e)s.",
-        choices: ["nous sommes excusé(e)s", "nous avons excusé", "nous étions excusé(e)s"]
+        choices: ["sommes excusé(e)s", "avons excusé", "étions excusé(e)s"]
       },
       {
         id: 56,
