@@ -165,17 +165,15 @@ const AuxiliaryOnlyExercise = ({
         const participle = parts[1]; // "décidée" ou "rappelé(e)"
         
         if (contractedPart.endsWith('est')) {
-          // "s'est" -> "s'" + "___"
-          const pronoun = contractedPart.slice(0, -3); // "s'"
+          // "s'est" -> "se" + "___"
           const dashesAux = '___'; // 3 tirets pour "est"
           const dashesParticiple = '_'.repeat(participle.length);
-          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+          replacement = `se ${dashesAux} ${dashesParticiple}`;
         } else if (contractedPart.endsWith('es')) {
-          // "t'es" -> "t'" + "__"
-          const pronoun = contractedPart.slice(0, -2); // "t'"
+          // "t'es" -> "te" + "__"
           const dashesAux = '__'; // 2 tirets pour "es"
           const dashesParticiple = '_'.repeat(participle.length);
-          replacement = `${pronoun}${dashesAux} ${dashesParticiple}`;
+          replacement = `te ${dashesAux} ${dashesParticiple}`;
         } else {
           // Cas fallback
           const words = auxiliaryAndParticiple.split(' ');
