@@ -1186,7 +1186,7 @@ export const scenarios: Scenario[] = [
         verbToConjugate: "peint",
         correctAnswer: "a peint",
         explanation: "Peindre se conjugue avec avoir : elle a peint.",
-        choices: ["ai peint", "suis peint", "me suis peint"]
+        choices: ["a peint", "s'est peint", "est peint"]
       },
       {
         id: 142,
