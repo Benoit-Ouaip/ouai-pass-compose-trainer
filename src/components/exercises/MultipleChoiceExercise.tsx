@@ -58,12 +58,8 @@ const MultipleChoiceExercise = ({
       if (parts.length === 2 && parts[0].match(/[''`]/)) {
         // Cas avec contraction: "s'est décidée" ou "t'es rappelé(e)"
         const contractedPart = parts[0]; // "s'est" ou "t'es"
-        
-        if (contractedPart.endsWith('est')) {
-          replacement = `se <span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`;
-        } else if (contractedPart.endsWith('es')) {
-          replacement = `te <span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">...</span>`;
-        }
+        const pronoun = contractedPart.slice(0, contractedPart.length - (contractedPart.endsWith('est') ? 3 : 2));
+        replacement = `<span style="background: white; padding: 12px 16px; border: 2px solid #59c2df; border-radius: 8px; min-width: 160px; display: inline-block; color: #64748b; font-style: italic; font-size: 0.75rem;">${pronoun}...</span>`;
       } else if (parts.length > 2) {
         // Cas pronominal avec pronoms séparés: "nous nous sommes amusé(e)s" ou "se sont disputés"
         const pronounParts = parts.slice(0, -2);
