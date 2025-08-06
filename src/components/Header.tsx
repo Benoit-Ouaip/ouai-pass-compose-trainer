@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Maximize, Minimize } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface HeaderProps {
   onBackToHome?: () => void;
@@ -14,13 +13,59 @@ const Header = ({
 }: HeaderProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const isCurrentlyFullscreen = !!document.fullscreenElement;
+      console.log('Fullscreen state changed:', isCurrentlyFullscreen);
+      setIsFullscreen(isCurrentlyFullscreen);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleFullscreen = async () => {
+    console.log('Toggle fullscreen clicked, current state:', isFullscreen);
+    
+    try {
+      if (!document.fullscreenElement) {
+        console.log('Requesting fullscreen...');
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if ((document.documentElement as any).webkitRequestFullscreen) {
+          await (document.documentElement as any).webkitRequestFullscreen();
+        } else if ((document.documentElement as any).mozRequestFullScreen) {
+          await (document.documentElement as any).mozRequestFullScreen();
+        } else if ((document.documentElement as any).msRequestFullscreen) {
+          await (document.documentElement as any).msRequestFullscreen();
+        } else {
+          console.error('Fullscreen API not supported');
+          alert('Votre navigateur ne supporte pas le mode plein écran');
+        }
+      } else {
+        console.log('Exiting fullscreen...');
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        } else if ((document as any).webkitExitFullscreen) {
+          await (document as any).webkitExitFullscreen();
+        } else if ((document as any).mozCancelFullScreen) {
+          await (document as any).mozCancelFullScreen();
+        } else if ((document as any).msExitFullscreen) {
+          await (document as any).msExitFullscreen();
+        }
+      }
+    } catch (error) {
+      console.error('Erreur lors du changement de mode plein écran:', error);
+      alert('Impossible de changer le mode plein écran. Cela peut être dû aux restrictions du navigateur.');
     }
   };
 
