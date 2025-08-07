@@ -23,6 +23,7 @@ const MultipleChoiceExercise = ({
   isCorrect
 }: MultipleChoiceExerciseProps) => {
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
+  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
 
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
@@ -140,6 +141,35 @@ const MultipleChoiceExercise = ({
   const handleDragEnd = () => {
     setDraggedItem(null);
   };
+
+  // Gestionnaires pour les événements tactiles (iPad/mobile)
+  const handleTouchStart = (e: React.TouchEvent, choice: string) => {
+    const touch = e.touches[0];
+    setTouchStart({ x: touch.clientX, y: touch.clientY });
+    setDraggedItem(choice);
+    e.preventDefault();
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    e.preventDefault();
+    if (!touchStart || !draggedItem) return;
+
+    const touch = e.changedTouches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    // Vérifier si l'élément de destination est la zone de dépôt
+    const dropZone = element?.closest('[data-drop-zone="true"]');
+    if (dropZone && !isAnswered) {
+      setUserAnswer(draggedItem);
+    }
+    
+    setDraggedItem(null);
+    setTouchStart(null);
+  };
   return <div className="text-center space-y-4">
       <div className="p-4 bg-muted/20 rounded-lg">
         <p className="text-base font-medium text-ouaip-dark-blue mb-3 text-[#9f9f9f]">La phrase au présent :</p>
@@ -148,7 +178,7 @@ const MultipleChoiceExercise = ({
       }} />
       </div>
       
-      <div onDragOver={handleDragOver} onDrop={handleDrop} className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
+      <div onDragOver={handleDragOver} onDrop={handleDrop} data-drop-zone="true" className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">La phrase au passé composé :</p>
         <p className="text-xl text-foreground mb-6 leading-relaxed font-medium" dangerouslySetInnerHTML={{
         __html: createDisplaySentence()
@@ -164,9 +194,17 @@ const MultipleChoiceExercise = ({
           </p>}
         
         {!isAnswered && !userAnswer && shuffledChoices.length > 0 && <div className="flex justify-center gap-4 flex-wrap mt-6">
-            {shuffledChoices.map((choice, index) => <div key={index} draggable onDragStart={e => handleDragStart(e, choice)} onDragEnd={handleDragEnd} className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-move hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`} style={{
-          touchAction: 'none'
-        }}>
+            {shuffledChoices.map((choice, index) => <div key={index} 
+              draggable 
+              onDragStart={e => handleDragStart(e, choice)} 
+              onDragEnd={handleDragEnd}
+              onTouchStart={e => handleTouchStart(e, choice)}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-move hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`} 
+              style={{
+                touchAction: 'none'
+              }}>
                 {choice}
               </div>)}
           </div>}
