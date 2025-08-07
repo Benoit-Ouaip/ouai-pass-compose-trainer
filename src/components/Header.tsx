@@ -78,7 +78,7 @@ const Header = ({
           {showBackButton && <Button 
               variant="outline" 
               onClick={onBackToHome} 
-              className="border-2 border-[#e55555] text-[#e55555] bg-white/90 hover:bg-[#e55555] hover:text-white active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center"
+              className="border-2 border-[#e55555] text-white bg-[#e55555] hover:bg-[#e55555]/80 active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center"
             >
               <span className="hidden sm:inline">← Accueil</span>
               <span className="sm:hidden">←</span>
