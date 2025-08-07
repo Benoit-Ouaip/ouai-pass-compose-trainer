@@ -2,9 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { HelpCircle } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import VirtualKeyboard from "@/components/VirtualKeyboard";
-import { useDeviceDetection } from "@/hooks/useDeviceDetection";
+import { useEffect, useRef } from "react";
 
 interface Exercise {
   id: number;
@@ -32,8 +30,6 @@ const AuxiliaryOnlyExercise = ({
   onKeyPress
 }: AuxiliaryOnlyExerciseProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { isIpad } = useDeviceDetection();
-  const [showVirtualKeyboard, setShowVirtualKeyboard] = useState(false);
 
   useEffect(() => {
     if (!isAnswered && inputRef.current) {
@@ -251,23 +247,20 @@ const AuxiliaryOnlyExercise = ({
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            autoComplete="off"
+            autoComplete="one-time-code"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
-            readOnly={isIpad && !isAnswered}
             className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
-            placeholder={isIpad ? "Utilise le clavier ci-dessous" : "Ex: est décidée, sont allés..."}
+            placeholder="Ex: est décidée, sont allés..."
             disabled={isAnswered}
-            onClick={() => {
-              if (isIpad && !isAnswered) {
-                setShowVirtualKeyboard(true);
-              }
-            }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' && userAnswer.trim()) {
                 onKeyPress(e as any);
               }
+            }}
+            onFocus={(e) => {
+              e.target.setAttribute('autocomplete', 'one-time-code');
             }}
           />
           <Popover>
@@ -294,37 +287,16 @@ const AuxiliaryOnlyExercise = ({
           </Popover>
         </div>
         
-         {!isAnswered && !userAnswer && (
-           <div className="mt-4 text-center">
-             <p className="text-sm text-muted-foreground italic">
-               💡 {isIpad ? "Utilise le clavier ci-dessous" : "Tape ta réponse dans le champ ci-dessus"}
-             </p>
-           </div>
-         )}
-       </div>
-       
-       {/* Clavier virtuel pour iPad */}
-       {isIpad && showVirtualKeyboard && !isAnswered && (
-         <div className="mt-6">
-           <VirtualKeyboard
-             onKeyPress={(key) => {
-               setUserAnswer(userAnswer + key);
-             }}
-             onBackspace={() => {
-               setUserAnswer(userAnswer.slice(0, -1));
-             }}
-             onSubmit={() => {
-               if (userAnswer.trim()) {
-                 setShowVirtualKeyboard(false);
-                 onKeyPress({ key: 'Enter' } as any);
-               }
-             }}
-             disabled={isAnswered}
-           />
-         </div>
-       )}
-     </div>
-   );
+        {!isAnswered && !userAnswer && (
+          <div className="mt-4 text-center">
+            <p className="text-sm text-muted-foreground italic">
+              💡 Tape ta réponse dans le champ ci-dessus
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default AuxiliaryOnlyExercise;
