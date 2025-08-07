@@ -24,6 +24,7 @@ const MultipleChoiceExercise = ({
 }: MultipleChoiceExerciseProps) => {
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
 
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
@@ -145,13 +146,19 @@ const MultipleChoiceExercise = ({
   // Gestionnaires pour les événements tactiles (iPad/mobile)
   const handleTouchStart = (e: React.TouchEvent, choice: string) => {
     const touch = e.touches[0];
-    setTouchStart({ x: touch.clientX, y: touch.clientY });
+    const startPos = { x: touch.clientX, y: touch.clientY };
+    setTouchStart(startPos);
+    setDragPosition(startPos);
     setDraggedItem(choice);
     e.preventDefault();
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     e.preventDefault();
+    if (!touchStart || !draggedItem) return;
+    
+    const touch = e.touches[0];
+    setDragPosition({ x: touch.clientX, y: touch.clientY });
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -169,6 +176,7 @@ const MultipleChoiceExercise = ({
     
     setDraggedItem(null);
     setTouchStart(null);
+    setDragPosition(null);
   };
   return <div className="text-center space-y-4">
       <div className="p-4 bg-muted/20 rounded-lg">
@@ -224,6 +232,19 @@ const MultipleChoiceExercise = ({
             💡 Conseil : {getContextualHint()}
           </p>}
       </div>
+
+      {/* Élément fantôme qui suit le doigt pendant le drag sur tactile */}
+      {dragPosition && draggedItem && (
+        <div 
+          className="fixed pointer-events-none z-50 px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2 opacity-80"
+          style={{
+            left: dragPosition.x,
+            top: dragPosition.y,
+          }}
+        >
+          {draggedItem}
+        </div>
+      )}
     </div>;
 };
 export default MultipleChoiceExercise;
