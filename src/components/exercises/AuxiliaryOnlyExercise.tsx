@@ -247,7 +247,7 @@ const AuxiliaryOnlyExercise = ({
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            autoComplete="one-time-code"
+            autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
@@ -258,9 +258,6 @@ const AuxiliaryOnlyExercise = ({
               if (e.key === 'Enter' && userAnswer.trim()) {
                 onKeyPress(e as any);
               }
-            }}
-            onFocus={(e) => {
-              e.target.setAttribute('autocomplete', 'one-time-code');
             }}
           />
           <Popover>
