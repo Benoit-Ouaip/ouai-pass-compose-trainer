@@ -145,38 +145,40 @@ const MultipleChoiceExercise = ({
 
   // Gestionnaires pour les événements tactiles (iPad/mobile)
   const handleTouchStart = (e: React.TouchEvent, choice: string) => {
+    if (isAnswered) return;
+    
     const touch = e.touches[0];
     const startPos = { x: touch.clientX, y: touch.clientY };
     setTouchStart(startPos);
-    setDragPosition(startPos);
     setDraggedItem(choice);
     e.preventDefault();
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    e.preventDefault();
-    if (!touchStart || !draggedItem) return;
+    if (!touchStart || !draggedItem || isAnswered) return;
     
     const touch = e.touches[0];
     setDragPosition({ x: touch.clientX, y: touch.clientY });
+    e.preventDefault();
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    e.preventDefault();
-    if (!touchStart || !draggedItem) return;
+    if (!touchStart || !draggedItem || isAnswered) return;
 
     const touch = e.changedTouches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
     
     // Vérifier si l'élément de destination est la zone de dépôt
     const dropZone = element?.closest('[data-drop-zone="true"]');
-    if (dropZone && !isAnswered) {
+    if (dropZone) {
       setUserAnswer(draggedItem);
     }
     
+    // Réinitialiser tous les états
     setDraggedItem(null);
     setTouchStart(null);
     setDragPosition(null);
+    e.preventDefault();
   };
   return <div className="text-center space-y-4">
       <div className="p-4 bg-muted/20 rounded-lg">
