@@ -242,25 +242,18 @@ const AuxiliaryOnlyExercise = ({
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         <div className="flex items-center justify-center gap-4">
-          <input
+          <Input
             ref={inputRef}
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            autoComplete="one-time-code"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
+            className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80"
             placeholder="Ex: est décidée, sont allés..."
             disabled={isAnswered}
             onKeyDown={(e) => {
               if (e.key === 'Enter' && userAnswer.trim()) {
                 onKeyPress(e as any);
               }
-            }}
-            onFocus={(e) => {
-              e.target.setAttribute('autocomplete', 'one-time-code');
             }}
           />
           <Popover>
