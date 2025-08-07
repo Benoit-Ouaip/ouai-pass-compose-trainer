@@ -75,7 +75,11 @@ const Header = ({
           <a href="https://ouaip.be/" target="_blank" rel="noopener noreferrer" className="bg-white p-1 sm:p-2 rounded-lg hover:opacity-80 transition-opacity">
             <img src="/lovable-uploads/b5e828fb-5d4a-48b1-aa05-4d3a09ec8468.png" alt="OUAIP Logo" className="h-8 sm:h-12 w-auto" />
           </a>
-          {showBackButton && <Button variant="outline" onClick={onBackToHome} className="border-ouaip-dark-blue text-ouaip-dark-blue bg-white/90 hover:bg-white text-xs sm:text-sm px-2 sm:px-4">
+          {showBackButton && <Button 
+              variant="outline" 
+              onClick={onBackToHome} 
+              className="border-2 border-[#e55555] text-[#e55555] bg-white/90 hover:bg-[#e55555] hover:text-white active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center"
+            >
               <span className="hidden sm:inline">← Accueil</span>
               <span className="sm:hidden">←</span>
             </Button>}
