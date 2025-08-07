@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+
 interface Exercise {
   id: number;
   presentSentence: string;
@@ -8,6 +9,7 @@ interface Exercise {
   explanation: string;
   choices?: string[];
 }
+
 interface MultipleChoiceExerciseProps {
   exercise: Exercise;
   userAnswer: string;
@@ -15,6 +17,7 @@ interface MultipleChoiceExerciseProps {
   isAnswered: boolean;
   isCorrect: boolean;
 }
+
 const MultipleChoiceExercise = ({
   exercise,
   userAnswer,
@@ -23,8 +26,6 @@ const MultipleChoiceExercise = ({
   isCorrect
 }: MultipleChoiceExerciseProps) => {
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
-  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
-  const [dragPosition, setDragPosition] = useState<{ x: number; y: number } | null>(null);
 
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
@@ -122,15 +123,18 @@ const MultipleChoiceExercise = ({
     // Conseil par défaut
     return "Clique et fais glisser une étiquette vers la zone avec les trois points.";
   };
+
   const handleDragStart = (e: React.DragEvent, choice: string) => {
     setDraggedItem(choice);
     e.dataTransfer.setData('text/plain', choice);
     e.dataTransfer.effectAllowed = 'move';
   };
+
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
   };
+
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     const choice = e.dataTransfer.getData('text/plain');
@@ -139,114 +143,93 @@ const MultipleChoiceExercise = ({
     }
     setDraggedItem(null);
   };
+
   const handleDragEnd = () => {
     setDraggedItem(null);
   };
 
-  // Gestionnaires pour les événements tactiles (iPad/mobile)
-  const handleTouchStart = (e: React.TouchEvent, choice: string) => {
-    if (isAnswered) return;
-    
-    const touch = e.touches[0];
-    const startPos = { x: touch.clientX, y: touch.clientY };
-    setTouchStart(startPos);
-    setDraggedItem(choice);
-    e.preventDefault();
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!touchStart || !draggedItem || isAnswered) return;
-    
-    const touch = e.touches[0];
-    setDragPosition({ x: touch.clientX, y: touch.clientY });
-    e.preventDefault();
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStart || !draggedItem || isAnswered) return;
-
-    const touch = e.changedTouches[0];
-    const element = document.elementFromPoint(touch.clientX, touch.clientY);
-    
-    // Vérifier si l'élément de destination est la zone de dépôt
-    const dropZone = element?.closest('[data-drop-zone="true"]');
-    if (dropZone) {
-      setUserAnswer(draggedItem);
+  // Gestionnaire simplifié pour tactile - simple tap pour sélectionner
+  const handleChoiceClick = (choice: string) => {
+    if (!isAnswered) {
+      setUserAnswer(choice);
     }
-    
-    // Réinitialiser tous les états
-    setDraggedItem(null);
-    setTouchStart(null);
-    setDragPosition(null);
-    e.preventDefault();
   };
-  return <div className="text-center space-y-4">
+
+  return (
+    <div className="text-center space-y-4">
       <div className="p-4 bg-muted/20 rounded-lg">
         <p className="text-base font-medium text-ouaip-dark-blue mb-3 text-[#9f9f9f]">La phrase au présent :</p>
-        <p className="text-xl text-foreground leading-relaxed" dangerouslySetInnerHTML={{
-        __html: highlightedPresentSentence
-      }} />
+        <p 
+          className="text-xl text-foreground leading-relaxed" 
+          dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
+        />
       </div>
       
-      <div onDragOver={handleDragOver} onDrop={handleDrop} data-drop-zone="true" className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]">
+      <div 
+        onDragOver={handleDragOver} 
+        onDrop={handleDrop} 
+        data-drop-zone="true" 
+        className="p-8 border-3 border-primary/40 rounded-xl relative shadow-lg bg-[#c5c5b9]/[0.13]"
+      >
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">La phrase au passé composé :</p>
-        <p className="text-xl text-foreground mb-6 leading-relaxed font-medium" dangerouslySetInnerHTML={{
-        __html: createDisplaySentence()
-      }} />
+        <p 
+          className="text-xl text-foreground mb-6 leading-relaxed font-medium" 
+          dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
+        />
         
-        {isAnswered && isCorrect && <div className="text-base font-medium text-green-600 mb-3 flex items-center justify-center gap-2">
+        {isAnswered && isCorrect && (
+          <div className="text-base font-medium text-green-600 mb-3 flex items-center justify-center gap-2">
             <img src="/lovable-uploads/67fac243-a62f-4f09-baef-5e4ec5394cdf.png" alt="Bravo" className="w-8 h-8 object-contain" />
             <span>Bravo ! Voici la phrase complète.</span>
-          </div>}
+          </div>
+        )}
         
-        {userAnswer && !isAnswered && <p className="text-base font-medium text-ouaip-dark-blue mb-3">
+        {userAnswer && !isAnswered && (
+          <p className="text-base font-medium text-ouaip-dark-blue mb-3">
             Tu as déposé une étiquette ! Clique sur Vérifier.
-          </p>}
+          </p>
+        )}
         
-        {!isAnswered && !userAnswer && shuffledChoices.length > 0 && <div className="flex justify-center gap-4 flex-wrap mt-6">
-            {shuffledChoices.map((choice, index) => <div key={index} 
-              draggable 
-              onDragStart={e => handleDragStart(e, choice)} 
-              onDragEnd={handleDragEnd}
-              onTouchStart={e => handleTouchStart(e, choice)}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-              className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-move hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`} 
-              style={{
-                touchAction: 'none'
-              }}>
+        {!isAnswered && !userAnswer && shuffledChoices.length > 0 && (
+          <div className="flex justify-center gap-4 flex-wrap mt-6">
+            {shuffledChoices.map((choice, index) => (
+              <div 
+                key={index} 
+                draggable 
+                onDragStart={e => handleDragStart(e, choice)} 
+                onDragEnd={handleDragEnd}
+                onClick={() => handleChoiceClick(choice)}
+                className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-pointer hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`}
+              >
                 {choice}
-              </div>)}
-          </div>}
+              </div>
+            ))}
+          </div>
+        )}
 
-        {!isAnswered && !userAnswer && shuffledChoices.length === 0 && <div className="mt-4 text-center">
+        {!isAnswered && !userAnswer && shuffledChoices.length === 0 && (
+          <div className="mt-4 text-center">
             <p className="text-red-500 font-medium">⚠️ Aucun choix disponible pour cet exercice</p>
             <p className="text-sm text-muted-foreground">Cet exercice n'a pas de choix multiples définis.</p>
-          </div>}
+          </div>
+        )}
 
-        {userAnswer && !isAnswered && <div className="mt-4 flex justify-center gap-2">
+        {userAnswer && !isAnswered && (
+          <div className="mt-4 flex justify-center gap-2">
             <Button onClick={() => setUserAnswer("")} variant="outline" className="px-4 py-2">
               🔄 Changer
             </Button>
-          </div>}
+          </div>
+        )}
         
-        {!userAnswer && !isAnswered && <p className="text-sm text-muted-foreground mt-4 italic">
+        {!userAnswer && !isAnswered && (
+          <p className="text-sm text-muted-foreground mt-4 italic">
             💡 Conseil : {getContextualHint()}
-          </p>}
+          </p>
+        )}
       </div>
-
-      {/* Élément fantôme qui suit le doigt pendant le drag sur tactile */}
-      {dragPosition && draggedItem && (
-        <div 
-          className="fixed pointer-events-none z-50 px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2 opacity-80"
-          style={{
-            left: dragPosition.x,
-            top: dragPosition.y,
-          }}
-        >
-          {draggedItem}
-        </div>
-      )}
-    </div>;
+    </div>
+  );
 };
+
 export default MultipleChoiceExercise;
