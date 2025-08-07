@@ -247,22 +247,10 @@ const AuxiliaryOnlyExercise = ({
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            onTouchStart={(e) => e.preventDefault()}
-            onContextMenu={(e) => e.preventDefault()}
-            onDoubleClick={(e) => e.preventDefault()}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
-            data-lpignore="true"
-            data-form-type="other"
-            data-1p-ignore="true"
-            data-lastpass-icon-root="true"
-            data-webkit-autofill="false"
-            inputMode="text"
-            name="grammar-exercise"
-            role="textbox"
-            aria-label="Réponse de l'exercice"
             className="ouaip-input text-center text-xl py-4 h-16 border-2 border-primary/50 focus:border-primary font-medium bg-white shadow-lg w-80 outline-none rounded-lg"
             placeholder="Ex: est décidée, sont allés..."
             disabled={isAnswered}
