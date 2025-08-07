@@ -242,12 +242,12 @@ const AuxiliaryOnlyExercise = ({
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         <div className="flex items-center justify-center gap-4">
-          <Input
+          <input
             ref={inputRef}
             type="text"
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            autoComplete="off"
+            autoComplete="one-time-code"
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
@@ -258,6 +258,9 @@ const AuxiliaryOnlyExercise = ({
               if (e.key === 'Enter' && userAnswer.trim()) {
                 onKeyPress(e as any);
               }
+            }}
+            onFocus={(e) => {
+              e.target.setAttribute('autocomplete', 'one-time-code');
             }}
           />
           <Popover>
