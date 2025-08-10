@@ -70,7 +70,7 @@ const Header = ({
             </Button>}
         </div>
         <div className="flex-1"></div>
-        <Button variant="outline" onClick={toggleFullscreen} className="border-white text-white hover:bg-white/20 bg-white/10 text-xs sm:text-sm px-2 sm:px-4" title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}>
+        <Button variant="outline" onClick={toggleFullscreen} className="border-2 border-white text-white hover:bg-white/20 bg-white/10 text-xs sm:text-sm px-2 sm:px-4" title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}>
           {isFullscreen ? <Minimize size={16} className="sm:w-5 sm:h-5" /> : <Maximize size={16} className="sm:w-5 sm:h-5" />}
           <span className="ml-1 sm:ml-2 hidden md:inline">Plein écran</span>
         </Button>
