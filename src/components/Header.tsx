@@ -1,30 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Maximize, Minimize } from "lucide-react";
 import { useState, useEffect } from "react";
-
 interface HeaderProps {
   onBackToHome?: () => void;
   showBackButton?: boolean;
 }
-
 const Header = ({
   onBackToHome,
   showBackButton = false
 }: HeaderProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-
   useEffect(() => {
     const handleFullscreenChange = () => {
       const isCurrentlyFullscreen = !!document.fullscreenElement;
       console.log('Fullscreen state changed:', isCurrentlyFullscreen);
       setIsFullscreen(isCurrentlyFullscreen);
     };
-
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
     document.addEventListener('mozfullscreenchange', handleFullscreenChange);
     document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
       document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
@@ -32,10 +27,8 @@ const Header = ({
       document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
     };
   }, []);
-
   const toggleFullscreen = async () => {
     console.log('Toggle fullscreen clicked, current state:', isFullscreen);
-    
     try {
       if (!document.fullscreenElement) {
         console.log('Requesting fullscreen...');
@@ -68,31 +61,20 @@ const Header = ({
       alert('Impossible de changer le mode plein écran. Cela peut être dû aux restrictions du navigateur.');
     }
   };
-
   return <header className="w-full border-b-2 border-primary p-2 sm:p-4 shadow-sm bg-primary">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 sm:gap-4">
-          {showBackButton && <Button 
-              variant="outline" 
-              onClick={onBackToHome} 
-              className="border-2 border-[#e55555] text-white bg-[#e55555] hover:bg-[#e55555]/80 active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center"
-            >
+          {showBackButton && <Button variant="outline" onClick={onBackToHome} className="border-2 border-[#e55555] active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center bg-[#59c7e0]/[0.83] text-white">
               <span className="hidden sm:inline">← Accueil</span>
               <span className="sm:hidden">←</span>
             </Button>}
         </div>
         <div className="flex-1"></div>
-        <Button 
-          variant="outline" 
-          onClick={toggleFullscreen}
-          className="border-white text-white hover:bg-white/20 bg-white/10 text-xs sm:text-sm px-2 sm:px-4"
-          title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}
-        >
+        <Button variant="outline" onClick={toggleFullscreen} className="border-white text-white hover:bg-white/20 bg-white/10 text-xs sm:text-sm px-2 sm:px-4" title={isFullscreen ? "Quitter le plein écran" : "Plein écran"}>
           {isFullscreen ? <Minimize size={16} className="sm:w-5 sm:h-5" /> : <Maximize size={16} className="sm:w-5 sm:h-5" />}
           <span className="ml-1 sm:ml-2 hidden md:inline">Plein écran</span>
         </Button>
       </div>
     </header>;
 };
-
 export default Header;
