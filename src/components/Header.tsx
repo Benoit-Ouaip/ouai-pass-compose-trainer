@@ -64,7 +64,7 @@ const Header = ({
   return <header className="w-full border-b-2 border-primary p-2 sm:p-4 shadow-sm bg-primary">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 sm:gap-4">
-          {showBackButton && <Button variant="outline" onClick={onBackToHome} className="border-white text-white hover:bg-white/20 bg-white/10 active:scale-95 transition-all duration-200 text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3 h-10 sm:h-16 flex items-center justify-center">
+          {showBackButton && <Button variant="outline" onClick={onBackToHome} className="border-white text-white hover:bg-white/20 bg-white/10 text-xs sm:text-sm px-2 sm:px-4" title="Retour à l'accueil">
               <span className="hidden sm:inline">← Accueil</span>
               <span className="sm:hidden">←</span>
             </Button>}
