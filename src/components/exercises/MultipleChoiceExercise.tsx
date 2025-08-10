@@ -173,7 +173,7 @@ const MultipleChoiceExercise = ({
       >
         <p className="text-base text-ouaip-dark-blue mb-4 font-normal text-[#59c2df]">La phrase au passé composé :</p>
         <p 
-          className="text-xl text-foreground mb-6 leading-relaxed font-medium" 
+          className="text-2xl text-foreground mb-6 leading-relaxed font-medium" 
           dangerouslySetInnerHTML={{ __html: createDisplaySentence() }}
         />
         
