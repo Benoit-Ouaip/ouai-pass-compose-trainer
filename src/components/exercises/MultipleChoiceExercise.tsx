@@ -160,7 +160,7 @@ const MultipleChoiceExercise = ({
       <div className="p-4 bg-muted/20 rounded-lg">
         <p className="text-base font-medium text-ouaip-dark-blue mb-3 text-[#9f9f9f]">La phrase au présent :</p>
         <p 
-          className="text-xl text-foreground leading-relaxed" 
+          className="text-2xl text-foreground leading-relaxed" 
           dangerouslySetInnerHTML={{ __html: highlightedPresentSentence }}
         />
       </div>
