@@ -53,7 +53,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/4dc33fb2-4505-4f21-910a-ec986970c3f2.png" 
                   alt="Aventures au passé composé" 
-                  className="h-48 sm:h-64 w-auto"
+                  className="h-48 sm:h-64 w-auto border-4 border-white rounded-3xl"
                 />
               </div>
               <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">Choisis ton aventure !</h2>
