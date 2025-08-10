@@ -46,7 +46,7 @@ const Index = () => {
   return <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: gameState === 'home' ? `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')` : `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')`}}>
       {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
-      <main className="w-full py-8 px-24">
+      <main className="w-full py-4 px-4">
         {gameState === 'home' && <div className="mx-auto">
             <div className="text-center mb-12">
               <div className="flex justify-center mb-8">
@@ -60,7 +60,7 @@ const Index = () => {
               <p className="text-xl text-muted-foreground">Maitrise le passé composé en t'amusant !</p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 w-full">
               {scenarios.map(scenario => <div key={scenario.id} className="fade-in">
                   <ScenarioCard id={scenario.id} title={scenario.title} description={scenario.description} icon={scenario.icon} color={scenario.color} onSelect={handleScenarioSelect} />
                 </div>)}
