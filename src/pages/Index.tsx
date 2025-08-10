@@ -48,21 +48,21 @@ const Index = () => {
       <BackgroundPreloader />
       {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
-      <main className="w-full py-4 px-4">
+      <main className="w-full py-2 px-2">
         {gameState === 'home' && <div className="mx-auto">
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-8">
+            <div className="text-center mb-6">
+              <div className="flex justify-center mb-4">
                 <img 
                   src="/lovable-uploads/4dc33fb2-4505-4f21-910a-ec986970c3f2.png" 
                   alt="Aventures au passé composé" 
-                  className="h-48 sm:h-64 w-auto border-4 border-white rounded-3xl"
+                  className="h-32 sm:h-40 w-auto border-4 border-white rounded-3xl"
                 />
               </div>
-              <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">Choisis ton aventure !</h2>
-              <p className="text-xl text-muted-foreground">Maitrise le passé composé en t'amusant !</p>
+              <h2 className="text-3xl font-bold text-ouaip-dark-blue mb-2">Choisis ton aventure !</h2>
+              <p className="text-lg text-muted-foreground">Maitrise le passé composé en t'amusant !</p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 w-full">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-2 w-full">
               {scenarios.map(scenario => <div key={scenario.id} className="fade-in">
                   <ScenarioCard id={scenario.id} title={scenario.title} description={scenario.description} icon={scenario.icon} color={scenario.color} onSelect={handleScenarioSelect} />
                 </div>)}
