@@ -36,11 +36,11 @@ const DifficultySelector = ({
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-2 border-white shadow-lg">
         <h2 className="text-3xl font-bold text-ouaip-dark-blue mb-4">
           {scenarioTitle}
         </h2>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-lg text-gray-700">
           Choisissez votre niveau de difficulté
         </p>
       </div>
@@ -49,10 +49,10 @@ const DifficultySelector = ({
         {difficulties.map((diff) => (
           <div
             key={diff.level}
-            className={`ouaip-card p-6 cursor-pointer transition-all duration-300 ${
+            className={`bg-white/90 backdrop-blur-sm border-2 border-white rounded-xl p-6 cursor-pointer transition-all duration-300 shadow-lg ${
               selectedDifficulty === diff.level 
-                ? 'border-primary bg-primary/5 shadow-md' 
-                : 'hover:border-primary/50'
+                ? 'border-ouaip-dark-blue bg-white shadow-xl scale-105' 
+                : 'hover:border-ouaip-dark-blue/50 hover:shadow-xl hover:scale-102'
             }`}
             onClick={() => onDifficultyChange(diff.level)}
           >
@@ -64,14 +64,14 @@ const DifficultySelector = ({
                 <h3 className="text-xl font-semibold text-ouaip-dark-blue mb-1">
                   {diff.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-700">
                   {diff.description}
                 </p>
               </div>
               <div className={`w-6 h-6 rounded-full border-2 transition-all ${
                 selectedDifficulty === diff.level
-                  ? 'bg-primary border-primary'
-                  : 'border-primary/30'
+                  ? 'bg-ouaip-dark-blue border-ouaip-dark-blue'
+                  : 'border-ouaip-dark-blue/30'
               }`}>
                 {selectedDifficulty === diff.level && (
                   <div className="w-full h-full rounded-full bg-white scale-50"></div>
@@ -82,10 +82,10 @@ const DifficultySelector = ({
         ))}
       </div>
 
-      <div className="text-center">
+      <div className="text-center bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-2 border-white shadow-lg">
         <Button 
           onClick={onStart}
-          className="ouaip-button-primary text-lg px-8 py-4"
+          className="bg-ouaip-dark-blue hover:bg-ouaip-dark-blue/90 text-white text-lg px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105"
           disabled={!selectedDifficulty}
         >
           Commencer l'exercice
