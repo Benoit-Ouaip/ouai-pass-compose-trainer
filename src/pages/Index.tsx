@@ -49,6 +49,13 @@ const Index = () => {
       <main className="container mx-auto py-8">
         {gameState === 'home' && <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
+              <div className="flex justify-center mb-8">
+                <img 
+                  src="/lovable-uploads/4dc33fb2-4505-4f21-910a-ec986970c3f2.png" 
+                  alt="Aventures au passé composé" 
+                  className="h-48 sm:h-64 w-auto"
+                />
+              </div>
               <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">Choisis ton aventure !</h2>
               <p className="text-xl text-muted-foreground">Maitrise le passé composé en t'amusant !</p>
             </div>

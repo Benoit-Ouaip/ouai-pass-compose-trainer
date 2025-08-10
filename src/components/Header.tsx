@@ -72,9 +72,6 @@ const Header = ({
   return <header className="w-full border-b-2 border-primary p-2 sm:p-4 shadow-sm bg-primary">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 sm:gap-4">
-          <a href="https://ouaip.be/" target="_blank" rel="noopener noreferrer" className="bg-white p-1 sm:p-2 rounded-lg hover:opacity-80 transition-opacity">
-            <img src="/lovable-uploads/b5e828fb-5d4a-48b1-aa05-4d3a09ec8468.png" alt="OUAIP Logo" className="h-8 sm:h-12 w-auto" />
-          </a>
           {showBackButton && <Button 
               variant="outline" 
               onClick={onBackToHome} 
@@ -84,10 +81,7 @@ const Header = ({
               <span className="sm:hidden">←</span>
             </Button>}
         </div>
-        <h1 className="text-sm sm:text-xl lg:text-2xl font-bold text-white text-center flex-1 mx-2">
-          <span className="hidden sm:inline">Entrainement sur le passé composé</span>
-          <span className="sm:hidden">Passé composé</span>
-        </h1>
+        <div className="flex-1"></div>
         <Button 
           variant="outline" 
           onClick={toggleFullscreen}
