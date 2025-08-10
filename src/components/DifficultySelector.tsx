@@ -37,10 +37,10 @@ const DifficultySelector = ({
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="text-center mb-8 bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-2 border-white shadow-lg">
-        <h2 className="text-3xl font-bold text-ouaip-dark-blue mb-4">
+        <h2 className="text-4xl font-bold text-ouaip-dark-blue mb-4">
           {scenarioTitle}
         </h2>
-        <p className="text-lg text-gray-700">
+        <p className="text-xl text-gray-700">
           Choisissez votre niveau de difficulté
         </p>
       </div>
@@ -61,10 +61,10 @@ const DifficultySelector = ({
                 {diff.stars}
               </div>
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-ouaip-dark-blue mb-1">
+                <h3 className="text-2xl font-semibold text-ouaip-dark-blue mb-1">
                   {diff.title}
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-lg text-gray-700">
                   {diff.description}
                 </p>
               </div>
@@ -85,7 +85,7 @@ const DifficultySelector = ({
       <div className="text-center bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-2 border-white shadow-lg">
         <Button 
           onClick={onStart}
-          className="bg-ouaip-dark-blue hover:bg-ouaip-dark-blue/90 text-white text-lg px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+          className="bg-ouaip-dark-blue hover:bg-ouaip-dark-blue/90 text-white text-xl px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105"
           disabled={!selectedDifficulty}
         >
           Commencer l'exercice
