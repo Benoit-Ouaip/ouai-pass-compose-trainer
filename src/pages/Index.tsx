@@ -44,7 +44,7 @@ const Index = () => {
     return currentScenario.exercises.slice(startIndex, endIndex);
   };
   return <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
-      <Header onBackToHome={gameState !== 'home' ? handleBackToHome : undefined} showBackButton={gameState !== 'home'} />
+      {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
       <main className="container mx-auto py-8">
         {gameState === 'home' && <div className="max-w-6xl mx-auto">
