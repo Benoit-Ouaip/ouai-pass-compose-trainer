@@ -43,7 +43,7 @@ const Index = () => {
     const endIndex = startIndex + 10;
     return currentScenario.exercises.slice(startIndex, endIndex);
   };
-  return <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
+  return <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')`}}>
       {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
       <main className="container mx-auto py-8">
