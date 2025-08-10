@@ -231,7 +231,7 @@ const ExerciseScreen = ({
         <Button variant="outline" onClick={onBack} className="border-primary text-primary hover:bg-primary/10">
           ← Retour
         </Button>
-        <h2 className="font-bold text-ouaip-dark-blue text-2xl text-white">
+        <h2 className="font-bold text-ouaip-dark-blue text-3xl text-white">
           {scenarioTitle}
         </h2>
         <Button variant="outline" onClick={() => setShowHelp(true)} className="border-warning text-warning hover:bg-warning/10">
