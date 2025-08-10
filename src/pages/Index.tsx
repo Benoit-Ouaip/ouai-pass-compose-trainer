@@ -6,6 +6,7 @@ import ExerciseScreen from "@/components/ExerciseScreen";
 import ResultsScreen from "@/components/ResultsScreen";
 import { scenarios, infoCard } from "@/data/scenarios";
 import InfoCard from "@/components/InfoCard";
+import BackgroundPreloader from "@/components/BackgroundPreloader";
 type GameState = 'home' | 'difficulty' | 'exercise' | 'results';
 const Index = () => {
   const [gameState, setGameState] = useState<GameState>('home');
@@ -43,7 +44,8 @@ const Index = () => {
     const endIndex = startIndex + 10;
     return currentScenario.exercises.slice(startIndex, endIndex);
   };
-  return <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: gameState === 'home' ? `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')` : `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')`}}>
+  return <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-200 bg-cover bg-center bg-no-repeat" style={{backgroundImage: gameState === 'home' ? `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')` : `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')`}}>
+      <BackgroundPreloader />
       {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
       <main className="w-full py-4 px-4">
