@@ -53,7 +53,7 @@ const Index = () => {
             <div className="text-center mb-6">
               <div className="flex justify-center mb-4">
                 <img 
-                  src="/lovable-uploads/4dc33fb2-4505-4f21-910a-ec986970c3f2.png" 
+                  src="/lovable-uploads/d4cbab2f-72a4-4199-b3b1-77ff3753c1df.png" 
                   alt="Aventures au passé composé" 
                   className="h-32 sm:h-40 w-auto border-4 border-white rounded-3xl"
                 />
