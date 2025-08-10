@@ -240,7 +240,7 @@ const ExerciseScreen = ({
       </div>
 
       {/* Progress */}
-      <div className="mb-8">
+      <div className="mb-12">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm text-muted-foreground">
             Phrase {currentExercise + 1} sur {exercises.length}
