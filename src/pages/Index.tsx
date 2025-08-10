@@ -46,8 +46,8 @@ const Index = () => {
   return <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: gameState === 'home' ? `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')` : `url('/lovable-uploads/189513c8-c4b7-4617-b924-c40123e226d9.png')`}}>
       {gameState !== 'home' && <Header onBackToHome={handleBackToHome} showBackButton={true} />}
       
-      <main className="container mx-auto py-8">
-        {gameState === 'home' && <div className="max-w-6xl mx-auto">
+      <main className="container mx-auto py-8 px-4 max-w-none">
+        {gameState === 'home' && <div className="mx-auto">
             <div className="text-center mb-12">
               <div className="flex justify-center mb-8">
                 <img 
