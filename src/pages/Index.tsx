@@ -4,13 +4,14 @@ import ScenarioCard from "@/components/ScenarioCard";
 import DifficultySelector from "@/components/DifficultySelector";
 import ExerciseScreen from "@/components/ExerciseScreen";
 import ResultsScreen from "@/components/ResultsScreen";
+import DragDropConjugationExercise from "@/components/exercises/DragDropConjugationExercise";
 import { scenarios, infoCard } from "@/data/scenarios";
 import InfoCard from "@/components/InfoCard";
 import BackgroundPreloader from "@/components/BackgroundPreloader";
 type GameState = 'home' | 'difficulty' | 'exercise' | 'results';
 const Index = () => {
   const [gameState, setGameState] = useState<GameState>('home');
-  const [selectedScenario, setSelectedScenario] = useState<number>(1);
+  const [selectedScenario, setSelectedScenario] = useState<number>(0);
   const [selectedDifficulty, setSelectedDifficulty] = useState<number>(1);
   const [finalScore, setFinalScore] = useState<number>(0);
   const currentScenario = scenarios.find(s => s.id === selectedScenario);
@@ -19,7 +20,12 @@ const Index = () => {
     setGameState('difficulty');
   };
   const handleDifficultySelect = (difficulty: number) => {
-    setSelectedDifficulty(difficulty);
+    // Pour la révision avoir/être, on passe directement à l'exercice
+    if (selectedScenario === 0) {
+      setGameState('exercise');
+    } else {
+      setSelectedDifficulty(difficulty);
+    }
   };
   const handleStartExercise = () => {
     setGameState('exercise');
@@ -72,13 +78,42 @@ const Index = () => {
             </div>
           </div>}
 
-        {gameState === 'difficulty' && currentScenario && <div className="fade-in">
-            <DifficultySelector selectedDifficulty={selectedDifficulty} onDifficultyChange={handleDifficultySelect} onStart={handleStartExercise} scenarioTitle={currentScenario.title} />
-          </div>}
+        {gameState === 'difficulty' && currentScenario && (
+          <div className="fade-in">
+            {selectedScenario === 0 ? (
+              <DragDropConjugationExercise 
+                onComplete={handleExerciseComplete}
+                onBack={handleBackToHome}
+              />
+            ) : (
+              <DifficultySelector 
+                selectedDifficulty={selectedDifficulty} 
+                onDifficultyChange={handleDifficultySelect} 
+                onStart={handleStartExercise} 
+                scenarioTitle={currentScenario.title} 
+              />
+            )}
+          </div>
+        )}
 
-        {gameState === 'exercise' && currentScenario && <div className="fade-in">
-            <ExerciseScreen exercises={getExercises()} scenarioTitle={currentScenario.title} difficulty={selectedDifficulty} onComplete={handleExerciseComplete} onBack={handleBackToDifficulty} />
-          </div>}
+        {gameState === 'exercise' && currentScenario && (
+          <div className="fade-in">
+            {selectedScenario === 0 ? (
+              <DragDropConjugationExercise 
+                onComplete={handleExerciseComplete}
+                onBack={handleBackToDifficulty}
+              />
+            ) : (
+              <ExerciseScreen 
+                exercises={getExercises()} 
+                scenarioTitle={currentScenario.title} 
+                difficulty={selectedDifficulty} 
+                onComplete={handleExerciseComplete} 
+                onBack={handleBackToDifficulty} 
+              />
+            )}
+          </div>
+        )}
 
         {gameState === 'results' && currentScenario && <div className="fade-in">
             <ResultsScreen score={finalScore} scenarioTitle={currentScenario.title} onReplay={handleReplay} onBackToHome={handleBackToHome} />
