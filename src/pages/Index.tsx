@@ -51,7 +51,7 @@ const Index = () => {
       <main className="w-full py-2 px-2">
         {gameState === 'home' && <div className="mx-auto">
             <div className="text-center mb-6">
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-2">
                 <img 
                   src="/lovable-uploads/d4cbab2f-72a4-4199-b3b1-77ff3753c1df.png" 
                   alt="Aventures au passé composé" 
