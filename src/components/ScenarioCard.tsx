@@ -12,8 +12,8 @@ interface ScenarioCardProps {
 const ScenarioCard = ({ id, title, description, icon, color, onSelect }: ScenarioCardProps) => {
   // Taille spéciale pour la vignette de révision
   const isRevisionCard = id === 0;
-  const iconSize = isRevisionCard ? "w-20 h-20" : "w-16 h-16";
-  const textSize = isRevisionCard ? "text-3xl" : "text-2xl";
+  const iconSize = isRevisionCard ? "w-24 h-24" : "w-16 h-16";
+  const textSize = isRevisionCard ? "text-4xl" : "text-2xl";
   
   return (
     <div className="ouaip-card p-6 h-full flex flex-col">
