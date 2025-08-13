@@ -30,7 +30,7 @@ export const scenarios: Scenario[] = [
     id: 0,
     title: "Révision Avoir & Être",
     description: "Révise les verbes avoir et être au présent - Prérequis essentiel !",
-    icon: "/images/revision-icon.png",
+    icon: "📚",
     color: "bg-ouaip-purple/20 text-ouaip-purple",
     exercises: [] // Exercice spécial de glisser-déposer
   },

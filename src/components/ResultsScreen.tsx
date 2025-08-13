@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { RotateCcw, Home } from "lucide-react";
 import confetti from 'canvas-confetti';
 
 interface ResultsScreenProps {
