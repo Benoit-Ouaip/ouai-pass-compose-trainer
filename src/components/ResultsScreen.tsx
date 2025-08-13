@@ -11,10 +11,10 @@ interface ResultsScreenProps {
 
 const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: ResultsScreenProps) => {
   const getBadge = () => {
-    if (score >= 80) return { type: "or", emoji: "🥇", title: "Excellent !" };
-    if (score >= 70) return { type: "argent", emoji: "🥈", title: "Très bien !" };
-    if (score >= 60) return { type: "bronze", emoji: "🥉", title: "Bien joué !" };
-    return { type: "effort", emoji: "💪", title: "Il va falloir s'améliorer !" };
+    if (score >= 80) return { type: "or", title: "Excellent !" };
+    if (score >= 70) return { type: "argent", title: "Très bien !" };
+    if (score >= 60) return { type: "bronze", title: "Bien joué !" };
+    return { type: "effort", title: "Il va falloir s'améliorer !" };
   };
 
   const badge = getBadge();
@@ -291,7 +291,7 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
           onClick={onReplay}
           className="ouaip-button-primary w-full text-lg py-3"
         >
-          🔄 Rejouer ce scénario
+          Rejouer ce scénario
         </Button>
         
         <Button 
@@ -299,7 +299,7 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
           variant="outline"
           className="w-full text-lg py-3 border-primary text-primary hover:bg-primary/10"
         >
-          🏠 Changer de scénario
+          Changer de scénario
         </Button>
       </div>
     </div>
