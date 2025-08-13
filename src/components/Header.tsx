@@ -61,7 +61,7 @@ const Header = ({
       alert('Impossible de changer le mode plein écran. Cela peut être dû aux restrictions du navigateur.');
     }
   };
-  return <header className="w-full border-b-2 border-primary p-2 sm:p-4 shadow-sm bg-primary">
+  return <header className="w-full p-2 sm:p-4 bg-transparent">
       <div className="w-full flex items-center justify-between gap-2 px-2">
         <div className="flex items-center gap-2 sm:gap-4">
           {showBackButton && <Button variant="outline" onClick={onBackToHome} className="!border-2 !border-white !text-white hover:!bg-white/20 !bg-white/10 text-xs sm:text-sm px-2 sm:px-4" title="Retour à l'accueil">
