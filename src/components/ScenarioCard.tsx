@@ -10,16 +10,16 @@ interface ScenarioCardProps {
 }
 
 const ScenarioCard = ({ id, title, description, icon, color, onSelect }: ScenarioCardProps) => {
-  const isImageIcon = icon.startsWith('/') || icon.startsWith('src/');
+  const isImageIcon = icon.startsWith('/');
   
   return (
     <div className="ouaip-card p-6 h-full flex flex-col">
-      <div className={`w-16 h-16 rounded-lg flex items-center justify-center text-2xl mb-4 mx-auto ${color} border-2 border-white/20`}>
+      <div className={`w-16 h-16 rounded-lg flex items-center justify-center text-2xl mb-4 mx-auto ${color}`}>
         {isImageIcon ? (
           <img 
             src={icon} 
             alt={title}
-            className="w-12 h-12 object-cover rounded-md"
+            className="w-10 h-10 object-contain"
           />
         ) : (
           icon
