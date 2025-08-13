@@ -292,7 +292,6 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
           onClick={onReplay}
           className="ouaip-button-primary w-full text-lg py-3"
         >
-          <RotateCcw className="w-5 h-5 mr-2" />
           Rejouer ce scénario
         </Button>
         
@@ -301,7 +300,6 @@ const ResultsScreen = ({ score, scenarioTitle, onReplay, onBackToHome }: Results
           variant="outline"
           className="w-full text-lg py-3 border-primary text-primary hover:bg-primary/10"
         >
-          <Home className="w-5 h-5 mr-2" />
           Changer de scénario
         </Button>
       </div>
