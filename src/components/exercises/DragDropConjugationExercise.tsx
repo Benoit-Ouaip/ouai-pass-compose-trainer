@@ -38,6 +38,7 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
   const [isCompleted, setIsCompleted] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [touchStartPos, setTouchStartPos] = useState<{x: number, y: number} | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     // Mélanger les formes au début
@@ -92,20 +93,43 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
   };
 
   const handleTouchStart = (e: React.TouchEvent, form: ConjugationForm) => {
+    console.log('Touch start detected for:', form.form);
     e.preventDefault();
+    e.stopPropagation();
+    
     const touch = e.touches[0];
     setTouchStartPos({ x: touch.clientX, y: touch.clientY });
     setDraggedItem(form);
+    setIsDragging(true);
+    
+    // Bloquer le défilement de la page
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+    
+    console.log('Drag started, scroll blocked');
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    
     e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('Touch move detected');
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
+    console.log('Touch end detected');
     e.preventDefault();
+    e.stopPropagation();
+    
+    // Rétablir le défilement
+    document.body.style.overflow = '';
+    document.body.style.touchAction = '';
+    setIsDragging(false);
     
     if (!draggedItem || !touchStartPos) {
+      console.log('No dragged item or touch position');
       setTouchStartPos(null);
       setDraggedItem(null);
       return;
@@ -115,8 +139,11 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
     const x = touch.clientX;
     const y = touch.clientY;
     
+    console.log('Touch ended at position:', x, y);
+    
     // Obtenir l'élément à cette position
     const elementAtPoint = document.elementFromPoint(x, y);
+    console.log('Element at point:', elementAtPoint);
     
     // Chercher une zone de dépôt
     let targetVerb: 'avoir' | 'être' | null = null;
@@ -126,13 +153,19 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
       const avoirZone = elementAtPoint.closest('[data-drop-zone="avoir"]');
       const etreZone = elementAtPoint.closest('[data-drop-zone="être"]');
       
+      console.log('Avoir zone found:', !!avoirZone);
+      console.log('Être zone found:', !!etreZone);
+      
       if (avoirZone) targetVerb = 'avoir';
       else if (etreZone) targetVerb = 'être';
     }
     
+    console.log('Target verb:', targetVerb);
+    
     if (targetVerb) {
       // Vérifier si c'est le bon verbe
       if (draggedItem.verb === targetVerb) {
+        console.log('Correct verb match!');
         // Retirer de la liste mélangée
         setShuffledForms(prev => prev.filter(form => form.id !== draggedItem.id));
         
@@ -152,12 +185,15 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
           description: "Bonne réponse !",
         });
       } else {
+        console.log('Wrong verb match');
         toast({
           title: "Oups !",
           description: "Cette forme ne va pas avec ce verbe.",
           variant: "destructive"
         });
       }
+    } else {
+      console.log('No target zone found');
     }
 
     setTouchStartPos(null);
