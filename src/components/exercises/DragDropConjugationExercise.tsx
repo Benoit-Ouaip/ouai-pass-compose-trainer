@@ -37,6 +37,7 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
   const [draggedItem, setDraggedItem] = useState<ConjugationForm | null>(null);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [touchStartPos, setTouchStartPos] = useState<{x: number, y: number} | null>(null);
 
   useEffect(() => {
     // Mélanger les formes au début
@@ -87,6 +88,39 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
       });
     }
     
+    setDraggedItem(null);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent, form: ConjugationForm) => {
+    const touch = e.touches[0];
+    setTouchStartPos({ x: touch.clientX, y: touch.clientY });
+    setDraggedItem(form);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault(); // Empêche le défilement de la page
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!draggedItem || !touchStartPos) return;
+
+    const touch = e.changedTouches[0];
+    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    // Chercher la zone de dépôt la plus proche
+    const dropZone = elementBelow?.closest('[data-drop-zone]');
+    if (dropZone) {
+      const targetVerb = dropZone.getAttribute('data-drop-zone') as 'avoir' | 'être';
+      if (targetVerb) {
+        // Simuler l'événement de drop
+        const fakeEvent = {
+          preventDefault: () => {},
+        } as React.DragEvent;
+        handleDrop(fakeEvent, targetVerb);
+      }
+    }
+
+    setTouchStartPos(null);
     setDraggedItem(null);
   };
 
@@ -170,11 +204,12 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
             className="min-h-64 border-2 border-dashed border-ouaip-blue/30 rounded-lg p-4 space-y-2"
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, 'avoir')}
+            data-drop-zone="avoir"
           >
             {avoirForms.map((form) => (
               <div
                 key={form.id}
-                className="bg-ouaip-blue/10 text-ouaip-blue p-3 rounded-lg text-center font-medium cursor-pointer hover:bg-ouaip-blue/20 transition-colors"
+                className="bg-ouaip-blue/10 text-ouaip-blue p-4 rounded-lg text-center font-medium cursor-pointer hover:bg-ouaip-blue/20 transition-colors text-lg"
                 onClick={() => handleRemoveFromColumn(form.id, 'avoir')}
                 title="Cliquer pour retirer"
               >
@@ -196,11 +231,12 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
             className="min-h-64 border-2 border-dashed border-ouaip-green/30 rounded-lg p-4 space-y-2"
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, 'être')}
+            data-drop-zone="être"
           >
             {etreForms.map((form) => (
               <div
                 key={form.id}
-                className="bg-ouaip-green/10 text-ouaip-green p-3 rounded-lg text-center font-medium cursor-pointer hover:bg-ouaip-green/20 transition-colors"
+                className="bg-ouaip-green/10 text-ouaip-green p-4 rounded-lg text-center font-medium cursor-pointer hover:bg-ouaip-green/20 transition-colors text-lg"
                 onClick={() => handleRemoveFromColumn(form.id, 'être')}
                 title="Cliquer pour retirer"
               >
@@ -223,9 +259,12 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
           {shuffledForms.map((form) => (
             <div
               key={form.id}
-              className="bg-primary/10 text-primary p-3 rounded-lg font-medium cursor-grab active:cursor-grabbing hover:bg-primary/20 transition-colors select-none"
+              className="bg-primary/10 text-primary p-4 rounded-lg font-medium cursor-grab active:cursor-grabbing hover:bg-primary/20 transition-colors select-none text-lg touch-manipulation"
               draggable
               onDragStart={(e) => handleDragStart(e, form)}
+              onTouchStart={(e) => handleTouchStart(e, form)}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               {form.form}
             </div>
