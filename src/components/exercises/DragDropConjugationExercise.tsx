@@ -92,9 +92,15 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
   };
 
   const handleTouchStart = (e: React.TouchEvent, form: ConjugationForm) => {
+    e.preventDefault();
     const touch = e.touches[0];
     setTouchStartPos({ x: touch.clientX, y: touch.clientY });
     setDraggedItem(form);
+    
+    // Ajouter un style visuel pour indiquer que l'élément est sélectionné
+    const target = e.currentTarget as HTMLElement;
+    target.style.transform = 'scale(1.05)';
+    target.style.opacity = '0.8';
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -102,21 +108,67 @@ const DragDropConjugationExercise = ({ onComplete, onBack }: DragDropConjugation
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!draggedItem || !touchStartPos) return;
+    e.preventDefault();
+    
+    // Remettre le style normal
+    const target = e.currentTarget as HTMLElement;
+    target.style.transform = '';
+    target.style.opacity = '';
+    
+    if (!draggedItem || !touchStartPos) {
+      setTouchStartPos(null);
+      setDraggedItem(null);
+      return;
+    }
 
     const touch = e.changedTouches[0];
     const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
     
-    // Chercher la zone de dépôt la plus proche
-    const dropZone = elementBelow?.closest('[data-drop-zone]');
+    // Chercher la zone de dépôt
+    let dropZone = elementBelow?.closest('[data-drop-zone]');
+    
+    // Si pas trouvé, chercher dans les éléments parents
+    if (!dropZone && elementBelow) {
+      let current = elementBelow.parentElement;
+      while (current && !dropZone) {
+        if (current.hasAttribute('data-drop-zone')) {
+          dropZone = current;
+          break;
+        }
+        current = current.parentElement;
+      }
+    }
+    
     if (dropZone) {
       const targetVerb = dropZone.getAttribute('data-drop-zone') as 'avoir' | 'être';
       if (targetVerb) {
-        // Simuler l'événement de drop
-        const fakeEvent = {
-          preventDefault: () => {},
-        } as React.DragEvent;
-        handleDrop(fakeEvent, targetVerb);
+        // Vérifier si c'est le bon verbe
+        if (draggedItem.verb === targetVerb) {
+          // Retirer de la liste mélangée
+          setShuffledForms(prev => prev.filter(form => form.id !== draggedItem.id));
+          
+          // Ajouter à la bonne colonne
+          if (targetVerb === 'avoir') {
+            setAvoirForms(prev => [...prev, draggedItem].sort((a, b) => 
+              conjugationForms.findIndex(f => f.id === a.id) - conjugationForms.findIndex(f => f.id === b.id)
+            ));
+          } else {
+            setEtreForms(prev => [...prev, draggedItem].sort((a, b) => 
+              conjugationForms.findIndex(f => f.id === a.id) - conjugationForms.findIndex(f => f.id === b.id)
+            ));
+          }
+          
+          toast({
+            title: "Bravo !",
+            description: "Bonne réponse !",
+          });
+        } else {
+          toast({
+            title: "Oups !",
+            description: "Cette forme ne va pas avec ce verbe.",
+            variant: "destructive"
+          });
+        }
       }
     }
 
