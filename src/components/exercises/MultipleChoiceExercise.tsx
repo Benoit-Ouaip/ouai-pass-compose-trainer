@@ -26,6 +26,8 @@ const MultipleChoiceExercise = ({
   isCorrect
 }: MultipleChoiceExerciseProps) => {
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragPosition, setDragPosition] = useState<{x: number, y: number} | null>(null);
 
   // Mélanger les choix de manière aléatoire
   const shuffledChoices = exercise.choices ? [...exercise.choices].sort(() => Math.random() - 0.5) : [];
@@ -124,6 +126,7 @@ const MultipleChoiceExercise = ({
     return "Clique et fais glisser une étiquette vers la zone avec les trois points.";
   };
 
+  // Gestion du drag and drop pour ordinateur
   const handleDragStart = (e: React.DragEvent, choice: string) => {
     setDraggedItem(choice);
     e.dataTransfer.setData('text/plain', choice);
@@ -148,9 +151,86 @@ const MultipleChoiceExercise = ({
     setDraggedItem(null);
   };
 
-  // Gestionnaire simplifié pour tactile - simple tap pour sélectionner
+  // Gestion tactile pour iPad/mobile
+  const handleTouchStart = (e: React.TouchEvent, choice: string) => {
+    e.preventDefault(); // Empêche la sélection de texte
+    
+    const touch = e.touches[0];
+    setDraggedItem(choice);
+    setIsDragging(true);
+    setDragPosition({ x: touch.clientX, y: touch.clientY });
+    
+    // Bloquer complètement le défilement
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    document.body.style.touchAction = 'none';
+    
+    // Vibration sur les appareils compatibles
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !draggedItem) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const touch = e.touches[0];
+    setDragPosition({ x: touch.clientX, y: touch.clientY });
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isDragging || !draggedItem) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Rétablir le défilement
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.height = '';
+    document.body.style.touchAction = '';
+    
+    const touch = e.changedTouches[0];
+    const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    // Recherche de la zone de dépôt
+    let isDropZone = false;
+    
+    if (elementAtPoint) {
+      // Chercher dans les parents jusqu'à trouver une zone de dépôt
+      let current: Element | null = elementAtPoint;
+      while (current && !isDropZone) {
+        if (current.hasAttribute('data-drop-zone')) {
+          isDropZone = true;
+        }
+        current = current.parentElement;
+      }
+    }
+    
+    if (isDropZone && !isAnswered) {
+      setUserAnswer(draggedItem);
+      
+      // Vibration de succès
+      if (navigator.vibrate) {
+        navigator.vibrate([100, 50, 100]);
+      }
+    }
+    
+    // Reset
+    setDraggedItem(null);
+    setIsDragging(false);
+    setDragPosition(null);
+  };
+
+  // Gestionnaire simplifié pour clic direct
   const handleChoiceClick = (choice: string) => {
-    if (!isAnswered) {
+    if (!isAnswered && !isDragging) {
       setUserAnswer(choice);
     }
   };
@@ -192,20 +272,44 @@ const MultipleChoiceExercise = ({
         
         {!isAnswered && !userAnswer && shuffledChoices.length > 0 && (
           <div className="flex justify-center gap-4 flex-wrap mt-6">
-            {shuffledChoices.map((choice, index) => (
-              <div 
-                key={index} 
-                draggable 
-                onDragStart={e => handleDragStart(e, choice)} 
-                onDragEnd={handleDragEnd}
-                onClick={() => handleChoiceClick(choice)}
-                className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-pointer hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 ${draggedItem === choice ? 'opacity-50 scale-95' : ''}`}
-              >
-                {choice}
-              </div>
-            ))}
-          </div>
-        )}
+             {shuffledChoices.map((choice, index) => (
+               <div 
+                 key={index} 
+                 draggable 
+                 onDragStart={e => handleDragStart(e, choice)} 
+                 onDragEnd={handleDragEnd}
+                 onTouchStart={(e) => handleTouchStart(e, choice)}
+                 onTouchMove={handleTouchMove}
+                 onTouchEnd={handleTouchEnd}
+                 onClick={() => handleChoiceClick(choice)}
+                 className={`px-6 py-3 text-lg font-medium bg-white border-2 border-primary/50 rounded-lg cursor-pointer hover:border-primary hover:shadow-lg transition-all select-none transform hover:scale-105 touch-manipulation ${
+                   draggedItem === choice && isDragging ? 'opacity-50 scale-110' : draggedItem === choice ? 'opacity-50 scale-95' : ''
+                 }`}
+                 style={{
+                   touchAction: 'none',
+                   userSelect: 'none',
+                   WebkitUserSelect: 'none'
+                 }}
+               >
+                 {choice}
+               </div>
+             ))}
+           </div>
+         )}
+
+         {/* Élément fantôme qui suit le doigt pendant le drag */}
+         {isDragging && draggedItem && dragPosition && (
+           <div
+             className="fixed pointer-events-none z-50 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium text-lg shadow-lg opacity-80"
+             style={{
+               left: dragPosition.x - 50,
+               top: dragPosition.y - 25,
+               transform: 'rotate(5deg)'
+             }}
+           >
+             {draggedItem}
+           </div>
+         )}
 
         {!isAnswered && !userAnswer && shuffledChoices.length === 0 && (
           <div className="mt-4 text-center">
